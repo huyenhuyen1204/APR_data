@@ -1,0 +1,9 @@
+@@ -6,7 +6,7 @@
+      * Constructor Car.
+      */
+     public Car(String brand, String model,
+-               String registrationNumber, Person owner,int numberOfDoors) {
++               String registrationNumber, Person owner, int numberOfDoors) {
+         super(brand, model, registrationNumber, owner);
+         this.numberOfDoors = numberOfDoors;
+     }

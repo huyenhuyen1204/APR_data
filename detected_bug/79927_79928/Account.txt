@@ -1,0 +1,47 @@
+@@ -2,7 +2,7 @@
+ 
+ public class Account {
+     private double balance;
+-    private ArrayList<Transaction> arrTrans = new ArrayList<>();
++    private ArrayList<Transaction> transitionList = new ArrayList<>();
+ 
+     /** Missing a java doc. */
+     private void deposit(double amount) {
+@@ -12,7 +12,7 @@
+         }
+         balance += amount;
+         Transaction tran = new Transaction("deposit", amount, balance);
+-        arrTrans.add(tran);
++        transitionList.add(tran);
+     }
+ 
+     /** Missing a java doc. */
+@@ -27,7 +27,7 @@
+         }
+         balance -= amount;
+         Transaction tran = new Transaction("withdraw", amount, balance);
+-        arrTrans.add(tran);
++        transitionList.add(tran);
+     }
+ 
+     /** Missing a java doc. */
+@@ -43,15 +43,15 @@
+ 
+     /** Missing a java doc. */
+     public void printTransaction() {
+-        for (int i = 0; i < arrTrans.size(); i++) {
++        for (int i = 0; i < transitionList.size(); i++) {
+             String s = "";
+-            if (arrTrans.get(i).getOperation() == "deposit") {
++            if (transitionList.get(i).getOperation() == "deposit") {
+                 s = "Nap tien $";
+             } else {
+                 s = "Rut tien $";
+             }
+-            double amount = arrTrans.get(i).getAmount();
+-            double bal = arrTrans.get(i).getBalance();
++            double amount = transitionList.get(i).getAmount();
++            double bal = transitionList.get(i).getBalance();
+             String a = String.format("%.2f", amount);
+             String b = String.format("%.2f", bal);
+             String s1 = ". So du luc nay: $";

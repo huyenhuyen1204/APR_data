@@ -1,0 +1,31 @@
+@@ -29,16 +29,17 @@
+      * add.
+      */
+     public void addTransaction(double amount, String operation) {
+-        if (!operation.equals(Transaction.DEPOSIT) && !operation.equals(Transaction.WITHDRAW)) {
+-            System.out.println("Yeu cau khong hop le!");
+-        } else if (operation.equals(Transaction.DEPOSIT)) {
+-            Transaction transaction = new Transaction(operation, amount, balance);
++
++        if (operation.equals(Transaction.DEPOSIT)) {
+             deposit(amount);
++            Transaction transaction = new Transaction(operation, amount, balance);
+             transitionList.add(transaction);
+         } else if (operation.equals(Transaction.WITHDRAW)) {
+-            Transaction transaction = new Transaction(operation, amount, balance);
+             withdraw(amount);
++            Transaction transaction = new Transaction(operation, amount, balance);
+             transitionList.add(transaction);
++        } else {
++            System.out.println("Yeu cau khong hop le!");
+         }
+     }
+ 
+@@ -57,6 +58,7 @@
+             count++;
+         }
+     }
++    
+ }
+ 
+ 

@@ -1,0 +1,32 @@
+@@ -38,11 +38,11 @@
+ 
+     /**
+      * add a new piece to the list.
+-     * @param piece
++     * @param piece new piece
+      */
+     public void addPiece(Piece piece) {
+         if (validate(piece.getCoordinatesX(), piece.getCoordinatesY())
+-                && duplicated(piece.getCoordinatesX(), piece.getCoordinatesY())) {
++                && !duplicated(piece.getCoordinatesX(), piece.getCoordinatesY())) {
+             pieces.add(piece);
+         }
+     }
+@@ -62,11 +62,12 @@
+         return null;
+     }
+ 
++    /**
++     * remove a piece with the coordinate of (x,y).
++     * @param x x axis of the piece
++     * @param y y axis of the piece
++     */
+     public void removeAt(int x, int y) {
+-        for (Piece p : pieces) {
+-            if (x == p.getCoordinatesX() && y == p.getCoordinatesY()) {
+-                pieces.remove(p);
+-            }
+-        }
++        pieces.removeIf(p -> x == p.getCoordinatesX() && y == p.getCoordinatesY());
+     }
+ }

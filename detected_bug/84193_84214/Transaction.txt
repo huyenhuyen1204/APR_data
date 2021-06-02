@@ -1,0 +1,8 @@
+@@ -29,6 +29,7 @@
+         this.operation = operation;
+     }
+ 
++    /**.....*/
+     public Transaction(String operation, double amount, double balance) {
+         this.operation = operation;
+         this.amount = amount;

@@ -1,0 +1,30 @@
+@@ -5,7 +5,7 @@
+  */
+ public class Game {
+     private Board board;
+-    private ArrayList<Move> moveHistory;
++    private ArrayList<Move> moveHistory = new ArrayList<Move>();
+ 
+     /**
+      * Loan .
+@@ -49,14 +49,16 @@
+         if (piece.canMove(board, x, y)) {
+             Move move;
+             if (board.getAt(x, y) != null) {
+-                move = new Move(piece.getX(), x, piece.getY(), y, piece, board.getAt(x, y));
++                int tempX = piece.getCoordinatesX();
++                int tempY = piece.getCoordinatesY();
++                move = new Move(tempX, x, tempY, y, piece, board.getAt(x, y));
+                 board.removeAt(x, y);
+             } else {
+-                move = new Move(piece.getX(), x, piece.getY(), y, piece);
++                move = new Move(piece.getCoordinatesX(), x, piece.getCoordinatesY(), y, piece);
+             }
+             moveHistory.add(move);
+-            piece.setX(x);
+-            piece.setY(y);
++            piece.setCoordinatesX(x);
++            piece.setCoordinatesY(y);
+         }
+     }
+ }

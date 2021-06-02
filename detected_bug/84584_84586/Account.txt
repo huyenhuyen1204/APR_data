@@ -1,0 +1,9 @@
+@@ -39,7 +39,7 @@
+                 }
+             }
+             if (operation.equals(Transaction.WITHDRAW)) {
+-                deposit(amount);
++                withdraw(amount);
+                 if (amount <= balance && amount > 0) {
+                     transitionList.add(new Transaction(Transaction.WITHDRAW, amount, balance));
+                 }

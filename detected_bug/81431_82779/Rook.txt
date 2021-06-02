@@ -1,0 +1,25 @@
+@@ -35,9 +35,11 @@
+       if (diffX == 0 && diffY == 0) {
+          return true;
+       }
++
+       if (diffX * diffY != 0) {
+          return false;
+       }
++
+       Piece t = board.getAt(x, y);
+       if (t != null && t.getColor().equals(this.getColor())) {
+          return false;
+@@ -52,11 +54,10 @@
+             }
+             xt += direction;
+          }
+-        
+       }
+       if (diffY != 0) {
+          int direction = (diffY < 0) ? 1 : -1;
+-         int yt = this.getCoordinatesX() + direction;
++         int yt = this.getCoordinatesY() + direction;
+          while (yt != y) {
+             t = board.getAt(x, yt);
+            if (t != null) {

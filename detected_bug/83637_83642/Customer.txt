@@ -1,0 +1,9 @@
+@@ -41,7 +41,7 @@
+     }
+ 
+     /**
+-     * Setter for full name;
++     * Setter for full name.
+      */
+     public void setFullName(String fullName) {
+         this.fullName = fullName;

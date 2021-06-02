@@ -1,0 +1,187 @@
+@@ -1,109 +1,135 @@
+ import java.util.ArrayList;
+ import java.util.List;
+ 
++/**
++ * abstract class Account.
++ */
+ public abstract class Account {
++
+     public static final String CHECKING = "CHECKING";
+     public static final String SAVINGS = "SAVINGS";
++
+     protected long accountNumber;
+     protected double balance;
+     protected List<Transaction> transactionList = new ArrayList<>();
+ 
++    /**
++     * constructor.
++     */
+     public Account() {
+ 
+     }
+ 
+     /**
+-     * cmt.
++     * constructor.
+      */
+     public Account(long accountNumber, double balance) {
+         this.accountNumber = accountNumber;
+         this.balance = balance;
+     }
+ 
++    /**
++     * getter.
++     * @return .
++     */
+     public long getAccountNumber() {
+         return accountNumber;
+     }
+ 
++    /**
++     * getter.
++     * @return .
++     */
+     public double getBalance() {
+         return balance;
+     }
+ 
+     /**
+-     * cmt.
++     * abstract method withdraw.
++     * @param amount .
+      */
+-    public void doWithdrawing(double money) throws BankException {
+-        if (money < 0) {
+-            throw new InvalidFundingAmountException(money);
+-        } else if (money > balance) {
+-            throw new InsufficientFundsException(money);
++    public abstract void withdraw(double amount);
++
++    /**
++     * abstract method deposit.
++     * @param amount .
++     */
++    public abstract void deposit(double amount);
++
++    /**
++     * doWithdrawing.
++     * @param amount .
++     * @throws InsufficientFundsException .
++     */
++    public void doWithdrawing(double amount)
++            throws InsufficientFundsException, InvalidFundingAmountException {
++        if (amount < 0) {
++            throw new InvalidFundingAmountException(amount);
++        }
++        if (balance < amount) {
++            throw new InsufficientFundsException(amount);
+         }
+         if (this instanceof SavingsAccount) {
+-            if (money > 1000) {
+-                throw new InvalidFundingAmountException(money);
+-            } else if (balance - money < 5000) {
+-                throw new InsufficientFundsException(money);
++            if (balance - amount < 5000) {
++                throw new InvalidFundingAmountException(amount);
++            }
++            if (amount > 1000) {
++                throw new InsufficientFundsException(amount);
+             }
+         }
+-        Transaction transaction;
+-        if (this instanceof CheckingAccount) {
+-            transaction = new Transaction(Transaction.TYPE_WITHDRAW_CHECKING, money,
+-                    balance, balance - money);
+-        } else {
+-            transaction = new Transaction(Transaction.TYPE_WITHDRAW_SAVINGS, money,
+-                    balance, balance - money);
+-        }
+-        transactionList.add(transaction);
+-        balance -= money;
+     }
+ 
+     /**
+-     * cmt.
++     * doDepositing.
++     * @param amount .
++     * @throws InsufficientFundsException .
+      */
+-    public void doDepositing(double money) throws BankException {
+-        if (money < 0) {
+-            throw new InvalidFundingAmountException(money);
++    public void doDepositing(double amount)
++            throws InsufficientFundsException, InvalidFundingAmountException {
++        if (amount < 0) {
++            throw new InvalidFundingAmountException(amount);
+         }
+-        Transaction transaction;
+-        if (this instanceof CheckingAccount) {
+-            transaction = new Transaction(Transaction.TYPE_DEPOSIT_CHECKING, money,
+-                    balance, balance + money);
+-        } else {
+-            transaction = new Transaction(Transaction.TYPE_DEPOSIT_SAVINGS, money,
+-                    balance, balance + money);
+-        }
+-        transactionList.add(transaction);
+-        balance += money;
+     }
+ 
+-    public abstract void withdraw(double money);
+-
+-    public abstract void deposit(double money);
+-
+     /**
+-     * cmt.
++     * getter.
++     * @return .
+      */
+     public String getTransactionHistory() {
+-        String s = "Lịch sử giao dịch của tài khoản " + accountNumber + ":";
++        StringBuilder result =
++                new StringBuilder("Lịch sử giao dịch của tài khoản "
++                + accountNumber + ":\n");
+         for (Transaction transaction : transactionList) {
+-            s = s + "\n" + transaction.getTransactionSummary();
++            result.append(transaction.getTransactionSummary())
++                    .append("\n")
++            ;
+         }
+-        return s;
++        return result.toString().trim();
+     }
+ 
+     /**
+-     * cmt.
++     * addTransaction.
++     * @param transaction .
+      */
+-    public void addTransaction(Transaction a) {
+-        transactionList.add(a);
++    public void addTransaction(Transaction transaction) {
++        transactionList.add(transaction);
+     }
+ 
+     /**
+-     * cmt.
++     * equals.
++     * @param o .
++     * @return .
+      */
++    @Override
+     public boolean equals(Object o) {
+-        if (this.accountNumber == ((Account) o).accountNumber) {
++        if (this == o) {
+             return true;
+         }
+-        return false;
++        if (o == null || getClass() != o.getClass()) {
++            return false;
++        }
++        Account account = (Account) o;
++        return accountNumber == account.accountNumber;
+     }
+-}
++
++}
+\ No newline at end of file

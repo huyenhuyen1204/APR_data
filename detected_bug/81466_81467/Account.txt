@@ -1,0 +1,11 @@
+@@ -65,8 +65,8 @@
+             }
+             System.out.print("" + round(transitionList.get(i).getAmount()) + ".");
+             System.out.print(" So du luc nay: $"
+-                    + round(transitionList.get(i).getBalance()) + ".");
+-
++                    + round(transitionList.get(i).getBalance()) + '.');
++            System.out.println("");
+         }
+     }
+ 

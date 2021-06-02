@@ -1,0 +1,12 @@
+@@ -50,9 +50,9 @@
+      */
+     @Override
+     public String toString() {
+-        char character = (char)(movedPiece.getCoordinatesX() + 100);
++        char character = (char) (this.getEndX() + 96);
+         return movedPiece.getColor() + "-" + movedPiece.getSymbol()
+-                + character + movedPiece.getCoordinatesY();
++                + character + this.getEndY();
+     }
+ 
+     /**

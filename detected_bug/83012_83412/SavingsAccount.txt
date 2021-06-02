@@ -1,0 +1,33 @@
+@@ -1,9 +1,15 @@
+-public class SavingsAccount extends Account{
++public class SavingsAccount extends Account {
+ 
++    /**
++     * .
++     */
+     public SavingsAccount(long accountNumber, double balance) {
+         super(accountNumber, balance);
+     }
+ 
++    /**
++     * .
++     */
+     @Override
+     public void withdraw(double num) {
+         try {
+@@ -13,6 +19,9 @@
+         }
+     }
+ 
++    /**
++     * .
++     */
+     @Override
+     public void deposit(double num) {
+         try {
+@@ -21,5 +30,4 @@
+             e.printStackTrace();
+         }
+     }
+-
+ }

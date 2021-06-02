@@ -1,0 +1,8 @@
+@@ -43,6 +43,7 @@
+     }
+ 
+     public abstract String getSymbol();
++
+     public abstract boolean canMove(Board board, int x, int y);
+ 
+ }

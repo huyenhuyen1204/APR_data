@@ -1,0 +1,105 @@
+@@ -1,55 +1,64 @@
+-import java.lang.reflect.Array;
+ import java.util.ArrayList;
+ 
+ public class Account {
+     private double balance;
+-    private ArrayList<Transaction> transitionList = new ArrayList<>();
+-
+-    public double getBalance() {
+-        return balance;
++    private ArrayList<Transaction> transitionList;
++    public Account() {
++        transitionList = new ArrayList<Transaction>();
+     }
+ 
+-    public void setBalance(double balance) {
+-        this.balance = balance;
++    private void deposit (double amount) {
++        if(amount<=0) {
++            System.out.println("So tien ban nap vao khong hop le!");
++            return;
++        }
++        else
++            balance+=amount;
+     }
+-    private void deposit(double amount)
+-    {
+-        if(amount > 0)
+-            balance += amount;
+-        else System.out.println("So tien ban nap vao khong hop le!");
++    private void withdraw(double amount) {
++        if(amount<=0) {
++            System.out.println("So tien ban rut ra khong hop le!");
++            return;
++        }
++        else if(amount>balance) {
++            System.out.println("So tien ban rut vuot qua so du!");
++            return;
++        }
++        else balance-=amount;
+     }
+-    private void withdraw(double amount)
+-    {
+-        if(amount > 0)
+-            if(amount <= balance)
+-                balance -= amount;
+-                        else System.out.println("So tien ban rut vuot qua so du!");
+-                        else System.out.println("So tien ban rut ra khong hop le!");
+-    }
+-    public void addTransaction(double amount,String operation )
+-    {
+-        if(operation == "deposit")
++    public void addTransaction(double amount,String operation) {
++        if(operation.equals("deposit"))
+         {
+             deposit(amount);
+-            Transaction transaction = new Transaction("deposit",amount,balance);
+-            transitionList.add(transaction);
+-        } else if (operation == "withdraw")
+-        {
+-            withdraw(amount);
+-            Transaction transaction = new Transaction("withdraw",amount,balance);
+-            transitionList.add(transaction);
++            Transaction temp = new Transaction("deposit", amount, balance);
++            transitionList.add(temp);
+         }
+-        else System.out.println("Yeu cau khong hop le!");
++        else if(operation.equals("withdraw"))
++        {
++            {
++                withdraw(amount);
++                Transaction temp = new Transaction("withdraw", amount, balance);
++                transitionList.add(temp);
++            }
++        }
++        else
++        {
++            System.out.println("Yeu cau khong hop le!");
++        }
+ 
+     }
+-    public void printTransaction ()
+-    {
+-        for(int i = 1; i < transitionList.size()+1;i++)
+-        {
+-            if(transitionList.get(i).getOperation() == "deposit")
+-            System.out.println("Giao dich"+i+": Nap tien $"+transitionList.get(i).getAmount()+". So du luc nay:"+ transitionList.get(i).getBalance()+");");
+-            else
+-                System.out.println("Giao dich"+i+": Rut tien $"+transitionList.get(i).getAmount()+". So du luc nay:"+ transitionList.get(i).getBalance()+");");
++    public void printTransaction() {
++        String t ;
++        for (int i = 0; i< transitionList.size(); i++) {
++            if(transitionList.get(i).getOperation().equals("deposit")) {
++                t = "Nap tien $";
++            }
++             else
++                 t= "Rut tien $";
++             System.out.println(String.format("Giao dich %d: %s%.2f. So du luc nay: $%.2f.",i+1, t , transitionList.get(i).getAmount(), transitionList.get(i).getBalance()));
++            }
+         }
++
+     }
+-}
++
++

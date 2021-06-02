@@ -1,0 +1,31 @@
+@@ -21,6 +21,9 @@
+ 
+     }
+ 
++    /**
++     * create an instance.
++     */
+     public Transaction(int type, double amount, double initialBalance, double finalBalance) {
+         this.type = type;
+         this.amount = amount;
+@@ -32,12 +35,15 @@
+         return typeToString[type];
+     }
+ 
++    /**
++     * get transaction summary.
++     */
+     public String getTransactionSummary() {
+         DecimalFormat decimalFormat = new DecimalFormat("0.00");
+-        return "- Kiểu giao dịch: " + getTransactionTypeString() +
+-                ". Số dư ban đầu: $" + decimalFormat.format(initialBalance) +
+-                ". Số tiền: $" + decimalFormat.format(amount) +
+-                ". Số dư cuối: $" + decimalFormat.format(finalBalance) + ".";
++        return "- Kiểu giao dịch: " + getTransactionTypeString()
++                + ". Số dư ban đầu: $" + decimalFormat.format(initialBalance)
++                + ". Số tiền: $" + decimalFormat.format(amount)
++                + ". Số dư cuối: $" + decimalFormat.format(finalBalance) + ".";
+     }
+ }
+  
+\ No newline at end of file

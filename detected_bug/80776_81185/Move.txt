@@ -1,0 +1,28 @@
+@@ -1,3 +1,5 @@
++import java.nio.channels.Pipe;
++
+ public class Move {
+ 
+     private  Piece movedPiece;
+@@ -82,7 +84,7 @@
+     @Override
+     public String toString() {
+         String indexX = null;
+-        switch (movedPiece.getCoordinatesX()) {
++        switch (this.getEndX()) {
+             case 1 :
+                 indexX = "a";
+                 break;
+@@ -107,8 +109,10 @@
+             case 8 :
+                 indexX = "h";
+                 break;
++            default:
+         }
+-        return "`" + movedPiece.getColor() + "-" + movedPiece.getSymbol() + indexX
+-                + String.valueOf(movedPiece.getCoordinatesY()) + "`";
++        return movedPiece.getColor() + "-" + movedPiece.getSymbol() + indexX
++                + String.valueOf(this.getEndY());
+     }
++
+ }

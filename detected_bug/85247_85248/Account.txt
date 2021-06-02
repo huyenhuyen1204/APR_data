@@ -1,0 +1,35 @@
+@@ -3,7 +3,7 @@
+ 
+ public class Account {
+     private double balance;
+-    private List<Transaction> transactionList = new ArrayList<>();
++    private ArrayList<Transaction> transitionList = new ArrayList<>();
+ 
+     /**
+      * deposit.
+@@ -45,12 +45,12 @@
+             case Transaction.DEPOSIT:
+                 this.deposit(amount);
+                 t = new Transaction(operation, amount, balance);
+-                transactionList.add(t);
++                transitionList.add(t);
+                 break;
+             case Transaction.WITHDRAW:
+                 this.withdraw(amount);
+                 t = new Transaction(operation, amount, balance);
+-                transactionList.add(t);
++                transitionList.add(t);
+                 break;
+             default:
+                 System.out.println("Yeu cau khong hop le!");
+@@ -63,8 +63,8 @@
+      */
+ 
+     public void printTransaction() {
+-        for (Transaction t : transactionList) {
+-            System.out.print("Giao dich " + (transactionList.indexOf(t) + 1) + ": ");
++        for (Transaction t : transitionList) {
++            System.out.print("Giao dich " + (transitionList.indexOf(t) + 1) + ": ");
+             switch (t.getOperation()) {
+                 case Transaction.DEPOSIT:
+                     System.out.println("Nap tien $" + String.format("%.2f", t.getAmount())

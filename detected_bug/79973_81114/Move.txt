@@ -1,0 +1,61 @@
+@@ -1,7 +1,9 @@
+ public class Move {
+     private Piece movedPiece;
+-    private int startX, endX;
+-    private int startY, endY;
++    private int startX;
++    private int endX;
++    private int startY;
++    private int endY;
+     private Piece killedPiece;
+ 
+     /**3.*/
+@@ -27,37 +29,36 @@
+     @Override
+     public String toString() {
+         String s = null;
+-        switch (startX) {
++        switch (endX) {
+             case 1:
+-                s += 'a';
++                s = "a";
+                 break;
+             case 2:
+-                s += 'b';
++                s = "b";
+                 break;
+             case 3:
+-                s += 'c';
++                s = "c";
+                 break;
+             case 4:
+-                s += 'd';
++                s = "d";
+                 break;
+             case 5:
+-                s += 'e';
++                s = "e";
+                 break;
+             case 6:
+-                s += 'f';
++                s = "f";
+                 break;
+             case 7:
+-                s += 'g';
++                s = "g";
+                 break;
+             case 8:
+-                s += 'h';
++                s = "h";
+                 break;
+             default:
+                 break;
+         }
+-
+-        return "`" + this.movedPiece.getSymbol() + "-" + this.movedPiece.getSymbol()
+-                + s + this.startY + "`";
++        return "" + this.movedPiece.getColor() + "-" + this.movedPiece.getSymbol()
++                + s + this.endY;
+     }
+ 
+     /**3.*/

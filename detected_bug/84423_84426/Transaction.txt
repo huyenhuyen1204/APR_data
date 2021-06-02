@@ -1,0 +1,13 @@
+@@ -8,6 +8,12 @@
+     public Transaction() {
+     }
+ 
++    /**
++     * Transaction.
++     * @param operation ten giao dich
++     * @param amount so tien giao dich
++     * @param balance so du con lai
++     */
+     public Transaction(String operation, double amount, double balance) {
+         this.operation = operation;
+         this.amount = amount;

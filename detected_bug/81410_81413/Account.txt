@@ -1,0 +1,50 @@
+@@ -6,7 +6,7 @@
+  */
+ public class Account {
+     private double balance;
+-    private ArrayList<Transaction> transactionList = new ArrayList<>();
++    private ArrayList<Transaction> transitionList = new ArrayList<>();
+ 
+     /**
+      * .
+@@ -47,11 +47,11 @@
+         if (operation.equals(Transaction.DEPOSIT)) {
+             deposit(amount);
+             Transaction trans = new Transaction("deposit", amount, balance);
+-            transactionList.add(trans);
++            transitionList.add(trans);
+         } else if (operation.equals(Transaction.WITHDRAW)) {
+             withdraw(amount);
+             Transaction trans = new Transaction("withdraw", amount, balance);
+-            transactionList.add(trans);
++            transitionList.add(trans);
+         }
+     }
+ 
+@@ -59,19 +59,19 @@
+      * .
+      */
+     public void printTransaction() {
+-        for (int i = 0; i < transactionList.size(); i++) {
+-            if (transactionList.get(i).getOperation().equals("deposit")) {
++        for (int i = 0; i < transitionList.size(); i++) {
++            if (transitionList.get(i).getOperation().equals("deposit")) {
+                 System.out.println("Giao dich "
+                         + (i + 1) + ": "
+-                        + "Nap tien $" + String.format("%.2f", transactionList.get(i).getAmount())
++                        + "Nap tien $" + String.format("%.2f", transitionList.get(i).getAmount())
+                         + ". So du luc nay: $"
+-                        + String.format("%.2f", transactionList.get(i).getBalance()) + ".");
++                        + String.format("%.2f", transitionList.get(i).getBalance()) + ".");
+             }
+-            if (transactionList.get(i).getOperation().equals("withdraw")) {
++            if (transitionList.get(i).getOperation().equals("withdraw")) {
+                 System.out.println("Giao dich " + (i + 1) + ": "
+-                        + "Rut tien $" + String.format("%.2f", transactionList.get(i).getAmount())
++                        + "Rut tien $" + String.format("%.2f", transitionList.get(i).getAmount())
+                         + ". So du luc nay: $"
+-                        +  String.format("%.2f", transactionList.get(i).getBalance()) + ".");
++                        +  String.format("%.2f", transitionList.get(i).getBalance()) + ".");
+             }
+         }
+     }

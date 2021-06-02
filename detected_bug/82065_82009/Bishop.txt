@@ -1,0 +1,47 @@
+@@ -20,29 +20,34 @@
+             return false;
+         }
+ 
+-        int directionX;
+-        int directionY;
++        int dx;
++        int dy;
+         if (this.getCoordinatesX() - x < 0) {
+-            directionX = 1;
++            dx = 1;
+         } else {
+-            directionX = -1;
++            dx = -1;
+         }
+         if (this.getCoordinatesY() - y < 0) {
+-            directionY = 1;
++            dy = 1;
+         } else {
+-            directionY = -1;
++            dy = -1;
+         }
+ 
+         int thisX = this.getCoordinatesX();
+         int thisY = this.getCoordinatesY();
+-        while (thisX + directionX != x) {
+-            thisX += directionX;
+-            thisY += directionY;
+-            return board.getAt(thisX, thisY) == null;
++        while (thisX + dx != x) {
++            thisX += dx;
++            thisY += dy;
++            if (board.getAt(thisX, thisY) != null) {
++                return false;
++            }
+         }
+-        thisX += directionX;
+-        thisY += directionY;
++        thisX += dx;
++        thisY += dy;
+ 
++        if (board.getAt(thisX, thisY) == null) {
++            return true;
++        }
+         return !board.getAt(thisX, thisY).getColor().equals(this.getColor());
+     }
+ }

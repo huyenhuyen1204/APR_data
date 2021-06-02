@@ -1,0 +1,15 @@
+@@ -22,10 +22,10 @@
+         this.amount = amount;
+         this.initialBalance = initialBalance;
+         this.finalBalance = finalBalance;
+-        map.put(1, "Nạp tiền vãng lai");
+-        map.put(2, "Rút tiền vãng lai");
+-        map.put(3, "Nạp tiền tiết kiệm");
+-        map.put(4, "Rút tiền tiết kiệm");
++        map.put(0, "Nạp tiền vãng lai");
++        map.put(1, "Rút tiền vãng lai");
++        map.put(2, "Nạp tiền tiết kiệm");
++        map.put(3, "Rút tiền tiết kiệm");
+     }
+ 
+     private String getTransactionTypeString(int a) {

@@ -1,0 +1,67 @@
+@@ -14,41 +14,43 @@
+ 
+     @Override
+     public boolean canMove(Board board, int x, int y) {
+-        if (x != this.getX() && y != this.getY()) {
++        if (x != this.getCoordinatesX() && y != this.getCoordinatesY()) {
+             return false;
+         }
+-        if (x == this.getX())
+-        {
+-            if (y > this.getY()) {
+-                for (int i = y + 1; i < this.getY(); ++ i) {
++        if (x == this.getCoordinatesX() && y == this.getCoordinatesY()) {
++            return false;
++        }
++        if (x == this.getCoordinatesX()) {
++            if (y < this.getCoordinatesY()) {
++                for (int i = y + 1; i < this.getCoordinatesY(); ++ i) {
+                     for (Piece p : board.getPieces()) {
+-                        if (p.getX() == x && p.getY() == i) {
++                        if (p.getCoordinatesX() == x && p.getCoordinatesY() == i) {
+                             return false;
+                         }
+                     }
+                 }
+             } else {
+-                for (int i = y - 1; i >= this.getY(); -- i) {
++                for (int i = y - 1; i > this.getCoordinatesY(); -- i) {
+                     for (Piece p : board.getPieces()) {
+-                        if (p.getX() == x && p.getY() == i) {
++                        if (p.getCoordinatesX() == x && p.getCoordinatesY() == i) {
+                             return false;
+                         }
+                     }
+                 }
+             }
+         } else {
+-            if (x > this.getX()) {
+-                for (int i = x + 1; i <= this.getX(); ++ i) {
++            if (x < this.getCoordinatesX()) {
++                for (int i = x + 1; i < this.getCoordinatesX(); ++ i) {
+                     for (Piece p : board.getPieces()) {
+-                        if (p.getY() == y && p.getX() == i) {
++                        if (p.getCoordinatesY() == y && p.getCoordinatesX() == i) {
+                             return false;
+                         }
+                     }
+                 }
+             } else {
+-                for (int i = x - 1; i >= this.getX(); -- i) {
++                for (int i = x - 1; i > this.getCoordinatesX(); -- i) {
+                     for (Piece p : board.getPieces()) {
+-                        if (p.getY() == y && p.getX() == i) {
++                        if (p.getCoordinatesY() == y && p.getCoordinatesX() == i) {
+                             return false;
+                         }
+                     }
+@@ -56,7 +58,8 @@
+             }
+         }
+         for (Piece p : board.getPieces()) {
+-            if (p.getY() == y && p.getX() == x && p.getColor() == this.getColor()) {
++            if (p.getCoordinatesY() == y && p.getCoordinatesX() == x
++                    && p.getColor() == this.getColor()) {
+                 return false;
+             }
+         }

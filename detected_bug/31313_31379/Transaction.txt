@@ -1,0 +1,25 @@
+@@ -1,4 +1,5 @@
+ 
++import java.text.DecimalFormat;
+ 
+ public class Transaction {
+     private String operation;
+@@ -39,10 +40,16 @@
+     public double getBalance() {
+         return balance;
+     }
++    public String toString(double number){
++        String pat = "##.00";
++        DecimalFormat decimalFormat = new DecimalFormat(pat);
++        String format = decimalFormat.format(number);
++        return format;
++    }
+     public String depositToString() {
+-        return ": Nap tien $" + this.getAmount()+ ".So du luc nay: $" + this.getBalance() +".";
++        return ": Nap tien $" + this.toString(this.getAmount())+ ". So du luc nay: $" + this.toString(this.getBalance()) +".";
+     }
+     public String withdrawToString() {
+-        return ": Rut tien $" + this.getAmount()+ ".So du luc nay: $" + this.getBalance() +".";
++        return ": Rut tien $" + this.toString(this.getAmount())+ ". So du luc nay: $" + this.toString(this.getBalance()) +".";
+     }
+ }

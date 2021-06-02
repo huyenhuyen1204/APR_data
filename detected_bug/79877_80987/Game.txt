@@ -1,0 +1,29 @@
+@@ -25,19 +25,24 @@
+         this.moveHistory = moveHistory;
+     }
+ 
++    /**
++     * 123.
++     */
+     public void movePiece(Piece piece, int x, int y) {
+         if (board.validate(x, y)) {
+             if (piece.canMove(board, x, y)) {
+                 if (board.getPieces() != null) {
+-                    Move move = new Move(piece.getX(), x, piece.getY(), y, piece, board.getAt(x, y));
++                    Move move = new Move(piece.getCoordinatesX(), x, piece.getCoordinatesY(), y,
++                            piece, board.getAt(x, y));
+                     moveHistory.add(move);
+ 
+                 } else {
+-                    Move move = new Move(piece.getX(), x, piece.getY(), y, piece);
++                    Move move = new Move(piece.getCoordinatesX(), x,
++                            piece.getCoordinatesY(), y, piece);
+                     moveHistory.add(move);
+                 }
+-                piece.setX(x);
+-                piece.setY(y);
++                piece.setCoordinatesX(x);
++                piece.setCoordinatesY(y);
+             }
+         }
+     }

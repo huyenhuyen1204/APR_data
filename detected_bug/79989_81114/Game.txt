@@ -1,0 +1,33 @@
+@@ -8,15 +8,19 @@
+     public Game(Board board) {
+         this.board = board;
+     }
+-    
++
+     /**5.*/
+     public void movePiece(Piece piece, int x, int y) {
+-        if (board.getAt(x, y) != null) {
+-            board.removeAt(x, y);
+-        }
+         if (piece.canMove(board, x, y)) {
+-            Move move = new Move(piece.getX(), x, piece.getY(), y, piece);
++            Move move = new Move(piece.getCoordinatesX(), x, piece.getCoordinatesY(), y, piece);
++            if (board.getAt(x, y) != null) {
++                move.setKilledPiece(board.getAt(x, y));
++                board.removeAt(x, y);
++            }
++            piece.setCoordinatesX(x);
++            piece.setCoordinatesY(y);
+             moveHistory.add(move);
++            board.addPiece(piece);
+         }
+     }
+ 
+@@ -39,5 +43,4 @@
+     public void setMoveHistory(ArrayList<Move> moveHistory) {
+         this.moveHistory = new ArrayList<>(moveHistory);
+     }
+-}
+-
++}
+\ No newline at end of file

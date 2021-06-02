@@ -1,0 +1,24 @@
+@@ -18,11 +18,11 @@
+ 
+     /**2.*/
+     public void addPiece(Piece piece) {
+-        if (validate(piece.getX(), piece.getY())) {
++        if (validate(piece.getCoordinatesX(), piece.getCoordinatesY())) {
+             boolean check = true;
+             for (Piece piece1 : pieces) {
+-                if (piece1.getX() == piece.getX()
+-                        && piece1.getY() == piece.getY()) {
++                if (piece1.getCoordinatesX() == piece.getCoordinatesX()
++                        && piece1.getCoordinatesY() == piece.getCoordinatesY()) {
+                     check = false;
+                     break;
+                 }
+@@ -37,7 +37,7 @@
+     public Piece getAt(int x, int y) {
+         if (validate(x, y)) {
+             for (Piece piece : pieces) {
+-                if (piece.getX() == x && piece.getY() == y) {
++                if (piece.getCoordinatesX() == x && piece.getCoordinatesY() == y) {
+                     return piece;
+                 }
+             }

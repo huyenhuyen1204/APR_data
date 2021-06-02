@@ -1,0 +1,21 @@
+@@ -1,13 +1,6 @@
+-public class BankException extends Exception {
+-    /**
+-     * This is comment.
+-     */
+-    private static final long serialVersionUID = 1L;
+-
+-    /**
+-     * This is comment.
+-     */
+-    public BankException(String msg) {
+-        super(msg);
+-    }
+-}
++public class BankException extends Exception {
++    public BankException(String message) {
++        super(message);
++    }
++}
++ 
+\ No newline at end of file

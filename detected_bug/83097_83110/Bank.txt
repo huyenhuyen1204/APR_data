@@ -1,0 +1,11 @@
+@@ -34,8 +34,9 @@
+         String[] info = accountInfo.split(" ");
+         long accountNumber = Long.parseLong(info[0]);
+         double balance = Double.parseDouble(info[2]);
+-        if (info[1].equals(Account.CHECKING))
++        if (info[1].equals(Account.CHECKING)) {
+             return new CheckingAccount(accountNumber, balance);
++        }
+         return new SavingsAccount(accountNumber, balance);
+     }
+ 

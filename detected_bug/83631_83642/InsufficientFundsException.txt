@@ -1,0 +1,9 @@
+@@ -5,6 +5,7 @@
+      * Constructor.
+      */
+     public InsufficientFundsException(double money) {
+-        super("Số dư tài khoản không đủ $" + (new DecimalFormat("0.00")).format(money) + " để thực hiện giao dịch");
++        super("Số dư tài khoản không đủ $"
++                + (new DecimalFormat("0.00")).format(money) + " để thực hiện giao dịch");
+     }
+ }

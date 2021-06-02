@@ -1,0 +1,9 @@
+@@ -57,7 +57,7 @@
+             System.out.println("So tien ban rut vuot qua so du!");
+             return;
+         }
+-        Transaction a = new Transaction(Transaction.DEPOSIT, amount, balance - amount);
++        Transaction a = new Transaction(Transaction.WITHDRAW, amount, balance - amount);
+         transitionList.add(a);
+         this.setBalance(balance - amount);
+     }

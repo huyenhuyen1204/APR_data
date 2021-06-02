@@ -1,0 +1,58 @@
+@@ -4,15 +4,17 @@
+ 
+ public class Account {
+     private double balance;
+-    private ArrayList<Transaction> transactions = new ArrayList<>();
++    private ArrayList<Transaction> transitionList = new ArrayList<>();
+ 
++    /** hello. */
+     public void printTransaction() {
+-        for (int i = 0; i < transactions.size(); i++) {
++        for (int i = 0; i < transitionList.size(); i++) {
+             System.out.println("Giao dich " + (i + 1) + ": "
+-                    + transactions.get(i).toString());
++                    + transitionList.get(i).toString());
+         }
+     }
+ 
++    /** hello. */
+     public void addTransaction(double amount, String operation) {
+         if (operation.equals(Transaction.DEPOSIT)) {
+             if (amount < 0) {
+@@ -24,7 +26,7 @@
+             transaction.setOperation(operation);
+             transaction.setAmount(amount);
+             transaction.setBalance(balance);
+-            transactions.add(transaction);
++            transitionList.add(transaction);
+         } else if (operation.equals(Transaction.WITHDRAW)) {
+             if (amount > balance) {
+                 System.out.println("So tien ban rut vuot qua so du!");
+@@ -38,24 +40,19 @@
+             transaction.setOperation(operation);
+             transaction.setAmount(amount);
+             transaction.setBalance(balance);
+-            transactions.add(transaction);
++            transitionList.add(transaction);
+         } else {
+             System.out.println("Yeu cau khong hop le!");
+         }
+     }
+ 
++    /** hello. */
+     private void deposit(double amount) {
+ 
+     }
+ 
++    /** hello. */
+     private void withdraw(double amount) {
+ 
+     }
+-
+-    public static void main(String[] args) {
+-        Account acc= new Account();
+-        acc.addTransaction(2000.255,"deposit");
+-        acc.addTransaction(1000,"withdraw");
+-        acc.printTransaction();
+-    }
+ }

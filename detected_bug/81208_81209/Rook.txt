@@ -1,0 +1,126 @@
+@@ -29,98 +29,41 @@
+         if (this.getCoordinatesX() != x && this.getCoordinatesY() != y) {
+             return false;
+         }
+-        int minpos = 1;
+-        int maxpos = 8;
+-        if (this.getCoordinatesX() == x) {
+-
+-            for (Piece i : board.getPieces()) {
+-                if (i.getCoordinatesX() != x) {
+-                    continue;
+-                }
+-                if (i.getCoordinatesY() <= this.getCoordinatesY()) {
+-                    minpos = Math.max(minpos, i.getCoordinatesY());
+-                } else {
+-                    maxpos = Math.min(maxpos, i.getCoordinatesY());
++        if (x == this.getCoordinatesX()) {
++            for (int i = y + 1; i < this.getCoordinatesY(); i++) {
++                if (board.getAt(x, i) != null) {
++                    return false;
+                 }
+             }
+-            boolean posmin = false;
+-            boolean posmax = false;
+-            if (y < minpos || y > maxpos) {
++            for (int i = this.getCoordinatesY() + 1; i < y; i++) {
++                if (board.getAt(x, i) != null) {
++                    return false;
++                }
++            }
++            if (board.getAt(x, y) != null) {
++                if (board.getAt(x, y).getColor().equals(this.getColor())) {
++                    return false;
++                } else {
++                    return true;
++                }
++            }
++            return true;
++        }
++        for (int i = this.getCoordinatesX() + 1; i < x; i++) {
++            if (board.getAt(i, y) != null) {
+                 return false;
+             }
+-            for (Piece i : board.getPieces()) {
+-                if (i.getCoordinatesX() != x) {
+-                    continue;
+-                }
+-                if (i.getCoordinatesY() == minpos
+-                        && !i.getColor().equals(this.getColor())) {
+-                    return true;
+-                }
+-                if (i.getCoordinatesY() == maxpos
+-                        && !i.getColor().equals(this.getColor())) {
+-                    return true;
+-                }
+-                if (i.getCoordinatesY() == minpos) {
+-                    posmin = true;
+-                }
+-                if (i.getCoordinatesY() == maxpos) {
+-                    posmax = true;
+-                }
+-            }
+-            if (minpos < y && y < maxpos) {
+-                return true;
+-            }
+-            if (!posmin && y == minpos) {
+-                return true;
+-            }
+-            if (!posmax && y == maxpos) {
+-                return true;
+-            }
+-            return false;
+         }
+-        for (Piece i : board.getPieces()) {
+-            if (i.getCoordinatesY() != y) {
+-                continue;
+-            }
+-            if (i.getCoordinatesX() <= this.getCoordinatesX()) {
+-                minpos = Math.max(minpos, i.getCoordinatesX());
+-            } else {
+-                maxpos = Math.min(maxpos, i.getCoordinatesX());
++        for (int i = x + 1; i < this.getCoordinatesX(); i++) {
++            if (board.getAt(i, y) != null) {
++                return false;
+             }
+         }
+-        boolean posmin = false;
+-        boolean posmax = false;
+-        if (x < minpos || x > maxpos) {
+-            return false;
+-        }
+-        for (Piece i : board.getPieces()) {
+-            if (i.getCoordinatesY() != y) {
+-                continue;
+-            }
+-            if (i.getCoordinatesX() == minpos
+-                    && !i.getColor().equals(this.getColor())) {
+-                return true;
+-            }
+-            if (i.getCoordinatesX() == maxpos
+-                    && !i.getColor().equals(this.getColor())) {
+-                return true;
+-            }
+-            if (i.getCoordinatesX() == minpos) {
+-                posmin = true;
+-            }
+-            if (i.getCoordinatesX() == maxpos) {
+-                posmax = true;
++        if (board.getAt(x, y) != null) {
++            if (board.getAt(x, y).getColor().equals(this.getColor())) {
++                return false;
+             }
+         }
+-        if (minpos < x && x < maxpos) {
+-            return true;
+-        }
+-        if (!posmin && x == minpos) {
+-            return true;
+-        }
+-        if (!posmax && x == maxpos) {
+-            return true;
+-        }
+-        return false;
++        return true;
+     }
+ }

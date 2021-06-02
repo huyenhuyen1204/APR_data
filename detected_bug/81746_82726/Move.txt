@@ -1,0 +1,41 @@
+@@ -6,6 +6,14 @@
+     private Piece movedPiece;
+     private Piece killedPiece;
+ 
++    /**
++     * ham khoi tao co tham so.
++     * @param startX .
++     * @param startY .
++     * @param endX .
++     * @param endY .
++     * @param movedPiece .
++     */
+     public Move(int startX, int startY, int endX, int endY, Piece movedPiece) {
+         this.startX = startX;
+         this.startY = startY;
+@@ -14,6 +22,15 @@
+         this.movedPiece = movedPiece;
+     }
+ 
++    /**
++     * ham khoi tao co tham so.
++     * @param startX .
++     * @param startY .
++     * @param endX .
++     * @param endY .
++     * @param movedPiece .
++     * @param killedPiece .
++     */
+     public Move(int startX, int startY, int endX, int endY, Piece movedPiece, Piece killedPiece) {
+         this.startX = startX;
+         this.startY = startY;
+@@ -27,8 +44,7 @@
+     public String toString() {
+         String res = movedPiece.getColor() + "-"
+                 + movedPiece.getSymbol()
+-                + ('a' + movedPiece.getCoordinatesY())
+-                + movedPiece.getCoordinatesX();
++                + (char) ('a' + endX - 1) + endY;
+         return res;
+     }
+ 

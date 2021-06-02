@@ -1,0 +1,18 @@
+@@ -27,14 +27,15 @@
+         this.endX = endX;
+         this.endY = endY;
+         this.movedPiece = movedPiece;
++        this.killedPiece = killedPiece;
+     }
+ 
+     @Override
+     public String toString() {
+         return movedPiece.getColor()
+                 + "-" + movedPiece.getSymbol()
+-                + (char) (endY - 1 + 'a')
+-                + endX;
++                + (char) (endX - 1 + 'a')
++                + endY;
+     }
+ 
+     public void setEndX(int endX) {

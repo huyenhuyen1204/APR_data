@@ -1,0 +1,11 @@
+@@ -68,8 +68,8 @@
+         String name = line.replace(id, "");
+         name = name.trim();
+         id = id.trim();
+-        long Cmnd = Long.parseLong(id);
+-        return new Customer(Cmnd, name);
++        long cmnd = Long.parseLong(id);
++        return new Customer(cmnd, name);
+     }
+ 
+     /**

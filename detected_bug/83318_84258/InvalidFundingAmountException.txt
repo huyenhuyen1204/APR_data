@@ -1,0 +1,16 @@
+@@ -1,5 +1,13 @@
++/**
++ * class InvalidFundingAmountException.
++ */
+ public class InvalidFundingAmountException extends BankException {
+-    public InvalidFundingAmountException(double money) {
+-        super("Số tiền không hợp lệ: $" + money);
++
++    /**
++     * constructor.
++     */
++    public InvalidFundingAmountException(double amount) {
++        super("Số tiền không hợp lệ: $"
++                + String.format("%.2f", amount));
+     }
+ }

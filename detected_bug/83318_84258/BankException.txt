@@ -1,0 +1,15 @@
+@@ -1,5 +1,12 @@
++/**
++ * class BankException.
++ */
+ public class BankException extends Exception {
+-    public BankException(String s) {
+-        super(s);
++    /**
++     * constructor.
++     * @param exception .
++     */
++    public BankException(String exception) {
++        super(exception);
+     }
+ }

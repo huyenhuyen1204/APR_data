@@ -1,0 +1,35 @@
+@@ -16,11 +16,9 @@
+     @Override
+     public boolean canMove(Board board, int x, int y) {
+         if (board == null) {
+-           // System.out.println("a");
+             return false;
+         }
+         if (Math.abs(this.getCoordinatesX() - x) != Math.abs(this.getCoordinatesY() - y)) {
+-            //System.out.println("B");
+             return false;
+         }
+         int tx;
+@@ -41,18 +39,19 @@
+             i += tx;
+             j += ty;
+             if (board.getAt(i, j) != null) {
+-             //   System.out.println("c");
+                 return false;
+             }
+ 
+         }
+ 
+-        if (board.getAt(i, j).getColor() == null) {
++        i += tx;
++        j += ty;
++
++        if (board.getAt(i, j) == null) {
+             return true;
+         }
+ 
+         if (board.getAt(i, j).getColor() == this.getColor()) {
+-           // System.out.println("d");
+             return false;
+         } else {
+             return true;

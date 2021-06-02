@@ -1,0 +1,11 @@
+@@ -50,9 +50,7 @@
+             if (balance == temp - amount) {
+                 check = true;
+             }
+-        }
+-
+-        else if (operation.equals(Transaction.DEPOSIT)) {
++        } else if (operation.equals(Transaction.DEPOSIT)) {
+             double temp = balance;
+             deposit(amount);
+             if (balance == temp + amount) {

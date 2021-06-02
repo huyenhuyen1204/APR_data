@@ -1,0 +1,78 @@
+@@ -2,7 +2,7 @@
+ import java.util.ArrayList;
+ 
+ public class Account {
+-    private double balance = 0.00;
++    private double balance;
+     private ArrayList<Transaction> transitionList = new ArrayList<>();
+ 
+     public double getBalance() {
+@@ -21,13 +21,6 @@
+     }
+ 
+     /**
+-     * withdraw return string.
+-     */
+-    private String withdraw() {
+-        return "WITHDRAW";
+-    }
+-
+-    /**
+      * Deposit.
+      */
+     private void deposit(double amount) {
+@@ -39,6 +32,13 @@
+     }
+ 
+     /**
++     * withdraw return string.
++     */
++    private String withdraw() {
++        return "WITHDRAW";
++    }
++
++    /**
+      * Withdraw.
+      */
+     private void withdraw(double amount) {
+@@ -55,11 +55,13 @@
+      * Add transaction.
+      */
+     public void addTransaction(double amount, String operation) {
+-        Transaction transaction = new Transaction(operation, amount, balance);
++        Transaction transaction = new Transaction(operation, amount, this.balance);
+         if (operation.equalsIgnoreCase(deposit())) {
+             transitionList.add(transaction);
++            deposit(amount);
+         } else if (operation.equalsIgnoreCase(withdraw())) {
+             transitionList.add(transaction);
++            withdraw(amount);
+         } else {
+             System.out.println("Yeu cau khong hop le!");
+         }
+@@ -71,6 +73,7 @@
+     public void printTransaction() {
+         DecimalFormat f = new DecimalFormat("##.00");
+         String result = "";
++        this.balance = 0;
+         for (int i = 0; i < transitionList.size(); i++) {
+             int j = i + 1;
+             if (transitionList.get(i).getOperation().equalsIgnoreCase(deposit())) {
+@@ -94,16 +97,7 @@
+      * Main function.
+      */
+     public static void main(String[] args) {
+-//        Account acc= new Account();
+-//        acc.addTransaction(2000.255,"deposit");
+-//        System.out.println(acc.balance);
+-//        acc.addTransaction(1000,"withdraw");
+-//        System.out.println(acc.balance);
+-//        //System.out.println(acc.transactions.size());
+-//        //acc.withdraw(200);
+-//        acc.printTransaction();
+-//        DecimalFormat f = new DecimalFormat("##.00");
+-//        System.out.println(f.format(12));
++        
+     }
+ }
+ 

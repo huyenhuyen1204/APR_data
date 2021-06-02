@@ -1,0 +1,14 @@
+@@ -34,12 +34,9 @@
+             moveHistory.add(
+                     new Move(piece.getCoordinatesX(), piece.getCoordinatesY(),
+                             x, y, piece, killedPiece));
+-            if (killedPiece != null) {
+-                board.removeAt(x, y);
+-            }
++            board.removeAt(x, y);
+             piece.setCoordinatesX(x);
+             piece.setCoordinatesY(y);
+-            return;
+         }
+     }
+ 

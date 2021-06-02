@@ -1,0 +1,79 @@
+@@ -1,49 +1,63 @@
++import java.text.DecimalFormat;
+ import java.util.ArrayList;
+ 
+ public class Account {
+-    private double balanace;
+-    private ArrayList<Transaction> transactions = new ArrayList<Transaction>();
++    private double balance;
++    private ArrayList<Transaction> transitionList = new ArrayList<Transaction>();
+ 
++    /**nap.*/
+     private void deposit(double amount) {
+         if (amount <= 0) {
+             System.out.println("So tien ban nap vao khong hop le!");
+         }
+     }
+ 
++    /**rut.*/
+     private void withdraw(double amount) {
+         if (amount <= 0) {
+-            System.out.println("So tien ban nap vao khong hop le!");
++            System.out.println("So tien ban rut ra khong hop le!");
+         }
+-        if (amount > balanace) {
++        if (amount > balance) {
+             System.out.println("So tien ban rut vuot qua so du!");
+         }
+     }
+ 
++    /**addTrans.*/
+     public void addTransaction(double amount, String operation) {
+         Transaction trans;
+-        amount = (double) Math.round(amount * 100) / 100;
+         if (operation.equals(Transaction.DEPOSIT)) {
+             deposit(amount);
+-            balanace += amount;
+-            trans = new Transaction(operation, amount, balanace);
+-            transactions.add(trans);
++            balance += amount;
++            trans = new Transaction(operation, amount, balance);
++            transitionList.add(trans);
+         } else if (operation.equals(Transaction.WITHDRAW)) {
+             withdraw(amount);
+-            balanace -= amount;
+-            trans = new Transaction(operation, amount, balanace);
+-            transactions.add(trans);
++            balance -= amount;
++            trans = new Transaction(operation, amount, balance);
++            transitionList.add(trans);
+         } else {
+             System.out.println("Yeu cau khong hop le!");
+         }
+     }
+ 
++    /**print.*/
+     public void printTransaction() {
+-        for (int i = 0; i < transactions.size(); i++) {
+-            if (transactions.get(i).getOperation().equals("deposit")) {
+-                System.out.println("Giai dich " + (i + 1) + ": Nap tien $" + transactions.get(i).getAmount() + ". So du luc nay: $" + transactions.get(i).getBalance() + ".");
++        for (int i = 0; i < transitionList.size(); i++) {
++            if (transitionList.get(i).getOperation().equals("deposit")) {
++                System.out.println("Giao dich " + (i + 1) + ": Nap tien $"
++                        + dfRound(transitionList.get(i).getAmount()) + ". So du luc nay: $"
++                        + dfRound(transitionList.get(i).getBalance()) + ".");
+             } else {
+-                System.out.println("Giai dich " + (i + 1) + ": Rut tien $" + transactions.get(i).getAmount() + ". So du luc nay: $" + transactions.get(i).getBalance() + ".");
++                System.out.println("Giao dich " + (i + 1) + ": Rut tien $"
++                        + dfRound(transitionList.get(i).getAmount()) + ". So du luc nay: $"
++                        + dfRound(transitionList.get(i).getBalance()) + ".");
+             }
+         }
+     }
++
++    /**dfRound.*/
++    public String dfRound(double num) {
++        DecimalFormat df = new DecimalFormat("0.00");
++        return df.format(num);
++    }
+ }

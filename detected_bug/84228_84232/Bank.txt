@@ -1,0 +1,50 @@
+@@ -10,6 +10,9 @@
+ public class Bank {
+     private List<Customer> customerList = new ArrayList<>();
+ 
++    /**
++     * tt.
++     */
+     public boolean isNumber(String s) {
+         for (int i = 0; i < s.length(); ++i) {
+             if (s.charAt(i) > '9' || s.charAt(i) < '0') {
+@@ -19,6 +22,9 @@
+         return true;
+     }
+ 
++    /**
++     * tt.
++     */
+     public void readCustomerList(InputStream inputStream) {
+         InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+         BufferedReader reader = new BufferedReader(inputStreamReader);
+@@ -57,6 +63,9 @@
+         }
+     }
+ 
++    /**
++     * tt.
++     */
+     public String getCustomersInfoByNameOrder() {
+         for (int i = 0; i < customerList.size(); ++i) {
+             for (int j = i + 1; j < customerList.size(); ++j) {
+@@ -78,6 +87,9 @@
+         return s;
+     }
+ 
++    /**
++     * tt.
++     */
+     public String getCustomersInfoByIdOrder() {
+         for (int i = 0; i < customerList.size(); ++i) {
+             for (int j = i + 1; j < customerList.size(); ++j) {
+@@ -98,6 +110,9 @@
+         return s;
+     }
+ 
++    /**
++     * tt.
++     */
+     public List<Customer> getCustomerList() {
+         return customerList;
+     }

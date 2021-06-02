@@ -1,0 +1,98 @@
+@@ -3,6 +3,8 @@
+ 
+ public class Account extends Transaction {
+ 
++    private double balance = 0;
++
+     public Account() {
+ 
+     }
+@@ -14,7 +16,7 @@
+         super(operation, amount, balance);
+     }
+ 
+-    private List<Transaction> list = new ArrayList<>();
++    private ArrayList<Transaction> transitionList = new ArrayList<>();
+ 
+     /**
+      * nap tien.
+@@ -25,18 +27,18 @@
+             System.out.println("So tien ban nap vao khong hop le!");
+             return;
+         }
+-        if (list.size() == 0) {
++        if (transitionList.size() == 0) {
+             Transaction x = new Transaction();
+             x.setAmount(amount);
+             x.setBalance(getBalance() + amount);
+             x.setOperation(getDeposit());
+-            list.add(x);
++            transitionList.add(x);
+         } else {
+             Transaction x = new Transaction();
+             x.setAmount(amount);
+-            x.setBalance(list.get(list.size()-1).getBalance() + amount);
++            x.setBalance(transitionList.get(transitionList.size() - 1).getBalance() + amount);
+             x.setOperation(getDeposit());
+-            list.add(x);
++            transitionList.add(x);
+         }
+     }
+ 
+@@ -49,20 +51,20 @@
+             System.out.println("So tien ban rut ra khong hop le!");
+             return;
+         }
+-        if (list.size() == 0) {
++        if (transitionList.size() == 0) {
+             System.out.println("So tien ban rut vuot qua so du!");
+             return;
+         } else {
+-            if (list.get(list.size()-1).getBalance() < amount) {
++            if (transitionList.get(transitionList.size() - 1).getBalance() < amount) {
+                 System.out.println("So tien ban rut vuot qua so du!");
+                 return;
+             }
+         }
+         Transaction x = new Transaction();
+         x.setAmount(amount);
+-        x.setBalance(list.get(list.size()-1).getBalance() - amount);
++        x.setBalance(transitionList.get(transitionList.size() - 1).getBalance() - amount);
+         x.setOperation(getWithdraw());
+-        list.add(x);
++        transitionList.add(x);
+     }
+ 
+     /**
+@@ -71,6 +73,10 @@
+      * @param operation kieu giao dich
+      */
+     public void addTransaction(double amount, String operation) {
++        if (operation != getDeposit() && operation != getWithdraw()) {
++            System.out.println("Yeu cau khong hop le!");
++            return;
++        }
+         if (operation == getDeposit()) {
+             deposit(amount);
+         } else {
+@@ -83,13 +89,15 @@
+      */
+     public void printTransaction() {
+         int cnt = 1;
+-        for (Transaction i : list) {
++        for (Transaction i : transitionList) {
+             if (i.getOperation() == getDeposit()) {
+-                System.out.println("Giao dich " + cnt + ": Nap tien $" + String.format("%.2f", i.getAmount()) +
+-                 ". So du luc nay: $" + String.format("%.2f", i.getBalance()) + ".");
++                System.out.println("Giao dich " + cnt + ": Nap tien $" 
++                + String.format("%.2f", i.getAmount()) + ". So du luc nay: $" 
++                + String.format("%.2f", i.getBalance()) + ".");
+             } else {
+-                System.out.println("Giao dich " + cnt + ": Rut tien $" + String.format("%.2f", i.getAmount()) +
+-                 ". So du luc nay: $" + String.format("%.2f", i.getBalance()) + ".");
++                System.out.println("Giao dich " + cnt + ": Rut tien $" 
++                + String.format("%.2f", i.getAmount()) + ". So du luc nay: $" 
++                + String.format("%.2f", i.getBalance()) + ".");
+             }
+             cnt++;
+         }

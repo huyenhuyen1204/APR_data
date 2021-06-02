@@ -1,0 +1,18 @@
+@@ -21,7 +21,7 @@
+             String b = String.format("%.2f", transitionList.get(i).getBalance());
+             if (transitionList.get(i).getOperation().equals(Transaction.DEPOSIT)) {
+                 s = "Nap tien";
+-            } else {
++            } else if (transitionList.get(i).getOperation().equals(Transaction.WITHDRAW)) {
+                 s = "Rut tien";
+             }
+             System.out.println("Giao dich " + (i + 1) + ": " + s
+@@ -57,7 +57,7 @@
+             System.out.println("So tien ban rut vuot qua so du!");
+             return;
+         }
+-        Transaction a = new Transaction(Transaction.DEPOSIT, amount, balance - amount);
++        Transaction a = new Transaction(Transaction.WITHDRAW, amount, balance - amount);
+         transitionList.add(a);
+         this.setBalance(balance - amount);
+     }

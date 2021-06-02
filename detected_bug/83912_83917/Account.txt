@@ -1,0 +1,42 @@
+@@ -37,7 +37,7 @@
+     /**
+      * them giao dich.
+      */
+-    public void addTransaction(double amount , String operation) {
++    public void addTransaction(double amount, String operation) {
+         if (!operation.equals(Transaction.WITHDRAW) && !operation.equals(Transaction.DEPOSIT)) {
+             System.out.println("Yeu cau khong hop le!");
+             return;
+@@ -58,28 +58,19 @@
+     public void printTransaction() {
+         int count = 1;
+         for (Transaction tran : transitionList) {
+-            double countAmo = (double)(Math.ceil(tran.getAmount() * 1000) / 1000);
+ 
+-            double countBala = (double)(Math.ceil(tran.getBalance() * 1000) / 1000);
+             String operation = null;
+             if (tran.getOperation(). equals(Transaction.DEPOSIT)) {
+                 operation = ": Nap tien $";
+             } else if (tran.getOperation(). equals(Transaction.WITHDRAW)) {
+                 operation = ": Rut tien $";
+             }
+-
+-            System.out.println( "Giao dich "+ count + operation + String.format("%.2f", countAmo)
+-                    + ". So du luc nay: $" + String.format("%.2f", countBala) + ".");
+-            count ++;
++            System.out.println("Giao dich " + count + operation
++                    + String.format("%.2f", tran.getAmount())
++                    + ". So du luc nay: $" + String.format("%.2f", tran.getBalance()) + ".");
++            count++;
+         }
+     }
+ 
+-    public static void main(String[] args) {
+-        Account acc= new Account();
+-        acc.addTransaction(2000.255,"deposit");
+-        acc.addTransaction(1000,"withdraw");
+-        acc.printTransaction();
+-
+-    }
+ 
+ }

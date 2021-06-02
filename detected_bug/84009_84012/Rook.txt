@@ -1,0 +1,59 @@
+@@ -1,9 +1,9 @@
+-public class Rook extends Piece{
++public class Rook extends Piece {
+     /**
+      * Ham khoi tao 2 tham so.
+      */
+     public Rook(int x, int y) {
+-        super(x,y);
++        super(x, y);
+     }
+ 
+     /**
+@@ -26,18 +26,19 @@
+      */
+     @Override
+     public boolean canMove(Board board, int x, int y) {
+-        if (!board.validate(x,y) && x != getCoordinatesX() && y != getCoordinatesY()) {
++        if (!board.validate(x, y) || (x != getCoordinatesX() && y != getCoordinatesY())) {
+             return false;
+         }
++
+         if (x == getCoordinatesX()) {
+             if (y > getCoordinatesY()) {
+-                for(int i = getCoordinatesY() + 1; i < y; i++) {
++                for (int i = getCoordinatesY() + 1; i < y; ++i) {
+                     if (board.getAt(getCoordinatesX(), i) != null) {
+                         return false;
+                     }
+                 }
+             } else {
+-                for(int i = getCoordinatesY() - 1; i > y; i--) {
++                for (int i = getCoordinatesY() - 1; i > y; --i) {
+                     if (board.getAt(getCoordinatesX(), i) != null) {
+                         return false;
+                     }
+@@ -45,20 +46,20 @@
+             }
+         } else {
+             if (x < getCoordinatesY()) {
+-                for(int i = getCoordinatesY() - 1; i > y; i--) {
++                for (int i = getCoordinatesY() - 1; i > y; --i) {
+                     if (board.getAt(i, getCoordinatesY()) != null) {
+                         return false;
+                     }
+                 }
+             } else {
+-                for(int i = getCoordinatesX() + 1; i < x; i++) {
++                for (int i = getCoordinatesX() + 1; i < x; ++i) {
+                     if (board.getAt(i, getCoordinatesY()) != null) {
+                         return false;
+                     }
+                 }
+             }
+         }
+-        if (board.getAt(x,y) != null && board.getAt(x, y).getColor().equals(this.getColor())) {
++        if (board.getAt(x, y) != null && board.getAt(x, y).getColor().equals(this.getColor())) {
+             return false;
+         }
+         return true;

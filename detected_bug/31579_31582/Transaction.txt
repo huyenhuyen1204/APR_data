@@ -1,0 +1,10 @@
+@@ -2,7 +2,8 @@
+     private String operation;
+     private double amount;
+     private double balance;
+-    public static final String DEPOSIT = null,WITHDRAW=null;
++    public static final String DEPOSIT =null;
++    public static final String WITHDRAW =null;
+ 
+     public Transaction(String operation, double amount, double balance) {
+         this.operation = operation;

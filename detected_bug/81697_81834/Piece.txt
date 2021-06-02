@@ -1,0 +1,20 @@
+@@ -1,9 +1,6 @@
+ 
+-import java.util.Objects;
+-
+ public abstract class Piece {
+ 
+-    private Board board;
+     private int coordinatesX;
+     private int coordinatesY;
+     private String color;
+@@ -60,7 +57,7 @@
+     @Override
+     public String toString() {
+         return color
+-                + "-" + (char) (coordinatesY - 1 + 'a')
+-                + coordinatesX;
++                + "-" + (char) (coordinatesX - 1 + 'a')
++                + coordinatesY;
+     }
+ }

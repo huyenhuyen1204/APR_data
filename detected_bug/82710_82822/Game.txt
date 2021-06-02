@@ -1,0 +1,11 @@
+@@ -26,7 +26,10 @@
+                 Piece pieceKilled = this.board.getAt(x, y);
+                 temp = new Move(piece.getCoordinatesX(), x,
+                         piece.getCoordinatesY(), y, piece, pieceKilled);
++                this.board.removeAt(x, y);
+             }
++            piece.setCoordinatesX(x);
++            piece.setCoordinatesY(y);
+             this.moveHistory.add(temp);
+         }
+     }

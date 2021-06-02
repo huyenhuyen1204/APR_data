@@ -1,0 +1,29 @@
+@@ -1,12 +1,9 @@
+ import java.util.ArrayList;
+-import java.util.HashMap;
+-import java.util.Map;
+ 
+ public class Board {
+     public static final int WIDTH = 8;
+     public static final int HEIGHT = 8;
+     private ArrayList<Piece> pieces = new ArrayList<>();
+-    public Map<String, Piece> mapPieces = new HashMap<>();
+ 
+     public Board() {
+     }
+@@ -26,7 +23,6 @@
+                 }
+             }
+             this.pieces.add(piece);
+-            this.mapPieces.put((x + ";" + y), piece);
+         }
+     }
+ 
+@@ -61,7 +57,6 @@
+             if (pieces.get(i).getCoordinatesX() == x
+                     && pieces.get(i).getCoordinatesY() == y) {
+                 pieces.remove(i);
+-                this.mapPieces.remove(x + ";" + y);
+                 return;
+             }
+         }

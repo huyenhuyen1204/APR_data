@@ -1,0 +1,9 @@
+@@ -4,7 +4,7 @@
+     private String operation;
+     private double amount;
+     private double balance;
+-    static final public String DEPOSITE = "deposite";
++    static final public String DEPOSIT = "deposit";
+     static final public String WITHDRAW = "withdraw";
+ 
+     public Transaction(String operation, double amount, double balance) {

@@ -1,0 +1,12 @@
+@@ -1,9 +1,9 @@
+-public class Rook extends Piece{
++public class Rook extends Piece {
+     /**
+      * Ham khoi tao 2 tham so.
+      */
+     public Rook(int x, int y) {
+-        super(x,y);
++        super(x, y);
+     }
+ 
+     /**

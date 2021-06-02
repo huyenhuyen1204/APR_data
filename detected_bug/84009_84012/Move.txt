@@ -1,0 +1,14 @@
+@@ -118,10 +118,10 @@
+      */
+     @Override
+     public String toString() {
+-        char a = (char) (endX + 96);
+-        String s = String.valueOf(a);
++        char init = (char) (endX + 96);
++        String s = String.valueOf(init);
+         s += String.valueOf(endY);
+-        return movedPiece.getColor() + " " + movedPiece.getSymbol() + s;
++        return movedPiece.getColor() + "-" + movedPiece.getSymbol() + s;
+     }
+ }
+ 

@@ -1,0 +1,25 @@
+@@ -23,11 +23,11 @@
+         int count = 0;
+         for (int i = 0; i < pieces.size(); i++) {
+             if (piece.getCoordinatesX() != pieces.get(i).getCoordinatesX()
+-            && piece.getCoordinatesY() != pieces.get(i).getCoordinatesY()) {
++            || piece.getCoordinatesY() != pieces.get(i).getCoordinatesY()) {
+                 count++;
+             }
+         }
+-        for (int i = 0; i < count; i++) {
++        if (count == pieces.size()) {
+             if (validate(piece.getCoordinatesX(), piece.getCoordinatesY())) {
+                 pieces.add(piece);
+             }
+@@ -47,6 +47,10 @@
+         return null;
+     }
+ 
++    /**
++     * method.
++     */
++
+     public void removeAt(int x, int y) {
+         for (int i = 0; i < pieces.size(); i++) {
+             if (x == pieces.get(i).getCoordinatesX() && y == pieces.get(i).getCoordinatesY()) {

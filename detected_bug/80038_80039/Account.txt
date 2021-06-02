@@ -1,0 +1,52 @@
+@@ -1,9 +1,8 @@
+ import java.text.DecimalFormat;
+-import java.util.ArrayList;
+ 
+ public class Account {
+     private double balance;
+-    private ArrayList<Transaction> transaction = new ArrayList<>();
++    private java.util.ArrayList<Transaction> transitionList = new java.util.ArrayList<>();
+ 
+     /**
+      * nap tien.
+@@ -33,12 +32,12 @@
+      * them giao dich.
+      */
+     public void addTransaction(double amount, String operation) {
+-        if (operation.equalsIgnoreCase(Transaction.operation1)) {
++        if (operation.equalsIgnoreCase(Transaction.DEPOSIT)) {
+             deposit(amount);
+-            transaction.add(new Transaction(operation, amount, balance));
+-        } else if (operation.equalsIgnoreCase(Transaction.operation2)) {
++            transitionList.add(new Transaction(operation, amount, balance));
++        } else if (operation.equalsIgnoreCase(Transaction.WITHDRAW)) {
+             withdraw(amount);
+-            transaction.add(new Transaction(operation, amount, balance));
++            transitionList.add(new Transaction(operation, amount, balance));
+         } else {
+             System.out.println("Yeu cau khong hop le!");
+         }
+@@ -50,8 +49,8 @@
+     public void printTransaction() {
+         int i = 1;
+         DecimalFormat f = new DecimalFormat("##.00");
+-        for (Transaction t : transaction) {
+-            if (t.getOperation().equalsIgnoreCase(Transaction.operation1)) {
++        for (Transaction t : transitionList) {
++            if (t.getOperation().equalsIgnoreCase(Transaction.DEPOSIT)) {
+                 System.out.println("Giao dich " + i + ": Nap tien $" + f.format(t.getAmount())
+                         + ". So du luc nay: $" + f.format(t.getBalance()) + ".");
+             } else {
+@@ -66,9 +65,9 @@
+      * args.
+      */
+     public static void main(String[] args) {
+-        Account acc= new Account();
+-        acc.addTransaction(2000.255,"deposit");
+-        acc.addTransaction(1000,"withdraw");
++        Account acc = new Account();
++        acc.addTransaction(2000.255, "deposit");
++        acc.addTransaction(1000, "withdraw");
+         acc.printTransaction();
+     }
+ }

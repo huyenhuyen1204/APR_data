@@ -1,0 +1,44 @@
+@@ -25,34 +25,30 @@
+         }
+         balance -= amount;
+     }
+-    /**
+-     * construcor.
+-     */
++    /**....*/
+ 
+     public void addTransaction(double amount, String operation) {
+-        if (operation.equals("d")) {
++        if (operation.equals("deposit")) {
+             deposit(amount);
+-            transitionList.add(new Transaction("d", amount, balance));
++            transitionList.add(new Transaction("deposit", amount, balance));
+             return;
+-        } else if (operation.equals("w")) {
++        } else if (operation.equals("withdraw")) {
+             withdraw(amount);
+-            transitionList.add(new Transaction("w", amount, balance));
++            transitionList.add(new Transaction("withdraw", amount, balance));
+             return;
+         } else {
+             System.out.println("Yeu cau khong hop le!");
+             return;
+         }
+     }
+-    /**
+-     * construcor.
+-     */
++    /**....*/
+ 
+     public void printTransaction() {
+-        int n = transitionList.size();
++        int len = transitionList.size();
+         DecimalFormat format = new DecimalFormat("0.00");
+-        for (int i = 0; i < n; i++) {
++        for (int i = 0; i < len; i++) {
+             String t = "";
+-            if (transitionList.get(i).getOperation().equals("d")) {
++            if (transitionList.get(i).getOperation().equals("deposit")) {
+                 t += "Nap tien $"
+                   + format.format(Math.round(transitionList.get(i).getAmount() * 10 * 10) / 100.00)
+                   + ". " + "So du luc nay: $"

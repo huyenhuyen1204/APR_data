@@ -1,0 +1,10 @@
+@@ -8,6 +8,9 @@
+     public Transaction() {
+     }
+ 
++    /**
++     * Constructor.
++     */
+     public Transaction(String operation, double amount, double balance) {
+         this.operation = operation;
+         this.amount = amount;

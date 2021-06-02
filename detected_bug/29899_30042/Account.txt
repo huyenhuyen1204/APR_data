@@ -1,0 +1,77 @@
+@@ -2,14 +2,14 @@
+ 
+ public class Account {
+ 
+-    private double balance; // số dư tài khoản ngân hàng
+-    private ArrayList<Transaction> list;
++    private double balance = 0; // số dư tài khoản ngân hàng
++    private ArrayList<Transaction> transitionList = new ArrayList<>();
+     private void deposit(double amount){  // gửi tiền
+         if(amount <= 0)
+             System.out.println("So tien ban nap vao khong hop le!");
+         else {
+             balance += amount;
+-            list.add(new Transaction("deposit", amount, balance));
++            transitionList.add(new Transaction("deposit", amount, balance));
+         }
+     }
+     private void withdraw(double amount){  // rút tiền
+@@ -19,18 +19,17 @@
+             System.out.println("So tien ban rut vuot qua so du!");
+         else {
+             balance -= amount;
+-            list.add(new Transaction("withdraw", amount, balance));
++            transitionList.add(new Transaction("withdraw", amount, balance));
+         }
+     }
+ 
+-    public void addTransaction(double amount, String oparation){
+-        if(!oparation.equals(Transaction.DESPOSIT) && !oparation.equals(Transaction.WITHDRAW)){
++    public void addTransaction(double amount, String operation){
++        if(!operation.equals(Transaction.DEPOSIT) && !operation.equals(Transaction.WITHDRAW)){
+             System.out.println("Yeu cau khong hop le!");
+             return;
+         }
+-        if(oparation.equals(Transaction.DESPOSIT)){
++        if(operation.equals(Transaction.DEPOSIT)){
+             deposit(amount);
+-
+         }
+         else{
+             withdraw(amount);
+@@ -38,21 +37,26 @@
+     }
+ 
+     public void printTransaction(){
+-        if(list.isEmpty()){
+-            for(int i=0; i<list.size(); i++){
+-                if(list.get(i).getOparation().equals(Transaction.DESPOSIT)){
+-                    System.out.println("Giao dich " + i + ": " + "Nap tien $" + Math.round(list.get(i).getAmount() * 100) / 100 +
+-                            ". So du luc nay: " + "$" + Math.round(list.get(i).getBalance() * 100) / 100);
++        if(!transitionList.isEmpty()){
++            for(int i=0; i<transitionList.size(); i++){
++                if(transitionList.get(i).getOperation().equals(Transaction.DEPOSIT)){
++                    System.out.println("Giao dich " + (i + 1) + ": " + "Nap tien $" + String.format("%.2f", transitionList.get(i).getAmount()) +
++                            ". So du luc nay: " + "$" + String.format("%.2f", transitionList.get(i).getBalance())  + ".");
+                 }
+                 else{
+-                    System.out.println("Giao dich " + i + ": " + "Rut tien $" + Math.round(list.get(i).getAmount() * 100) / 100 +
+-                            ". So du luc nay: " + "$" + Math.round(list.get(i).getBalance() * 100) / 100);
++                    System.out.println("Giao dich " + (i + 1) + ": " + "Rut tien $" + String.format("%.2f", transitionList.get(i).getAmount()) +
++                            ". So du luc nay: " + "$" + String.format("%.2f", transitionList.get(i).getBalance())  + ".");
+                 }
+             }
+         }
+     }
+-
++/*
+     public static void main(String[] args){
+-
++        Account acc= new Account();
++        acc.addTransaction(2000.255,"deposit");
++        acc.addTransaction(1000,"withdraw");
++        acc.printTransaction();
+     }
++*/
++
+ }

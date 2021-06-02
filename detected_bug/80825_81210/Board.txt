@@ -1,0 +1,12 @@
+@@ -18,6 +18,11 @@
+         return pieces;
+     }
+ 
++    /**
++     * Author.
++     * Thuan
++     * Trinh Van Thuan
++     */
+     public void addPiece(Piece piece) {
+         if (this.validate(piece.getCoordinatesX(), piece.getCoordinatesY())
+                 && getAt(piece.getCoordinatesX(), piece.getCoordinatesY()) == null) {

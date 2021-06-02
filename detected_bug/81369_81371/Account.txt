@@ -1,0 +1,28 @@
+@@ -23,7 +23,7 @@
+     private void withdraw(double amount) {
+         if (amount <= 0) {
+             System.out.println("So tien ban rut ra khong hop le!");
+-        } else if (amount > balance){
++        } else if (amount > balance) {
+             System.out.println("So tien ban rut vuot qua so du!");
+         } else {
+             balance -= amount;
+@@ -56,13 +56,15 @@
+             String output = "Giao dich " + (i + 1) + ": ";
+             Transaction transaction = transitionList.get(i);
+             double amount = (double) Math.round(transaction.getAmount() * 100) / 100;
+-            double balance_= (double) Math.round(transaction.getBalance() * 100) / 100;
++            double balance1 = (double) Math.round(transaction.getBalance() * 100) / 100;
+             DecimalFormat decimalFormat = new DecimalFormat("0.00");
+             if (transaction.getOperation().equals(Transaction.DEPOSIT)) {
+-                output += "Nap tien $" + decimalFormat.format(amount) + ". So du luc nay: $" + decimalFormat.format(balance_) + ".";
++                output += "Nap tien $" + decimalFormat.format(amount)
++                            + ". So du luc nay: $" + decimalFormat.format(balance1) + ".";
+             }
+             if (transaction.getOperation().equals(Transaction.WITHDRAW)) {
+-                output += "Rut tien $" + decimalFormat.format(amount) + ". So du luc nay: $" + decimalFormat.format(balance_) + ".";
++                output += "Rut tien $" + decimalFormat.format(amount)
++                            + ". So du luc nay: $" + decimalFormat.format(balance1) + ".";
+             }
+             System.out.println(output);
+         }

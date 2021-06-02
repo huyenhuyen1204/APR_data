@@ -1,0 +1,9 @@
+@@ -56,7 +56,7 @@
+                 }
+             }
+         }
+-        if (board.getAt(x, y).getColor().equals(this.getColor())) {
++        if (board.getAt(x, y) != null && board.getAt(x, y).getColor().equals(this.getColor())) {
+             return false;
+         }
+         return true;

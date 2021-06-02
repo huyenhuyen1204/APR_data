@@ -1,0 +1,64 @@
+@@ -1,23 +1,25 @@
++import java.text.DecimalFormat;
+ import java.util.ArrayList;
+ import java.util.List;
+ 
+ public class Account {
+ 
++	static DecimalFormat format = new DecimalFormat("0.00"); 
+ 	private double balance;
+-	private List<Transaction> list = new ArrayList<>();
++	private ArrayList<Transaction> transitionList = new ArrayList<>();
+ 	private void deposit(double amount)
+ 	{
+ 		if(amount > 0) {
+ 			this.balance = this.balance + amount;
+ 		}
+ 		else {
+-			System.out.println("So tien ban nap khong hop le!");
++			System.out.println("So tien ban nap vao khong hop le!");
+ 		}
+ 	}
+ 	private void withdraw(double amount)
+ 	{
+ 		if(amount <= 0) {
+-			System.out.println("So tien ban rut khong hop le!");
++			System.out.println("So tien ban rut ra khong hop le!");
+ 		}
+ 		else if(amount > this.balance) {
+ 			System.out.println("So tien ban rut vuot qua so du!");
+@@ -37,27 +39,27 @@
+ 			amount = (double)Math.round(amount * 100) / 100;
+ 			deposit(amount);
+ 			Transaction transaction = new Transaction(operation, amount, this.balance);
+-			list.add(transaction);
++			transitionList.add(transaction);
+ 		}
+ 		else if(operation.equals("withdraw")) {
+ 			amount = (double)Math.round(amount * 100) / 100;
+ 			withdraw(amount);
+ 			Transaction transaction = new Transaction(operation, amount, this.balance);
+-			list.add(transaction);
++			transitionList.add(transaction);
+ 		}
+ 	}
+ 	
+ 	public void printTransaction()
+ 	{
+-		for(int i = 0; i < list.size(); i++)
++		for(int i = 0; i < transitionList.size(); i++)
+ 		{
+-			if(list.get(i).getOperation().equals("deposit"))
++			if(transitionList.get(i).getOperation().equals("deposit"))
+ 			{
+-				System.out.println("Giao dich " + (i + 1) + ": Nap tien $" + list.get(i).getAmount() + ". So du luc nay: $" + list.get(i).getBalance());
++				System.out.println("Giao dich " + (i + 1) + ": Nap tien $" + format.format(transitionList.get(i).getAmount()) + ". So du luc nay: $" + format.format(transitionList.get(i).getBalance()) + ".");
+ 			}
+-			if(list.get(i).getOperation().equals("withdraw"))
++			if(transitionList.get(i).getOperation().equals("withdraw"))
+ 			{
+-				System.out.println("Giao dich " + (i + 1) + ": Rut tien $" + list.get(i).getAmount() + ". So du luc nay: $" + list.get(i).getBalance() + ".");
++				System.out.println("Giao dich " + (i + 1) + ": Rut tien $" + format.format(transitionList.get(i).getAmount()) + ". So du luc nay: $" + format.format(transitionList.get(i).getBalance()) + ".");
+ 			}
+ 		}
+ 	}

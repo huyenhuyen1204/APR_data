@@ -1,0 +1,76 @@
+@@ -2,16 +2,16 @@
+ 
+ public class Account {
+     private double balance;
+-    private ArrayList<Transaction> historyTransactions;
++    private ArrayList<Transaction> transitionList;
+ 
+     public Account(double balance) {
+         this.balance = balance;
+-        this.historyTransactions = new ArrayList<>();
++        this.transitionList = new ArrayList<>();
+     }
+ 
+     public Account() {
+         this.balance = 0;
+-        this.historyTransactions = new ArrayList<>();
++        this.transitionList = new ArrayList<>();
+     }
+ 
+     private void deposit(double amount) {
+@@ -25,7 +25,7 @@
+ 
+     private void withdraw(double amount) {
+         if (amount <= 0) {
+-            System.out.println("So tien ban nap vao khong hop le!");
++            System.out.println("So tien ban rut ra khong hop le!");
+             return;
+         } else if (amount > this.balance) {
+             System.out.println("So tien ban rut vuot qua so du!");
+@@ -35,21 +35,29 @@
+         this.balance -= amount;
+     }
+ 
++    /**
++     * Comment.
++     */
+     public void addTransaction(double amount, String operation) {
+         if (operation.equals(Transaction.DEPOSIT)) {
+             this.deposit(amount);
+             Transaction tran = new Transaction(operation, amount, this.balance);
+-            this.historyTransactions.add(tran);
++            this.transitionList.add(tran);
+         } else if (operation.equals(Transaction.WITHDRAW)) {
+             this.withdraw(amount);
+             Transaction tran = new Transaction(operation, amount, this.balance);
+-            this.historyTransactions.add(tran);
++            this.transitionList.add(tran);
++        } else {
++            System.out.println("Yeu cau khong hop le!");
+         }
+     }
+ 
++    /**
++     * Comment.
++     */
+     public void printTransaction() {
+-        for (int i = 0; i < this.historyTransactions.size(); i++) {
+-            Transaction t = this.historyTransactions.get(i);
++        for (int i = 0; i < this.transitionList.size(); i++) {
++            Transaction t = this.transitionList.get(i);
+             String mess = "Giao dich " + (i + 1);
+             if (t.getOperation().equals(Transaction.DEPOSIT)) {
+                 mess += ": Nap tien ";
+@@ -62,12 +70,4 @@
+             System.out.println(mess);
+         }
+     }
+-
+-
+-    public static void main(String[] args) {
+-        Account acc = new Account();
+-        acc.addTransaction(2000.255, "deposit");
+-        acc.addTransaction(1000, "withdraw");
+-        acc.printTransaction();
+-    }
+ }

@@ -1,0 +1,14 @@
+@@ -41,13 +41,4 @@
+         this.balance = balance;
+     }
+ 
+-    public static String getDEPOSITE() {
+-        return DEPOSIT;
+-    }
+-
+-    public static String getWITHDRAW() {
+-        return WITHDRAW;
+-    }
+-
+-
+ }

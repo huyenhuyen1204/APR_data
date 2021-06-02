@@ -1,0 +1,9 @@
+@@ -2,7 +2,7 @@
+ 
+ public class Game {
+     private Board board;
+-    private ArrayList<Move> moveHistory;
++    private ArrayList<Move> moveHistory = new ArrayList<>();
+ 
+     public Game(Board board) {
+         this.board = board;

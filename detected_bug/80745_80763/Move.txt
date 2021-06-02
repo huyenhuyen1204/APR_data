@@ -1,0 +1,10 @@
+@@ -48,8 +48,7 @@
+         String ans = movedPiece.getColor() + "-" + movedPiece.getSymbol();
+         char add = (char) (this.endX - 1 + 'a');
+         char add1 = (char) (this.endY + '0');
+-        ans += add + add1;
+-        return ans;
++        return ans + add + add1;
+     }
+ 
+     /**

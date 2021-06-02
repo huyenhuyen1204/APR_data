@@ -1,0 +1,59 @@
+@@ -10,13 +10,17 @@
+         transitionList = new ArrayList<>();
+     }
+ 
+-    private void Err(String error) {
++    /**
++     * print err.
++     * @param error error
++     */
++    private void err(String error) {
+         System.out.println(error);
+     }
+ 
+     private void deposit(double amount) {
+         if (amount <= 0) {
+-            Err("So tien ban nap vao khong hop le!");
++            err("So tien ban nap vao khong hop le!");
+             return;
+         }
+         balance += amount;
+@@ -24,16 +28,22 @@
+ 
+     private void withdraw(double amount) {
+         if (amount <= 0) {
+-            Err("So tien ban nap vao khong hop le!");
++            err("So tien ban rut ra khong hop le!");
+             return;
+         }
+         if (amount > balance) {
+-            Err("So tien ban rut vuot qua so du!");
++            err("So tien ban rut vuot qua so du!");
+             return;
+         }
+         balance -= amount;
+     }
+ 
++    /**
++     * add transaction.
++     *
++     * @param amount    amount
++     * @param operation operation
++     */
+     public void addTransaction(double amount, String operation) {
+ 
+         if (operation.equals(Transaction.DEPOSIT)) {
+@@ -47,9 +57,12 @@
+             transitionList.add(new Transaction(operation, amount, balance));
+             return;
+         }
+-        Err("Yeu cau khong hop le!");
++        err("Yeu cau khong hop le!");
+     }
+ 
++    /**
++     * print.
++     */
+     public void printTransaction() {
+         for (int i = 0; i < transitionList.size(); i++) {
+             System.out.println("Giao dich " + (i + 1) + ": " + transitionList.get(i).toString());

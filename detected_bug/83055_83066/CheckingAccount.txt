@@ -1,0 +1,23 @@
+@@ -10,7 +10,7 @@
+         try {
+             doWithdrawing(d);
+             addTransaction(new Transaction(Transaction.TYPE_WITHDRAW_CHECKING,
+-                    d, getBalance()+d, getBalance()));
++                    d, getBalance() + d, getBalance()));
+         } catch (BankException e) {
+             System.out.println(e.toString());
+         }
+@@ -18,11 +18,11 @@
+     }
+ 
+     @Override
+-    public void deposit(double d){
++    public void deposit(double d) {
+         try {
+             doDepositing(d);
+             addTransaction(new Transaction(Transaction.TYPE_DEPOSIT_CHECKING,
+-                    d, getBalance()-d, getBalance()));
++                    d, getBalance() - d, getBalance()));
+ 
+         } catch (BankException e) {
+             System.out.println(e.toString());

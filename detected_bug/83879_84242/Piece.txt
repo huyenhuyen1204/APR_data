@@ -1,0 +1,76 @@
+@@ -3,18 +3,49 @@
+     private int coordinatesY;
+     private String color;
+ 
++    /**
++     * constructor.
++     */
++
+     public Piece(int coordinatesX, int coordinatesY) {
+         this.coordinatesX = coordinatesX;
+         this.coordinatesY = coordinatesY;
+         this.color = "white";
+     }
+ 
++    /**
++     * constructor.
++     */
++
+     public Piece(int coordinatesX, int coordinatesY, String color) {
+         this.coordinatesX = coordinatesX;
+         this.coordinatesY = coordinatesY;
+         this.color = color;
+     }
+ 
++    /**
++     * method.
++     */
++
++    public String algebraicNotation() {
++        if (getCoordinatesX() == 1) {
++            return "a";
++        } else if (getCoordinatesX() == 2) {
++            return "b";
++        } else if (getCoordinatesX() == 3) {
++            return "c";
++        } else if (getCoordinatesX() == 4) {
++            return "d";
++        } else if (getCoordinatesX() == 5) {
++            return "e";
++        } else if (getCoordinatesX() == 6) {
++            return "f";
++        } else if (getCoordinatesX() == 7) {
++            return "g";
++        }
++        return "h";
++    }
++
+     public int getCoordinatesX() {
+         return coordinatesX;
+     }
+@@ -39,25 +70,6 @@
+         this.color = color;
+     }
+ 
+-    public String algebraicNotation() {
+-       if (getCoordinatesX() == 1) {
+-           return "a";
+-       } else if (getCoordinatesX() == 2) {
+-           return "b";
+-       } else if (getCoordinatesX() == 3) {
+-           return "c";
+-       } else if (getCoordinatesX() == 4) {
+-           return "d";
+-       } else if (getCoordinatesX() == 5) {
+-           return "e";
+-       } else if (getCoordinatesX() == 6) {
+-           return "f";
+-       } else if (getCoordinatesX() == 7) {
+-           return "g";
+-       }
+-       return "h";
+-    }
+-
+     public abstract String getSymbol();
+ 
+     public abstract boolean canMove(Board board, int x, int y);

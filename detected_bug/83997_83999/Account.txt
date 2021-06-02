@@ -1,0 +1,11 @@
+@@ -2,8 +2,8 @@
+ import java.util.List;
+ 
+ public abstract class Account {
+-    private static final String CHECKING = "CHECKING";
+-    private static final String SAVINGS = "SAVINGS";
++    public static final String CHECKING = "CHECKING";
++    public static final String SAVINGS = "SAVINGS";
+     protected long accountNumber;
+     protected double balance;
+     protected List<Transaction> transactionList = new ArrayList<Transaction>();

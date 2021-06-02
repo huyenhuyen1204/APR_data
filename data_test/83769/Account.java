@@ -1,0 +1,72 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class Account {
+
+    private double balance;
+
+    private List<Transaction> transactions = new ArrayList<>();
+
+    /**
+     * pt nạp tiền vào tài khoản.
+     */
+    private void deposit(double amount) {
+        if (amount <= 0) {
+            System.out.println("So tien ban nap vao khong hop le!");
+        }
+        balance += amount;
+        transactions.add(new Transaction(Transaction.DEPOSIT, amount, balance));
+    }
+
+    /**
+     * pt rút tiền.
+     */
+    private void withdraw(double amount) {
+        if (amount <= 0) {
+            System.out.println("So tien ban rut ra khong hop le!");
+        } else if (amount > balance) {
+            System.out.println("So tien ban rut vuot qua so du!");
+        }
+        balance -= amount;
+        transactions.add(new Transaction(Transaction.WITHDRAW, amount, balance));
+    }
+
+    /**
+     * pt thêm giao dịch vào danh sách giao dịch.
+     * @param amount số tiền giao dịch
+     * @param operation tên loại giao dịch
+     */
+    public void addTransaction(double amount, String operation) {
+        if (operation.equals(Transaction.DEPOSIT)) {
+            deposit(amount);
+        } else if (operation.equals(Transaction.WITHDRAW)) {
+            withdraw(amount);
+        } else {
+            System.out.println("Yeu cau khong hop le!");
+        }
+    }
+
+    /**
+     * pt in tất cả các giao dịch.
+     */
+    public void printTransaction() {
+        for (int i = 0; i < transactions.size(); i++) {
+            if (transactions.get(i).getOperation().equals(Transaction.DEPOSIT)) {
+                double tienNap = transactions.get(i).getAmount();
+                System.out.printf("Giao dich %d: Nap tien $%.2f. So du luc nay: $%.2f.\n", (i + 1), tienNap, balance);
+            } else if (transactions.get(i).getOperation().equals(Transaction.WITHDRAW)) {
+                double tienRut = transactions.get(i).getAmount();
+                System.out.printf("Giao dich %d: Nap tien $%.2f. So du luc nay: $%.2f.\n", (i + 1), tienRut, balance);
+            }
+        }
+    }
+
+    /**
+    public static void main(String[] args) {
+        Account acc = new Account();
+        acc.addTransaction(2000.255, "deposit");
+        acc.addTransaction(1000, "withdraw");
+        acc.printTransaction();
+    }
+     */
+}

@@ -1,0 +1,30 @@
+@@ -39,7 +39,8 @@
+     /**
+      * .
+      */
+-    public void doWithdrawing(double num) throws InsufficientFundsException, InvalidFundingAmountException {
++    public void doWithdrawing(double num)
++            throws InsufficientFundsException, InvalidFundingAmountException {
+         if (num < 0) {
+             throw new InsufficientFundsException(num);
+         }
+@@ -67,7 +68,8 @@
+     /**
+      * .
+      */
+-    public void doDepositing(double num) throws InvalidFundingAmountException, InsufficientFundsException {
++    public void doDepositing(double num)
++            throws InvalidFundingAmountException, InsufficientFundsException {
+         if (num < 0) {
+             throw new InsufficientFundsException(num);
+         }
+@@ -86,7 +88,8 @@
+      */
+     public String getTransactionHistory() {
+         StringBuilder ans = new StringBuilder();
+-        ans.append("Lịch sử giao dịch của tài khoản ").append(this.accountNumber).append(":").append("\n");
++        ans.append("Lịch sử giao dịch của tài khoản ").append(this.accountNumber);
++        ans.append(":").append("\n");
+         for (Transaction transaction: transactionList) {
+             ans.append(transaction.getTransactionSummary());
+             ans.append("\n");

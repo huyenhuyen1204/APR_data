@@ -1,0 +1,19 @@
+@@ -12,6 +12,10 @@
+     return Character.isAlphabetic(line.toCharArray()[0]);
+   }
+ 
++  /**
++   * aldksfjlaskdf.
++   * @param inputStream dklfjasl
++   */
+   public void readCustomerList(InputStream inputStream) {
+     Scanner scanner = new Scanner(inputStream);
+     Customer customer = null;
+@@ -48,6 +52,7 @@
+     c.sort(comparator);
+     StringBuilder sb = new StringBuilder();
+     c.forEach(customer -> sb.append(customer.getCustomerInfo()).append('\n'));
++    sb.deleteCharAt(sb.length() - 1);
+     return sb.toString();
+   }
+ 

@@ -1,0 +1,30 @@
+@@ -9,6 +9,9 @@
+ 
+     }
+ 
++    /**
++     * add a new piece to the board.
++     */
+     public void addPiece(Piece newPiece) {
+         if (!validate(newPiece.getCoordinatesX(), newPiece.getCoordinatesY())) {
+             return;
+@@ -23,6 +26,9 @@
+         return y >= 1 && y <= 8 && x >= 1 && x <= 8;
+     }
+ 
++    /**
++     * return the piece at given position.
++     */
+     public Piece getAt(int x, int y) {
+         if (pieces.isEmpty()) {
+             return null;
+@@ -36,6 +42,9 @@
+         return null;
+     }
+ 
++    /**
++     * remove the piece at given position.
++     */
+     public void removeAt(int x, int y) {
+         Piece piece = this.getAt(x, y);
+         if (piece != null) {

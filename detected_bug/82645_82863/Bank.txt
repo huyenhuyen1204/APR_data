@@ -1,0 +1,207 @@
+@@ -1,101 +1,104 @@
+-import java.io.InputStream;
+-import java.util.ArrayList;
+-import java.util.Comparator;
+-import java.util.List;
+-import java.util.Scanner;
+-
+-/**
+- * Created by CCNE on 02/12/2020.
+- */
+-public class Bank {
+-    private List<Customer> customerList = new ArrayList<>();
+-
+-    /**
+-     * read customer list.
+-     * @param inputStream input
+-     */
+-    public void readCustomerList(InputStream inputStream) {
+-        Scanner scanner = new Scanner(inputStream);
+-
+-        List<String> stringList = new ArrayList<>();
+-
+-        while (scanner.hasNextLine()) {
+-            stringList.add(scanner.nextLine());
+-        }
+-
+-        Customer customer = new Customer();
+-        Account account = null;
+-
+-        for (String string : stringList) {
+-            String[] strings = string.split(" ");
+-
+-            if (strings[0].length() == 10) {
+-                if (strings[1].equals(Account.CHECKING)) {
+-                    account = new CheckingAccount(Long.parseLong(strings[0]),
+-                            Double.parseDouble(strings[2]));
+-                } else if (strings[1].equals(Account.SAVINGS)) {
+-                    account = new SavingsAccount(Long.parseLong(strings[0]),
+-                            Double.parseDouble(strings[2]));
+-                }
+-                customer.addAccount(account);
+-            } else {
+-                StringBuilder fullName = new StringBuilder();
+-
+-                for (int i = 0; i < strings.length - 1; i++) {
+-                    fullName.append(strings[i]).append(" ");
+-                }
+-
+-                customer = new Customer(Integer.parseInt(strings[strings.length - 1]),
+-                        fullName.toString());
+-            }
+-        }
+-    }
+-
+-    /**
+-     * get info.
+-     * @return info
+-     */
+-    public String getCustomersInfoByNameOrder() {
+-        StringBuilder stringBuilder = new StringBuilder();
+-
+-        customerList.sort(new NameOrder());
+-
+-        for (Customer customer : customerList) {
+-            stringBuilder.append(customer.getCustomerInfo()).append('\n');
+-        }
+-        return stringBuilder.toString();
+-    }
+-
+-    /**
+-     * get info.
+-     * @return info
+-     */
+-    public String getCustomersInfoByIdOrder() {
+-        StringBuilder stringBuilder = new StringBuilder();
+-
+-        customerList.sort(new IdOrder());
+-
+-        for (Customer customer : customerList) {
+-            stringBuilder.append(customer.getCustomerInfo()).append('\n');
+-        }
+-        return stringBuilder.toString();
+-    }
+-
+-    public List<Customer> getCustomerList() {
+-        return customerList;
+-    }
+-
+-    private class IdOrder implements Comparator<Customer> {
+-        @Override
+-        public int compare(Customer o1, Customer o2) {
+-            return (int) (o1.getIdNumber() - o2.getIdNumber());
+-        }
+-    }
+-
+-    private class NameOrder implements Comparator<Customer> {
+-        @Override
+-        public int compare(Customer o1, Customer o2) {
+-            return o1.getFullName().compareTo(o2.getFullName());
+-        }
+-    }
+-}
++import java.io.InputStream;
++import java.util.ArrayList;
++import java.util.Comparator;
++import java.util.List;
++import java.util.Scanner;
++
++/**
++ * Created by CCNE on 02/12/2020.
++ */
++public class Bank {
++    private List<Customer> customerList = new ArrayList<>();
++
++    /**
++     * read customer list.
++     * @param inputStream input
++     */
++    public void readCustomerList(InputStream inputStream) {
++        Scanner scanner = new Scanner(inputStream);
++
++        List<String> stringList = new ArrayList<>();
++
++        while (scanner.hasNextLine()) {
++            stringList.add(scanner.nextLine());
++        }
++
++        Customer customer = new Customer();
++        Account account = null;
++
++        for (String string : stringList) {
++            String[] strings = string.split(" ");
++
++            if (strings[0].length() == 10) {
++                if (strings[1].equals(Account.CHECKING)) {
++                    account = new CheckingAccount(Long.parseLong(strings[0]),
++                            Double.parseDouble(strings[2]));
++                } else if (strings[1].equals(Account.SAVINGS)) {
++                    account = new SavingsAccount(Long.parseLong(strings[0]),
++                            Double.parseDouble(strings[2]));
++                }
++                customer.addAccount(account);
++            } else {
++                StringBuilder fullName = new StringBuilder();
++
++                for (int i = 0; i < strings.length - 1; i++) {
++                    fullName.append(strings[i]).append(" ");
++                }
++
++                customer = new Customer(Integer.parseInt(strings[strings.length - 1]),
++                        fullName.toString());
++
++                customerList.add(customer);
++            }
++        }
++    }
++
++    /**
++     * get info.
++     * @return info
++     */
++    public String getCustomersInfoByNameOrder() {
++        StringBuilder stringBuilder = new StringBuilder();
++
++        customerList.sort(new NameOrder());
++
++        for (Customer customer : customerList) {
++            stringBuilder.append(customer.getCustomerInfo()).append('\n');
++        }
++        return stringBuilder.toString().trim();
++    }
++
++    /**
++     * get info.
++     * @return info
++     */
++    public String getCustomersInfoByIdOrder() {
++        StringBuilder stringBuilder = new StringBuilder();
++
++        customerList.sort(new IdOrder());
++
++        for (Customer customer : customerList) {
++            stringBuilder.append(customer.getCustomerInfo()).append('\n');
++        }
++        return stringBuilder.toString().trim();
++    }
++
++    public List<Customer> getCustomerList() {
++        return customerList;
++    }
++
++    private class IdOrder implements Comparator<Customer> {
++        @Override
++        public int compare(Customer o1, Customer o2) {
++            return (int) (o1.getIdNumber() - o2.getIdNumber());
++        }
++    }
++
++    private class NameOrder implements Comparator<Customer> {
++        @Override
++        public int compare(Customer o1, Customer o2) {
++            return o1.getFullName().compareTo(o2.getFullName());
++        }
++    }
++}
++ 
+\ No newline at end of file

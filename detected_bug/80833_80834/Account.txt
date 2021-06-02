@@ -1,0 +1,24 @@
+@@ -56,15 +56,19 @@
+             Transaction transaction = transitionList.get(i);
+             if (transaction.getOperation().equals(Transaction.DEPOSIT)) {
+                 System.out.print("Nap tien $");
+-                System.out.printf("%.2f", (double) Math.round(transaction.getAmount() * 100) / 100);
++                System.out.printf("%.2f", 
++                        (double) Math.round(transaction.getAmount() * 100) / 100);
+                 System.out.print(". So du luc nay: $");
+-                System.out.printf("%.2f", (double) Math.round(transaction.getBalance() * 100) / 100);
++                System.out.printf("%.2f",
++                        (double) Math.round(transaction.getBalance() * 100) / 100);
+                 System.out.println(".");
+             } else {
+                 System.out.print("Rut tien $");
+-                System.out.printf("%.2f", (double) Math.round(transaction.getAmount() * 100) / 100);
++                System.out.printf("%.2f",
++                        (double) Math.round(transaction.getAmount() * 100) / 100);
+                 System.out.print(". So du luc nay: $");
+-                System.out.printf("%.2f", (double) Math.round(transaction.getBalance() * 100) / 100);
++                System.out.printf("%.2f",
++                        (double) Math.round(transaction.getBalance() * 100) / 100);
+                 System.out.println(".");
+             }
+         }

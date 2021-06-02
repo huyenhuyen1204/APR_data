@@ -1,0 +1,77 @@
+@@ -36,52 +36,55 @@
+      * @param board .
+      * @param x .
+      * @param y .
+-     * @return
++     * @return .
+      */
+     @Override
+     public boolean canMove(Board board, int x, int y) {
+-        int xCurrent = this.getCoordinatesX();
+-        int yCurrent = this.getCoordinatesY();
++        int xcurrent = this.getCoordinatesX();
++        int ycurrent = this.getCoordinatesY();
+ 
+-        if (xCurrent == x && yCurrent == y) {
++        if (xcurrent != x && ycurrent != y) {
+             return false;
+         }
+ 
+-        if (!board.getAt(x, y).getColor().equals(this.getColor())) {
+-            return true;
+-        }
+-
+-        if (xCurrent == x) {
+-            if (yCurrent < y) {
+-                for (int i = yCurrent + 1; i <= y; i++) {
++        if (xcurrent == x) {
++            if (ycurrent < y) {
++                for (int i = ycurrent + 1; i < y; i++) {
+                     if (board.getAt(x, i) != null) {
+                         return false;
+                     }
+                 }
+-            } else {
+-                for (int i = yCurrent - 1; i >= y; i--) {
++            } else if (ycurrent > y) {
++                for (int i = ycurrent - 1; i > y; i--) {
+                     if (board.getAt(x, i) != null) {
+                         return false;
+                     }
+                 }
+             }
+-        } else if (yCurrent == y) {
+-            if (xCurrent < x) {
+-                for (int i = xCurrent + 1; i <= x; i++) {
++        } else if (ycurrent == y) {
++            if (xcurrent < x) {
++                for (int i = xcurrent + 1; i < x; i++) {
+                     if (board.getAt(i, y) != null) {
+-
+                         return false;
+                     }
+                 }
+-            } else {
+-                for (int i = xCurrent - 1; i >= x; i--) {
++            } else if (xcurrent > x) {
++                for (int i = xcurrent - 1; i > x; i--) {
+                     if (board.getAt(i, y) != null) {
+                         return false;
+                     }
+                 }
+             }
+-        } else {
+-            return false;
++        }
++        for (int i = 0; i < board.getPieces().size(); i++) {
++            if (board.getPieces().get(i).getCoordinatesX() == x
++                    && board.getPieces().get(i).getCoordinatesY() == y) {
++                if (board.getPieces().get(i).getColor().equals(this.getColor())) {
++                    return false;
++                } else {
++                    return true;
++                }
++            }
+         }
+         return true;
+     }

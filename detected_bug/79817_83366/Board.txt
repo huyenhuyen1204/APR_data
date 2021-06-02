@@ -1,0 +1,50 @@
+@@ -1,22 +1,20 @@
+ import java.util.ArrayList;
+ 
+-/**
+- * Created by CCNE on 19/11/2020.
+- */
+ public class Board {
+-    public int WIDTH = 8;
+-    public int HEIGHT = 8;
++    public static final int WIDTH = 8;
++    public static final int HEIGHT = 8;
+     private ArrayList<Piece> pieces;
+ 
+     public Board() {}
+ 
++    /**addPiece.*/
+     public void addPiece(Piece piece) {
+-        if (validate(piece.getX(), piece.getY())) {
++        if (validate(piece.getCoordinatesX(), piece.getCoordinatesY()) && !pieces.contains(piece)) {
+             pieces.add(piece);
+         }
+     }
+ 
+-    // Ktra toa do hop le
++    /**kt toa do.*/
+     public boolean validate(int x, int y) {
+         if (x >= 1 && y <= 8) {
+             return true;
+@@ -24,17 +22,19 @@
+         return false;
+     }
+ 
++    /**removeAt.*/
+     public void removeAt(int x, int y) {
+         for (int i = 0; i < pieces.size(); i++) {
+-            if (x == pieces.get(i).getX() && y == pieces.get(i).getY()) {
++            if (x == pieces.get(i).getCoordinatesX() && y == pieces.get(i).getCoordinatesY()) {
+                 pieces.remove(i);
+             }
+         }
+     }
+ 
++    /**getAt.*/
+     public Piece getAt(int x, int y) {
+         for (int i = 0; i < pieces.size(); i++) {
+-            if (x == pieces.get(i).getX() && y == pieces.get(i).getY()) {
++            if (x == pieces.get(i).getCoordinatesX() && y == pieces.get(i).getCoordinatesY()) {
+                 return pieces.get(i);
+             }
+         }

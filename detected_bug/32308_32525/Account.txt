@@ -1,0 +1,56 @@
+@@ -3,12 +3,10 @@
+ 
+ public class Account {
+     private double balance;
+-    private ArrayList<Transaction> transactionList;
+-    private double[] balances = new double[100];
+-    private int i = 0;
++    private ArrayList<Transaction> transitionList;
+ 
+     public Account() {
+-        transactionList = new ArrayList<>();
++        transitionList = new ArrayList<>();
+         this.balance = 0;
+     }
+ 
+@@ -35,14 +33,12 @@
+         if (operation.equals(Transaction.DEPOSIT)) {
+             deposit(amount);
+             if (amount > 0)
+-                balances[i++] = this.balance;
+-                transactionList.add(new Transaction(operation, amount, this.balance));
++                transitionList.add(new Transaction(operation, amount, this.balance));
+         }
+         else if (operation.equals(Transaction.WITHDRAW)) {
+             withdraw(amount);
+             if (amount > 0 && amount <= this.balance)
+-                balances[i++] = this.balance;
+-                transactionList.add(new Transaction(operation, amount, this.balance));
++                transitionList.add(new Transaction(operation, amount, this.balance));
+         }
+         else
+             System.out.println("Yeu cau khong hop le!");
+@@ -54,11 +50,11 @@
+     }
+ 
+     public void printTransaction() {
+-        for (int i = 0; i<transactionList.size(); i++) {
+-            if (transactionList.get(i).getOperation().equals("deposit"))
+-                System.out.println("Giao dich " + (i + 1) + ": Nap tien $" + getRound(transactionList.get(i).getAmount()) + ". So du luc nay: $" + getRound(balances[i]) + ".");
++        for (int i = 0; i<transitionList.size(); i++) {
++            if (transitionList.get(i).getOperation().equals("deposit"))
++                System.out.println("Giao dich " + (i + 1) + ": Nap tien $" + getRound(transitionList.get(i).getAmount()) + ". So du luc nay: $" + getRound(transitionList.get(i).getBalance()) + ".");
+             else
+-                System.out.println("Giao dich " + (i + 1) + ": Rut tien $" + getRound(transactionList.get(i).getAmount()) + ". So du luc nay: $" + getRound(balances[i]) + ".");
++                System.out.println("Giao dich " + (i + 1) + ": Rut tien $" + getRound(transitionList.get(i).getAmount()) + ". So du luc nay: $" + getRound(transitionList.get(i).getBalance()) + ".");
+         }
+     }
+ 
+@@ -66,6 +62,7 @@
+         Account acc= new Account();
+         acc.addTransaction(2000.255,"deposit");
+         acc.addTransaction(1000,"withdraw");
++        acc.addTransaction(3000.526, "deposit");
+         acc.printTransaction();
+     }
+ }

@@ -1,0 +1,58 @@
+@@ -3,19 +3,30 @@
+     private int coordinatesY;
+     private String color = "white";
+ 
++    /**
++     * ham.
++     * @param coordinatesX ham.
++     * @param coordinatesY ham.
++     */
+     public Piece(int coordinatesX, int coordinatesY) {
+         this.coordinatesX = coordinatesX;
+         this.coordinatesY = coordinatesY;
+     }
+ 
++    /**
++     * ham.
++     * @param coordinatesX ham.
++     * @param coordinatesY ham.
++     * @param color ham.
++     */
+     public Piece(int coordinatesX, int coordinatesY, String color) {
+-        this.coordinatesY = coordinatesY;
+         this.coordinatesX = coordinatesX;
++        this.coordinatesY = coordinatesY;
+         this.color = color;
+     }
+ 
+     public int getCoordinatesX() {
+-        return coordinatesX;
++        return this.coordinatesX;
+     }
+ 
+     public void setCoordinatesX(int coordinatesX) {
+@@ -23,7 +34,7 @@
+     }
+ 
+     public int getCoordinatesY() {
+-        return coordinatesY;
++        return this.coordinatesY;
+     }
+ 
+     public void setCoordinatesY(int coordinatesY) {
+@@ -31,7 +42,7 @@
+     }
+ 
+     public String getColor() {
+-        return color;
++        return this.color;
+     }
+ 
+     public void setColor(String color) {
+@@ -39,5 +50,6 @@
+     }
+ 
+     public abstract String getSymbol();
++
+     public abstract boolean canMove(Board board, int x, int y);
+ }

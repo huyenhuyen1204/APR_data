@@ -1,0 +1,21 @@
+@@ -94,7 +94,7 @@
+      */
+     public String toString() {
+         String a = "";
+-        int b = movedPiece.getCoordinatesX();
++        int b = this.endX;
+         if (b == 1) {
+             a = "a";
+         } else if (b == 2) {
+@@ -112,8 +112,9 @@
+         } else if (b == 8) {
+             a = "h";
+         }
+-        String s = this.getMovedPiece().getColor() + "-R"
+-                + a + movedPiece.getCoordinatesY();
++        String s = this.getMovedPiece().getColor() + "-"
++                + this.getMovedPiece().getSymbol()
++                + a + this.endY;
+         return s;
+     }
+ }

@@ -1,0 +1,28 @@
+@@ -1,5 +1,4 @@
+ 
+-
+ import java.util.ArrayList;
+ 
+ public class Account {
+@@ -36,6 +35,11 @@
+         }
+     }
+ 
++    /**
++     * them giao dich vao danh sach.
++     * @param amount tien giao dich.
++     * @param operation loai giao dich.
++     */
+     public void addTransaction(double amount, String operation) {
+         if (operation.equalsIgnoreCase(Transaction.DEPOSIT)) {
+             deposit(amount);
+@@ -46,6 +50,9 @@
+         }
+     }
+ 
++    /**
++     * in cac giao dich ra ngoai.
++     */
+     public void printTransaction() {
+         int count = 1;
+         for (Transaction iterator : transitionList) {

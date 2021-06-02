@@ -1,0 +1,9 @@
+@@ -10,7 +10,7 @@
+ 
+     private BigDecimal round(double value) {
+         BigDecimal a = new BigDecimal(value);
+-        return a.setScale(2,BigDecimal.ROUND_HALF_EVEN);
++        return a.setScale(2, BigDecimal.ROUND_HALF_EVEN);
+     }
+ 
+     /**a.

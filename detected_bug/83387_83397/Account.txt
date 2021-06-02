@@ -1,0 +1,9 @@
+@@ -52,7 +52,7 @@
+      */
+ 
+     public void printTransaction() {
+-        DecimalFormat format = new DecimalFormat("##.##");
++        DecimalFormat format = new DecimalFormat("0.00");
+         for (int i = 0; i < transitionList.size(); i++) {
+             String res = "";
+             res = res + transitionList.get(i).getOperation();

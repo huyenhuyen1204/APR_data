@@ -1,0 +1,30 @@
+@@ -12,16 +12,16 @@
+ 
+     /** binhdang. */
+     public void addPiece(Piece piece) {
+-        int _x = piece.getX();
+-        int _y = piece.getY();
+-        if (validate(_x, _y) && getAt(_x, _y) == null) {
++        int tempX = piece.getCoordinatesX();
++        int tempY = piece.getCoordinatesY();
++        if (validate(tempX, tempY) && getAt(tempX, tempY) == null) {
+             pieces.add(piece);
+         }
+     }
+ 
+     /** binhdang. */
+     public boolean validate(int x, int y) {
+-        return x >= 0 && x <= 8 && y >= 0 && y <= 8;
++        return x >= 1 && x <= 8 && y >= 1 && y <= 8;
+     }
+ 
+     /** binhdang. */
+@@ -34,7 +34,7 @@
+     /** binhdang. */
+     public Piece getAt(int x, int y) {
+         for (Piece temp : pieces) {
+-            if (temp.getX() == x && temp.getY() == y) {
++            if (temp.getCoordinatesX() == x && temp.getCoordinatesY() == y) {
+                 return temp;
+             }
+         }

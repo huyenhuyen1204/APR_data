@@ -1,0 +1,20 @@
+@@ -20,6 +20,7 @@
+     }
+ 
+     public abstract String getSymbol();
++
+     public abstract boolean canMove(Board board, int x, int y);
+ 
+     public int getCoordinatesX() {
+@@ -42,8 +43,10 @@
+         return color;
+     }
+ 
++    /** set color for pieces.
++     */
+     public void setColor(String color) {
+-        if (color.equals("white") || color.equals("black")){
++        if (color.equals("white") || color.equals("black")) {
+             this.color = color;
+         }
+     }

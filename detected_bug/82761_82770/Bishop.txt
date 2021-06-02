@@ -1,0 +1,37 @@
+@@ -17,22 +17,30 @@
+     public boolean canMove(Board board, int x, int y) {
+         int dx = x - getCoordinatesX();
+         int unitStepX = dx / Math.abs(dx);
+-        int tmpX = this.getCoordinatesX();
++        int tmpX = this.getCoordinatesX() + unitStepX;
+ 
+         int dy = y - getCoordinatesY();
+         int unitStepY = dy / Math.abs(dy);
+-        int tmpY = this.getCoordinatesY();
++        int tmpY = this.getCoordinatesY() + unitStepY;
+ 
++        if (dx == 0 && dy == 0) {
++            return true;
++        }
+         if (Math.abs(dx) != Math.abs(dy)) {
+             return false;
+         }
+-        do {
+-            tmpX += unitStepX;
+-            tmpY += unitStepY;
++        while (tmpX != x && tmpY != y) {
+             if (board.getAt(tmpX, tmpY) != null) {
+                 return false;
+             }
+-        } while (tmpX != x && tmpY != y);
++            tmpX += unitStepX;
++            tmpY += unitStepY;
++        }
++        Piece collisionPiece = board.getAt(x, y);
++        if (collisionPiece != null
++                && collisionPiece.getColor().equals(getColor())) {
++            return false;
++        }
+         return true;
+     }
+ }

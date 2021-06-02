@@ -1,0 +1,13 @@
+@@ -1,8 +1,10 @@
+ 
+ public class Transaction {
+ 	private String operation;
+-	private double amount, balance;
+-	public final static String DEPOSIT = "deposit", WITHDRAW = "withdraw";
++	private double amount;
++	private double balance;
++	public final static String DEPOSIT = "deposit";
++	public final static String WITHDRAW = "withdraw";
+ 	
+ 	public String getOperation() {
+ 		return operation;

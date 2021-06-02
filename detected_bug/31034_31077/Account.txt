@@ -1,0 +1,58 @@
+@@ -1,8 +1,9 @@
++import java.text.DecimalFormat;
+ import java.util.ArrayList;
+ 
+ public class Account{
+     private double balance = 0;
+-    private ArrayList<String> transitionList = new ArrayList<>();
++    private ArrayList<Transaction> transitionList = new ArrayList<>();
+     public String s = "";
+     private void deposit(double amount){
+         if(amount > 0){
+@@ -22,26 +23,28 @@
+     public void addTransaction(double amount,String operation){
+         if(operation!= Transaction.DEPOSIT && operation!= Transaction.WITHDRAW) {
+             System.out.println("Yeu cau khong hop le!");
+-        }
+-        if (operation == Transaction.DEPOSIT) {
+-            deposit(amount);
+-            if (amount > 0) {
+-                s = "Nap tien $" + String.valueOf(Math.round(amount * 100.00) / 100.00) + ". So du luc nay: $" + String.valueOf(Math.round(balance * 100.00) / 100.00) + ".";
+-                transitionList.add(s);
+-            }
+-        }
+-        else{
+-            withdraw(amount);
+-            if(amount > 0 && amount <= balance){
+-                s = "Rut tien $"+String.valueOf(Math.round(amount*100.00)/100.00)+". So du luc nay: $"+String.valueOf(Math.round(balance*100.00)/100.00)+".";
+-                transitionList.add(s);
++        }else {
++            if (operation == Transaction.DEPOSIT) {
++                deposit(amount);
++                if (amount > 0) {
++                    transitionList.add(new Transaction(operation,amount,balance));
++                }
++            } else {
++                withdraw(amount);
++                if (amount > 0 && amount <= balance) {
++                    transitionList.add(new Transaction(operation,amount,balance));
++                }
+             }
+         }
+     }
+-        public void printTransaction(){
+-            for(int i=0;i<transitionList.size();i++){
+-                System.out.println("Giao dich "+String.valueOf(i+1)+": "+transitionList.get(i));
++        public void printTransaction() {
++            DecimalFormat df = new DecimalFormat("0.00");
++            for (int i = 0; i < transitionList.size(); i++) {
++                System.out.print("Giao dich " + String.valueOf(i + 1) + ": ");
++                if (transitionList.get(i).getOperation() == Transaction.DEPOSIT) {
++                    System.out.println("Nap tien $" + df.format(transitionList.get(i).getAmount()) + ". So du luc nay: $" + df.format(transitionList.get(i).getBalance()) + ".");
++                } else
++                    System.out.println(s = "Rut tien $" + df.format(transitionList.get(i).getAmount()) + ". So du luc nay: $" + df.format(transitionList.get(i).getBalance()) + ".");
+             }
+         }
+-
+     }
+\ No newline at end of file

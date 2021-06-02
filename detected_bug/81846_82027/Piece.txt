@@ -1,0 +1,49 @@
+@@ -6,6 +6,13 @@
+     public Piece() {
+     }
+ 
++    /**
++     * constructor.
++     * @param coordinatesX coordinate x
++     * @param coordinatesY coordinate y
++     * @param color color
++     */
++
+     public Piece(int coordinatesX, int coordinatesY, String color) {
+         this.coordinatesX = coordinatesX;
+         this.coordinatesY = coordinatesY;
+@@ -19,7 +26,15 @@
+ 
+     public abstract String getSymbol();
+ 
+-    public abstract boolean canMove( Board board, int x, int y);
++    /**
++     * check available move.
++     * @param board board
++     * @param x coordinate x
++     * @param y coordinate y
++     * @return true if can move
++     */
++
++    public abstract boolean canMove(Board board, int x, int y);
+ 
+     public int getCoordinatesX() {
+         return coordinatesX;
+@@ -45,7 +60,16 @@
+         this.color = color;
+     }
+ 
+-    public boolean checkPosition(Piece piece){
++    /**
++     * if position is available.
++     * @param piece piece
++     * @return true if available
++     */
++
++    public boolean checkPosition(Piece piece) {
++        if (piece == null) {
++            return false;
++        }
+         return true;
+     }
+ }

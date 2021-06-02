@@ -1,0 +1,64 @@
+@@ -2,10 +2,12 @@
+ 
+ public class Account {
+     private double balance;
+-    ArrayList<String> transactions = new ArrayList<>();
++    private ArrayList<String> transitions = new ArrayList<>();
++    private ArrayList<Transaction> transitionList = new ArrayList<>();
+ 
+     /**
+      * deposit.
++     *
+      * @param amount a.
+      */
+     private void deposit(double amount) {
+@@ -18,6 +20,7 @@
+ 
+     /**
+      * withdraw.
++     *
+      * @param amount a.
+      */
+     private void withdraw(double amount) {
+@@ -41,15 +44,23 @@
+     public void addTransaction(double amount, String operation) {
+         if (operation.equals(Transaction.DEPOSIT)) {
+             deposit(amount);
+-            transactions.add("Giao dich" + Integer.toString(transactions.size() + 1) + ": "
++            String tmp = "Giao dich " + Integer.toString(transitions.size() + 1) + ": "
+                     + "Nap tien $" + String.format("%.2f", amount) + ". "
+-                    + "So du luc nay: $" + String.format("%.2f", balance) + ".");
++                    + "So du luc nay: $" + String.format("%.2f", balance) + ".";
++            if (!transitions.isEmpty()) {
++                tmp = "\n" + tmp;
++            }
++            transitions.add(tmp);
+         } else {
+             if (operation.equals(Transaction.WITHDRAW)) {
+                 withdraw(amount);
+-                transactions.add("Giao dich" + Integer.toString(transactions.size() + 1) + ": "
++                String tmp = "Giao dich " + Integer.toString(transitions.size() + 1) + ": "
+                         + "Rut tien $" + String.format("%.2f", amount) + ". "
+-                        + "So du luc nay: $" + String.format("%.2f", balance) + ".");
++                        + "So du luc nay: $" + String.format("%.2f", balance) + ".";
++                if (!transitions.isEmpty()) {
++                    tmp = "\n" + tmp;
++                }
++                transitions.add(tmp);
+             } else {
+                 System.out.println("Yeu cau khong hop le!");
+             }
+@@ -60,11 +71,8 @@
+      * print.
+      */
+     public void printTransaction() {
+-        for (String transaction : transactions) {
+-            if (transaction!=transactions.get(transactions.size()-1)){
+-                System.out.println(transaction);
+-            }
+-            else System.out.print(transaction);
++        for (String transaction : transitions) {
++            System.out.print(transaction);
+         }
+     }
+ }

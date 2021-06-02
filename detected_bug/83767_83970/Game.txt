@@ -1,0 +1,72 @@
+@@ -17,24 +17,22 @@
+      */
+     public void movePiece(Piece piece, int x, int y) {
+         if (piece.canMove(board, x, y)) {
+-            Move m = new Move(piece.getCoordinatesX(), piece.getCoordinatesY(),
+-                     x, y, piece);
+-            moveHistory.add(m);
+-            int diffX = x - piece.getCoordinatesX();
+-            int diffY = y - piece.getCoordinatesY();
+-
+-            if (diffX > 0) {
+-                piece.setCoordinatesX(piece.getCoordinatesX() + diffX);
++            Piece killedP = board.getAt(x, y);
++            if (killedP != null) {
++                Move m1 = new Move(piece.getCoordinatesX(), piece.getCoordinatesY(),
++                        x, y, piece, board.getAt(x, y));
++                moveHistory.add(m1);
++                board.removeAt(x, y);
+             } else {
+-                piece.setCoordinatesX(piece.getCoordinatesX() - diffX);
++                Move m = new Move(piece.getCoordinatesX(), piece.getCoordinatesY(),
++                        x, y, piece);
++                moveHistory.add(m);
+             }
+-
+-            if (diffY > 0) {
+-                piece.setCoordinatesY(piece.getCoordinatesY() + diffY);
+-            } else {
+-                piece.setCoordinatesY(piece.getCoordinatesY() - diffY);
+-            }
++        } else {
++            return;
+         }
++        piece.setCoordinatesX(x);
++        piece.setCoordinatesY(y);
+     }
+ 
+     public Board getBoard() {
+@@ -53,30 +51,10 @@
+         this.moveHistory = moveHistory;
+     }
+ 
++    /**
++     * Main.
++     */
+     public static void main(String[] args) {
+-        Piece p = new Rook(1, 2);
+-        Piece p1 = new Rook(2, 5);
+-        Piece p3 = new Rook(5, 1, "black");
+-        Piece p2 = new Rook(2, 2);
+-        Piece p4 = new Rook(2, 5, "black");
+-        Board b = new Board();
+-        b.addPiece(p);
+-        System.out.println(b.getPieces().size());
+ 
+-        b.addPiece(p1);
+-        System.out.println(b.getPieces().size());
+-
+-        b.addPiece(p2);
+-        System.out.println(b.getPieces().size());
+-
+-        b.addPiece(p3);
+-        System.out.println(b.getPieces().size());
+-
+-        b.addPiece(p4);
+-        System.out.println(b.getPieces().size());
+-
+-        System.out.println(p.canMove(b, 2, 2));
+-        //System.out.println(p.canMove(b, ));
+-        System.out.println();
+     }
+ }

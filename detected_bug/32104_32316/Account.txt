@@ -1,0 +1,99 @@
+@@ -3,46 +3,45 @@
+ 
+ public class Account {
+     private double balance;
+-    ArrayList<Transaction> transitionList = new ArrayList<Transaction>();
++    private ArrayList<Transaction> transitionList = new ArrayList<Transaction>();
+ 
+-    private void deposite(double amount){
+-        if (amount <= 0)
+-            System.out.println("So tien ban nap vao khong hop le!");
++    private void deposit(double amount){
++        if (amount <= 0) {
++            System.out.print("So tien ban nap vao khong hop le!");
++            return;
++        }
+         else{
+             balance += amount;
+         }
+     }
+     private void withdraw(double amount){
+-        if (amount <= 0)
+-            System.out.println("So tien ban rut ra khong hop le!");
+-        else if (amount > balance)
+-            System.out.println("So tien ban rut vuot qua so du!");
++        if (amount <= 0) {
++            System.out.print("So tien ban rut ra khong hop le!");
++            return;
++        }
++        else if (amount > balance) {
++            System.out.print("So tien ban rut vuot qua so du!");
++            return;
++        }
+         else{
+             balance -=amount;
+         }
+     }
+     public void addTransaction(double amount, String operation){
+-        if (operation != "withdraw" && operation != "deposite"){
+-            System.out.println("Yeu cau khong hop le!");
++        if (!operation.equals( "withdraw") && !operation.equals("deposit")){
++            System.out.print("Yeu cau khong hop le!");
++            return;
+         }
+         else {
+-            if (operation == "deposite") {
+-                if (amount <= 0){
+-                    deposite(amount);
+-                }
+-                else {
+-                    Transaction tt = new Transaction(operation, amount, this.balance);
++            if (operation.equals("deposit")) {
++                    deposit(amount);
++                    Transaction tt = new Transaction(operation, amount, balance);
+                     transitionList.add(tt);
+-                }
+             }
+-            else {
+-                if (amount <= 0 || amount > balance){
+-                    deposite(amount);
+-                }
+-                else {
+-                    Transaction tt = new Transaction(operation, amount, this.balance);
+-                    transitionList.add(tt);
+-                }
++            else if (operation.equals("withdraw")){
++                withdraw(amount);
++                Transaction tt = new Transaction(operation,amount,balance);
++                transitionList.add(tt);
+             }
+         }
+     }
+@@ -50,20 +49,20 @@
+         for (int i = 0; i < transitionList.size(); i++){
+             int j = i + 1;
+             System.out.print("Giao dich "+j+": ");
+-            double n = Math.round((transitionList.get(i).getAmount()*100))/100;
+-            double m = Math.round(transitionList.get(i).getBalance()*100)/100;
++
+             if (transitionList.get(i).getOperation() == "withdraw")
+-                System.out.print("Rut tien $"+n+". So du luc nay: $"+m+".");
+-            else if (transitionList.get(i).getOperation() == "deposite")
+-                System.out.print("Nap tien $"+n+". So du luc nay: $"+m+".");
++                System.out.printf("Rut tien $%.2f. So du luc nay: $%.2f.", transitionList.get(i).getAmount(), transitionList.get(i).getBalance());
++            else if (transitionList.get(i).getOperation() == "deposit")
++                System.out.printf("Nap tien $%.2f. So du luc nay: $%.2f.", transitionList.get(i).getAmount(), transitionList.get(i).getBalance());
+             System.out.println();
+         }
+     }
+ 
+     public static void main(String[] args) {
+         Account ac = new Account();
+-        ac.balance = 88;
+-        ac.addTransaction(2.3, "withdraw");
++        //ac.balance = 0;
++        ac.addTransaction(2000.255, "deposit");
++        ac.addTransaction(1000.00, "withdraw");
+         ac.printTransaction();
+         System.out.println();
+     }

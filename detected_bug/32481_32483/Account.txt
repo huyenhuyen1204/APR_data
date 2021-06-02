@@ -1,0 +1,53 @@
+@@ -1,12 +1,11 @@
+ 
+ 
+ import java.util.ArrayList;
+-import java.util.List;
+ 
+ 
+ public class Account{
+     private double balance = 0;
+-    List<Transaction> transactionList = new ArrayList<Transaction>();
++    private ArrayList<Transaction> transitionList = new ArrayList<Transaction>();
+     private void deposit(double amount){
+         if(amount <= 0){
+             System.out.println("So tien ban nap vao khong hop le!");
+@@ -17,10 +16,10 @@
+     }
+     private void withdraw(double amount){
+         if(amount <= 0){
+-            System.out.println("So tien ban rut ta khong hop le!");
++            System.out.println("So tien ban rut ra khong hop le!");
+         }
+         else if(amount > balance){
+-            System.out.println("So tien ban rut ra vuot qua so du!");
++            System.out.println("So tien ban rut vuot qua so du!");
+         }
+         else
+             balance -= amount;
+@@ -31,19 +30,19 @@
+         }
+         else if(operation == "deposit"){
+             deposit(amount);
+-            transactionList.add(new Transaction(operation,amount,balance));
++            transitionList.add(new Transaction(operation,amount,balance));
+         }
+         else if(operation == "withdraw"){
+             withdraw(amount);
+-            transactionList.add(new Transaction(operation,amount,balance));
++            transitionList.add(new Transaction(operation,amount,balance));
+         }
+     }
+     public void printTransaction(){
+-        for(int i=0;i<transactionList.size();i++){
+-            if(transactionList.get(i).getOperation().equals("deposit"))
+-                System.out.format("Giao dich %d: Nap tien $%.2f. So du luc nay: $%.2f.\n",i+1,transactionList.get(i).getAmount(),transactionList.get(i).getBalance());
++        for(int i=0;i<transitionList.size();i++){
++            if(transitionList.get(i).getOperation().equals("deposit"))
++                System.out.format("Giao dich %d: Nap tien $%.2f. So du luc nay: $%.2f.\n",i+1,transitionList.get(i).getAmount(),transitionList.get(i).getBalance());
+             else
+-                System.out.format("Giao dich %d: Rut tien $%.2f. So du luc nay: $%.2f.\n",i+1,transactionList.get(i).getAmount(),transactionList.get(i).getBalance());
++                System.out.format("Giao dich %d: Rut tien $%.2f. So du luc nay: $%.2f.\n",i+1,transitionList.get(i).getAmount(),transitionList.get(i).getBalance());
+         }
+     }
+     public static void main(String[] args){

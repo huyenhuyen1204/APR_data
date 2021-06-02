@@ -1,0 +1,66 @@
+@@ -1,11 +1,15 @@
+ public class Bishop extends Piece {
+-    Bishop(int x, int y) {
++    public Bishop() {
++
++    }
++
++    public Bishop(int x, int y) {
+         super(x, y);
+     }
+ 
+-    Bishop(int x, int y, String color) {
++   public Bishop(int x, int y, String color) {
+         super(x, y, color);
+-    }
++   }
+ 
+     @Override
+     public String getSymbol() {
+@@ -14,30 +18,26 @@
+ 
+     @Override
+     public boolean canMove(Board board, int x, int y) {
+-        //Chua xu ly tren duong gap quan co khac thi khong duoc di chuyen
+-        if (getCoordinatesX() - x == getCoordinatesY() - y
+-                || getCoordinatesX() - x == y - getCoordinatesY()) {
+-            int stepX = -1;
+-            int stepY = -1;
+-            int distance = getCoordinatesX() - x;
+-            if (getCoordinatesX() < x) {
+-                stepX = 1;
+-                distance *= -1;
+-            }
+-            if (getCoordinatesY() < y) {
+-                stepY = 1;
+-            }
++        int distanceX = x - getCoordinatesX();
++        int distanceY = y - getCoordinatesY();
+ 
+-            for (int i = 1; i < distance; i++) {
+-                for (int e = 0; e < board.getPieces().size(); e++) {
+-                    if (board.getPieces().get(e).getCoordinatesX() == getCoordinatesX() + stepX * i
+-                    && board.getPieces().get(e).getCoordinatesY() == getCoordinatesY() + stepY * i) {
+-                        return false;
+-                    }
++        if (distanceX == distanceY || distanceX == -distanceY) {
++            int stepX = distanceX < 0 ? -1 : 1;
++            int stepY = distanceY < 0 ? -1 : 1;
++
++            for (int i = 1; i < Math.abs(distanceX); i++) {
++                if (board.getAt(getCoordinatesX() + i * stepX,
++                        getCoordinatesY() + i * stepY) != null) {
++                    return false;
+                 }
+             }
+ 
+-            return true;
++            if (board.getAt(x, y) == null) {
++                return true;
++            } else if (board.getAt(x, y).getColor().equals(getColor()) == false) {
++                return true;
++            }
++
+         }
+ 
+         return false;

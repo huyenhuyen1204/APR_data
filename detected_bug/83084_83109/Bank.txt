@@ -1,0 +1,104 @@
+@@ -1,4 +1,7 @@
+-import java.io.*;
++import java.io.FileInputStream;
++import java.io.IOException;
++import java.io.InputStream;
++import java.io.InputStreamReader;
+ import java.util.ArrayList;
+ import java.util.List;
+ 
+@@ -9,6 +12,9 @@
+         return customerList;
+     }
+ 
++    /**
++     * javadoc.
++     */
+     public void readCustomerList(InputStream inputStream) {
+         InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+         StringBuilder data = new StringBuilder();
+@@ -49,17 +55,20 @@
+             } else {
+                 if (parseLine[1].equals(Account.CHECKING)) {
+                     currentCustomer.addAccount(new CheckingAccount(Long.parseLong(parseLine[0]),
+-                                                                   Double.parseDouble(parseLine[2])));
++                            Double.parseDouble(parseLine[2])));
+                 } else {
+                     currentCustomer.addAccount(new SavingsAccount(Long.parseLong(parseLine[0]),
+-                                                                  Double.parseDouble(parseLine[2])));
++                            Double.parseDouble(parseLine[2])));
+                 }
+             }
+         }
+     }
+ 
++    /**
++     * javadoc.
++     */
+     public String getCustomersInfoByIdOrder() {
+-        for (int i = 0; i < customerList.size(); ++i)
++        for (int i = 0; i < customerList.size(); ++i) {
+             for (int j = i + 1; j < customerList.size(); ++j) {
+                 Customer a = customerList.get(i);
+                 Customer b = customerList.get(j);
+@@ -68,16 +77,22 @@
+                     customerList.set(i, b);
+                 }
+             }
++        }
++
+ 
+         StringBuilder res = new StringBuilder();
+         for (Customer i : customerList) {
+             res.append(i.getCustomerInfo()).append('\n');
+         }
++        res.deleteCharAt(res.lastIndexOf("\n"));
+         return res.toString();
+     }
+ 
++    /**
++     * javadoc.
++     */
+     public String getCustomersInfoByNameOrder() {
+-        for (int i = 0; i < customerList.size(); ++i)
++        for (int i = 0; i < customerList.size(); ++i) {
+             for (int j = i + 1; j < customerList.size(); ++j) {
+                 Customer a = customerList.get(i);
+                 Customer b = customerList.get(j);
+@@ -86,29 +101,33 @@
+                     customerList.set(i, b);
+                 }
+             }
++        }
+ 
+         StringBuilder res = new StringBuilder();
+         for (Customer i : customerList) {
+             res.append(i.getCustomerInfo()).append('\n');
+         }
++        res.deleteCharAt(res.lastIndexOf("\n"));
+         return res.toString();
+     }
+ 
+     /**
+      * javadoc.
+      */
+-    public static void main(String[] args) throws FileNotFoundException {
++    public static void main(String[] args) {
++        /*
+         Bank bank = new Bank();
+         bank.readCustomerList(new FileInputStream("src/test.txt"));
+         System.out.println(bank.getCustomersInfoByNameOrder());
+         List<Customer> customers = bank.getCustomerList();
+-        customers.get(2).getAccountList().get(0).withdraw(1000);
++        customers.get(2).getAccountList().get(0).withdraw(-1000.00);
+         for (Customer customer : customers) {
+             for (Account account : customer.getAccountList()) {
+                 System.out.println(account.getBalance() + " "
+                         + account.getAccountNumber() + " " + (account instanceof CheckingAccount));
+             }
+         }
++        */
+     }
+ }
+  
+\ No newline at end of file

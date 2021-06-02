@@ -1,0 +1,11 @@
+@@ -82,8 +82,8 @@
+     public String getCustomersInfoByNameOrder() {
+         for (int i = 0; i < customerList.size(); ++i) {
+             for (int j = i + 1; j < customerList.size(); ++j) {
+-                if (customerList.get(i).getFullName().
+-                        compareTo(customerList.get(j).getFullName()) > 0) {
++                if (customerList.get(i).getFullName()
++                        .compareTo(customerList.get(j).getFullName()) > 0) {
+                     Collections.swap(customerList, i, j);
+                 }
+             }

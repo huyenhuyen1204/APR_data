@@ -1,0 +1,11 @@
+@@ -2,7 +2,9 @@
+     private String operation; // tên loại giao dịch
+     private double amount; // số tiền giao dịch
+     private double balance; // số dư còn lại
+-    public static final String DEPOSIT = "deposit", WITHDRAW = "withdraw";
++    public static final String DEPOSIT = "deposit";
++    public static final String WITHDRAW = "withdraw";
++
+ 
+     public Transaction(String operation, double amount, double balance) {
+         this.operation = operation;

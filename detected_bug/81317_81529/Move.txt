@@ -1,0 +1,9 @@
+@@ -4,7 +4,7 @@
+     private int startY;
+     private int endY;
+     private Piece movedPiece;
+-    private Piece killedPiece;
++    private Piece killedPiece = null;
+ 
+     /**
+      * constructor with 5 parameters.

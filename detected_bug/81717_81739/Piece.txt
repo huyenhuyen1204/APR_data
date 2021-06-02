@@ -1,0 +1,19 @@
+@@ -7,12 +7,18 @@
+ 
+     }
+ 
++    /**
++     * initialize method.
++     */
+     public Piece(int coordinatesX, int coordinatesY) {
+         this.coordinatesX = coordinatesX;
+         this.coordinatesY = coordinatesY;
+         this.color = "white";
+     }
+ 
++    /**
++     * initialize method.
++     */
+     public Piece(int coordinatesX, int coordinatesY, String color) {
+         this.coordinatesX = coordinatesX;
+         this.coordinatesY = coordinatesY;

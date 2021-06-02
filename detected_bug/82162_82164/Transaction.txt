@@ -1,0 +1,26 @@
+@@ -2,7 +2,10 @@
+     private String operation;
+     private double amount;
+     private double balance;
+-    public static final String DEPOSIT = "deposit",WITHDRAW = "withdraw";
++
++    public static final String DEPOSIT = "deposit";
++    public static final String WITHDRAW = "withdraw";
++    /**....*/
+ 
+     public Transaction(String operation, double amount, double balance) {
+         this.operation = operation;
+@@ -33,13 +36,4 @@
+     public void setOperation(String operation) {
+         this.operation = operation;
+     }
+-
+-    public static void main(String[] args) {
+-        Account acc= new Account();
+-        acc.addTransaction(2000.255,"deposit");
+-        acc.addTransaction(1000,"withdraw");
+-        acc.printTransaction();
+-    }
+-
+-
+ }

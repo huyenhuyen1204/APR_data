@@ -1,0 +1,48 @@
+@@ -33,6 +33,9 @@
+ 
+     }
+ 
++    /**
++     * abc.
++     */
+     public void addTransaction(double amount, String operation) {
+         if (!operation.equals(Transaction.DEPOSIT) && !operation.equals(Transaction.WITHDRAW)) {
+             System.out.println("Yeu cau khong hop le!");
+@@ -50,27 +53,19 @@
+ 
+     }
+ 
+-    public void printTransaction() {
+-        for (int i = 0; i < transitionList.size(); i++) {
+-            if (transitionList.get(i).getOperation().equals(Transaction.DEPOSIT)) {
+-                System.out.printf("Giao dich %d: Nap tien $%.2f. So du luc nay: $%.2f.\n",
+-                        i, transitionList.get(i).getAmount(), transitionList.get(i).getBalance());
+-            } else {
+-                System.out.printf("Giao dich %d: Rut tien $%.2f. So du luc nay: $%.2f.\n",
+-                        i, transitionList.get(i).getAmount(), transitionList.get(i).getBalance());
+-            }
+-        }
+-    }
+-
+     /**
+      * abc.
+      */
+-    public static void main(String[] args) {
+-        Account acc= new Account();
+-        acc.addTransaction(2000.255,"deposit");
+-        acc.addTransaction(1000,"withdraw");
+-        acc.addTransaction(100000,"withdraw");
+-        acc.printTransaction();
++    public void printTransaction() {
++        for (int i = 0; i < transitionList.size(); i++) {
++            if (transitionList.get(i).getOperation().equals(Transaction.DEPOSIT)) {
++                System.out.printf("Giao dich %d: Nap tien $%.2f. So du luc nay: $%.2f.\n", i + 1,
++                        transitionList.get(i).getAmount(), transitionList.get(i).getBalance());
++            } else {
++                System.out.printf("Giao dich %d: Rut tien $%.2f. So du luc nay: $%.2f.\n", i + 1,
++                        transitionList.get(i).getAmount(), transitionList.get(i).getBalance());
++            }
++        }
+     }
+ 
+ 

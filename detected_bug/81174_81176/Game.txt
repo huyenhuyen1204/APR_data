@@ -1,0 +1,8 @@
+@@ -25,6 +25,7 @@
+             }
+             piece.setCoordinatesX(thisX);
+             piece.setCoordinatesY(thisY);
++            moveHistory.add(move);
+         }
+     }
+ 

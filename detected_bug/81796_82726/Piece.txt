@@ -1,0 +1,25 @@
+@@ -3,6 +3,11 @@
+     private int coordinatesY;
+     private String color;
+ 
++    /**
++     * ham khoi tao co tham so.
++     * @param coordinatesX .
++     * @param coordinatesY .
++     */
+     public Piece(int coordinatesX, int coordinatesY) {
+         if (coordinatesX >= 1 && coordinatesX <= 8) {
+             this.coordinatesX = coordinatesX;
+@@ -13,6 +18,12 @@
+         color = "white";
+     }
+ 
++    /**
++     * ham khoi tao co tham so.
++     * @param coordinatesX .
++     * @param coordinatesY .
++     * @param color .
++     */
+     public Piece(int coordinatesX, int coordinatesY, String color) {
+         this.coordinatesX = coordinatesX;
+         this.coordinatesY = coordinatesY;

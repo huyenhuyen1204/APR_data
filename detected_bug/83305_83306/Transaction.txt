@@ -1,0 +1,13 @@
+@@ -7,9 +7,9 @@
+ 
+     /**
+      * Transaction.
+-     * @param operation
+-     * @param amount
+-     * @param balance
++     * @param operation ..
++     * @param amount ..
++     * @param balance ..
+      */
+     public Transaction(String operation, double amount, double balance) {
+         this.operation = operation;

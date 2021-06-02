@@ -1,0 +1,64 @@
+@@ -2,34 +2,38 @@
+ 
+ public class Game {
+     private Board board;
+-    private ArrayList<Move> moveHistory = new ArrayList<>();
++    private ArrayList<Move> moveHistory = new ArrayList<Move>();
+ 
+-    Game(Board board) {
++    public Game() {
++
++    }
++
++    public Game(Board board) {
+         this.board = board;
+     }
+ 
+     /**
+-     * ds da s.
+-     * @param piece d
+-     * @param x ter
+-     * @param y ert
++     * move a piece.
++     * @param piece df
++     * @param x df
++     * @param y df
+      */
+     public void movePiece(Piece piece, int x, int y) {
+-        //chua xu ly neu ha duoc 1 quan co khac thi xoa quan co do
+         if (piece.canMove(board, x, y)) {
+-            for (int i = 0; i < board.getPieces().size(); i++) {
+-                if(board.getPieces().get(i).getCoordinatesX() == x
+-                        && board.getPieces().get(i).getCoordinatesY() == y) {
+-                    board.getPieces().remove(i);
+-                }
++            Move newMove;
++            if (board.getAt(x, y) != null
++                    && board.getAt(x, y).getColor().equals(piece.getColor()) == false) {
++                newMove = new Move(piece.getCoordinatesX(), piece.getCoordinatesY(),
++                        x, y, piece, board.getAt(x, y));
++                board.removeAt(x, y);
++            } else {
++                newMove = new Move(piece.getCoordinatesX(), piece.getCoordinatesY(), x, y, piece);
+             }
+-
+-            Move newMove = new Move(piece.getCoordinatesX(), piece.getCoordinatesY(), x, y, piece);
++            moveHistory.add(newMove);
++            board.addPiece(piece);
+             piece.setCoordinatesX(x);
+             piece.setCoordinatesY(y);
+-            moveHistory.add(newMove);
+         }
+-
+     }
+ 
+     public Board getBoard() {
+@@ -43,8 +47,4 @@
+     public ArrayList<Move> getMoveHistory() {
+         return moveHistory;
+     }
+-
+-    public void setMoveHistory(ArrayList<Move> moveHistory) {
+-        this.moveHistory = moveHistory;
+-    }
+ }

@@ -1,0 +1,61 @@
+@@ -1,14 +1,13 @@
+ import java.util.ArrayList;
+-import java.util.List;
+ 
+ public class Account {
+     private double balance;
+ 
+-    private List<Transaction> transactions;
++        private ArrayList<Transaction> transitionList;
+ 
+     public Account() {
+         balance = 0;
+-        transactions = new ArrayList<Transaction>();
++        transitionList = new ArrayList<Transaction>();
+     }
+ 
+     private void deposit(double amount) {
+@@ -30,7 +29,7 @@
+             }
+         }
+         else {
+-            System.out.println("So tien ban nap vao khong hop le!");
++            System.out.println("So tien ban rut ra khong hop le!");
+         }
+     }
+ 
+@@ -38,11 +37,11 @@
+         switch (operation) {
+             case Transaction.DEPOSIT:
+                 deposit(amount);
+-                transactions.add(new Transaction(operation, amount, balance));
++                transitionList.add(new Transaction(operation, amount, balance));
+                 break;
+             case Transaction.WITHDRAW:
+                 withdraw(amount);
+-                transactions.add(new Transaction(operation, amount, balance));
++                transitionList.add(new Transaction(operation, amount, balance));
+                 break;
+             default:
+                 System.out.println("Yeu cau khong hop le!");
+@@ -50,16 +49,16 @@
+     }
+ 
+     public void printTransaction() {
+-        for (int i = 0; i < transactions.size(); ++i) {
++        for (int i = 0; i < transitionList.size(); ++i) {
+             StringBuilder stringBuilder = new StringBuilder();
+             stringBuilder.append("Giao dich ");
+             stringBuilder.append(i + 1);
+             stringBuilder.append(": ");
+-            stringBuilder.append(transactions.get(i).getOperation() == Transaction.DEPOSIT ? "Nap tien" : "Rut tien");
++            stringBuilder.append(transitionList.get(i).getOperation() == Transaction.DEPOSIT ? "Nap tien" : "Rut tien");
+             stringBuilder.append(" $");
+-            stringBuilder.append(String.format("%.2f", transactions.get(i).getAmount()));
++            stringBuilder.append(String.format("%.2f", transitionList.get(i).getAmount()));
+             stringBuilder.append(". So du luc nay: $");
+-            stringBuilder.append(String.format("%.2f", transactions.get(i).getBalance()));
++            stringBuilder.append(String.format("%.2f", transitionList.get(i).getBalance()));
+             stringBuilder.append(".");
+             System.out.println(stringBuilder);
+         }

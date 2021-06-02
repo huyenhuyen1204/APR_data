@@ -1,0 +1,18 @@
+@@ -9,7 +9,7 @@
+       double initialMoney = balance;
+       doDepositing(money);
+       addTransaction(
+-              new Transaction(Transaction.TYPE_DEPOSIT_CHECKING, money, initialMoney, balance));
++              new Transaction(Transaction.TYPE_DEPOSIT_SAVINGS, money, initialMoney, balance));
+     } catch (BankException exception) {
+       System.out.println(exception);
+     }
+@@ -27,7 +27,7 @@
+       double initialMoney = balance;
+       doWithdrawing(money);
+       addTransaction(
+-              new Transaction(Transaction.TYPE_WITHDRAW_CHECKING, money, initialMoney, balance));
++              new Transaction(Transaction.TYPE_WITHDRAW_SAVINGS, money, initialMoney, balance));
+     } catch (BankException exception) {
+       System.out.println(exception);
+     }

@@ -1,0 +1,40 @@
+@@ -28,7 +28,8 @@
+                 if (count > 0) {
+                     return false;
+                 } else {
+-                    if (board.getAt(x, y) != null && board.getAt(x, y).getColor().equals(this.getColor())) {
++                    if (board.getAt(x, y) != null
++                            && board.getAt(x, y).getColor().equals(this.getColor())) {
+                         return false;
+                     }
+                     return true;
+@@ -43,7 +44,8 @@
+                 if (count > 0) {
+                     return false;
+                 } else {
+-                    if (board.getAt(x, y) != null && board.getAt(x, y).getColor().equals(this.getColor())) {
++                    if (board.getAt(x, y) != null
++                            && board.getAt(x, y).getColor().equals(this.getColor())) {
+                         return false;
+                     }
+                     return true;
+@@ -61,7 +63,8 @@
+                 if (count > 0) {
+                     return false;
+                 } else {
+-                    if (board.getAt(x, y) != null && board.getAt(x, y).getColor().equals(this.getColor())) {
++                    if (board.getAt(x, y) != null
++                            && board.getAt(x, y).getColor().equals(this.getColor())) {
+                         return false;
+                     }
+                     return true;
+@@ -76,7 +79,8 @@
+                 if (count > 0) {
+                     return false;
+                 } else {
+-                    if (board.getAt(x, y) != null && board.getAt(x, y).getColor().equals(this.getColor())) {
++                    if (board.getAt(x, y) != null
++                            && board.getAt(x, y).getColor().equals(this.getColor())) {
+                         return false;
+                     }
+                     return true;

@@ -1,0 +1,54 @@
+@@ -25,14 +25,22 @@
+ 
+     }
+ 
++    /**
++     * hello.
++     * @param amount 1.
++     * @param operation 2.
++     */
+     public void addTransaction(double amount, String operation) {
+-        if (operation.equals(Transaction.DEPOSIT)){
++        if (operation.equals(Transaction.DEPOSIT)) {
+             deposit(amount);
+-        }
+-        else if (operation.equals(Transaction.WITHDRAW)) {
++            transitionList.add(new Transaction(operation, amount, this.balance));
++
++        } else if (operation.equals(Transaction.WITHDRAW)) {
+             withdraw(amount);
++            transitionList.add(new Transaction(operation, amount, this.balance));
++        } else {
++            System.out.println("Yeu cau khong hop le!");
+         }
+-        transitionList.add(new Transaction(operation, amount, this.balance));
+     }
+ 
+     /**
+@@ -42,8 +50,6 @@
+         int count = 0;
+         for (Transaction transaction : transitionList) {
+             count++;
+-            //transaction.setAmount(Math.round(transaction.getAmount() * 100) / 100.0);
+-           //transaction.setBalance(Math.round(transaction.getBalance() * 100) / 100.0);
+             if (transaction.getOperation().equals(transaction.WITHDRAW)) {
+                 System.out.print("Giao dich " + count + ": Rut tien $");
+                 System.out.printf("%.2f", transaction.getAmount());
+@@ -51,16 +57,13 @@
+                 System.out.printf("%.2f", transaction.getBalance());
+                 System.out.print(".");
+                 System.out.println();
+-            }
+-            else if (transaction.getOperation().equals(transaction.DEPOSIT)) {
++            } else if (transaction.getOperation().equals(transaction.DEPOSIT)) {
+                 System.out.print("Giao dich " + count + ": Nap tien $");
+                 System.out.printf("%.2f", transaction.getAmount());
+                 System.out.print(". So du luc nay: $");
+                 System.out.printf("%.2f", transaction.getBalance());
+                 System.out.print(".");
+                 System.out.println();
+-            } else {
+-                System.out.println("Yeu cau khong hop le!");
+             }
+         }
+     }

@@ -1,0 +1,40 @@
+@@ -8,22 +8,28 @@
+         this.board = board;
+     }
+ 
++    /**
++     * Di chuyen co.
++     * @param piece quan di chuyen.
++     * @param x toa do x den.
++     * @param y toa do y den.
++     */
+     public void movePiece(Piece piece, int x, int y) {
+         if (piece.canMove(board, x, y)) {
+             if (board.getAt(x, y) == null) {
+-                piece.setCoordinatesX(x);
+-                piece.setCoordinatesY(y);
+                 moveHistory.add(
+                         new Move(piece.getCoordinatesX(), piece.getCoordinatesY(),
+                                 x, y, piece));
++                piece.setCoordinatesX(x);
++                piece.setCoordinatesY(y);
+             } else {
+                 Piece killedPiece = board.getAt(x, y);
+                 board.removeAt(x, y);
+-                piece.setCoordinatesX(x);
+-                piece.setCoordinatesY(y);
+                 moveHistory.add(
+                         new Move(piece.getCoordinatesX(), piece.getCoordinatesY(),
+                                 x, y, piece, killedPiece));
++                piece.setCoordinatesX(x);
++                piece.setCoordinatesY(y);
+             }
+         }
+     }
+@@ -43,4 +49,6 @@
+     public void setBoard(Board board) {
+         this.board = board;
+     }
++
++
+ }

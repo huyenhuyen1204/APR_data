@@ -1,0 +1,39 @@
+@@ -14,15 +14,19 @@
+         if (piece.canMove(this.board, x, y)) {
+             boolean killed = false;
+             for (Piece p : board.getPieces()) {
+-                if (p.getCoordinatesX() == x && p.getCoordinatesY() == y && p.getColor() != piece.getColor()) {
+-                    moveHistory.add(new Move(piece.getCoordinatesX(), x, piece.getCoordinatesY(), y, piece, p));
++                if (p.getCoordinatesX() == x && p.getCoordinatesY() == y
++                        && p.getColor() != piece.getColor()) {
++                    moveHistory.add(
++                            new Move(piece.getCoordinatesX(), x,
++                                    piece.getCoordinatesY(), y, piece, p));
+                     this.board.removeAt(x, y);
+                     killed = true;
+                     break;
+                 }
+             }
+             if (!killed) {
+-                moveHistory.add(new Move(piece.getCoordinatesX(), x, piece.getCoordinatesY(), y, piece));
++                moveHistory.add(
++                        new Move(piece.getCoordinatesX(), x, piece.getCoordinatesY(), y, piece));
+             }
+             this.board.movePiece(piece, x, y);
+         }
+@@ -47,15 +51,9 @@
+         Rook r2 = new Rook(2, 6, "black");
+         game.board.addPiece(r1);
+         game.board.addPiece(r2);
+-        for (Piece p : game.board.getPieces()) {
+-            System.out.println(p.getColor() + p.getSymbol() + p.getCoordinatesX() + p.getCoordinatesY());
+-        }
+         game.movePiece(r1, 2, 6);
+         for (Move m : game.moveHistory) {
+             System.out.println(m.toString());
+         }
+-        for (Piece p : game.board.getPieces()) {
+-            System.out.println(p.getColor() + p.getSymbol() + p.getCoordinatesX() + p.getCoordinatesY());
+-        }
+     }
+ }

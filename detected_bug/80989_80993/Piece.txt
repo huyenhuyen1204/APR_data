@@ -1,0 +1,9 @@
+@@ -51,6 +51,6 @@
+     }
+ 
+     public abstract String getSymbol();
+-    public abstract boolean canMove(Board board,
+-                                    int coordinatesX, int coordinatesY);
++    
++    public abstract boolean canMove(Board board, int coordinatesX, int coordinatesY);
+ }

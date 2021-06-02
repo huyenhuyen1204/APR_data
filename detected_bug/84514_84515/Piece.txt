@@ -1,0 +1,9 @@
+@@ -18,7 +18,7 @@
+     }
+ 
+     /**
+-     * ham khoi tao 3 tham so
++     * ham khoi tao 3 tham so.
+      * @param coordinatesX sd
+      * @param coordinatesY df
+      * @param color df

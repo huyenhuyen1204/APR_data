@@ -1,0 +1,10 @@
+@@ -37,7 +37,8 @@
+                     moveHistory.add(move);
+ 
+                 } else {
+-                    Move move = new Move(piece.getCoordinatesX(), x, piece.getCoordinatesY(), y, piece);
++                    Move move = new Move(piece.getCoordinatesX(), x,
++                            piece.getCoordinatesY(), y, piece);
+                     moveHistory.add(move);
+                 }
+                 piece.setCoordinatesX(x);

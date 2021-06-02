@@ -1,0 +1,50 @@
+@@ -22,27 +22,29 @@
+             String line = scanner.nextLine();
+ 
+             if (line.charAt(0) < '0' || line.charAt(0) > '9') {
+-                int length = line.length();
+-                long cmnd = Long.parseLong(line.substring(length - 9, length));
+-                String name = line.substring(0, length - 10);
+                 cnt++;
+                 if (cnt != 1) {
+                     customerList.add(customer);
+                 }
++
++                int length = line.length();
++                long id = Long.parseLong(line.substring(length - 9, length));
++
++                String name = line.substring(0, length - 10);
+                 customer = new Customer();
+                 customer.setFullName(name);
+-                customer.setIdNumber(cmnd);
++                customer.setIdNumber(id);
+ 
+             } else {
+-                String tokens[] = line.split(" ");
+-                long STK = Long.parseLong(tokens[0]);
++                String[] tokens = line.split(" ");
++                long stk = Long.parseLong(tokens[0]);
+                 String type = tokens[1];
+                 double sodu = Double.parseDouble(tokens[2]);
+                 Account account;
+                 if (type.equals("CHECKING")) {
+-                    account = new CheckingAccount(STK, sodu);
++                    account = new CheckingAccount(stk, sodu);
+                 } else {
+-                    account = new SavingsAccount(STK, sodu);
++                    account = new SavingsAccount(stk, sodu);
+                 }
+                 customer.addAccount(account);
+             }
+@@ -77,9 +79,9 @@
+             @Override
+             public int compare(Customer o1, Customer o2) {
+                 if (o1.getIdNumber() < o2.getIdNumber()) {
+-                    return 1;
+-                } else {
+                     return -1;
++                } else {
++                    return 1;
+                 }
+             }
+         });

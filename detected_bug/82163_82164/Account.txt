@@ -1,0 +1,9 @@
+@@ -4,7 +4,7 @@
+ 
+ public class Account {
+     private double balance;
+-    private List<Transaction> transitionList = new ArrayList<Transaction>();
++    private ArrayList<Transaction> transitionList = new ArrayList<Transaction>();
+ 
+     private void deposit(double amount) {
+         if (amount <= 0) {

@@ -1,0 +1,40 @@
+@@ -23,15 +23,15 @@
+                 return false;
+             }
+         }
+-        if (x == this.getX()) {
+-            if (y > this.getY()) {
+-                for (int i = this.getY() + 1; i < y; i++) {
++        if (x == this.getCoordinatesX()) {
++            if (y > this.getCoordinatesY()) {
++                for (int i = this.getCoordinatesY() + 1; i < y; i++) {
+                     if (board.getAt(x, i) != null) {
+                         return false;
+                     }
+                 }
+             } else {
+-                for (int i = y + 1; i < this.getY(); i++) {
++                for (int i = y + 1; i < this.getCoordinatesY(); i++) {
+                     if (board.getAt(x, i) != null) {
+                         return false;
+                     }
+@@ -39,15 +39,15 @@
+             }
+             return true;
+         }
+-        if (y == this.getY()) {
+-            if (x > this.getX()) {
+-                for (int i = this.getX() + 1; i < x; i++) {
++        if (y == this.getCoordinatesY()) {
++            if (x > this.getCoordinatesX()) {
++                for (int i = this.getCoordinatesX() + 1; i < x; i++) {
+                     if (board.getAt(i, y) != null) {
+                         return false;
+                     }
+                 }
+             } else {
+-                for (int i = x + 1; i < this.getX(); i++) {
++                for (int i = x + 1; i < this.getCoordinatesX(); i++) {
+                     if (board.getAt(i, y) != null) {
+                         return false;
+                     }

@@ -1,0 +1,8 @@
+@@ -1,5 +1,6 @@
+ /**
+- * @author Lê Công Nam
++ *  .
++ * @author Lê Công Nam .
+  */
+ public class Transaction {
+     private String operation;

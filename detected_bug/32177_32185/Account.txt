@@ -1,0 +1,58 @@
+@@ -1,4 +1,3 @@
+-import java.util.List;
+ import java.util.ArrayList;
+ /**
+  * Account
+@@ -6,7 +5,7 @@
+ public class Account {
+ 
+     private double balance;
+-    private List<Transaction> transactionList = new ArrayList<Transaction>();
++    private ArrayList<Transaction> transitionList = new ArrayList<Transaction>();
+ 
+     private void deposit(double amount)
+     {
+@@ -37,7 +36,7 @@
+             if (curBalance != prevBalance)
+             {
+                 Transaction t = new Transaction(operation, amount, this.balance);
+-                transactionList.add(t);
++                transitionList.add(t);
+             }
+         }
+         else if (operation.equals(Transaction.WITHDRAW))
+@@ -48,7 +47,7 @@
+             if (curBalance != prevBalance)
+             {
+                 Transaction t = new Transaction(operation, amount, this.balance);
+-                transactionList.add(t);
++                transitionList.add(t);
+             }
+         }
+         else
+@@ -57,18 +56,18 @@
+ 
+     public void printTransaction()
+     {
+-        for (int i = 1; i <= transactionList.size(); i++)
++        for (int i = 1; i <= transitionList.size(); i++)
+         {
+             System.out.print("Giao dich " + i + ": ");
+-            if (transactionList.get(i-1).getOperation().equals(Transaction.DEPOSIT))
++            if (transitionList.get(i-1).getOperation().equals(Transaction.DEPOSIT))
+             {
+-                System.out.printf("Nap tien $%.2f. ", transactionList.get(i-1).getAmount());
+-                System.out.printf("So du luc nay: $%.2f.\n",transactionList.get(i-1).getBalance());
++                System.out.printf("Nap tien $%.2f. ", transitionList.get(i-1).getAmount());
++                System.out.printf("So du luc nay: $%.2f.\n", transitionList.get(i-1).getBalance());
+             }
+-            else if (transactionList.get(i-1).getOperation().equals(Transaction.WITHDRAW))
++            else if (transitionList.get(i-1).getOperation().equals(Transaction.WITHDRAW))
+             {
+-                System.out.printf("Rut tien $%.2f. ", transactionList.get(i-1).getAmount());
+-                System.out.printf("So du luc nay: $%.2f.\n",transactionList.get(i-1).getBalance());
++                System.out.printf("Rut tien $%.2f. ", transitionList.get(i-1).getAmount());
++                System.out.printf("So du luc nay: $%.2f.\n", transitionList.get(i-1).getBalance());
+             }
+         }
+     }

@@ -1,0 +1,18 @@
+@@ -42,7 +42,7 @@
+      */
+     public void addPiece(Piece piece) {
+         if (validate(piece.getCoordinatesX(), piece.getCoordinatesY())
+-                && duplicated(piece.getCoordinatesX(), piece.getCoordinatesY())) {
++                && !duplicated(piece.getCoordinatesX(), piece.getCoordinatesY())) {
+             pieces.add(piece);
+         }
+     }
+@@ -63,7 +63,7 @@
+     }
+ 
+     /**
+-     * remove a piece with the coordinate of (x,y)
++     * remove a piece with the coordinate of (x,y).
+      * @param x x axis of the piece
+      * @param y y axis of the piece
+      */

@@ -1,0 +1,57 @@
+@@ -5,15 +5,19 @@
+     private ArrayList<Transaction> transitionList = new ArrayList<Transaction>();
+ 
+     private void deposit(double amount){
++        amount = Math.round(amount * 100.0) / 100.0;
++
+         if(amount <= 0){
+             System.out.println("So tien ban nap vao khong hop le!");
+         }
+         else {
+             balance += amount;
++            balance = Math.round(balance * 100.0) / 100.0;
+         }
+     }
+ 
+     private void withdraw(double amount){
++        amount = Math.round(amount * 100.0) / 100.0;
+         if(amount <=0){
+             System.out.println("So tien ban rut ra khong hop le!");
+         }
+@@ -22,10 +26,12 @@
+         }
+         else{
+             balance -= amount;
++            balance = Math.round(balance * 100.0) / 100.0;
+         }
+     }
+ 
+     public void addTransaction(double amount, String operation){
++        amount = Math.round(amount * 100.0) / 100.0;
+         if(operation != Transaction.DEPOSIT && operation != Transaction.WITHDRAW)
+         {
+             System.out.println("Yeu cau khong hop le!");
+@@ -44,16 +50,17 @@
+     public void printTransaction(){
+         for(int x = 0; x < transitionList.size();  x ++){
+             int i = x + 1;
+-            System.out.println("Giao dich " + i + ": " + transitionList.get(x).getOperation() + " " + "$" +transitionList.get(x).getAmount() + ".So du luc nay: " + "$" + transitionList.get(x).getBalance() +".");
++            double amount = transitionList.get(x).getAmount();
++            double balance = transitionList.get(x).getBalance();
++
++            System.out.println("Giao dich " + i + ": " + transitionList.get(x).getOperation() + " " + "$" +String.format("%.2f", amount) + ". So du luc nay: " + "$" + String.format("%.2f",balance) +".");
+         }
+     }
+ 
+     public static void main(String args[]){
+-        Account acc = new Account();
+-        acc.addTransaction(3000.68,"deposit");
+-        acc.addTransaction(3000.00, "deposit");
+-        acc.addTransaction(1000.00, "withdraw");
+-        acc.addTransaction(2000.00,"withdraw");
++        Account acc= new Account();
++        acc.addTransaction(2000.255,"deposit");
++        acc.addTransaction(1000,"withdraw");
+         acc.printTransaction();
+     }
+ }

@@ -1,0 +1,22 @@
+@@ -11,7 +11,7 @@
+     private Piece killedPiece;
+ 
+     /**
+-     * when there isn't killedPiece
++     * when there isn't killedPiece.
+      * @param startX coordinate
+      * @param startY coordinate
+      * @param endX coordinate
+@@ -33,9 +33,9 @@
+ 
+     @Override
+     public String toString() {
+-        char column = (char)(endX - 1 + (int) 'a');
+-        return String.format("%s-%s%c%d"
+-                , movedPiece.getColor(), movedPiece.getSymbol(), column, endY);
++        char column = (char) (endX - 1 + (int) 'a');
++        return String.format("%s-%s%c%d",
++                movedPiece.getColor(), movedPiece.getSymbol(), column, endY);
+     }
+ 
+     public int getStartX() {

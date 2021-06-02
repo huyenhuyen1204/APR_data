@@ -1,0 +1,10 @@
+@@ -9,8 +9,7 @@
+      * @param coordinatesY y.
+      */
+     public Piece(int coordinatesX, int coordinatesY) {
+-        this.coordinatesX = coordinatesX;
+-        this.coordinatesY = coordinatesY;
++        this(coordinatesX, coordinatesY, "white");
+     }
+ 
+     /**

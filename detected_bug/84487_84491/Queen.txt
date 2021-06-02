@@ -1,0 +1,9 @@
+@@ -38,7 +38,7 @@
+                 }
+             }
+             return true;
+-        } else if (currY == y){
++        } else if (currY == y) {
+             if (currX < x) {
+                 for (int i = currX + 1; i < x; ++i) {
+                     if (board.getAt(i, y) != null) {

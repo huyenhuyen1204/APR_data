@@ -1,0 +1,54 @@
+@@ -3,7 +3,7 @@
+ public class Account {
+     private double balance;
+ 
+-    private ArrayList<Transaction> transactions= new ArrayList<>();
++    private ArrayList<Transaction> transitionList = new ArrayList<>();
+ 
+     /**
+      * cmt.
+@@ -22,15 +22,15 @@
+     /**
+      * cmt.
+      */
+-    public ArrayList<Transaction> getTransactions() {
+-        return transactions;
++    public ArrayList<Transaction> getTransitionList() {
++        return transitionList;
+     }
+ 
+     /**
+      * cmt.
+      */
+-    public void setTransactions(ArrayList<Transaction> transactions) {
+-        this.transactions = transactions;
++    public void setTransitionList(ArrayList<Transaction> transitionList) {
++        this.transitionList = transitionList;
+     }
+ 
+     /**
+@@ -60,9 +60,9 @@
+      * cmt.
+      */
+     public void printTransaction() {
+-        int size = transactions.size();
++        int size = transitionList.size();
+         for (int i = 0; i < size; i++) {
+-            Transaction trans = transactions.get(i);
++            Transaction trans = transitionList.get(i);
+             System.out.print("Giao dich " + (i + 1) + ": ");
+             if (trans.getOperation().equalsIgnoreCase(Transaction.DEPOSIT)) {
+                 System.out.print("Nap tien $");
+@@ -81,10 +81,10 @@
+     public void addTransaction(double amount, String operation) {
+         if (operation.equals(Transaction.DEPOSIT)) {
+             deposit(amount);
+-            transactions.add(new Transaction(operation, amount, balance));
++            transitionList.add(new Transaction(operation, amount, balance));
+         } else if (operation.equals(Transaction.WITHDRAW)) {
+             withdraw(amount);
+-            transactions.add(new Transaction(operation, amount, balance));
++            transitionList.add(new Transaction(operation, amount, balance));
+         } else {
+             System.out.println("Yeu cau khong hop le!");
+         }

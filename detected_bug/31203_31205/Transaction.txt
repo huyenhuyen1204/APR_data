@@ -1,0 +1,13 @@
+@@ -1,9 +1,9 @@
+ public class Transaction {
+-    private String operation; // loại giao dịch
++    private String operation;
+     private double amount;
+     private double balance;
+-    public static final String DEPOSIT = "deposit"; // gửi tiền
+-    public static final String WITHDRAW  = "withdraw"; // rút tiền
++    public static final String DEPOSIT = "deposit";
++    public static final String WITHDRAW  = "withdraw";
+ 
+     public Transaction(String operation, double amount, double balance) {
+         this.operation = operation;

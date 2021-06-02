@@ -1,0 +1,9 @@
+@@ -44,7 +44,7 @@
+     }
+ 
+     public String getCustomerInfo() {
+-        return String.format("Số CMND: %d. Họ tên: %s",
++        return String.format("Số CMND: %d. Họ tên: %s.",
+                 idNumber, fullName);
+     }
+ 

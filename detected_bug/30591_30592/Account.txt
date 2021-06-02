@@ -1,0 +1,14 @@
+@@ -44,11 +44,11 @@
+             if(transitionList.get(i).getOperation().equals(DEPOSIT) ==  true) {
+                 String s_amount = String.format("%.2f", transitionList.get(i).getAmount());
+                 String s_balance = String.format("%.2f", transitionList.get(i).getBalance());
+-                System.out.println( "Giao dich " + k + ": Nap tien $" + s_amount + ". So du luc nay: $" + s_balance);
++                System.out.println( "Giao dich " + k + ": Nap tien $" + s_amount + ". So du luc nay: $" + s_balance + ".");
+             } else {
+                 String s_amount = String.format("%.2f", transitionList.get(i).getAmount());
+                 String s_balance = String.format("%.2f", transitionList.get(i).getBalance());
+-                System.out.println( "Giao dich " + k + ": Rut tien $" + s_amount + ". So du luc nay: $" + s_balance);
++                System.out.println( "Giao dich " + k + ": Rut tien $" + s_amount + ". So du luc nay: $" + s_balance + ".");
+             }
+         }
+     }

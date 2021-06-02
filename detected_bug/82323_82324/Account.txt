@@ -1,0 +1,11 @@
+@@ -54,8 +54,8 @@
+         int j = 1;
+         for (Transaction i : transitionList) {
+             String s = null;
+-            Double amount = (double) Math.ceil(i.getAmount() * 100) / 100;
+-            Double balance = (double) Math.ceil(i.getBalance() * 100) / 100;
++            Double amount = i.getAmount();
++            Double balance = i.getBalance();
+             if (i.getOperation().equals(Transaction.DEPOSIT)) {
+                 s = String.format("Giao dich %s: Nap tien $%.2f. So du luc nay: $%.2f.",
+                         j, amount, balance);

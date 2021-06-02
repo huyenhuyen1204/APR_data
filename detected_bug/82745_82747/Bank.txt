@@ -1,0 +1,24 @@
+@@ -11,6 +11,7 @@
+ public class Bank {
+     private List<Customer> customerList = new ArrayList<>();
+ 
++    /** Initialize. */
+     public void readCustomerList(InputStream inputStream) {
+         try {
+             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+@@ -44,6 +45,7 @@
+         }
+     }
+ 
++    /** Name order. */
+     public String getCustomersInfoByNameOrder() {
+         StringBuilder result = new StringBuilder();
+         for (int i = 0; i < customerList.size(); i++) {
+@@ -62,6 +64,7 @@
+         return result.toString().trim();
+     }
+ 
++    /** Id order. */
+     public String getCustomersInfoByIdOrder() {
+         StringBuilder result = new StringBuilder();
+         for (int i = 0; i < customerList.size(); i++) {

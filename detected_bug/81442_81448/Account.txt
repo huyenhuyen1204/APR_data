@@ -1,0 +1,21 @@
+@@ -45,11 +45,19 @@
+         for (int i = 0; i < transitionList.size(); i++) {
+             double a = (double) Math.round(transitionList.get(i).getAmount() * 100) / 100;
+             double b = (double) Math.round(transitionList.get(i).getBalance() * 100) / 100;
++            String c = String.valueOf(a);
++            String d = String.valueOf(b);
++            if (c.charAt(c.length() - 1) == '0') {
++                c = c + "0";
++            }
++            if (d.charAt(d.length() - 1) == '0') {
++                d = d + "0";
++            }
+             System.out.println("Giao dich "
+                     + (i + 1)
+                     + ": "
+                     + transitionList.get(i).getOperation() + " $"
+-                    + a + ". So du luc nay: $" + b + ".");
++                    + c + ". So du luc nay: $" + d + ".");
+         }
+     }
+ }

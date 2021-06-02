@@ -1,0 +1,9 @@
+@@ -3,7 +3,7 @@
+ public class Account {
+     private double balance;
+     private ArrayList<Transaction> transitionList = new ArrayList<Transaction>();
+-    private ArrayList<String> list=new ArrayList<String>();
++    private ArrayList<String> list = new ArrayList<String>();
+ 
+     public Account() {
+ 

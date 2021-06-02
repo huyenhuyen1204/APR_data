@@ -1,0 +1,13 @@
+@@ -59,8 +59,10 @@
+                 operation = "Rut tien";
+             }
+             System.out.println("Giao dich " + n + ": " + operation
+-                    + "$" + numberFormatter.format(transaction.getAmount())
+-                    + ". So du luc nay: $" + numberFormatter.format(transaction.getBalance()) + ".");
++                    + " $" + numberFormatter.format(transaction.getAmount())
++                    + ". So du luc nay: $"
++                    + numberFormatter.format(transaction.getBalance())
++                    + ".");
+         }
+     }
+ 

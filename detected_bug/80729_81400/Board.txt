@@ -1,0 +1,52 @@
+@@ -17,10 +17,8 @@
+         this.pieces = pieces;
+     }
+ 
+-    /*
+-     *nnnnnnn.
+-     *nnnnn.
+-     *
++    /**
++     * cmt.
+      *
+      */
+     public boolean validate(int x, int y) {
+@@ -30,10 +28,8 @@
+         return false;
+     }
+ 
+-    /*
+-     *nnnnnnn.
+-     *nnnnn.
+-     *
++    /**
++     * cmt.
+      *
+      */
+     public void addPiece(Piece piece) {
+@@ -48,10 +44,8 @@
+         }
+     }
+ 
+-    /*
+-     *nnnnnnn.
+-     *nnnnn.
+-     *
++    /**
++     * cmt.
+      *
+      */
+     public void removeAt(int x, int y) {
+@@ -64,10 +58,8 @@
+         }
+     }
+ 
+-    /*
+-     *nnnnnnn
+-     *nnnnn.
+-     *
++    /**
++     * cmt.
+      *
+      */
+     public Piece getAt(int x, int y) {

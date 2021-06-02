@@ -1,0 +1,30 @@
+@@ -1,7 +1,7 @@
+ import java.util.ArrayList;
+ 
+ public class Game {
+-    private static ArrayList<Move> moveHistory;
++    private ArrayList<Move> moveHistory = new ArrayList<Move>();
+     private Board board;
+ 
+     /**
+@@ -18,7 +18,7 @@
+      *
+      * @return .
+      */
+-    public static ArrayList<Move> getMoveHistory() {
++    public ArrayList<Move> getMoveHistory() {
+         return moveHistory;
+     }
+ 
+@@ -39,10 +39,10 @@
+             } else {
+                 Move move = new Move(piece.getCoordinatesX(), x, piece.getCoordinatesY(),
+                         y, piece, board.getAt(x, y));
++                moveHistory.add(move);
+                 board.removeAt(x, y);
+                 piece.setCoordinatesX(x);
+                 piece.setCoordinatesY(y);
+-                moveHistory.add(move);
+             }
+         }
+     }

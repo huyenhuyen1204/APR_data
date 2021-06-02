@@ -1,0 +1,30 @@
+@@ -56,8 +56,12 @@
+                     return false;
+                 }
+             }
+-            if (board.getAt(x, y) == null) return true;
+-            if (board.getAt(x, y).getColor().equals(getColor())) return false;
++            if (board.getAt(x, y) == null) {
++                return true;
++            }
++            if (board.getAt(x, y).getColor().equals(getColor())) {
++                return false;
++            }
+             return true;
+         }
+         if (y == getCoordinatesY()) {
+@@ -73,8 +77,12 @@
+                     return false;
+                 }
+             }
+-            if (board.getAt(x, y) == null) return true;
+-            if (board.getAt(x, y).getColor().equals(getColor())) return false;
++            if (board.getAt(x, y) == null) {
++                return true;
++            }
++            if (board.getAt(x, y).getColor().equals(getColor())) {
++                return false;
++            }
+             return true;
+         }
+         return false;

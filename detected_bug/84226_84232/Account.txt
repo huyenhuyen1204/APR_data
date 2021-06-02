@@ -1,0 +1,39 @@
+@@ -1,12 +1,12 @@
+-import java.util.List;
+ import java.util.ArrayList;
++import java.util.List;
+ 
+ public abstract class Account {
+     public static final String CHECKING = "CHECKING";
+     public static final String SAVINGS = "SAVINGS";
+     private long accountNumber;
+     private double balance;
+-    private List<Transaction> transactionList = new ArrayList<>();
++    protected List<Transaction> transactionList = new ArrayList<>();
+ 
+     /**
+      * tt.
+@@ -87,12 +87,12 @@
+     /**
+      * tt.
+      */
+-    public abstract void withdraw(double money) ;
++    public abstract void withdraw(double money);
+ 
+     /**
+      * tt.
+      */
+-    public abstract void deposit(double money) ;
++    public abstract void deposit(double money);
+ 
+     /**
+      * tt.
+@@ -116,7 +116,7 @@
+      * tt.
+      */
+     public boolean equals(Object o) {
+-        if(accountNumber == ((Account) o).accountNumber) {
++        if (accountNumber == ((Account) o).accountNumber) {
+             return true;
+         }
+         return false;

@@ -1,0 +1,9 @@
+@@ -6,8 +6,6 @@
+     public static final String DEPOSIT = "deposit";
+     public static final String WITHDRAW = "withdraw";
+ 
+-    public Transaction() {}
+-
+     /**
+      * transaction.
+      * @param operation operation

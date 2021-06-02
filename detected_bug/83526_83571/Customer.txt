@@ -1,0 +1,17 @@
+@@ -6,10 +6,16 @@
+     private String fullName;
+     private List<Account> accountList = new ArrayList<>();
+ 
++    /**
++     * Constructor.
++     */
+     public Customer() {
+ 
+     }
+ 
++    /**
++     * Constructor 2.
++     */
+     public Customer(long idNumber, String fullName) {
+         this.idNumber = idNumber;
+         this.fullName = fullName;

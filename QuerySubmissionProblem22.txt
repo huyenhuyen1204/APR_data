@@ -1,0 +1,23 @@
+select group_of_best_submissions.student_id, group_of_best_submissions.course_problem_id
+                from (select ss_80_100.*
+                            from submission ss_80_100
+                                join course_problem cp
+                                    on ss_80_100.course_problem_id = cp.course_problem_id
+                                        join problem p
+                                            on cp.problem_id = p.problem_id
+                                                where ss_80_100.total_score = 100
+                                                        and p.problem_id =22 order by ss_80_100.submission_id desc) as group_of_best_submissions
+                    , (select ss_max.student_id, max(ss_max.total_score) as best
+                            from submission ss_max
+                                join course_problem cp
+                                      on ss_max.course_problem_id = cp.course_problem_id
+                                join problem p
+                                      on cp.problem_id = p.problem_id
+                                          and p.problem_id =22
+                                group by ss_max.student_id) as highest
+                            where highest.student_id = group_of_best_submissions.student_id
+                                and highest.best = group_of_best_submissions.total_score
+                                    group by group_of_best_submissions.student_id
+INTO OUTFILE '/var/lib/mysql-files/problem22.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY '\n';

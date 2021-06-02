@@ -1,0 +1,23 @@
+@@ -24,11 +24,11 @@
+                 }
+             }
+             if (board.getAt(x, y) == null
+-                    || !board.getAt(x, y).getColor().equals(this.getColor())){
++                    || !board.getAt(x, y).getColor().equals(this.getColor())) {
+                 return true;
+             }
+         }
+-        if (this.getCoordinatesX() == y) {
++        if (this.getCoordinatesY() == y) {
+             for (Piece check : board.getPieces()) {
+                 if (check.getCoordinatesY() == y
+                         && (check.getCoordinatesX() > Math.min(x, this.getCoordinatesX())
+@@ -37,7 +37,7 @@
+                 }
+             }
+             if (board.getAt(x, y) == null
+-                    || !board.getAt(x, y).getColor().equals(this.getColor())){
++                    || !board.getAt(x, y).getColor().equals(this.getColor())) {
+                 return true;
+             }
+         }

@@ -1,0 +1,25 @@
+@@ -22,8 +22,14 @@
+         return false;
+     }
+ 
++    /**
++     * ham.
++     * @param piece ham.
++     */
+     public void addPiece(Piece piece) {
+-        pieces.add(piece);
++        if (validate(piece.getCoordinatesX(), piece.getCoordinatesY()) && !pieces.contains(piece)) {
++              pieces.add(piece);
++        }
+     }
+ 
+     /**
+@@ -47,7 +53,7 @@
+      * @param y ham.
+      */
+     public void removeAt(int x, int y) {
+-        pieces.removeIf(piece -> (piece.getCoordinatesY() == y && piece.getCoordinatesX() == x));
++        pieces.removeIf(piece -> (piece.getCoordinatesX() == x && piece.getCoordinatesY() == y));
+     }
+ 
+     public ArrayList<Piece> getPieces() {

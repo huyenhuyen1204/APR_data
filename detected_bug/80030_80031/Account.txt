@@ -1,0 +1,14 @@
+@@ -44,11 +44,11 @@
+     public void printTransaction() {
+         for (int i = 0; i < transitionList.size(); i++) {
+             if (transitionList.get(i).getOperation().equals("deposit")) {
+-                System.out.println("Giai dich " + (i + 1) + ": Nap tien $"
++                System.out.println("Giao dich " + (i + 1) + ": Nap tien $"
+                         + dfRound(transitionList.get(i).getAmount()) + ". So du luc nay: $"
+                         + dfRound(transitionList.get(i).getBalance()) + ".");
+             } else {
+-                System.out.println("Giai dich " + (i + 1) + ": Rut tien $"
++                System.out.println("Giao dich " + (i + 1) + ": Rut tien $"
+                         + dfRound(transitionList.get(i).getAmount()) + ". So du luc nay: $"
+                         + dfRound(transitionList.get(i).getBalance()) + ".");
+             }

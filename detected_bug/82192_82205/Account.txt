@@ -1,0 +1,112 @@
+@@ -1,8 +1,9 @@
++import java.text.DecimalFormat;
+ import java.util.ArrayList;
+ 
+ public class Account {
+-    private double balance = 0.00;
+-    private ArrayList<Transaction> transactions = new ArrayList<>();
++    private double balance;
++    private ArrayList<Transaction> transitionList = new ArrayList<>();
+ 
+     public double getBalance() {
+         return balance;
+@@ -20,16 +21,9 @@
+     }
+ 
+     /**
+-     * withdraw return string.
+-     */
+-    private String withdraw() {
+-        return "WITHDRAW";
+-    }
+-
+-    /**
+      * Deposit.
+      */
+-    public void deposit(double amount) {
++    private void deposit(double amount) {
+         if (amount > 0) {
+             setBalance(balance + amount);
+         } else {
+@@ -38,9 +32,16 @@
+     }
+ 
+     /**
++     * withdraw return string.
++     */
++    private String withdraw() {
++        return "WITHDRAW";
++    }
++
++    /**
+      * Withdraw.
+      */
+-    public void withdraw(double amount) {
++    private void withdraw(double amount) {
+         if (amount < 0) {
+             System.out.println("So tien ban rut ra khong hop le!");
+         } else if (amount > balance) {
+@@ -54,11 +55,13 @@
+      * Add transaction.
+      */
+     public void addTransaction(double amount, String operation) {
+-        Transaction transaction = new Transaction(operation, amount, balance);
++        Transaction transaction = new Transaction(operation, amount, this.balance);
+         if (operation.equalsIgnoreCase(deposit())) {
+-            transactions.add(transaction);
++            transitionList.add(transaction);
++            deposit(amount);
+         } else if (operation.equalsIgnoreCase(withdraw())) {
+-            transactions.add(transaction);
++            transitionList.add(transaction);
++            withdraw(amount);
+         } else {
+             System.out.println("Yeu cau khong hop le!");
+         }
+@@ -68,20 +71,21 @@
+      * Print TransactionList.
+      */
+     public void printTransaction() {
++        DecimalFormat f = new DecimalFormat("##.00");
+         String result = "";
+-        for (int i = 0; i < transactions.size(); i++) {
++        this.balance = 0;
++        for (int i = 0; i < transitionList.size(); i++) {
+             int j = i + 1;
+-            double amt = (double) Math.round(transactions.get(i).getAmount() * 100) / 100;
+-            if (transactions.get(i).getOperation().equalsIgnoreCase(deposit())) {
+-                deposit(transactions.get(i).getAmount());
++            if (transitionList.get(i).getOperation().equalsIgnoreCase(deposit())) {
++                deposit(transitionList.get(i).getAmount());
+                 result += "Giao dich " + j + ": Nap tien $"
+-                        + amt + ". So du luc nay: $"
+-                        + (double) Math.round(this.balance * 100) / 100 + "." + '\n';
+-            } else if (transactions.get(i).getOperation().equalsIgnoreCase(withdraw())) {
+-                withdraw(transactions.get(i).getAmount());
++                        + f.format(transitionList.get(i).getAmount()) + ". So du luc nay: $"
++                        + f.format(balance) + "." + '\n';
++            } else if (transitionList.get(i).getOperation().equalsIgnoreCase(withdraw())) {
++                withdraw(transitionList.get(i).getAmount());
+                 result += "Giao dich " + j + ": Rut tien $"
+-                        + amt + ". So du luc nay: $"
+-                        + (double) Math.round(this.balance * 100) / 100 + "." + '\n';
++                        + f.format(transitionList.get(i).getAmount()) + ". So du luc nay: $"
++                        + f.format(balance) + "." + '\n';
+             }
+ 
+ 
+@@ -93,13 +97,7 @@
+      * Main function.
+      */
+     public static void main(String[] args) {
+-        Account acc= new Account();
+-        acc.addTransaction(2000.255,"deposit");
+-        System.out.println(acc.balance);
+-        acc.addTransaction(1000,"withdraw");
+-        System.out.println(acc.balance);
+-        //System.out.println(acc.transactions.size());
+-        acc.printTransaction();
++        
+     }
+ }
+ 

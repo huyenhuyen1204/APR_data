@@ -1,0 +1,42 @@
+@@ -9,22 +9,22 @@
+     /**
+      * Hello, this is me ure looking for.
+      */
+-    public Move(int xStart, int xEnd, int yStart, int yEnd, Piece moved) {
+-        startX = xStart;
+-        startY = yStart;
+-        endX = xEnd;
+-        endY = yEnd;
++    public Move(int firstX, int secX, int firstY, int secY, Piece moved) {
++        startX = firstX;
++        startY = firstY;
++        endX = secX;
++        endY = secY;
+         movedPiece = moved;
+     }
+ 
+     /**
+      * Hello, this is me ure looking for.
+      */
+-    public Move(int xStart, int xEnd, int yStart, int yEnd, Piece moved, Piece killed) {
+-        startX = xStart;
+-        startY = yStart;
+-        endX = xEnd;
+-        endY = yEnd;
++    public Move(int firstX, int secX, int firstY, int secY, Piece moved, Piece killed) {
++        startX = firstX;
++        startY = firstY;
++        endX = secX;
++        endY = secY;
+         movedPiece = moved;
+         killedPiece = killed;
+     }
+@@ -34,7 +34,7 @@
+      */
+     public String toString() {
+         return movedPiece.getColor() + '-' + movedPiece.getSymbol()
+-                + (movedPiece.getCoordinatesY() + 'a') + movedPiece.getCoordinatesX();
++                + (char) (endX - 1 + 'a') + endY;
+     }
+ 
+     /**

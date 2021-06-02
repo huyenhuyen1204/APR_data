@@ -1,0 +1,9 @@
+@@ -75,6 +75,7 @@
+     }
+ 
+     public String toString() {
+-        return movedPiece.getColor() + "-" + movedPiece.getSymbol() + (char) (endX + 'a' - 1) + endY;
++        return movedPiece.getColor() + "-" + movedPiece.getSymbol()
++                + (char) (endX + 'a' - 1) + endY;
+     }
+ }

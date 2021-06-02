@@ -1,0 +1,15 @@
+@@ -54,12 +54,12 @@
+      */
+     public void printTransaction() {
+         for (int i = 0; i < transitionList.size(); i++) {
+-            if(transitionList.get(i).getOperation() == transitionList.get(i).DEPOSIT) {
++            if (transitionList.get(i).getOperation() == transitionList.get(i).DEPOSIT) {
+                 System.out.println("Giao dich " + (i + 1)
+                         + ": Nap tien $" + lamtron(transitionList.get(i).getAmount())
+                         + ". So du luc nay: $" + lamtron(transitionList.get(i).getBalance()) + ".");
+             }
+-            if(transitionList.get(i).getOperation() == transitionList.get(i).WITHDRAW) {
++            if (transitionList.get(i).getOperation() == transitionList.get(i).WITHDRAW) {
+                 System.out.println("Giao dich " + (i + 1)
+                         + ": Rut tien $" + lamtron(transitionList.get(i).getAmount())
+                         + ". So du luc nay: $" + lamtron(transitionList.get(i).getBalance()) + ".");

@@ -1,0 +1,10 @@
+@@ -25,6 +25,8 @@
+ 
+         if (Math.abs(currX - x) == 2 && Math.abs(currY - y) == 1) {
+             return true;
+-        } else return (Math.abs(currX - x) == 1 && Math.abs(currY - y) == 2);
++        } else {
++            return (Math.abs(currX - x) == 1 && Math.abs(currY - y) == 2);
++        }
+     }
+ }

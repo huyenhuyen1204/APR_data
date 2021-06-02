@@ -1,0 +1,28 @@
+@@ -78,9 +78,11 @@
+ 
+         Transaction transaction;
+         if (this instanceof SavingsAccount) {
+-            transaction = new Transaction(Transaction.TYPE_WITHDRAW_SAVINGS, t, balance, balance - t);
++            transaction = new Transaction(Transaction.TYPE_WITHDRAW_SAVINGS, t,
++                    balance, balance - t);
+         } else {
+-            transaction = new Transaction(Transaction.TYPE_WITHDRAW_CHECKING, t, balance, balance - t);
++            transaction = new Transaction(Transaction.TYPE_WITHDRAW_CHECKING, t,
++                    balance, balance - t);
+         }
+         transactionList.add(transaction);
+         balance -= t;
+@@ -95,9 +97,11 @@
+         }
+         Transaction transaction;
+         if (this instanceof SavingsAccount) {
+-            transaction = new Transaction(Transaction.TYPE_DEPOSIT_SAVINGS, t, balance, balance + t);
++            transaction = new Transaction(Transaction.TYPE_DEPOSIT_SAVINGS, t,
++                    balance, balance + t);
+         } else {
+-            transaction = new Transaction(Transaction.TYPE_DEPOSIT_CHECKING, t, balance, balance + t);
++            transaction = new Transaction(Transaction.TYPE_DEPOSIT_CHECKING, t,
++                    balance, balance + t);
+         }
+         transactionList.add(transaction);
+         balance += t;

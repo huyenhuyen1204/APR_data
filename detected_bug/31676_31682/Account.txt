@@ -1,0 +1,24 @@
+@@ -26,7 +26,7 @@
+ 	private void withdraw(double amount)
+ 	{	
+ 		if (amount <= 0)
+-			System.out.println( "So tien ban nap vao khong hop le!");
++			System.out.println( "So tien ban rut ra khong hop le!");
+ 		else if (amount > this.balance)
+ 			System.out.println( "So tien ban rut vuot qua so du!");
+ 		else 
+@@ -50,8 +50,12 @@
+ 		int cnt = 0;
+ 		for(Transaction t : transitionList) {
+ 			cnt++;
+-			System.out.println("Giao dich " + cnt + ": Nap tien $ " + t.getAmount() + ".");
+-			System.out.println(" So du luc nay: $ " + t.getBalance() + ".");
++			if (t.getOperation() == "deposit")
++				System.out.print("Giao dich " + cnt + ": Nap tien $" );
++			else System.out.print("Giao dich " + cnt + ": Rut tien $" );
++			System.out.printf("%.2f", t.getAmount());
++			System.out.print(". So du luc nay: $");
++			System.out.printf("%.2f.\n", t.getBalance());
+ 		}
+ 	}
+ 	public static void main(String[] args) 

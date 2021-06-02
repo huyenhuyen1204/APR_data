@@ -1,0 +1,17 @@
+@@ -1,6 +1,13 @@
+-public class InsufficientFundsException extends BankException{
++import java.text.DecimalFormat;
++
++public class InsufficientFundsException extends BankException {
++
++    /**
++     * create an instance.
++     */
+     public InsufficientFundsException(double b) {
+-        this.mess = "Số dư tài khoản không đủ $" + b
+-                + "để thực hiện giao dịch";
++        super("Số dư tài khoản không đủ $"
++                + new DecimalFormat("0.00").format(b)
++                + " để thực hiện giao dịch");
+     }
+ }

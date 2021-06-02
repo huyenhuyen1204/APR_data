@@ -1,0 +1,43 @@
+@@ -4,7 +4,7 @@
+     public static final int WIDTH = 8;
+     public static final int HEIGHT = 8;
+ 
+-    private ArrayList<Piece> pieces = new ArrayList<>();
++    private ArrayList<Piece> pieces = new ArrayList<Piece>();
+ 
+     /**
+      * Constructor.
+@@ -16,14 +16,20 @@
+      * Add piece to list.
+      */
+     public void addPiece(Piece piece) {
+-        if (pieces.size() <= 0) {
++        int count = 0;
++        if (pieces.isEmpty()) {
+             pieces.add(piece);
+         } else {
+-            for (int i = 0; i < pieces.size(); i++) {
+-                if (compareTo(pieces.get(i), piece) == false) {
+-                    pieces.add(piece);
++            for (int i = 0; i < getPieces().size(); i++) {
++                if (compareTo(pieces.get(i), piece)) {
++                    break;
++                } else {
++                    count++;
+                 }
+             }
++            if (count == getPieces().size()) {
++                pieces.add(piece);
++            }
+         }
+     }
+ 
+@@ -45,7 +51,7 @@
+      * Validate.
+      */
+     public boolean validate(int x, int y) {
+-        if (x >= 1 && y <= 8) {
++        if (x >= 1 && x <= 8 && y >= 1 && y <= 8) {
+             return true;
+         } else {
+             return false;

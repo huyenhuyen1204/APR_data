@@ -1,0 +1,19 @@
+@@ -7,10 +7,11 @@
+     public Game(Board board) {
+         this.board = board;
+     }
++    /**....*/
+ 
+     public void movePiece(Piece piece, int x, int y) {
+       if (board.validate(x, y)) {
+-          if(board.getAt(x, y) == null){
++          if (board.getAt(x, y) == null) {
+               int a = piece.getCoordinatesX();
+               int b = piece.getCoordinatesY();
+               piece.setCoordinatesY(y);
+@@ -39,5 +40,4 @@
+     public ArrayList<Move> getMoveHistory() {
+         return moveHistory;
+     }
+-
+ }

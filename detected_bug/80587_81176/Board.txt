@@ -1,0 +1,35 @@
+@@ -1,5 +1,4 @@
+ import java.util.ArrayList;
+-import java.util.List;
+ 
+ public class Board {
+     public static final int WIDTH = 8;
+@@ -16,10 +15,11 @@
+      * Hello, this is me ure looking for.
+      */
+     public void addPiece(Piece piece) {
+-        int thisX, thisY;
++        int thisX;
++        int thisY;
+         thisX = piece.getCoordinatesX();
+         thisY = piece.getCoordinatesY();
+-        if (validate(thisX, thisY) && getAt(thisX, thisY) != null) {
++        if (validate(thisX, thisY) && getAt(thisX, thisY) == null) {
+             pieces.add(piece);
+         }
+     }
+@@ -45,10 +45,10 @@
+      * Hello, this is me ure looking for.
+      */
+     public Piece getAt(int thisX, int thisY) {
+-        for (int i = 0; i < pieces.size(); i++) {
+-            if (thisX == pieces.get(i).getCoordinatesX()
+-                    && thisY == pieces.get(i).getCoordinatesY()) {
+-                return pieces.get(i);
++        for (Piece piece : pieces) {
++            if (thisX == piece.getCoordinatesX()
++                    && thisY == piece.getCoordinatesY()) {
++                return piece;
+             }
+         }
+         return null;

@@ -1,0 +1,74 @@
+@@ -31,63 +31,51 @@
+         return temp.getColor() + "-" + temp.getSymbol() + (char) (endX + 96) + endY;
+     }
+ 
+-    /** binhdang. */
+     public int getStartX() {
+         return startX;
+     }
+ 
+-    /** binhdang. */
+     public void setStartX(int startX) {
+         this.startX = startX;
+     }
+ 
+-    /** binhdang. */
+     public int getEndX() {
+         return endX;
+     }
+ 
+-    /** binhdang. */
+     public void setEndX(int endX) {
+         this.endX = endX;
+     }
+ 
+-    /** binhdang. */
+     public int getStartY() {
+         return startY;
+     }
+ 
+-    /** binhdang. */
+     public void setStartY(int startY) {
+         this.startY = startY;
+     }
+ 
+-    /** binhdang. */
+     public int getEndY() {
+         return endY;
+     }
+ 
+-    /** binhdang. */
+     public void setEndY(int endY) {
+         this.endY = endY;
+     }
+ 
+-    /** binhdang. */
+-    public Piece getKilledPiece() {
+-        return killedPiece;
+-    }
+-
+-    /** binhdang. */
+-    public void setKilledPiece(Piece temp) {
+-        this.killedPiece = temp;
+-    }
+-
+-    /** binhdang. */
+     public Piece getMovedPiece() {
+         return movedPiece;
+     }
+ 
+-    /** binhdang. */
+-    public void setMovedPiece(Piece temp) {
+-        this.movedPiece = temp;
++    public void setMovedPiece(Piece movedPiece) {
++        this.movedPiece = movedPiece;
++    }
++
++    public Piece getKilledPiece() {
++        return killedPiece;
++    }
++
++    public void setKilledPiece(Piece killedPiece) {
++        this.killedPiece = killedPiece;
+     }
+ }

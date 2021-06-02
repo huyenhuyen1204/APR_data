@@ -1,0 +1,24 @@
+@@ -27,6 +27,11 @@
+         }
+     }
+ 
++    /**
++     * Author.
++     * Thuan
++     * Trinh Van Thuan
++     */
+     public void addTransaction(double amount, String operation) {
+         if (operation.equals(Transaction.DEPOSIT)) {
+             deposit(amount);
+@@ -37,6 +42,11 @@
+         }
+     }
+ 
++    /**
++     * Author.
++     * Thuan
++     * Trinh Van Thuan
++     */
+     public void printTransaction() {
+         StringBuilder res = new StringBuilder();
+         for (int i = 0; i < transitionList.size(); ++i) {

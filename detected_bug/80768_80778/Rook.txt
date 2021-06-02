@@ -1,0 +1,86 @@
+@@ -36,36 +36,26 @@
+      * @param board .
+      * @param x .
+      * @param y .
+-     * @return
++     * @return .
+      */
+     @Override
+     public boolean canMove(Board board, int x, int y) {
+         int xcurrent = this.getCoordinatesX();
+         int ycurrent = this.getCoordinatesY();
+ 
+-        if (xcurrent == x && ycurrent == y) {
++        if (xcurrent != x && ycurrent != y) {
+             return false;
+         }
+ 
+         if (xcurrent == x) {
+             if (ycurrent < y) {
+-                for (int i = ycurrent + 1; i <= y; i++) {
+-                    if (i == y) {
+-                        if (!board.getAt(x, i).getColor().equals(this.getColor())) {
+-                            return true;
+-                        }
+-                    }
++                for (int i = ycurrent + 1; i < y; i++) {
+                     if (board.getAt(x, i) != null) {
+                         return false;
+                     }
+                 }
+-            } else {
+-                for (int i = ycurrent - 1; i >= y; i--) {
+-                    if (i == y) {
+-                        if (!board.getAt(x, i).getColor().equals(this.getColor())) {
+-                            return true;
+-                        }
+-                    }
++            } else if (ycurrent > y) {
++                for (int i = ycurrent - 1; i > y; i--) {
+                     if (board.getAt(x, i) != null) {
+                         return false;
+                     }
+@@ -73,30 +63,28 @@
+             }
+         } else if (ycurrent == y) {
+             if (xcurrent < x) {
+-                for (int i = xcurrent + 1; i <= x; i++) {
+-                    if (i == x) {
+-                        if (!board.getAt(i, y).getColor().equals(this.getColor())) {
+-                            return true;
+-                        }
+-                    }
++                for (int i = xcurrent + 1; i < x; i++) {
+                     if (board.getAt(i, y) != null) {
+                         return false;
+                     }
+                 }
+-            } else {
+-                for (int i = xcurrent - 1; i >= x; i--) {
+-                    if (i == x) {
+-                        if (!board.getAt(i, y).getColor().equals(this.getColor())) {
+-                            return true;
+-                        }
+-                    }
++            } else if (xcurrent > x) {
++                for (int i = xcurrent - 1; i > x; i--) {
+                     if (board.getAt(i, y) != null) {
+                         return false;
+                     }
+                 }
+             }
+-        } else {
+-            return false;
++        }
++        for (int i = 0; i < board.getPieces().size(); i++) {
++            if (board.getPieces().get(i).getCoordinatesX() == x
++                    && board.getPieces().get(i).getCoordinatesY() == y) {
++                if (board.getPieces().get(i).getColor().equals(this.getColor())) {
++                    return false;
++                } else {
++                    return true;
++                }
++            }
+         }
+         return true;
+     }

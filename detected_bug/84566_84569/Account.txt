@@ -1,0 +1,60 @@
+@@ -7,7 +7,9 @@
+     private void deposit(double amount) {
+         if (amount <= 0) {
+             System.out.println("So tien ban nap vao khong hop le!");
+-        } else balance += amount;
++        } else {
++            balance += amount;
++        }
+     }
+ 
+     private void withdraw(double amount) {
+@@ -15,9 +17,14 @@
+             System.out.println("So tien ban rut ra khong hop le!");
+         } else if (amount >= balance) {
+             System.out.println("So tien ban rut vuot qua so du!");
+-        } else balance -= amount;
++        } else {
++            balance -= amount;
++        }
+     }
+ 
++    /**
++     * hung.
++     */
+     public void addTransaction(double amount, String operation) {
+         if (operation == Transaction.DEPOSIT) {
+             deposit(amount);
+@@ -32,6 +39,9 @@
+         }
+     }
+ 
++    /**
++     * hung.
++     */
+     public String lamtron(double a) {
+         long b = Math.round(a * 100);
+         String str = Integer.toString((int) b);
+@@ -39,9 +49,21 @@
+         return str;
+     }
+ 
++    /**
++     * hung.
++     */
+     public void printTransaction() {
+         for (int i = 0; i < transitionList.size(); i++) {
+-            System.out.println("Giao dich " + (i + 1) + ": Nap tien $" + lamtron(transitionList.get(i).getAmount()) + ". So du luc nay: $" + lamtron(transitionList.get(i).getBalance()));
++            if (transitionList.get(i).getOperation() == transitionList.get(i).DEPOSIT) {
++                System.out.println("Giao dich " + (i + 1)
++                        + ": Nap tien $" + lamtron(transitionList.get(i).getAmount())
++                        + ". So du luc nay: $" + lamtron(transitionList.get(i).getBalance()) + ".");
++            }
++            if (transitionList.get(i).getOperation() == transitionList.get(i).WITHDRAW) {
++                System.out.println("Giao dich " + (i + 1)
++                        + ": Rut tien $" + lamtron(transitionList.get(i).getAmount())
++                        + ". So du luc nay: $" + lamtron(transitionList.get(i).getBalance()) + ".");
++            }
+         }
+     }
+ }

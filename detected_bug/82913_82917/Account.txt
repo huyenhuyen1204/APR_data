@@ -1,0 +1,66 @@
+@@ -9,14 +9,22 @@
+ 
+   private final long accountNumber;
+   private double balance;
+-  private final List<Transaction> transactionList;
++  protected final List<Transaction> transactionList;
+ 
++  /**
++   * xyz.
++   * @param accountNumber xzy
++   * @param balance xyz
++   */
+   public Account(long accountNumber, double balance) {
+     this.accountNumber = accountNumber;
+     this.balance = balance;
+     transactionList = new ArrayList<>();
+   }
+ 
++  /**
++   * xyz.
++   */
+   public Account() {
+     this(0, 0);
+   }
+@@ -33,6 +41,11 @@
+ 
+   public abstract void deposit(double amount);
+ 
++  /**
++   * xyz.
++   * @param amount xzy
++   * @throws BankException xdkj
++   */
+   public void doDepositing(double amount) throws BankException {
+     if (amount < 0) {
+       throw new InvalidFundingAmountException(amount);
+@@ -40,6 +53,11 @@
+     balance += amount;
+   }
+ 
++  /**
++   * dkjaldf.
++   * @param amount ddf
++   * @throws BankException ddd
++   */
+   public void doWithdrawing(double amount) throws BankException {
+     if (amount < 0) {
+       throw new InvalidFundingAmountException(amount);
+@@ -54,12 +72,17 @@
+     transactionList.add(transaction);
+   }
+ 
++  /**
++   * kldfjlaskdjfdlk.
++   * @return asdlkfjsadkl
++   */
+   public String getTransactionHistory() {
+     StringBuilder builder = new StringBuilder("Lịch sử giao dịch của tài khoản ")
+         .append(accountNumber).append(":\n");
+     for (Transaction t : transactionList) {
+       builder.append(t.getTransactionSummary()).append('\n');
+     }
++    builder.deleteCharAt(builder.length() - 1);
+     return builder.toString();
+   }
+ 

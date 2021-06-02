@@ -1,0 +1,73 @@
+@@ -3,12 +3,20 @@
+     private int coordinatesY;
+     private String color;
+ 
++    /**
++     * cmt.
++     *
++     */
+     public Piece(int coordinatesX, int coordinatesY) {
+         this.coordinatesX = coordinatesX;
+         this.coordinatesY = coordinatesY;
+         this.color = "white";
+     }
+ 
++    /**
++     * cmt.
++     *
++     */
+     public Piece(int coordinatesX, int coordinatesY, String color) {
+         this.coordinatesX = coordinatesX;
+         this.coordinatesY = coordinatesY;
+@@ -17,17 +25,15 @@
+ 
+     public abstract String getSymbol();
+ 
+-    public abstract boolean canMove(Board board,int x, int y);
++    public abstract boolean canMove(Board board, int x, int y);
+ 
+     public int getCoordinatesX() {
+         return coordinatesX;
+     }
+ 
+-    /*
+-     *@nnn nnnn.
+-     *nnn nn.
+-     *ffdds
+-     *faf
++    /**
++     * cmt.
++     *
+      */
+     public void setCoordinatesX(int coordinatesX) {
+         if (coordinatesX <= 8 && coordinatesX >= 1) {
+@@ -39,11 +45,9 @@
+         return coordinatesY;
+     }
+ 
+-    /*
+-     *@nnn nnnn.
+-     *nnn nn.
+-     *ffdds
+-     *faf
++    /**
++     * cmt.
++     *
+      */
+     public void setCoordinatesY(int coordinatesY) {
+         if (coordinatesY >= 1 && coordinatesY <= 8) {
+@@ -55,11 +59,9 @@
+         return color;
+     }
+ 
+-    /*
+-     *@nnn nnnn.
+-     *nnn nn.
+-     *ffdds
+-     *faf
++    /**
++     * cmt.
++     *
+      */
+     public void setColor(String color) {
+         if (color.equals("white") || color.equals("black")) {

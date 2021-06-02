@@ -1,0 +1,38 @@
+@@ -15,7 +15,7 @@
+         return balance;
+     }
+ 
+-    public void setBalance (double balance) {
++    public void setBalance(double balance) {
+         this.balance = balance;
+     }
+ 
+@@ -23,8 +23,8 @@
+      * phuong thuc rut tien tu tai khoan.
+      * @param amount so tien rut.
+      */
+-    private void withdraw (double amount) {
+-        if (amount < 0){
++    private void withdraw(double amount) {
++        if (amount < 0) {
+             System.out.println("So tien ban rut ra khong hop le!");
+         } else if (amount > this.balance) {
+             System.out.println("So tien ban rut vuot qua so du!");
+@@ -37,7 +37,7 @@
+      * phuong thuc nap tien vao tai khoan.
+      * @param amount so tien giao dich.
+      */
+-    private void deposit (double amount) {
++    private void deposit(double amount) {
+         if (amount >= 0) {
+             this.balance += amount;
+         } else {
+@@ -50,7 +50,7 @@
+      * @param amount so tien nap vao.
+      * @param operation ten giao dich.
+      */
+-    public void addTransaction (double amount, String operation) {
++    public void addTransaction(double amount, String operation) {
+         if (operation.equals("withdraw")) {
+             this.withdraw(amount);
+             Transaction transaction = new Transaction(operation, amount, this.balance);

@@ -1,0 +1,23 @@
+@@ -16,7 +16,21 @@
+      * Add piece to list.
+      */
+     public void addPiece(Piece piece) {
+-        pieces.add(piece);
++        int count = 0;
++        if (pieces.isEmpty()) {
++            pieces.add(piece);
++        } else {
++            for (int i = 0; i < getPieces().size(); i++) {
++                if (compareTo(pieces.get(i), piece)) {
++                    break;
++                } else {
++                    count++;
++                }
++            }
++            if (count == getPieces().size()) {
++                pieces.add(piece);
++            }
++        }
+     }
+ 
+     /**

@@ -1,0 +1,10 @@
+@@ -44,6 +44,9 @@
+         accountList.add(account);
+     }
+ 
++    /**
++     * return all info customer.
++     */
+     public String getCustomerInfo() {
+         StringBuilder res = new StringBuilder();
+         res.append("Số CMND: ")

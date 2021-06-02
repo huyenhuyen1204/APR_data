@@ -1,0 +1,61 @@
+@@ -2,12 +2,12 @@
+ 
+ public class Account {
+     private double balance;
+-    private ArrayList<Transaction> myTransaction;
++    private ArrayList<Transaction> transitionList;
+ 
+     /** Mai Huy. */
+     public Account() {
+         this.balance = 0;
+-        myTransaction = new ArrayList<Transaction>();
++        transitionList = new ArrayList<Transaction>();
+     }
+ 
+     /** Mai Huy. */
+@@ -36,10 +36,10 @@
+     public void addTransaction(double amount, String operation) {
+         if (operation.equals(Transaction.DEPOSIT)) {
+             deposit(amount);
+-            myTransaction.add(new Transaction(operation, amount, balance));
++            transitionList.add(new Transaction(operation, amount, balance));
+         } else if (operation.equals(Transaction.WITHDRAW)) {
+             withdraw(amount);
+-            myTransaction.add(new Transaction(operation, amount, balance));
++            transitionList.add(new Transaction(operation, amount, balance));
+         } else {
+             System.out.println("Yeu cau khong hop le!");
+         }
+@@ -47,22 +47,24 @@
+ 
+     /** Mai Huy. */
+     public void printTransaction() {
+-        int size = myTransaction.size();
++        int size = transitionList.size();
+         for (int i = 0; i < size; i++) {
+-            if (myTransaction.get(i).getOperation().equals(Transaction.DEPOSIT)) {
++            Transaction myTransaction = transitionList.get(i);
++            if (myTransaction.getOperation().equals(Transaction.DEPOSIT)) {
+                 System.out.print("Giao dich " + (i + 1) + ": Nap tien $");
+-                double roundAmount = (double) Math.round(myTransaction.get(i).getAmount() * 100) / 100;
+-                double roundBalance = (double) Math.round(myTransaction.get(i).getBalance() * 100) / 100;
++
++                double roundAmount = (double) Math.round(myTransaction.getAmount() * 100) / 100;
++                double roundBalance = (double) Math.round(myTransaction.getBalance() * 100) / 100;
+                 System.out.printf("%.2f", roundAmount);
+-                System.out.print(". So du luc nay:  $");
++                System.out.print(". So du luc nay: $");
+                 System.out.printf("%.2f", roundBalance);
+                 System.out.println(".");
+             } else {
+                 System.out.print("Giao dich " + (i + 1) + ": Rut tien $");
+-                double roundAmount = (double) Math.round(myTransaction.get(i).getAmount() * 100) / 100;
+-                double roundBalance = (double) Math.round(myTransaction.get(i).getBalance() * 100) / 100;
++                double roundAmount = (double) Math.round(myTransaction.getAmount() * 100) / 100;
++                double roundBalance = (double) Math.round(myTransaction.getBalance() * 100) / 100;
+                 System.out.printf("%.2f", roundAmount);
+-                System.out.print(". So du luc nay:  $");
++                System.out.print(". So du luc nay: $");
+                 System.out.printf("%.2f", roundBalance);
+                 System.out.println(".");
+             }

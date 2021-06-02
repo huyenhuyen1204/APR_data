@@ -1,0 +1,9 @@
+@@ -94,7 +94,7 @@
+     public String toString() {
+         return movedPiece.getColor()
+                 + "-" + movedPiece.getSymbol()
+-                + symbolAtX[endX-1]
++                + symbolAtX[endX - 1]
+                 + endY;
+     }
+ }

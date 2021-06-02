@@ -1,0 +1,85 @@
+@@ -1,17 +1,12 @@
+ import java.text.DecimalFormat;
+ import java.util.ArrayList;
+-import java.util.List;
+ 
+ public class Account {
+     private double balance;
+-    private List<Transaction> transactionList = new ArrayList<>();
++    private ArrayList<Transaction> transitionList = new ArrayList<>();
+ 
+     public Account() {}
+ 
+-    public double getBalance() {
+-        return balance;
+-    }
+-
+     private void deposit(double amount) {
+         if (amount <= 0) {
+             System.out.print("So tien ban nap vao khong hop le!");
+@@ -22,7 +17,7 @@
+ 
+     private void withdraw(double amount) {
+         if (amount <= 0) {
+-            System.out.print("So tien ban nap vao khong hop le!");
++            System.out.print("So tien ban rut ra khong hop le!");
+             return;
+         }
+         if (amount > this.balance) {
+@@ -32,31 +27,41 @@
+         this.balance -= amount;
+     }
+ 
++    /**
++     * add.
++     * @param amount giao dich
++     * @param operation loai giao dich
++     */
+     public void addTransaction(double amount, String operation) {
+         if (operation != Transaction.DEPOSIT && operation != Transaction.WITHDRAW) {
+             System.out.print("Yeu cau khong hop le!");
+         } else {
+-            Transaction transaction = new Transaction();
+-            transaction.setAmount(amount);
+-            transaction.setOperation(operation);
+-            transactionList.add(transaction);
++            if (operation.equals(Transaction.DEPOSIT)) {
++                deposit(amount);
++            } else {
++                withdraw(amount);
++            }
++            Transaction transaction = new Transaction(operation, amount, this.balance);
++            transitionList.add(transaction);
+         }
+     }
+ 
++    /**
++     * in giao dich.
++     */
+     public void printTransaction() {
+-        for (int i = 0; i < transactionList.size(); i++) {
++        for (int i = 0; i < transitionList.size(); i++) {
+             DecimalFormat df2 = new DecimalFormat("#.00");
+-
+-            if (transactionList.get(i).getOperation() == Transaction.DEPOSIT) {
+-                this.deposit(transactionList.get(i).getAmount());
+-                System.out.println("Giao dich " + i + ": " + "Nap tien $"
+-                + df2.format(transactionList.get(i).getAmount()) + '.'
+-                + " So du luc nay: $" + df2.format(getBalance()) + '.');
++            if (transitionList.get(i).getOperation() == (Transaction.DEPOSIT)) {
++                this.deposit(transitionList.get(i).getAmount());
++                System.out.println("Giao dich " + (i + 1) + ": " + "Nap tien $"
++                + df2.format(transitionList.get(i).getAmount()) + '.'
++                + " So du luc nay: $" + df2.format(transitionList.get(i).getBalance()) + '.');
+             } else {
+-                this.withdraw(transactionList.get(i).getAmount());
+-                System.out.println("Giao dich " + i + ": " + "Rut tien $"
+-                + df2.format(transactionList.get(i).getAmount()) + '.'
+-                + " So du luc nay: $" + df2.format(getBalance()) + '.');
++                this.withdraw(transitionList.get(i).getAmount());
++                System.out.println("Giao dich " + (i + 1) + ": " + "Rut tien $"
++                + df2.format(transitionList.get(i).getAmount()) + '.'
++                + " So du luc nay: $" + df2.format(transitionList.get(i).getBalance()) + '.');
+             }
+         }
+     }

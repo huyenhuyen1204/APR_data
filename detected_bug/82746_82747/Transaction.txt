@@ -1,0 +1,12 @@
+@@ -24,9 +24,9 @@
+     private String getTransactionTypeString(int type) {
+         switch (type) {
+             case TYPE_DEPOSIT_CHECKING:
+-                return "Nạp tiền vãng lãi";
++                return "Nạp tiền vãng lai";
+             case TYPE_WITHDRAW_CHECKING:
+-                return "Rút tiền vãng lãi";
++                return "Rút tiền vãng lai";
+             case TYPE_DEPOSIT_SAVINGS:
+                 return "Nạp tiền tiết kiệm";
+             case TYPE_WITHDRAW_SAVINGS:

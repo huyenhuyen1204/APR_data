@@ -1,0 +1,77 @@
+@@ -2,7 +2,7 @@
+ 
+ public class Account {
+     private double balance = 0;
+-    private ArrayList<Transaction> transitionHistory = new ArrayList<>();
++    private ArrayList<Transaction> transitionList = new ArrayList<>();
+ 
+     /**
+      * khoi tao khong tham so.
+@@ -23,14 +23,12 @@
+      * phuong thuc rut tien tu tai khoan.
+      * @param amount so tien rut.
+      */
+-    private void withdraw (double amount) {
+-        if (amount < 0){
++    private void withdraw(double amount) {
++        if (amount < 0) {
+             System.out.println("So tien ban rut ra khong hop le!");
+-        }
+-        else if (amount > this.balance) {
++        } else if (amount > this.balance) {
+             System.out.println("So tien ban rut vuot qua so du!");
+-        }
+-        else {
++        } else {
+             this.balance -= amount;
+         }
+     }
+@@ -42,8 +40,7 @@
+     private void deposit(double amount) {
+         if (amount >= 0) {
+             this.balance += amount;
+-        }
+-        else {
++        } else {
+             System.out.println("So tien ban nap vao khong hop le!");
+         }
+     }
+@@ -53,15 +50,15 @@
+      * @param amount so tien nap vao.
+      * @param operation ten giao dich.
+      */
+-    public void addTransaction (double amount, String operation) {
+-        if (operation.equals("withdraw")){
++    public void addTransaction(double amount, String operation) {
++        if (operation.equals("withdraw")) {
+             this.withdraw(amount);
+             Transaction transaction = new Transaction(operation, amount, this.balance);
+-            transitionHistory.add(transaction);
+-        } else if (operation.equals("deposit")){
++            transitionList.add(transaction);
++        } else if (operation.equals("deposit")) {
+             this.deposit(amount);
+             Transaction transaction = new Transaction(operation, amount, this.balance);
+-            transitionHistory.add(transaction);
++            transitionList.add(transaction);
+         } else {
+             System.out.println("Yeu cau khong hop le!");
+         }
+@@ -71,11 +68,15 @@
+      * luu vao lich su giao dich.
+      */
+     public void printTransaction() {
+-        for(int i = 0; i < transitionHistory.size(); ++i){
+-            System.out.println("Giao dich " + (i + 1) + ": " + transitionHistory.get(i).toString());
++        for (int i = 0; i < transitionList.size(); ++i) {
++            System.out.println("Giao dich " + (i + 1) + ": " + transitionList.get(i).toString());
+         }
+     }
+ 
++    /**
++     * main.
++     * @param args a.
++     */
+     public static void main(String[] args) {
+         Account acc = new Account();
+         acc.addTransaction(2000.255, "deposit");

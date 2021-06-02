@@ -1,0 +1,18 @@
+@@ -40,6 +40,9 @@
+         }
+     }
+ 
++    /**
++     * javadoc.
++     */
+     public void doWithdrawing(double amount)
+     throws InvalidFundingAmountException, InsufficientFundsException {
+         if (amount < 0) {
+@@ -83,7 +86,6 @@
+         Account account = (Account) o;
+ 
+         return accountNumber == account.accountNumber;
+-
+     }
+ 
+     @Override

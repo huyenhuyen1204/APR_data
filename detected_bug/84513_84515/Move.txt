@@ -1,0 +1,40 @@
+@@ -11,6 +11,14 @@
+ 
+     }
+ 
++    /**
++     * ham khoi tao 5 tham so.
++     * @param startX df
++     * @param startY df
++     * @param endX df
++     * @param endY df
++     * @param movedPiece df
++     */
+     public Move(int startX, int startY, int endX, int endY, Piece movedPiece) {
+         this.startX = startX;
+         this.startY = startY;
+@@ -19,6 +27,15 @@
+         this.movedPiece = movedPiece;
+     }
+ 
++    /**
++     * ham khoi tao 6 tham so.
++     * @param startX df
++     * @param startY df
++     * @param endX df
++     * @param endY df
++     * @param movedPiece df
++     * @param killedPiece df
++     */
+     public Move(int startX, int startY, int endX, int endY, Piece movedPiece, Piece killedPiece) {
+         this.startX = startX;
+         this.startY = startY;
+@@ -30,7 +47,7 @@
+ 
+     @Override
+     public String toString() {
+-        return movedPiece.getColor() + "-" + movedPiece.getSymbol() + column[endX] + endY;
++        return movedPiece.getColor() + "-" + movedPiece.getSymbol() + column[endX - 1] + endY;
+     }
+ 
+     public int getStartX() {

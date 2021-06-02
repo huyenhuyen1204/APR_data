@@ -1,0 +1,43 @@
+@@ -7,9 +7,6 @@
+     public static final int HEIGHT = 8;
+     private ArrayList<Piece> pieces = new ArrayList<>();
+ 
+-    public Board() {
+-
+-    }
+     /**2.*/
+     public boolean validate(int x, int y) {
+         if ((x >= 1 && x <= 8) && (y >= 1 && y <= 8)) {
+@@ -21,8 +18,18 @@
+ 
+     /**2.*/
+     public void addPiece(Piece piece) {
+-        if (validate(piece.getCoordinatesX(), piece.getCoordinatesY()) && getAt(piece.getCoordinatesX(), piece.getCoordinatesY()) == null) {
+-            pieces.add(piece);
++        if (validate(piece.getCoordinatesX(), piece.getCoordinatesY())) {
++            boolean check = true;
++            for (Piece piece1 : pieces) {
++                if (piece1.getCoordinatesX() == piece.getCoordinatesX()
++                        && piece1.getCoordinatesY() == piece.getCoordinatesY()) {
++                    check = false;
++                    break;
++                }
++            }
++            if (check) {
++                pieces.add(piece);
++            }
+         }
+     }
+ 
+@@ -40,9 +47,8 @@
+ 
+     /**2.*/
+     public void removeAt(int x, int y) {
+-        Piece piece = getAt(x, y);
+-        if (piece != null) {
+-            pieces.remove(piece);
++        if (validate(x, y)) {
++            pieces.remove(getAt(x, y));
+         }
+     }
+ 

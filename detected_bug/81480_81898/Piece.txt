@@ -1,0 +1,8 @@
+@@ -41,7 +41,6 @@
+ 
+     /**
+      * fsdf.
+-     * @param piece
+      * @return
+      */
+     public boolean checkPosition(Piece piece) {

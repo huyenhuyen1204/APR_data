@@ -1,0 +1,59 @@
+@@ -1,25 +1,25 @@
+ import java.text.DecimalFormat;
+ import java.util.ArrayList;
+-import java.util.List;
+ 
+ public class Account {
+     private double balance;
+-    private ArrayList<Transaction> list;
++    private ArrayList<Transaction> transitionList;
+ 
+     public Account() {
+         balance = 0;
+-        list = new ArrayList<>();
++        transitionList = new ArrayList<>();
+     }
+-    void deposit(double amount) {
++
++    private void deposit(double amount) {
+         if (amount <= 0) {
+             System.out.println("So tien ban nap vao khong hop le!");
+         }
+ 
+         this.balance += amount;
+-        list.add(new Transaction(Transaction.DEPOSIT, amount, this.balance));
++        transitionList.add(new Transaction(Transaction.DEPOSIT, amount, this.balance));
+     }
+ 
+-    void withdraw(double amount) {
++    private void withdraw(double amount) {
+         if (amount <= 0) {
+             System.out.println("So tien ban rut ra khong hop le!");
+             return;
+@@ -30,7 +30,7 @@
+         }
+ 
+         this.balance -= amount;
+-        list.add(new Transaction(Transaction.WITHDRAW, amount, this.balance));
++        transitionList.add(new Transaction(Transaction.WITHDRAW, amount, this.balance));
+     }
+ 
+     public void addTransaction(double amount, String operation) {
+@@ -48,14 +48,14 @@
+ 
+     public void printTransaction() {
+         DecimalFormat format = new DecimalFormat("0.00");
+-        for (int i = 0; i < list.size(); i++) {
++        for (int i = 0; i < transitionList.size(); i++) {
+             System.out.print("Giao dich " + (i+1) + ": ");
+-            if (list.get(i).getOperation() == Transaction.DEPOSIT) {
++            if (transitionList.get(i).getOperation() == Transaction.DEPOSIT) {
+                 System.out.print("Nap tien $");
+             } else {
+                 System.out.print("Rut tien $");
+             }
+-            System.out.println(format.format(list.get(i).getAmount()) + ". So du luc nay: $" + format.format(list.get(i).getBalance()) + ".");
++            System.out.println(format.format(transitionList.get(i).getAmount()) + ". So du luc nay: $" + format.format(transitionList.get(i).getBalance()) + ".");
+         }
+     }
+ }

@@ -1,0 +1,44 @@
+@@ -6,6 +6,7 @@
+     private Piece movedPiece;
+     private Piece killedPiece;
+ 
++    /** Constructor without piece killed. **/
+     public Move(int startX, int endX, int startY, int endY, Piece movedPiece) {
+         this.startX = startX;
+         this.endX = endX;
+@@ -15,6 +16,16 @@
+         this.killedPiece = null;
+     }
+ 
++    /** Full constructor. **/
++    public Move(int startX, int endX, int startY, int endY, Piece movedPiece, Piece killedPiece) {
++        this.startX = startX;
++        this.endX = endX;
++        this.startY = startY;
++        this.endY = endY;
++        this.movedPiece = movedPiece;
++        this.killedPiece = killedPiece;
++    }
++
+     public void setStartX(int startX) {
+         this.startX = startX;
+     }
+@@ -63,16 +74,8 @@
+         return movedPiece;
+     }
+ 
+-    public Move(int startX, int endX, int startY, int endY, Piece movedPiece, Piece killedPiece) {
+-        this.startX = startX;
+-        this.endX = endX;
+-        this.startY = startY;
+-        this.endY = endY;
+-        this.movedPiece = movedPiece;
+-        this.killedPiece = killedPiece;
+-    }
+-
+     public String toString() {
+-        return movedPiece.getColor() + "-" + movedPiece.getSymbol() + (char)(endX + 'a' - 1) + endY;
++        return movedPiece.getColor() + "-" + movedPiece.getSymbol()
++                + (char) (endX + 'a' - 1) + endY;
+     }
+ }

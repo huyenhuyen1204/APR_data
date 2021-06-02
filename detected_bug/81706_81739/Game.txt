@@ -1,0 +1,24 @@
+@@ -8,6 +8,9 @@
+         this.board = board;
+     }
+ 
++    /**
++     * Move a piece to a new position.
++     */
+     public void movePiece(Piece piece, int x, int y) {
+         if (!piece.canMove(board, x, y)) {
+             return;
+@@ -16,9 +19,11 @@
+         piece.setCoordinatesY(y);
+ 
+         if (board.getAt(x, y) == null) {
+-            moveHistory.add(new Move(piece.getCoordinatesX(), piece.getCoordinatesY(), x, y, piece));
++            moveHistory.add(new Move(piece.getCoordinatesX(), piece.getCoordinatesY(),
++                    x, y, piece));
+         } else {
+-            moveHistory.add(new Move(piece.getCoordinatesX(), piece.getCoordinatesY(), x, y, piece, board.getAt(x, y)));
++            moveHistory.add(new Move(piece.getCoordinatesX(), piece.getCoordinatesY(),
++                    x, y, piece, board.getAt(x, y)));
+             board.removeAt(x, y);
+         }
+     }

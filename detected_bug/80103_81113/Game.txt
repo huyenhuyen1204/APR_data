@@ -1,0 +1,28 @@
+@@ -2,7 +2,7 @@
+ 
+ public class Game {
+     private Board board;
+-    private ArrayList<Move> moveHistory;
++    private ArrayList<Move> moveHistory = new ArrayList<Move>();
+ 
+     /**uyds.*/
+     public Game(Board board) {
+@@ -32,14 +32,15 @@
+     /**uyds.*/
+     public void movePiece(Piece piece, int x, int y) {
+         if (piece.canMove(board, x, y)) {
+-            Move e = new Move(piece.getX(), x, piece.getY(), y, piece);
++            Move e = new Move(piece.getCoordinatesX(), x, piece.getCoordinatesY(), y, piece);
+             if (board.getAt(x, y) != null) {
+                 e.setKilledPiece(board.getAt(x, y));
+                 board.removeAt(x, y);
+             }
+-            piece.setX(x);
+-            piece.setY(y);
++            piece.setCoordinatesX(x);
++            piece.setCoordinatesY(y);
+             moveHistory.add(e);
++            board.addPiece(piece);
+         }
+     }
+ }

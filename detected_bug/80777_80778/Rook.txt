@@ -1,0 +1,9 @@
+@@ -68,7 +68,7 @@
+                         return false;
+                     }
+                 }
+-            } else if (xcurrent > x){
++            } else if (xcurrent > x) {
+                 for (int i = xcurrent - 1; i > x; i--) {
+                     if (board.getAt(i, y) != null) {
+                         return false;

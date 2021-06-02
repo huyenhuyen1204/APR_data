@@ -1,0 +1,14 @@
+@@ -76,10 +76,11 @@
+      */
+     public String getTransactionHistory() {
+         StringBuilder stringBuilder = new StringBuilder();
+-        stringBuilder.append("Lịch sử giao dịch của tài khoản ").append(accountNumber).append(":\n");
++        stringBuilder.append("Lịch sử giao dịch của tài khoản ")
++                .append(accountNumber).append(":\n");
+ 
+         for (Transaction transaction : transactionList) {
+-            stringBuilder.append(transaction.getTransactionSumary());
++            stringBuilder.append(transaction.getTransactionSummary());
+         }
+         return stringBuilder.toString().trim();
+     }

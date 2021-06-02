@@ -1,0 +1,78 @@
+@@ -1,18 +1,18 @@
+ public abstract class Piece {
+-    private int x;
+-    private int y;
++    private int coordinatesX;
++    private int coordinatesY;
+     private String color;
+ 
+     /** binhdang. */
+     public Piece(int x, int y) {
+-        this.x = x;
+-        this.y = y;
++        this.coordinatesX = x;
++        this.coordinatesY = y;
+     }
+ 
+     /** binhdang. */
+     public Piece(int x, int y, String color) {
+-        this.x = x;
+-        this.y = y;
++        this.coordinatesX = x;
++        this.coordinatesY = y;
+         this.color = color;
+     }
+ 
+@@ -23,26 +23,6 @@
+     public abstract boolean canMove(Board board, int x, int y);
+ 
+     /** binhdang. */
+-    public int getX() {
+-        return x;
+-    }
+-
+-    /** binhdang. */
+-    public void setX(int x) {
+-        this.x = x;
+-    }
+-
+-    /** binhdang. */
+-    public int getY() {
+-        return y;
+-    }
+-
+-    /** binhdang. */
+-    public void setY(int y) {
+-        this.y = y;
+-    }
+-
+-    /** binhdang. */
+     public String getColor() {
+         return color;
+     }
+@@ -56,4 +36,25 @@
+     public boolean checkPosition(Piece piece) {
+         return true;
+     }
++
++    /** binhdang. */
++    public int getCoordinatesX() {
++        return coordinatesX;
++    }
++
++    /** binhdang. */
++    public void setCoordinatesX(int coordinatesX) {
++        this.coordinatesX = coordinatesX;
++    }
++
++    /** binhdang. */
++    public int getCoordinatesY() {
++        return coordinatesY;
++    }
++
++    /** binhdang. */
++    public void setCoordinatesY(int coordinatesY) {
++        this.coordinatesY = coordinatesY;
++    }
++
+ }

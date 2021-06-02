@@ -1,0 +1,29 @@
+@@ -27,8 +27,8 @@
+      */
+     public void addPiece(Piece piece) {
+         for (Piece i : pieces) {
+-            if (piece.getCoordinatesX() == i.getCoordinatesX() &&
+-                    piece.getCoordinatesY() == i.getCoordinatesY()) {
++            if (piece.getCoordinatesX() == i.getCoordinatesX()
++                    && piece.getCoordinatesY() == i.getCoordinatesY()) {
+                 return;
+             }
+         }
+@@ -44,7 +44,7 @@
+         if (pieces.isEmpty()) {
+             return;
+         }
+-        Piece piece = getAt(x,y);
++        Piece piece = getAt(x, y);
+         if (piece != null) {
+             pieces.remove(piece);
+         }
+@@ -56,7 +56,7 @@
+      * @param y y
+      * @return at
+      */
+-    public Piece getAt(int x, int y){
++    public Piece getAt(int x, int y) {
+         if (!pieces.isEmpty()) {
+             for (Piece i : pieces) {
+                 if (i.getCoordinatesX() == x && i.getCoordinatesY() == y) {

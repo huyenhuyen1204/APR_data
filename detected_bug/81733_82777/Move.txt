@@ -1,0 +1,27 @@
+@@ -8,7 +8,7 @@
+     private String[] symbolAtX = {"a", "b", "c", "d", "e", "f", "g", "h"};
+ 
+     /**
+-     * di chuyen
++     * di chuyen.
+      * @param startX x bat dau.
+      * @param startY y bat dau.
+      * @param endX x den.
+@@ -24,7 +24,7 @@
+     }
+ 
+     /**
+-     * di chuyen
++     * di chuyen.
+      * @param startX x bat dau.
+      * @param startY y bat dau.
+      * @param endX x den.
+@@ -94,7 +94,7 @@
+     public String toString() {
+         return movedPiece.getColor()
+                 + "-" + movedPiece.getSymbol()
+-                + symbolAtX[endX]
++                + symbolAtX[endX - 1]
+                 + endY;
+     }
+ }

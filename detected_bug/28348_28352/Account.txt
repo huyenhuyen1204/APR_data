@@ -1,0 +1,47 @@
+@@ -1,11 +1,10 @@
+ import java.util.ArrayList;
+-import java.util.List;
+ 
+ public class Account {
+ 
+     private double balance;
+ 
+-    List<Transaction> transactions = new ArrayList<>();
++    private ArrayList<Transaction> transitionList = new ArrayList<>();
+ 
+     private void deposit(double deposit) {
+         if (deposit <= 0.0) {
+@@ -13,7 +12,7 @@
+             return;
+         }
+         balance += deposit;
+-        transactions.add(new Transaction(Transaction.DEPOSIT, deposit, balance));
++        transitionList.add(new Transaction(Transaction.DEPOSIT, deposit, balance));
+     }
+ 
+     private void withdraw(double withdraw) {
+@@ -26,7 +25,7 @@
+             return;
+         }
+         balance -= withdraw;
+-        transactions.add(new Transaction(Transaction.WITHDRAW, withdraw, balance));
++        transitionList.add(new Transaction(Transaction.WITHDRAW, withdraw, balance));
+     }
+ 
+     public void addTransaction(double amount, String operation) {
+@@ -39,11 +38,11 @@
+     }
+ 
+     public void printTransaction() {
+-        for (int i = 0; i < transactions.size(); i++) {
++        for (int i = 0; i < transitionList.size(); i++) {
+             int transactionId = i + 1;
+-            double amount = transactions.get(i).getAmount();
+-            double balance = transactions.get(i).getBalance();
+-            if (transactions.get(i).getOperation().equals(Transaction.DEPOSIT))
++            double amount = transitionList.get(i).getAmount();
++            double balance = transitionList.get(i).getBalance();
++            if (transitionList.get(i).getOperation().equals(Transaction.DEPOSIT))
+                 System.out.printf("Giao dich %d: Nap tien $%.2f. So du luc nay: $%.2f.\n", transactionId, amount, balance);
+             else
+                 System.out.printf("Giao dich %d: Rut tien $%.2f. So du luc nay: $%.2f.\n", transactionId, amount, balance);

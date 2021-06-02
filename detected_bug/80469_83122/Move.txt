@@ -1,0 +1,8 @@
+@@ -13,7 +13,6 @@
+         this.movedPiece = movedPiece;
+         this.startX = startX;
+         this.startY = startY;
+-        this.killedPiece = null;
+     }
+ 
+     /**hu hu.*/

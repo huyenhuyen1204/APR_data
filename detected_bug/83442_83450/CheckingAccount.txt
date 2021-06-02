@@ -1,0 +1,24 @@
+@@ -14,9 +14,8 @@
+     public void deposit(double b) {
+         try {
+             doDepositing(b);
+-        }
+-        catch(BankException ex) {
+-            System.out.println(ex.getMess());
++        } catch (InvalidFundingAmountException ex) {
++            System.out.println(ex.getMessage());
+         }
+     }
+ 
+@@ -24,9 +23,8 @@
+     public void withdraw(double b) {
+         try {
+             doWithdrawing(b);
+-        }
+-        catch(BankException ex) {
+-            System.out.println(ex.getMess());
++        } catch (InvalidFundingAmountException | InsufficientFundsException ex) {
++            System.out.println(ex.getMessage());
+         }
+     }
+ }

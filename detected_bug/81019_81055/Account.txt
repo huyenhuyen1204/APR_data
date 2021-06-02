@@ -1,0 +1,72 @@
+@@ -3,7 +3,7 @@
+ 
+ public class Account {
+     private double balance;
+-    private List<Transaction> transitionList;
++    private ArrayList<Transaction> transitionList;
+ 
+     public Account() {
+         balance = 0;
+@@ -17,14 +17,15 @@
+         int n = transitionList.size();
+         for (int i = 0; i < n; i++) {
+             String s = "";
+-            double a = Math.round(transitionList.get(i).getAmount() * 100) / 100;
+-            double b = Math.round(transitionList.get(i).getBalance() * 100) / 100;
++            String a = String.format("%.2f", transitionList.get(i).getAmount());
++            String b = String.format("%.2f", transitionList.get(i).getBalance());
+             if (transitionList.get(i).getOperation().equals(Transaction.DEPOSIT)) {
+                 s = "Nap tien";
+-            } else {
++            } else if (transitionList.get(i).getOperation().equals(Transaction.WITHDRAW)) {
+                 s = "Rut tien";
+             }
+-            System.out.println("Giao dich " + i + ": " + s + " " + a + ". So du luc nay: " + b + ".");
++            System.out.println("Giao dich " + (i + 1) + ": " + s
++                    + " $" + a + ". So du luc nay: $" + b + ".");
+         }
+     }
+ 
+@@ -40,7 +41,7 @@
+         }
+         Transaction a = new Transaction(Transaction.DEPOSIT, amount, balance + amount);
+         transitionList.add(a);
+-        this.setBalance(balance+amount);
++        this.setBalance(balance + amount);
+     }
+ 
+     /**
+@@ -56,9 +57,9 @@
+             System.out.println("So tien ban rut vuot qua so du!");
+             return;
+         }
+-        Transaction a = new Transaction(Transaction.DEPOSIT, amount, balance - amount);
++        Transaction a = new Transaction(Transaction.WITHDRAW, amount, balance - amount);
+         transitionList.add(a);
+-        this.setBalance(balance-amount);
++        this.setBalance(balance - amount);
+     }
+ 
+     /**
+@@ -67,7 +68,7 @@
+      * @param amount    int.
+      * @param operation int.
+      */
+-    void addTransaction(double amount, String operation) {
++    public void addTransaction(double amount, String operation) {
+         if (operation.equals(Transaction.DEPOSIT)) {
+             deposit(amount);
+         } else if (operation.equals(Transaction.WITHDRAW)) {
+@@ -84,12 +85,4 @@
+     public void setBalance(double balance) {
+         this.balance = balance;
+     }
+-
+-    public List<Transaction> getTransactionList() {
+-        return transitionList;
+-    }
+-
+-    public void setTransactionList(List<Transaction> transactionList) {
+-        this.transitionList = transactionList;
+-    }
+ }

@@ -1,0 +1,9 @@
+@@ -16,7 +16,7 @@
+         super(operation, amount, balance);
+     }
+ 
+-    private List<Transaction> transitionList = new ArrayList<>();
++    private ArrayList<Transaction> transitionList = new ArrayList<>();
+ 
+     /**
+      * nap tien.

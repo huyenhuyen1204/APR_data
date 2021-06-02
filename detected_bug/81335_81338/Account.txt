@@ -1,0 +1,56 @@
+@@ -2,7 +2,7 @@
+ import java.util.ArrayList;
+ 
+ public class Account {
+-    private final ArrayList<Transaction> history;
++    private final ArrayList<Transaction> transitionList;
+     private double balance;
+ 
+     /**
+@@ -10,7 +10,7 @@
+      */
+     public Account() {
+         this.balance = 0;
+-        this.history = new ArrayList<Transaction>();
++        this.transitionList = new ArrayList<Transaction>();
+     }
+ 
+     /**
+@@ -37,13 +37,13 @@
+      * @param amount    .
+      * @param operation .
+      */
+-    void addTransaction(double amount, String operation) {
+-        if (!operation.equals(Transaction.in.toLowerCase()) &&
+-                !operation.equals(Transaction.out.toLowerCase())) {
++    public void addTransaction(double amount, String operation) {
++        if (!operation.equals(Transaction.DEPOSIT)
++                && !operation.equals(Transaction.WITHDRAW)) {
+             System.out.println("Yeu cau khong hop le!");
+             return;
+         }
+-        if (operation.equals(Transaction.in.toLowerCase())) {
++        if (operation.equals(Transaction.DEPOSIT)) {
+             if (amount <= 0) {
+                 System.out.println("So tien ban nap vao khong hop le!");
+                 return;
+@@ -61,16 +61,16 @@
+             withdraw(amount);
+         }
+         Transaction transaction = new Transaction(operation, amount, this.balance);
+-        history.add(transaction);
++        transitionList.add(transaction);
+     }
+ 
+     /**
+      * .
+      */
+     public void printTransaction() {
+-        int length = this.history.size();
++        int length = this.transitionList.size();
+         for (int i = 1; i <= length; i++) {
+-            Transaction trans = history.get(i - 1);
++            Transaction trans = transitionList.get(i - 1);
+             StringBuffer s = new StringBuffer("Giao dich ");
+             s.append(i);
+             if (trans.getOperation().equals("deposit")) {

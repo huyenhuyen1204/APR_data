@@ -1,0 +1,88 @@
+@@ -23,55 +23,57 @@
+     /**
+      * Hello, this is me ure looking for.
+      */
+-    public boolean canMove(Board board, int thisX, int thisY) {
+-        int cuteX = this.getCoordinatesX();
+-        int cuteY = this.getCoordinatesY();
++    public boolean canMove(Board board, int destX, int destY) {
++        int thisX = this.getCoordinatesX();
++        int thisY = this.getCoordinatesY();
+ 
+-        if (board == null) {
+-            return true;
+-        }
+-
+-        if ((cuteX != thisX && cuteY != thisY)
+-                || 1 >= thisX || 8 <= thisX || 1 >= thisY || 8 <= thisY) {
++        if (1 > destX || 8 < destX || 1 > destY || 8 < destY
++                || (thisX != destX && thisY != destY)) {
+             return false;
+         }
+ 
+-        if (cuteX == thisX) {
+-            if (thisY < cuteY) {
+-                while (cuteY != thisY){
+-                    if (board.getAt(cuteX, cuteY) != null) {
++        if (board.getAt(destX, destY) != null
++                && board.getAt(destX, destY).getColor().equals(this.getColor())) {
++            return false;
++        }
++
++        if (thisX == destX) {
++            if (destY < thisY) {
++                thisY--;
++                while (thisY != destY) {
++                    if (board.getAt(thisX, thisY) != null) {
+                         return false;
+                     }
+-                    cuteY--;
++                    thisY--;
+                 }
+-                return !board.getAt(cuteX, cuteY).getColor().equals(this.getColor());
+-            } else {
+-                while (cuteY != thisY){
+-                    if (board.getAt(cuteX, cuteY) != null) {
++            } else if (destY > thisY) {
++                thisY++;
++                while (thisY != destY) {
++                    if (board.getAt(thisX, thisY) != null) {
+                         return false;
+                     }
+-                    cuteY++;
++                    thisY++;
+                 }
+-                return !board.getAt(cuteX, cuteY).getColor().equals(this.getColor());
+             }
+         } else {
+-            if (thisX < cuteX) {
+-                while (cuteX != thisX){
+-                    if (board.getAt(cuteX, cuteY) != null) {
++            if (destX < thisX) {
++                thisX--;
++                while (thisX != destX) {
++                    if (board.getAt(thisX, thisY) != null) {
+                         return false;
+                     }
+-                    cuteX--;
++                    thisX--;
+                 }
+-                return !board.getAt(cuteX, cuteY).getColor().equals(this.getColor());
+-            } else {
+-                while (cuteX != thisX){
+-                    if (board.getAt(cuteX, cuteY) != null) {
++            } else if (destX > thisX) {
++                thisX++;
++                while (thisX != destX) {
++                    if (board.getAt(thisX, thisY) != null) {
+                         return false;
+                     }
+-                    cuteX++;
++                    thisX++;
+                 }
+-                return board.getAt(cuteX, cuteY).getColor().equals(this.getColor());
+             }
+         }
++        return true;
+     }
+ }

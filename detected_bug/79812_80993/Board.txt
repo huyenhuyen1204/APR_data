@@ -1,0 +1,56 @@
+@@ -11,24 +11,32 @@
+         return (1 <= x && x <= 8 && 1 <= y && y <= 8);
+     }
+ 
++    /**
++     * con.
++     */
+     public void addPiece(Piece piece) {
+-        if (!validate(piece.getX(), piece.getY()))
+-            return ;
++        if (!validate(piece.getCoordinatesX(), piece.getCoordinatesY())) {
++            return;
++        }
+ 
+-        for(int i = 0; i < pieces.size(); i ++) {
++        for (int i = 0; i < pieces.size(); ++ i) {
+             Piece p = pieces.get(i);
+-            if (p.getX() == piece.getX() && p.getY() == piece.getY()) {
+-                return ;
++            if (p.getCoordinatesX() == piece.getCoordinatesX()
++                    && p.getCoordinatesY() == piece.getCoordinatesY()) {
++                return;
+             }
+         }
+ 
+         pieces.add(piece);
+     }
+ 
++    /**
++     * con.
++     */
+     public Piece getAt(int x, int y) {
+-        for(int i = 0; i < pieces.size(); i ++) {
++        for (int i = 0; i < pieces.size(); ++ i) {
+             Piece p = pieces.get(i);
+-            if (p.getX() == x && p.getY() == y) {
++            if (p.getCoordinatesX() == x && p.getCoordinatesY() == y) {
+                 return p;
+             }
+         }
+@@ -36,10 +44,13 @@
+         return null;
+     }
+ 
++    /**
++     * con.
++     */
+     public void removeAt(int x, int y) {
+-        for(int i = 0; i < pieces.size(); i ++) {
++        for (int i = 0; i < pieces.size(); ++ i) {
+             Piece p = pieces.get(i);
+-            if (p.getX() == x && p.getY() == y) {
++            if (p.getCoordinatesX() == x && p.getCoordinatesY() == y) {
+                 pieces.remove(p);
+             }
+         }

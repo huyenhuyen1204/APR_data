@@ -1,0 +1,77 @@
+@@ -4,7 +4,7 @@
+ 
+ public class Account {
+     private double balance;
+-    private ArrayList<Transaction> transactions = new ArrayList<>();
++    private ArrayList<Transaction> transitionList = new ArrayList<>();
+ 
+     /**
+      * deposit.
+@@ -23,7 +23,7 @@
+     private void withdraw(double amount) {
+         if (amount <= 0) {
+             System.out.println("So tien ban rut ra khong hop le!");
+-        } else if (amount > balance){
++        } else if (amount > balance) {
+             System.out.println("So tien ban rut vuot qua so du!");
+         } else {
+             balance -= amount;
+@@ -43,7 +43,7 @@
+                 withdraw(amount);
+             }
+             Transaction transaction = new Transaction(operation, amount, balance);
+-            transactions.add(transaction);
++            transitionList.add(transaction);
+         }
+     }
+ 
+@@ -51,18 +51,20 @@
+      * printTransaction.
+      */
+     public void printTransaction() {
+-        int n = transactions.size();
++        int n = transitionList.size();
+         for (int i = 0; i < n; i++) {
+             String output = "Giao dich " + (i + 1) + ": ";
+-            Transaction transaction = transactions.get(i);
++            Transaction transaction = transitionList.get(i);
+             double amount = (double) Math.round(transaction.getAmount() * 100) / 100;
+-            double balance_= (double) Math.round(transaction.getBalance() * 100) / 100;
++            double balance1 = (double) Math.round(transaction.getBalance() * 100) / 100;
+             DecimalFormat decimalFormat = new DecimalFormat("0.00");
+             if (transaction.getOperation().equals(Transaction.DEPOSIT)) {
+-                output += "Nap tien $" + decimalFormat.format(amount) + ". So du luc nay: $" + decimalFormat.format(balance_) + ".";
++                output += "Nap tien $" + decimalFormat.format(amount)
++                            + ". So du luc nay: $" + decimalFormat.format(balance1) + ".";
+             }
+             if (transaction.getOperation().equals(Transaction.WITHDRAW)) {
+-                output += "Rut tien $" + decimalFormat.format(amount) + ". So du luc nay: $" + decimalFormat.format(balance_) + ".";
++                output += "Rut tien $" + decimalFormat.format(amount)
++                            + ". So du luc nay: $" + decimalFormat.format(balance1) + ".";
+             }
+             System.out.println(output);
+         }
+@@ -84,18 +86,18 @@
+     }
+ 
+     /**
+-     * getTransactions.
++     * getTransitionList.
+      * @return Arraylist
+      */
+-    public ArrayList<Transaction> getTransactions() {
+-        return transactions;
++    public ArrayList<Transaction> getTransitionList() {
++        return transitionList;
+     }
+ 
+     /**
+      * setTransaction.
+      */
+-    public void setTransactions(ArrayList<Transaction> transactions) {
+-        this.transactions = transactions;
++    public void setTransitionList(ArrayList<Transaction> transitionList) {
++        this.transitionList = transitionList;
+     }
+     /*
+     public static void main(String[] args) {

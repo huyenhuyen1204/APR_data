@@ -1,0 +1,41 @@
+@@ -89,37 +89,8 @@
+      * Trinh Van Thuan
+      */
+     public String toString() {
+-        char signal = 'a';
+-        switch (movedPiece.getCoordinatesX()) {
+-            case 1:
+-                signal = 'a';
+-                break;
+-            case 2:
+-                signal = 'b';
+-                break;
+-            case 3:
+-                signal = 'c';
+-                break;
+-            case 4:
+-                signal = 'd';
+-                break;
+-            case 5:
+-                signal = 'e';
+-                break;
+-            case 6:
+-                signal = 'f';
+-                break;
+-            case 7:
+-                signal = 'g';
+-                break;
+-            case 8:
+-                signal = 'h';
+-                break;
+-            default:
+-                break;
+-        }
+-        return movedPiece.getColor() + "-" + movedPiece.getSymbol()
+-                + signal + movedPiece.getCoordinatesY();
++        return movedPiece.getColor() + '-' + movedPiece.getSymbol()
++                + (char) (endX - 1 + 'a') + endY;
+     }
+ 
+ }
+\ No newline at end of file

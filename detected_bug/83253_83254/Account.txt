@@ -1,0 +1,9 @@
+@@ -3,7 +3,7 @@
+ 
+ public class Account {
+     private double balance;
+-    private List<Transaction> transitionList = new ArrayList<Transaction>();
++    private ArrayList<Transaction> transitionList = new ArrayList<Transaction>();
+ 
+     /**
+      * nap tien.

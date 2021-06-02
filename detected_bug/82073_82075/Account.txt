@@ -1,0 +1,56 @@
+@@ -2,11 +2,11 @@
+ 
+ public class Account {
+     private double balance;
+-    private ArrayList<Transaction> transactions;
++    private ArrayList<Transaction> transitionList;
+     
+     public Account() {
+         balance = 0;
+-        transactions = new ArrayList<>();
++        transitionList = new ArrayList<>();
+     }
+     
+     private void deposit(double amount) {
+@@ -15,7 +15,7 @@
+             return;
+         }
+         balance += amount;
+-        transactions.add(new Transaction(Transaction.DEPOSIT, amount, balance));
++        transitionList.add(new Transaction(Transaction.DEPOSIT, amount, balance));
+     }
+     
+     private void withdraw(double amount) {
+@@ -28,7 +28,7 @@
+             return;
+         }
+         balance -= amount;
+-        transactions.add(new Transaction(Transaction.WITHDRAW, amount, balance));
++        transitionList.add(new Transaction(Transaction.WITHDRAW, amount, balance));
+     }
+     
+     /**
+@@ -51,10 +51,10 @@
+      * Print transaction.
+      */
+     public void printTransaction() {
+-        for (int i = 0; i < transactions.size(); i++) {
++        for (int i = 0; i < transitionList.size(); i++) {
+             StringBuilder builder = new StringBuilder();
+             builder.append("Giao dich ").append(i + 1). append(": ");
+-            builder.append(transactions.get(i));
++            builder.append(transitionList.get(i));
+             System.out.println(builder.toString());
+         }
+     }
+@@ -64,8 +64,8 @@
+      */
+     public static void main(String[] args) {
+         Account acc = new Account();
+-        acc.addTransaction(2000.255,"deposit");
+-        acc.addTransaction(1000,"withdraw");
++        acc.addTransaction(2000.255, "deposit");
++        acc.addTransaction(1000, "withdraw");
+         acc.printTransaction();
+     }
+ }

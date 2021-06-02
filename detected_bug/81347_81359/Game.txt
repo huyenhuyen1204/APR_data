@@ -1,0 +1,19 @@
+@@ -16,14 +16,16 @@
+      */
+     public void movePiece(Piece piece, int x, int y) {
+         if (piece.canMove(board, x, y) && board.getAt(x, y) == null) {
+-            Move move = new Move(piece.getCoordinatesX(), x, piece.getCoordinatesY(), y, piece);
++            Move move = new Move(piece.getCoordinatesX(), x,
++                                piece.getCoordinatesY(), y, piece);
+             moveHistory.add(move);
+             piece.setCoordinatesX(x);
+             piece.setCoordinatesY(y);
+         }
+         if (piece.canMove(board, x, y) && board.getAt(x, y) != null) {
+             Piece killedPiece = board.getAt(x, y);
+-            Move move = new Move(piece.getCoordinatesX(), x, piece.getCoordinatesY(), y, piece, killedPiece);
++            Move move = new Move(piece.getCoordinatesX(), x,
++                                piece.getCoordinatesY(), y, piece, killedPiece);
+             moveHistory.add(move);
+             board.removeAt(x, y);
+             piece.setCoordinatesX(x);

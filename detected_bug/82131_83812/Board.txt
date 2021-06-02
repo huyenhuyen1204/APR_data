@@ -1,0 +1,40 @@
+@@ -11,6 +11,9 @@
+ 
+     }
+ 
++    /**
++     * add.
++     */
+     public void addPiece(Piece piece) {
+         if (!validate(piece.getCoordinatesX(), piece.getCoordinatesY())) {
+             return;
+@@ -24,6 +27,9 @@
+         pieces.add(piece);
+     }
+ 
++    /**
++     * valid.
++     */
+     public boolean validate(int x, int y) {
+         if (x < 1 || x > 8 || y < 1 || y > 8) {
+             return false;
+@@ -31,6 +37,9 @@
+         return true;
+     }
+ 
++    /**
++     * remove.
++     */
+     public void removeAt(int x, int y) {
+         for (Piece element : pieces) {
+             if (element.getCoordinatesX() == x && element.getCoordinatesY() == y) {
+@@ -40,6 +49,9 @@
+         }
+     }
+ 
++    /**
++     * get.
++     */
+     public Piece getAt(int x, int y) {
+         for (Piece element : pieces) {
+             if (element.getCoordinatesX() == x && element.getCoordinatesY() == y) {

@@ -1,0 +1,10 @@
+@@ -13,7 +13,8 @@
+     public void addPiece(Piece n) {
+         boolean kt = true;
+         for (Piece p : pieces) {
+-            if ((p.getCoordinatesX() == n.getCoordinatesX()) && (p.getCoordinatesY() == n.getCoordinatesY())) {
++            if ((p.getCoordinatesX() == n.getCoordinatesX())
++                    && (p.getCoordinatesY() == n.getCoordinatesY())) {
+                 kt = false;
+             }
+         }

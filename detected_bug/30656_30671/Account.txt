@@ -1,0 +1,38 @@
+@@ -31,7 +31,7 @@
+         }
+         else if (amount > this.balance)
+         {
+-            System.out.println("So tien ban rut vuot qua so du");
++            System.out.println("So tien ban rut vuot qua so du!");
+         }
+         else
+         {
+@@ -54,8 +54,8 @@
+             {
+                 withdraw(amount);
+             }
+-            Transaction add = new Transaction(operation,amount,this.balance);
+-            transitionList.add(add);
++            Transaction transaction = new Transaction(operation,amount,this.balance);
++            transitionList.add(transaction);
+         }
+     }
+     public void printTransaction()
+@@ -65,15 +65,11 @@
+         {
+             if (transitionList.get(i).getOperation().equals(Transaction.DEPOSIT))
+             {
+-                double a = transitionList.get(i).getBalance();
+-                double b = transitionList.get(i).getAmount();
+-                System.out.println("Giao dich " + i + 1 + ": Nap tien $" + transitionList.get(i).getAmount() + ". So du luc nay: $" + Math.round((a + b) * 100) / 100);
++                System.out.printf("Giao dich %d: Nap tien $%.2f. So du luc nay: $%.2f.\n",i + 1 , transitionList.get(i).getAmount(), transitionList.get(i).getBalance());
+             }
+             else if (transitionList.get(i).getOperation().equals(Transaction.WITHDRAW))
+             {
+-                double a = transitionList.get(i).getBalance();
+-                double b = transitionList.get(i).getAmount();
+-                System.out.println("Giao dich " + i + 1 + ": Rut tien $" + transitionList.get(i).getAmount() + ". So du luc nay: $" + Math.round((a - b) * 100) / 100);
++                System.out.printf("Giao dich %d: Rut tien $%.2f. So du luc nay: $%.2f.\n",i + 1 , transitionList.get(i).getAmount(), transitionList.get(i).getBalance());
+             }
+         }
+     }

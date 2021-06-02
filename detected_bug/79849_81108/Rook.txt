@@ -1,0 +1,60 @@
+@@ -17,28 +17,43 @@
+ 
+     @Override
+     public boolean canMove(Board board, int x, int y) {
+-        if (super.getX() == x || super.getY() == y) {
+-            ArrayList<Piece> pieces = board.getPieces();
+-            if(super.getX() == x) {
+-                for(Piece p: pieces) {
+-                    if(p.getY() < y) {
++        if (!board.validate(x, y)
++                || (x != super.getCoordinatesX() && y != super.getCoordinatesY())) {
++            return false;
++        }
++
++        if (x == super.getCoordinatesX()) {
++            if (y > super.getCoordinatesY()) {
++                for (int i = super.getCoordinatesY() + 1; i < y; ++i) {
++                    if (board.getAt(super.getCoordinatesX(), i) != null) {
+                         return false;
+                     }
+                 }
+-            }else if (super.getY() == y) {
+-                for(Piece p: pieces) {
+-                    if(p.getY() < x) {
++            } else {
++                for (int i = super.getCoordinatesY() - 1; i > y; --i) {
++                    if (board.getAt(super.getCoordinatesX(), i) != null) {
+                         return false;
+                     }
+                 }
+             }
+-            Piece piece = board.getAt(x, y);
+-            if (piece == null) {
+-                return true;
++        } else {
++            if (x < super.getCoordinatesX()) {
++                for (int i = super.getCoordinatesY() - 1; i > y; --i) {
++                    if (board.getAt(i, super.getCoordinatesY()) != null) {
++                        return false;
++                    }
++                }
+             } else {
+-                return !piece.getColor().equals(super.getColor());
++                for (int i = super.getCoordinatesX() + 1; i < x; ++i) {
++                    if (board.getAt(i, super.getCoordinatesY()) != null) {
++                        return false;
++                    }
++                }
+             }
+         }
+-        return false;
++        if (board.getAt(x, y) != null && board.getAt(x, y).getColor().equals(this.getColor())) {
++            return false;
++        }
++        return true;
+     }
+-}
+\ No newline at end of file
++} 
+\ No newline at end of file

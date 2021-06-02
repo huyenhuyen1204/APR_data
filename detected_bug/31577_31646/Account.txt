@@ -1,0 +1,18 @@
+@@ -1,5 +1,6 @@
+ //package Transaction;
+ 
++import java.text.DecimalFormat;
+ import java.util.ArrayList;
+ 
+ public class Account {
+@@ -42,7 +43,9 @@
+             if (transaction.getOperation().equals("deposit"))
+                 type = "Nap tien";
+             else type = "Rut tien";
+-            System.out.println("Giao dich " + (i++) + ": " + type + " $" + (double) Math.round(transaction.getAmount()*100)/100 + ". So du luc nay: $" + (double) Math.round(transaction.getBalance()*100)/100 + ".");
++            DecimalFormat df = new DecimalFormat("#.00");
++            //System.out.println("Giao dich " + (i++) + ": " + type + " $" + (double) Math.round(transaction.getAmount()*100)/100 + ". So du luc nay: $" + (double) Math.round(transaction.getBalance()*100)/100 + ".");
++            System.out.println("Giao dich " + (i++) + ": " + type + " $" + df.format(transaction.getAmount()) + ". So du luc nay: $" + df.format(transaction.getBalance()) + ".");
+         }
+     }
+ 

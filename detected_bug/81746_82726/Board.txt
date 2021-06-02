@@ -1,0 +1,61 @@
+@@ -2,30 +2,54 @@
+ import java.util.Iterator;
+ 
+ public class Board {
+-    public final static int WIDTH = 8;
+-    public final static int HEIGHT = 8;
+-    private ArrayList<Piece> pieces;
++    public static final int WIDTH = 8;
++    public static final int HEIGHT = 8;
++    private ArrayList<Piece> pieces = new ArrayList<>();
+ 
+     public Board() {
+     }
+ 
++    /**
++     * ham them quan co vao ban co.
++     *
++     * @param p la tham so.
++     */
+     public void addPiece(Piece p) {
+         if (validate(p.getCoordinatesX(), p.getCoordinatesY())
+-        && !pieces.contains(p)) {
++                && this.getAt(p.getCoordinatesX(), p.getCoordinatesY()) == null) {
+             pieces.add(p);
+         }
+     }
+ 
++    /**
++     * kiem tra toa do.
++     * @param x .
++     * @param y .
++     * @return .
++     */
+     public boolean validate(int x, int y) {
+         return (x >= 1 && x <= 8
+-        && y >=1 && y >= 8);
++                && y >= 1 && y <= 8);
+     }
+ 
++    /**
++     * xoa quan co.
++     * @param x .
++     * @param y .
++     */
+     public void removeAt(int x, int y) {
+         Piece piece = getAt(x, y);
+-        pieces.remove(piece);
++        if (!pieces.isEmpty() && piece != null) {
++            pieces.remove(piece);
++        }
+     }
+ 
++    /**
++     * lay quan co.
++     * @param x .
++     * @param y .
++     * @return .
++     */
+     public Piece getAt(int x, int y) {
+         Iterator<Piece> itr = pieces.iterator();
+         Piece curP;

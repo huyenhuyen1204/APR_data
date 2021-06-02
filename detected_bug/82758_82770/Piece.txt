@@ -1,0 +1,23 @@
+@@ -3,12 +3,14 @@
+     private int coordinatesY;
+     private String color;
+ 
++    /** Constructor. */
+     public Piece(int coordinatesX, int coordinatesY) {
+         this.coordinatesX = coordinatesX;
+         this.coordinatesY = coordinatesY;
+         this.color = "white";
+     }
+ 
++    /** Constructor. */
+     public Piece(int coordinatesX, int coordinatesY, String color) {
+         this(coordinatesX, coordinatesY);
+         this.color = color;
+@@ -42,6 +44,7 @@
+         this.color = color;
+     }
+ 
++    /** Check valid position. */
+     public boolean checkPosition(Piece piece) {
+         int x = piece.getCoordinatesX();
+         int y = piece.getCoordinatesY();

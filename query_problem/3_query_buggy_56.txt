@@ -1,0 +1,54 @@
+#SV1
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  815 and s.course_problem_id = 1211 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_56_student_815.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV2
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  819 and s.course_problem_id = 1211 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_56_student_819.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV3
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  820 and s.course_problem_id = 1211 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_56_student_820.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV4
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  823 and s.course_problem_id = 1211 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_56_student_823.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV5
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  836 and s.course_problem_id = 1211 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_56_student_836.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV6
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  843 and s.course_problem_id = 1212 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_56_student_843.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV7
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  858 and s.course_problem_id = 1212 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_56_student_858.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV8
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  863 and s.course_problem_id = 1212 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_56_student_863.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV9
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1408 and s.course_problem_id = 1217 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_56_student_1408.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+

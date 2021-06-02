@@ -1,0 +1,34 @@
+@@ -1,9 +1,12 @@
+ public class Transaction {
+     private String operation;
+     private double amount;
+-    private double balance;
+-    public static final String DEPOSIT = "gui";
+-    public static final String WITHDRAW = "rut";
++    private double balance = 0;
++    public static final String DEPOSIT = "deposit";
++    public static final String WITHDRAW = "withdraw";
++
++    public Transaction() {
++    }
+ 
+     /**
+      * contructor.
+@@ -40,12 +43,12 @@
+ 
+     @Override
+     public String toString() {
+-        if (operation.equals("gui")) {
+-            return "Nap tien $" + ((double) Math.round(amount * 100) / 100) + ". So du luc nay: $"
+-                    + ((double) Math.round(balance * 100) / 100) + ".";
++        if (operation.equals("deposit")) {
++            return "Nap tien $" + String.format("%.2f", amount) + ". So du luc nay: $"
++                    + String.format("%.2f", balance) + ".";
+         } else {
+-            return "Rut tien $" + ((double) Math.round(amount * 100) / 100) + ". So du luc nay: $"
+-                    + ((double) Math.round(balance * 100) / 100) + ".";
++            return "Rut tien $" + String.format("%.2f", amount) + ". So du luc nay: $"
++                    + String.format("%.2f", balance) + ".";
+         }
+     }
+ }

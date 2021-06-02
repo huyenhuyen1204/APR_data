@@ -1,0 +1,17 @@
+@@ -39,14 +39,14 @@
+     /**
+      * .
+      */
+-    public void setAmount(Double amount) {
++    public void setAmount(double amount) {
+         this.amount = amount;
+     }
+ 
+     /**
+      * .
+      */
+-    public void setBalance(Double balance) {
++    public void setBalance(double balance) {
+         this.balance = balance;
+     }
+ 

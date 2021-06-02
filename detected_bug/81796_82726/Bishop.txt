@@ -1,0 +1,63 @@
+@@ -14,28 +14,47 @@
+ 
+     @Override
+     public boolean canMove(Board board, int x, int y) {
+-        //boolean check = true;
+-        int _x = getCoordinatesX();
+-        int _y = getCoordinatesY();
++        int newX = getCoordinatesX();
++        int newY = getCoordinatesY();
+ 
+-        int max_x = (x > _x) ? x : _x;
+-        int max_y = (y > _y) ? y : _y;
+-        int min_x = (x < _x) ? x : _x;
+-        int min_y = (y < _y) ? y : _y;
+-        for (int i = min_x; i <= max_x; i++) {
+-            for (int j = min_y; j <= max_y; j++) {
+-                if (i + j == x + y || i - j == i - j) {
+-                    Piece piece = board.getAt(i, j);
+-                    if (piece == null) {
+-                        return true;
++        if (x + y != newX + newY && x - y != newX - newY) {
++            return false;
++        }
++
++        int maxX = (x > newX) ? x : newX;
++        int maxY = (y > newY) ? y : newY;
++        int minX = (x < newX) ? x : newX;
++        int minY = (y < newY) ? y : newY;
++        if (x + y == newX + newY) {
++            for (int i = minX + 1; i < maxX; i++) {
++                for (int j = minY + 1; j < maxY; j++) {
++                    if (i + j == x + y) {
++                        Piece piece = board.getAt(i, j);
++                        if (piece != null) {
++                            return false;
++                        }
+                     }
+                 }
+             }
+         }
+-        if (x + y != _x + _y && x - y != _x - _y) {
+-            return false;
++
++        if (x - y == newX - newY) {
++            for (int i = minX + 1; i < maxX; i++) {
++                for (int j = minY + 1; j < maxY; j++) {
++                    if (i - j == x - y) {
++                        Piece piece = board.getAt(i, j);
++                        if (piece != null) {
++                            return false;
++                        }
++                    }
++                }
++            }
+         }
++
+         Piece piece = board.getAt(x, y);
++        if (piece == null) {
++            return true;
++        }
+         return (!getColor().equals(piece.getColor()));
+     }
+ }

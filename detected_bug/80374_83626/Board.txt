@@ -1,0 +1,18 @@
+@@ -29,6 +29,8 @@
+     }
+ 
+     /**
++     * abc.
++     *
+      * @param x int.
+      * @param y int.
+      * @return int.
+@@ -36,7 +38,7 @@
+     public Piece getAt(int x, int y) {
+         int n = pieces.size();
+         for (int i = 0; i < n; i++) {
+-            if (pieces.get(i).getX() == x && pieces.get(i).getY() == y) {
++            if (pieces.get(i).getCoordinatesX() == x && pieces.get(i).getCoordinatesY() == y) {
+                 return pieces.get(i);
+             }
+         }

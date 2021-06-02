@@ -1,0 +1,59 @@
+@@ -1,20 +1,25 @@
+ 
+-
+-import java.util.Objects;
+-
+ public abstract class Piece {
+ 
+-    private Board board;
+     private int coordinatesX;
+     private int coordinatesY;
+     private String color;
+ 
++    /** khoi tao.
++     * @param x x(a->h)
++     * @param y y(1->8)
++     */
+     public Piece(int x, int y) {
+         coordinatesX = x;
+         coordinatesY = y;
+         color = "white";
+     }
+ 
++    /** khoi tao.
++     * @param x x
++     * @param y y
++     * @param color color
++     */
+     public Piece(int x, int y, String color) {
+         coordinatesX = x;
+         coordinatesY = y;
+@@ -50,25 +55,9 @@
+     public abstract boolean canMove(Board board, int x, int y);
+ 
+     @Override
+-    public boolean equals(Object o) {
+-        if (this == o) return true;
+-        if (o == null || getClass() != o.getClass()) return false;
+-        Piece piece = (Piece) o;
+-        return coordinatesX == piece.coordinatesX &&
+-                coordinatesY == piece.coordinatesY &&
+-                Objects.equals(color, piece.color);
+-    }
+-
+-    @Override
+-    public int hashCode() {
+-        return Objects.hash(coordinatesX, coordinatesY, color);
+-    }
+-
+-    @Override
+     public String toString() {
+-        return "coordinatesX=" + coordinatesX +
+-                ", coordinatesY=" + coordinatesY +
+-                ", color='" + color + '\'' +
+-                '}';
++        return color
++                + "-" + (char) (coordinatesX - 1 + 'a')
++                + coordinatesY;
+     }
+ }

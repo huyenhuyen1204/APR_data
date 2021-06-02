@@ -1,0 +1,43 @@
+@@ -17,14 +17,34 @@
+         if (!board.validate(desX, desY)) {
+             return false;
+         }
+-        if (Math.abs(this.getCoordinatesX() - desX) == Math.abs(this.getCoordinatesY() - desY)) {
+-            for (Piece piece : board.getPieces()) {
+-                if (piece.getCoordinatesX() == desX && piece.getCoordinatesY() == desY) {
+-                    return !piece.getColor().equals(this.getColor());
+-                }
+-            }
+-            return true;
++        if (Math.abs(this.getCoordinatesX() - desX) != Math.abs(this.getCoordinatesY() - desY)) {
++            return false;
+         }
+-        return false;
++        if (this.getCoordinatesX() == desX && this.getCoordinatesY() == desY) {
++            return false;
++        }
++        int checkX;
++        int checkY;
++        if (desX > this.getCoordinatesX()) {
++            checkX = 1;
++        } else {
++            checkX = -1;
++        }
++        if (desY > this.getCoordinatesY()) {
++            checkY = 1;
++        } else {
++            checkY = -1;
++        }
++        int y = this.getCoordinatesY() + checkY;
++        for (int x = this.getCoordinatesX() + checkX; x != desX; x += checkX) {
++            if (board.getAt(x, y) != null) {
++                return false;
++            }
++            y += checkY;
++        }
++        if (board.getAt(desX, desY) != null) {
++            return !board.getAt(desX, desY).getColor().equals(this.getColor());
++        }
++        return true;
+     }
+ }

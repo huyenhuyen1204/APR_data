@@ -1,0 +1,52 @@
+@@ -8,11 +8,6 @@
+ 
+     /**
+      * fsdfsd.
+-     * @param startX
+-     * @param endX
+-     * @param startY
+-     * @param endY
+-     * @param movedPiece
+      */
+     public Move(int startX, int endX, int startY, int endY, Piece movedPiece) {
+         this.startX = startX;
+@@ -24,12 +19,6 @@
+ 
+     /**
+      * fsdfsd.
+-     * @param startX
+-     * @param endX
+-     * @param startY
+-     * @param endY
+-     * @param movedPiece
+-     * @param killedPiece
+      */
+     public Move(int startX, int endX, int startY, int endY, Piece movedPiece, Piece killedPiece) {
+         this.startX = startX;
+@@ -40,11 +29,15 @@
+         this.killedPiece = killedPiece;
+     }
+ 
++    /**
++     * fsdfsd.
++     * @return
++     */
+     public String toString() {
+-        String Origin = movedPiece.getColor() + "-" + movedPiece.getSymbol();
+         char codinateX = (char) (this.endX - 1 + 'a');
+         char codinateY = (char) (this.endY + '0');
+-        return Origin + codinateX + codinateY;
++        String origin = movedPiece.getColor() + "-" + movedPiece.getSymbol();
++        return origin + codinateX + codinateY;
+     }
+ 
+     public int getEndX() {
+@@ -82,7 +75,7 @@
+     public Piece getKilledPiece() {
+         return killedPiece;
+     }
+-
++    
+     public void setStartX(int startX) {
+         this.startX = startX;
+     }

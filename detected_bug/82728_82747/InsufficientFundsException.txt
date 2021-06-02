@@ -1,0 +1,11 @@
+@@ -3,7 +3,8 @@
+  */
+ public class InsufficientFundsException extends BankException {
+     public InsufficientFundsException(double amount) {
+-        super("Số dư tài khoản không đủ " + amount + "để thực hiện giao dịch");
++        super("Số dư tài khoản không đủ "
++                + String.format("$%.2f", amount) + " để thực hiện giao dịch");
+     }
+ }
+  
+\ No newline at end of file

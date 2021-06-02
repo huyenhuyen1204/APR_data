@@ -1,0 +1,43 @@
+@@ -3,7 +3,7 @@
+ 
+ public class Account {
+     private double balance;
+-    private List<Transaction> transitionList = new ArrayList<Transaction>();
++    private ArrayList<Transaction> transitionList = new ArrayList<Transaction>();
+ 
+     private void deposit(double amount) {
+         if (amount <= 0) {
+@@ -23,6 +23,9 @@
+         }
+     }
+ 
++    /**
++     * Add.
++     */
+     public void addTransaction(double amount, String operation) {
+         if (operation.equals(Transaction.DEPOSIT)) {
+             this.deposit(amount);
+@@ -35,11 +38,21 @@
+         }
+     }
+ 
++    /**
++     * Print.
++     */
+     public void printTransaction() {
+         for (int i = 0; i < transitionList.size(); i++) {
+             if (transitionList.get(i).getOperation().equals(Transaction.DEPOSIT)) {
+-                String s = String.format("Giao dich %d: Nap tien $%.2f. So du luc nay: $%.2f",
+-                        i + 1, transitionList.get(i).getAmount(), transitionList.get(i).getBalance());
++                String s = String.format("Giao dich %d: Nap tien $%.2f. So du luc nay: $%.2f.",
++                        i + 1, transitionList.get(i).getAmount(),
++                        transitionList.get(i).getBalance());
++                System.out.println(s);
++            } else {
++                String s = String.format("Giao dich %d: Rut tien $%.2f. So du luc nay: $%.2f.",
++                        i + 1, transitionList.get(i).getAmount(),
++                        transitionList.get(i).getBalance());
++                System.out.println(s);
+             }
+         }
+     }

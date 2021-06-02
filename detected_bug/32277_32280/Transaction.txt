@@ -1,0 +1,16 @@
+@@ -27,12 +27,12 @@
+         this.amount = amount;
+     }
+ 
+-    public double getBlance() {
++    public double getBalance() {
+         return balance;
+     }
+ 
+-    public void setBalance(double blance) {
+-        this.balance = blance;
++    public void setBalance(double balance) {
++        this.balance = balance;
+     }
+ 
+ 

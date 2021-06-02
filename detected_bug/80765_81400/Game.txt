@@ -1,0 +1,13 @@
+@@ -22,10 +22,8 @@
+     }
+ 
+     /**
+-     * 5hlf.
+-     * @param piece
+-     * @param x
+-     * @param y
++     * cmt.
++     *
+      */
+     public void movePiece(Piece piece, int x, int y) {
+         if (x > 8 || x < 0 || y > 8 || y < 0) {

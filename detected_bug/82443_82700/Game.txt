@@ -1,0 +1,10 @@
+@@ -8,6 +8,9 @@
+         this.board = board;
+     }
+ 
++    /**
++     * .
++     **/
+     public void movePiece(Piece piece, int x, int y) {
+         if (piece.canMove(board, x, y)) {
+             Move move = new Move(piece.getCoordinatesX(), x, piece.getCoordinatesY(), y, piece);

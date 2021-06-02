@@ -1,0 +1,60 @@
+@@ -3,11 +3,11 @@
+ public class Account {
+ 
+     private double balance;
+-    private ArrayList<Transaction> transactionList;
++    private ArrayList<Transaction> transitionList;
+ 
+     public Account() {
+         balance = 0;
+-        transactionList = new ArrayList<>();
++        transitionList = new ArrayList<>();
+     }
+ 
+     /**
+@@ -37,7 +37,7 @@
+     /**
+      * them giao dich.
+      */
+-    public void addTransaction(double amount , String operation) {
++    public void addTransaction(double amount, String operation) {
+         if (!operation.equals(Transaction.WITHDRAW) && !operation.equals(Transaction.DEPOSIT)) {
+             System.out.println("Yeu cau khong hop le!");
+             return;
+@@ -49,7 +49,7 @@
+         }
+ 
+         Transaction transaction = new Transaction(operation, amount, this.balance);
+-        this.transactionList.add(transaction);
++        this.transitionList.add(transaction);
+     }
+ 
+     /**
+@@ -57,19 +57,20 @@
+      */
+     public void printTransaction() {
+         int count = 1;
+-        for (Transaction tran : transactionList) {
+-            double countAmo = (double)(Math.ceil(tran.getAmount() * 100) / 100 + 0.00);
+-            double countBala = (double)(Math.ceil(tran.getBalance() * 100) / 100 + 0.00);
++        for (Transaction tran : transitionList) {
++
+             String operation = null;
+             if (tran.getOperation(). equals(Transaction.DEPOSIT)) {
+                 operation = ": Nap tien $";
+             } else if (tran.getOperation(). equals(Transaction.WITHDRAW)) {
+                 operation = ": Rut tien $";
+             }
+-
+-            System.out.println( "Giao dich "+ count + operation + String.format("%.2f", countAmo) + ". So du luc nay: $" + String.format("%.2f", countBala));
+-            count ++;
++            System.out.println("Giao dich " + count + operation
++                    + String.format("%.2f", tran.getAmount())
++                    + ". So du luc nay: $" + String.format("%.2f", tran.getBalance()) + ".");
++            count++;
+         }
+     }
+-    
++
++
+ }

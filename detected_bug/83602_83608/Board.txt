@@ -1,0 +1,11 @@
+@@ -21,8 +21,8 @@
+ 
+     public void addPiece(Piece piece) {
+ 
+-        if (validate(piece.getCoordinatesX(), piece.getCoordinatesY()) &&
+-                getAt(piece.getCoordinatesX(), piece.getCoordinatesY()) == null) {
++        if (validate(piece.getCoordinatesX(), piece.getCoordinatesY())
++                && getAt(piece.getCoordinatesX(), piece.getCoordinatesY()) == null) {
+             pieces.add(piece);
+         }
+ 

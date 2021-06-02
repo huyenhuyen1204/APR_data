@@ -1,0 +1,55 @@
+@@ -40,12 +40,50 @@
+      */
+     @Override
+     public boolean canMove(Board board, int x, int y) {
+-        if (x == getCoordinatesX() || y == getCoordinatesY()) {
+-            Piece p = board.getAt(x, y);
+-            if (p == null) {
++        if (x == getCoordinatesX() && y == getCoordinatesY()) {
++            return false;
++        }
++        if (x == getCoordinatesX()) {
++            for (int i = getCoordinatesY() + 1; i < y; i++) {
++                Piece p = board.getAt(x, i);
++                if (p != null) {
++                    return false;
++                }
++            }
++            for (int i = getCoordinatesY() - 1; i > y; i--) {
++                Piece p = board.getAt(x, i);
++                if (p != null) {
++                    return false;
++                }
++            }
++            if (board.getAt(x, y) == null) {
+                 return true;
+             }
+-            return !p.getColor().equals(getColor());
++            if (board.getAt(x, y).getColor().equals(getColor())) {
++                return false;
++            }
++            return true;
++        }
++        if (y == getCoordinatesY()) {
++            for (int i = getCoordinatesX() + 1; i < x; i++) {
++                Piece p = board.getAt(i, y);
++                if (p != null) {
++                    return false;
++                }
++            }
++            for (int i = getCoordinatesX() - 1; i > x; i--) {
++                Piece p = board.getAt(i, y);
++                if (p != null) {
++                    return false;
++                }
++            }
++            if (board.getAt(x, y) == null) {
++                return true;
++            }
++            if (board.getAt(x, y).getColor().equals(getColor())) {
++                return false;
++            }
++            return true;
+         }
+         return false;
+     }

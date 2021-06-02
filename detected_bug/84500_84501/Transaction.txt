@@ -1,0 +1,9 @@
+@@ -7,7 +7,7 @@
+     public static final String WITHDRAW = "withdram";
+ 
+     /**
+-     * Luc Thi Hue
++     * Luc Thi Hue.
+      */
+     public Transaction(String operation, double amount, double balance) {
+         this.operation = operation;

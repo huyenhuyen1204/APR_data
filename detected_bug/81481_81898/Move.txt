@@ -1,0 +1,9 @@
+@@ -75,7 +75,7 @@
+     public Piece getKilledPiece() {
+         return killedPiece;
+     }
+-
++    
+     public void setStartX(int startX) {
+         this.startX = startX;
+     }

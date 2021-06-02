@@ -1,0 +1,52 @@
+@@ -2,7 +2,7 @@
+ 
+ public class Account {
+     private double balance;
+-    private ArrayList<Transaction> trs = new ArrayList<>();
++    private ArrayList<Transaction> transitionList = new ArrayList<>();
+ 
+     public Account() {
+         balance = 0;
+@@ -22,7 +22,7 @@
+         }
+         balance += amount;
+         Transaction tr = new Transaction(Transaction.DEPOSIT, amount, balance);
+-        trs.add(tr);
++        transitionList.add(tr);
+     }
+ 
+     /**
+@@ -36,7 +36,7 @@
+         } else {
+             balance -= amount;
+             Transaction tr = new Transaction(Transaction.WITHDRAW, amount, balance);
+-            trs.add(tr);
++            transitionList.add(tr);
+         }
+     }
+ 
+@@ -58,17 +58,17 @@
+      */
+     public void printTransaction() {
+         String rt = "";
+-        for (int i = 0; i < trs.size(); ++i) {
++        for (int i = 0; i < transitionList.size(); ++i) {
+             rt += "Giao dich " + (i + 1) + ": ";
+-            if (trs.get(i).getOperation().equals(Transaction.DEPOSIT)) {
+-                rt += "Nap tien $" + fixed(trs.get(i).getAmount());
+-            } else if (trs.get(i).getOperation().equals(Transaction.WITHDRAW)) {
+-                rt += "Rut tien $" + fixed(trs.get(i).getAmount());
++            if (transitionList.get(i).getOperation().equals(Transaction.DEPOSIT)) {
++                rt += "Nap tien $" + fixed(transitionList.get(i).getAmount());
++            } else if (transitionList.get(i).getOperation().equals(Transaction.WITHDRAW)) {
++                rt += "Rut tien $" + fixed(transitionList.get(i).getAmount());
+             }
+ 
+-            rt += ". So du luc nay: $" + fixed(trs.get(i).getBalance()) + ".";
++            rt += ". So du luc nay: $" + fixed(transitionList.get(i).getBalance()) + ".";
+ 
+-            if (i != trs.size() - 1) {
++            if (i != transitionList.size() - 1) {
+                 rt += "\n";
+             }
+         }

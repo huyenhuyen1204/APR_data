@@ -1,0 +1,26 @@
+@@ -6,12 +6,18 @@
+     public static String WHITE = "white";
+     public static String BLACK = "black";
+ 
++    /**
++     * .
++     **/
+     public Piece(int coordinatesX, int coordinatesY) {
+         this.coordinatesX = coordinatesX;
+         this.coordinatesY = coordinatesY;
+         this.color = WHITE;
+     }
+ 
++    /**
++     * .
++     **/
+     public Piece(int coordinatesX, int coordinatesY, String color) {
+         this.coordinatesX = coordinatesX;
+         this.coordinatesY = coordinatesY;
+@@ -48,5 +54,5 @@
+ 
+     public boolean checkPosition(Piece piece) {
+         return true;
+-    }///
++    }
+ }

@@ -1,0 +1,88 @@
+@@ -1,39 +1,48 @@
+ import java.util.ArrayList;
+ 
+ public class Account {
+-    private double balance  ;
++    private double balance = 0;
+     private ArrayList<Transaction> transitionList = new ArrayList<>();
+-    private void deposit( double amount){
+-        if( amount > 0 ){
+-            this.balance += amount;
+ 
+-        }else {
++    private void deposit(double amount) {
++        if (amount <= 0) {
+             System.out.println("So tien ban nap vao khong hop le!");
++            return;
+         }
++        this.balance += amount;
++        transitionList.add(new Transaction("Nap tien",amount, balance));
+     }
+-    private void withdraw( double amount){
+-        if( amount > 0 && amount <= this.balance){
+-            this.balance -= amount;
+-        }else if( amount > this.balance ){
+-            System.out.println("So tien ban rut vuot qua so du!");
+-        }else{
+-            System.out.println("So tien ban rut ra khong hop le!");
+-        }
+ 
++    private void withdraw(double amount) {
++        if (amount <= 0 ) {
++            System.out.println("So tien ban rut ra khong hop le!");
++            return;
++        }
++        else if(amount > balance)
++        {
++            System.out.println("So tien ban rut vuot qua so du!");
++            return;
++        }
++        this.balance -= amount;
++        transitionList.add(new Transaction("Rut tien",amount, balance));
+     }
+-    public void addTransaction( double amount , String operation){
+-        if( Transaction.DEPOSIT == operation){
+-            this.deposit(amount);
+-            Transaction tr = new Transaction("Nap tien" , amount , this.balance);
+-            transitionList.add(tr);
+-        }else if(Transaction.WITHDRAW == operation){
+-            this.withdraw(amount);
+-            Transaction tr = new Transaction( "Rut tien" , amount , this.balance);
+-            transitionList.add(tr);
+-        }else{
+-            System.out.println("Yeu cau khong hop le!");
++
++    public void addTransaction(double amount, String operation)
++    {
++        switch (operation)
++        {
++            case Transaction.DEPOSIT:
++                deposit(amount);
++                break;
++            case Transaction.WITHDRAW:
++                withdraw(amount);
++                break;
++            default:
++                System.out.println("Yeu cau khong hop le!");
++                break;
+         }
+     }
++
+     public void  printTransaction(){
+         int i = 1 ;
+         for ( Transaction item : transitionList){
+@@ -42,7 +51,11 @@
+         }
+     }
+ 
+-
+-
+-
++    public static void main(String[] args)
++    {
++        Account acc= new Account();
++        acc.addTransaction(2000.255,"deposit");
++        acc.addTransaction(1000,"withdraw");
++        acc.printTransaction();
++    }
+ }

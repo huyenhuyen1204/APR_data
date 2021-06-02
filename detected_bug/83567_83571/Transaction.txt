@@ -1,0 +1,15 @@
+@@ -49,10 +49,10 @@
+      * Return all transaction as string.
+      */
+     public String getTransactionSummary() {
+-        return String.format("- Kiểu giao dịch: %s. " +
+-                        "Số dư ban đầu: $%.2f. " +
+-                        "Số tiền: $%.2f. " +
+-                        "Số dư cuối: $%.2f.",
++        return String.format("- Kiểu giao dịch: %s. "
++                        + "Số dư ban đầu: $%.2f. "
++                        + "Số tiền: $%.2f. "
++                        + "Số dư cuối: $%.2f.",
+                 this.getTransactionTypeString(type),
+                 this.initialBalance,
+                 this.amount,

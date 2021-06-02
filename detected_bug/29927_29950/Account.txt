@@ -1,0 +1,31 @@
+@@ -2,7 +2,7 @@
+ 
+ public class Account {
+     private double balance = 0;
+-    private ArrayList<Transaction> transactions = new ArrayList<>();
++    private ArrayList<Transaction> transitionList = new ArrayList<>();
+ 
+     public Account() {
+ 
+@@ -26,18 +26,18 @@
+     public void addTransaction(double amount, String operation) {
+         if(operation == "deposit") {
+             deposit(amount);
+-            transactions.add(new Transaction(operation, amount, this.balance));
++            transitionList.add(new Transaction(operation, amount, this.balance));
+         } else
+         if(operation == "withdraw") {
+             withdraw(amount);
+-            transactions.add(new Transaction(operation, amount, this.balance));
++            transitionList.add(new Transaction(operation, amount, this.balance));
+         } else {
+             System.out.println("Yeu cau khong hop le!");
+         }
+     }
+     public void  printTransaction() {
+         int i = 1;
+-        for (Transaction transaction : transactions) {
++        for (Transaction transaction : transitionList) {
+             System.out.print("Giao dich " + i + ": ");
+             if (transaction.getOperation() == transaction.DEPOSIT) {
+                 System.out.print("Nap tien $");

@@ -1,0 +1,52 @@
+@@ -1,22 +1,43 @@
++/**
++ * class CheckingAccount.
++ */
+ public class CheckingAccount extends Account {
++
++    /**
++     * constructor.
++     * @param accountNumber .
++     * @param balance .
++     */
+     public CheckingAccount(long accountNumber, double balance) {
+         super(accountNumber, balance);
+     }
+ 
+-    @Override
+-    public void withdraw(double money) {
++    /**
++     * withdraw.
++     * @param amount .
++     */
++    public void withdraw(double amount) {
+         try {
+-            doWithdrawing(money);
+-        } catch (BankException e) {
++            doWithdrawing(amount);
++            addTransaction(new Transaction(Transaction.TYPE_WITHDRAW_CHECKING,
++                    amount, balance, balance - amount));
++            balance -= amount;
++        } catch (InsufficientFundsException | InvalidFundingAmountException e) {
+             e.printStackTrace();
+         }
+     }
+ 
+-    @Override
+-    public void deposit(double money) {
++    /**
++     * deposit.
++     * @param amount .
++     */
++    public void deposit(double amount) {
+         try {
+-            doDepositing(money);
+-        } catch (BankException e) {
++            doDepositing(amount);
++            addTransaction(new Transaction(Transaction.TYPE_DEPOSIT_CHECKING,
++                    amount, balance, balance + amount));
++            balance += amount;
++        } catch (InsufficientFundsException | InvalidFundingAmountException e) {
+             e.printStackTrace();
+         }
+     }

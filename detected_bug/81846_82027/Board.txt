@@ -1,0 +1,56 @@
+@@ -1,16 +1,20 @@
+ import java.util.ArrayList;
+ 
+ public class Board {
+-    public final static int WIDTH = 8;
+-    public final static int HEIGHT = 8;
++    public static final int WIDTH = 8;
++    public static final int HEIGHT = 8;
+     private ArrayList<Piece> pieces;
+ 
+     public Board() {
+     }
+ 
++    /**
++     * addPiece.
++     * @param piece piece
++     */
+     public void addPiece(Piece piece) {
+-        if (getAt(piece.getCoordinatesX(), piece.getCoordinatesY()) == null &&
+-                validate(piece.getCoordinatesX(), piece.getCoordinatesY())) {
++        if (getAt(piece.getCoordinatesX(), piece.getCoordinatesY()) == null
++                && validate(piece.getCoordinatesX(), piece.getCoordinatesY())) {
+             pieces.add(piece);
+         }
+     }
+@@ -19,16 +23,25 @@
+         return 1 <= x && 1 <= y && x <= 8 && y <= 8;
+     }
+ 
++    /**
++     * remove piece on board.
++     * @param x coordinate x
++     * @param y coordinate y
++     */
++
+     public void removeAt(int x, int y) {
+ 
+-        for (Piece piece : pieces) {
+-            if (piece.getCoordinatesX() == x && piece.getCoordinatesY() == y) {
+-                pieces.remove(piece);
+-            }
+-        }
++        pieces.removeIf(p -> x == p.getCoordinatesX() && y == p.getCoordinatesY());
+ 
+     }
+ 
++    /**
++     * get piece on board.
++     * @param x coordinate x
++     * @param y coordinate y
++     * @return
++     */
++
+     public Piece getAt(int x, int y) {
+ 
+         for (Piece piece : pieces) {

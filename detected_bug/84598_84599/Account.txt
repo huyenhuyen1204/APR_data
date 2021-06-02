@@ -1,0 +1,63 @@
+@@ -1,8 +1,9 @@
++import java.text.DecimalFormat;
+ import java.util.ArrayList;
+ 
+ public class Account {
+     private double balance;
+-    private ArrayList<Transaction> transactionArrayList = new ArrayList<>();
++    private ArrayList<Transaction> transitionList = new ArrayList<>();
+ 
+     public double getBalance() {
+         return balance;
+@@ -30,14 +31,19 @@
+         }
+     }
+ 
++    /**
++     * addTransaction.
++     * @param amount .
++     * @param operation .
++     */
+     public void addTransaction(double amount, String operation) {
+         if (operation.equals(Transaction.DEPOSIT)) {
+             if (amount > 0) {
+                 deposit(amount);
+                 Transaction transaction = new Transaction("Nap tien",
+-                        (double) Math.round(amount * 100)/ 100,
++                        (double) Math.round(amount * 100) / 100,
+                         (double) Math.round(getBalance() * 100) / 100);
+-                transactionArrayList.add(transaction);
++                transitionList.add(transaction);
+             } else {
+                 deposit(amount);
+             }
+@@ -47,7 +53,7 @@
+                 Transaction transaction2 = new Transaction("Rut tien",
+                         (double) Math.round(amount * 100) / 100,
+                         (double) Math.round(getBalance() * 100) / 100);
+-                transactionArrayList.add(transaction2);
++                transitionList.add(transaction2);
+             } else {
+                 withdraw(amount);
+             }
+@@ -56,11 +62,17 @@
+         }
+     }
+ 
++    /**
++     * printTransaction.
++     */
+     public void printTransaction() {
+-        for (int i = 0; i < transactionArrayList.size(); i++) {
++        for (int i = 0; i < transitionList.size(); i++) {
++            DecimalFormat format = new DecimalFormat("0.00");
+             System.out.println("Giao dich " + (i + 1) + ": "
+-                    + transactionArrayList.get(i).getOperation() + " $" + transactionArrayList.get(i).getAmount()
+-                    + ". " + "So du luc nay: " + "$" + transactionArrayList.get(i).getBalance() + ".");
++                    + transitionList.get(i).getOperation() + " $"
++                    + format.format(transitionList.get(i).getAmount())
++                    + ". " + "So du luc nay: " + "$"
++                    + format.format(transitionList.get(i).getBalance()) + ".");
+         }
+     }
+ }

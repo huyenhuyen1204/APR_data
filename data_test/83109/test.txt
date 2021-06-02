@@ -1,0 +1,18 @@
+Nguyễn Thị A 123456789
+1234567890 CHECKING 1000.0
+1234567891 SAVINGS 3000.0
+Lê Hoàng B 123456788
+1234567892 CHECKING 5000.0
+A Hoàng Văn C 123456787
+
+Lịch sử giao dịch của tài khoản 7046865999:
+- Kiểu giao dịch: Nạp tiền tiết kiệm. Số dư ban đầu: 30000.00. Số tiền: $50000.25. Số dư cuối: $80000.25.
+- Kiểu giao dịch: Nạp tiền tiết kiệm. Số dư ban đầu: $30000.00. Số tiền: $50000.25. Số dư cuối: $80000.25.
+- Kiểu giao dịch: Nạp tiền tiết kiệm. Số dư ban đầu: 80000.25. Số tiền: $2000.25. Số dư cuối: $82000.50.
+- Kiểu giao dịch: Rút tiền tiết kiệm. Số dư ban đầu: 82000.50. Số tiền: $900.27. Số dư cuối: $81100.23.
+- Kiểu giao dịch: Nạp tiền tiết kiệm. Số dư ban đầu: 81100.23. Số tiền: $8000.77. Số dư cuối: $89101.00.
+Lịch sử giao dịch của tài khoản 7046865999:
+- Kiểu giao dịch: Nạp tiền tiết kiệm. Số dư ban đầu: $30000.00. Số tiền: $50000.25. Số dư cuối: $80000.25.
+- Kiểu giao dịch: Nạp tiền tiết kiệm. Số dư ban đầu: $80000.25. Số tiền: $2000.25. Số dư cuối: $82000.50.
+- Kiểu giao dịch: Rút tiền tiết kiệm. Số dư ban đầu: $82000.50. Số tiền: $900.27. Số dư cuối: $81100.23.
+- Kiểu giao dịch: Nạp tiền tiết kiệm. Số dư ban đầu: $81100.23. Số tiền: $8000.77. Số dư cuối: $89101.00.

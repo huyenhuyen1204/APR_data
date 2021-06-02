@@ -1,0 +1,30 @@
+@@ -9,6 +9,9 @@
+         this.operation = "";
+     }
+ 
++    /**
++     * contructer.
++     */
+     public Transaction(String operation, double amount, double balance) {
+         this.operation = operation;
+         this.amount = amount;
+@@ -39,11 +42,17 @@
+         this.balance = balance;
+     }
+ 
+-    public static String getDEPOSIT() {
++    /**
++     * getdep.
++     */
++    public static String getDepositstr() {
+         return DEPOSIT;
+     }
+ 
+-    public static String getWITHDRAW() {
++    /**
++     * getWith.
++     */
++    public static String getWithdrawstr() {
+         return WITHDRAW;
+     }
+ }

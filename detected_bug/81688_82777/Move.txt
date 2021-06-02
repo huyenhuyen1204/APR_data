@@ -1,0 +1,44 @@
+@@ -5,8 +5,16 @@
+     private int endY;
+     private Piece movedPiece;
+     private Piece killedPiece;
+-    private String[] symbolAtX= {"a", "b", "c", "d", "e", "f", "g", "h"};
++    private String[] symbolAtX = {"a", "b", "c", "d", "e", "f", "g", "h"};
+ 
++    /**
++     * di chuyen.
++     * @param startX x bat dau.
++     * @param startY y bat dau.
++     * @param endX x den.
++     * @param endY y den.
++     * @param movedPiece quan di chuyen.
++     */
+     public Move(int startX, int startY, int endX, int endY, Piece movedPiece) {
+         this.startX = startX;
+         this.startY = startY;
+@@ -15,6 +23,15 @@
+         this.movedPiece = movedPiece;
+     }
+ 
++    /**
++     * di chuyen.
++     * @param startX x bat dau.
++     * @param startY y bat dau.
++     * @param endX x den.
++     * @param endY y den.
++     * @param movedPiece quan di chuyen.
++     * @param killedPiece quan bi ha.
++     */
+     public Move(int startX, int startY, int endX, int endY,
+                 Piece movedPiece, Piece killedPiece) {
+         this.startX = startX;
+@@ -77,7 +94,7 @@
+     public String toString() {
+         return movedPiece.getColor()
+                 + "-" + movedPiece.getSymbol()
+-                + symbolAtX[movedPiece.getCoordinatesX()]
+-                + movedPiece.getCoordinatesY();
++                + symbolAtX[endX - 1]
++                + endY;
+     }
+ }

@@ -1,0 +1,39 @@
+@@ -3,7 +3,7 @@
+ public class Account {
+ 
+     private double balance;
+-    ArrayList<Transaction> transitionList = new ArrayList<>();
++    private ArrayList<Transaction> transitionList = new ArrayList<>();
+ 
+     /**
+      * Nap tien.
+@@ -39,12 +39,10 @@
+     public void addTransaction(double amount, String operation) {
+         if (operation == "deposit") {
+             deposit(amount);
+-        }
+-        else {
++        } else {
+             if (operation == "withdraw") {
+                 withdraw(amount);
+-            }
+-            else {
++            } else {
+                 System.out.println("Yeu cau khong hop le!");
+             }
+         }
+@@ -55,11 +53,11 @@
+      */
+     public void printTransaction() {
+         for (int i = 0; i < transitionList.size(); i++) {
+-            System.out.print("Giao dich " + (i + 1 )+ ": ");
+-            if (transitionList.get(i).getOperation().equals("deposit")){
++            System.out.print("Giao dich " + (i + 1) + ": ");
++            if (transitionList.get(i).getOperation().equals("deposit")) {
+                 System.out.print("Nap tien ");
+             }
+-            if (transitionList.get(i).getOperation().equals("withdraw")){
++            if (transitionList.get(i).getOperation().equals("withdraw")) {
+                 System.out.print("Rut tien ");
+             }
+             System.out.printf("$%.2f.", transitionList.get(i).getAmount());

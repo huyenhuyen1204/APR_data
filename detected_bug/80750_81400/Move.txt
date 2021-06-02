@@ -1,0 +1,28 @@
+@@ -54,10 +54,8 @@
+         this.killedPiece = killedPiece;
+     }
+ 
+-    /*
+-     *@nnnnnnn.
+-     *nnnnn.
+-     *
++    /**
++     * cmt.
+      *
+      */
+     public Move(int startX, int endX, int startY, int endY, Piece movedPiece) {
+@@ -68,11 +66,9 @@
+         this.movedPiece = movedPiece;
+     }
+ 
+-    /*
+-     *@nnn nnnn.
+-     *nnn nn.
+-     *ffdds
+-     *faf
++    /**
++     * cmt.
++     *
+      */
+     public Move(int startX, int endX, int startY, int endY, Piece movedPiece, Piece killedPiece) {
+         this.startX = startX;

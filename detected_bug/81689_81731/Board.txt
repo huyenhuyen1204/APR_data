@@ -1,0 +1,48 @@
+@@ -13,12 +13,22 @@
+     public Board() {
+     }
+ 
++    /**
++     * check whether coordinate is valid.
++     * @param x coordinatesX
++     * @param y coordinatesY
++     * @return this coordinate is valid or not
++     */
+     public boolean validate(int x, int y) {
+         boolean con1 = (x >= 1) && (x <= 8);
+         boolean con2 = (y >= 1) && (y <= 8);
+         return con1 & con2;
+     }
+ 
++    /**
++     * add new piece.
++     * @param piece new piece to add
++     */
+     public void addPiece(Piece piece) {
+         boolean con1 = true;
+         for (Piece pieceC : pieces) {
+@@ -33,6 +43,12 @@
+         }
+     }
+ 
++    /**
++     * get piece in this coordinate of board.
++     * @param x coordinateX
++     * @param y coordinateY
++     * @return piece in this coordinate
++     */
+     public Piece getAt(int x, int y) {
+         for (Piece pieceC : pieces) {
+             boolean con1 = pieceC.getCoordinatesX() == x;
+@@ -44,6 +60,11 @@
+         return null;
+     }
+ 
++    /**
++     * remove piece in this coordinate of board.
++     * @param x coordinateX
++     * @param y coordinateY
++     */
+     public void removeAt(int x, int y) {
+         for (Piece pieceC : pieces) {
+             boolean con1 = pieceC.getCoordinatesX() == x;

@@ -1,0 +1,136 @@
+@@ -23,84 +23,70 @@
+ 
+     @Override
+     public boolean canMove(Board board, int x, int y) {
+-        if (x != this.getX() && y != this.getY()) {
++        if (x != this.getCoordinatesX() && y != this.getCoordinatesY()) {
+             return false;
+         }
+-        ArrayList<Piece> pieces = new ArrayList<>();
+-        for (int i = 0; i < board.getPieces().size(); i++) {
+-            if (board.getPieces().get(i).getColor().equals(this.getColor())) {
+-                if (board.getPieces().get(i).getX() != this.getX()
+-                        && board.getPieces().get(i).getY() != this.getY()) {
+-                    pieces.add(board.getPieces().get(i));
+-                }
+-                if (board.getPieces().get(i).getX() == x
+-                        && board.getPieces().get(i).getY() == y) {
+-                    return false;
+-                }
+-            }
++        if (x > 8 || x < 0 || y > 8 || y < 0) {
++            return false;
+         }
+-        ArrayList<Piece> rooks = new ArrayList<>();
+-        for (int i = 0; i < pieces.size(); i++) {
+-            if (pieces.get(i).getColor().equals(this.getColor())) {
+-                if (pieces.get(i).getX() == this.getX()) {
+-                    rooks.add(pieces.get(i));
+-                } else if (pieces.get(i).getY() == this.getY()) {
+-                    rooks.add(pieces.get(i));
+-                }
+-            }
++        int maxX = 0;
++        int minX = 0;
++        int maxY = 0;
++        int minY = 0;
++        if (this.getCoordinatesX() > x) {
++            maxX = this.getCoordinatesX();
++            minX = x;
++        } else {
++            maxX = x;
++            minX = this.getCoordinatesX();
+         }
+-        int lenght = rooks.size();
+-        for (int i = 0; i < lenght; i++) {
+-            if (rooks.get(i).getY() == this.getY()) {
+-               if ((rooks.get(i).getX() < x && rooks.get(i).getX() > this.getX())
+-               || (rooks.get(i).getX() > x && rooks.get(i).getX() < this.getX())) {
+-                   return false;
+-               }
+-            } else if (rooks.get(i).getX() == this.getX()) {
+-                if ((rooks.get(i).getY() < y && rooks.get(i).getY() > this.getY())
+-                        || (rooks.get(i).getY() > y && rooks.get(i).getY() < this.getY())) {
+-                    return false;
+-                }
+-            }
++        if (this.getCoordinatesY() > y) {
++            maxY = this.getCoordinatesY();
++            minY = y;
++        } else {
++            maxY = y;
++            minY = this.getCoordinatesY();
+         }
+-        return true;
+-        /**
+-        int l = rooks.size();
+-        if (x < this.getX()) {
+-            for (int i = x; i < this.getX(); i++) {
+-                for (int j = 0; j < l; j++) {
+-                    if (rooks.get(j).getX() == y && rooks.get(j).getY() == this.getY()) {
++        ArrayList<Piece> pieceArrayList = board.getPieces();
++        int l = pieceArrayList.size();
++
++        for (int i = 0; i < l; i++) {
++            if (pieceArrayList.get(i).getCoordinatesY() == this.getCoordinatesY()
++                    && pieceArrayList.get(i).getCoordinatesX() != this.getCoordinatesX()) {
++
++                if (pieceArrayList.get(i).getCoordinatesX() >= minX
++                        && pieceArrayList.get(i).getCoordinatesX() <= maxX) {
++
++                    if (pieceArrayList.get(i).getCoordinatesX() == x) {
++                        if (!pieceArrayList.get(i).getColor().equals(this.getColor())) {
++                            return true;
++                        } else {
++                            return false;
++                        }
++                    } else {
+                         return false;
+                     }
+                 }
+-            }
+-        } else {
+-            for (int i = this.getX() + 1; i <= x; i++) {
+-                for (int j = 0; j < l; j++) {
+-                    if (rooks.get(j).getX() == i && rooks.get(j).getY() == this.getY()) {
++
++            } else if (pieceArrayList.get(i).getCoordinatesX() == this.getCoordinatesX()
++                    && pieceArrayList.get(i).getCoordinatesY() != this.getCoordinatesY()) {
++
++                if (pieceArrayList.get(i).getCoordinatesY() >= minY
++                        && pieceArrayList.get(i).getCoordinatesY() <= maxY) {
++
++                    if (pieceArrayList.get(i).getCoordinatesY() == y) {
++                        if (!pieceArrayList.get(i).getColor().equals(this.getColor())) {
++                            return true;
++                        } else {
++                            return false;
++                        }
++                    } else {
+                         return false;
+                     }
+                 }
+             }
+         }
+ 
+-        if (y < this.getY()) {
+-            for (int i = y; i < this.getY(); i++) {
+-                for (int j = 0; j < l; j++) {
+-                    if (rooks.get(j).getY() == i && rooks.get(j).getX() == this.getX()) {
+-                        return false;
+-                    }
+-                }
+-            }
+-        } else {
+-            for (int i = this.getY(); i <= y; i++) {
+-                for (int j = 0; j < l; j++) {
+-                    if (rooks.get(j).getY() == i && rooks.get(j).getX() == this.getY()) {
+-                        return false;
+-                    }
+-                }
+-            }
+-        }
+-         */
++       return true;
+     }
+ }

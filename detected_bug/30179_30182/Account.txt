@@ -1,0 +1,9 @@
+@@ -1,7 +1,7 @@
+ import java.util.ArrayList;
+ public class Account{
+     private double balance ;
+-    ArrayList<Transaction> transitionList = new ArrayList<>();
++    private ArrayList<Transaction> transitionList = new ArrayList<>();
+     private void deposit(double amount)
+     {
+         this.balance = this.balance + amount;

@@ -1,0 +1,75 @@
+@@ -9,8 +9,7 @@
+     protected double balance;
+     protected List<Transaction> transactionList = new ArrayList<>();
+     public int typeAccountToInt = 0;
+-    public int maxWithdraw = 1000000000;
+-    public int minBalance = 0;
++
+     public Account() {
+         accountNumber = 0;
+         balance = 0;
+@@ -41,12 +40,15 @@
+ 
+     public abstract void deposit(double b);
+ 
++    /**
++     * transaction history.
++     */
+     public String getTransactionHistory() {
+-        String res = "Lịch sử giao dịch của tài khoản " + accountNumber +
+-                ": \n";
+-        for(int i = 0; i < transactionList.size(); i++) {
++        String res = "Lịch sử giao dịch của tài khoản " + accountNumber
++                + ":\n";
++        for (int i = 0; i < transactionList.size(); i++) {
+             res = res + transactionList.get(i).getTransactionSummary();
+-            if(i < transactionList.size() - 1) {
++            if (i < transactionList.size() - 1) {
+                 res = res + "\n";
+             }
+         }
+@@ -57,6 +59,9 @@
+         transactionList.add(transaction);
+     }
+ 
++    /**
++     * check equals.
++     */
+     public boolean equals(Object obj) {
+         if (obj == null || getClass() != obj.getClass()) {
+             return false;
+@@ -65,19 +70,29 @@
+         return this.accountNumber == acc.accountNumber;
+     }
+ 
+-    public void doDepositing(double b) throws BankException{
++    /**
++     * do deposit.
++     */
++    public void doDepositing(double b) throws InvalidFundingAmountException {
+         if (b < 0) {
+-            throw new InsufficientFundsException(b);
++            throw new InvalidFundingAmountException(b);
+         }
+         transactionList.add(new Transaction(typeAccountToInt, b, balance, balance + b));
+         balance += b;
+     }
+ 
+-    public void doWithdrawing(double b) throws BankException{
+-        if (b > maxWithdraw || b > balance || balance - b < minBalance) {
++    /**
++     * do withdraw.
++     */
++    public void doWithdrawing(double b)
++            throws InvalidFundingAmountException, InsufficientFundsException {
++        if (b < 0) {
+             throw new InvalidFundingAmountException(b);
+         }
+-        transactionList.add(new Transaction(typeAccountToInt + 1, b, balance, balance + b));
++        if (b > balance) {
++            throw new InsufficientFundsException(b);
++        }
++        transactionList.add(new Transaction(typeAccountToInt + 1, b, balance, balance - b));
+         balance -= b;
+     }
+ }

@@ -1,0 +1,54 @@
+@@ -14,20 +14,20 @@
+ 
+     @Override
+     public boolean canMove(Board board, int x, int y) {
+-        int _x = getCoordinatesX();
+-        int _y = getCoordinatesY();
++        int newX = getCoordinatesX();
++        int newY = getCoordinatesY();
+ 
+-        if (x + y != _x + _y && x - y != _x - _y) {
++        if (x + y != newX + newY && x - y != newX - newY) {
+             return false;
+         }
+ 
+-        int max_x = (x > _x) ? x : _x;
+-        int max_y = (y > _y) ? y : _y;
+-        int min_x = (x < _x) ? x : _x;
+-        int min_y = (y < _y) ? y : _y;
+-        if (x + y == _x + _y) {
+-            for (int i = min_x + 1; i < max_x; i++) {
+-                for (int j = min_y + 1; j < max_y; j++) {
++        int maxX = (x > newX) ? x : newX;
++        int maxY = (y > newY) ? y : newY;
++        int minX = (x < newX) ? x : newX;
++        int minY = (y < newY) ? y : newY;
++        if (x + y == newX + newY) {
++            for (int i = minX + 1; i < maxX; i++) {
++                for (int j = minY + 1; j < maxY; j++) {
+                     if (i + j == x + y) {
+                         Piece piece = board.getAt(i, j);
+                         if (piece != null) {
+@@ -38,9 +38,9 @@
+             }
+         }
+ 
+-        if (x - y == _x - _y) {
+-            for (int i = min_x + 1; i < max_x; i++) {
+-                for (int j = min_y + 1; j < max_y; j++) {
++        if (x - y == newX - newY) {
++            for (int i = minX + 1; i < maxX; i++) {
++                for (int j = minY + 1; j < maxY; j++) {
+                     if (i - j == x - y) {
+                         Piece piece = board.getAt(i, j);
+                         if (piece != null) {
+@@ -52,6 +52,9 @@
+         }
+ 
+         Piece piece = board.getAt(x, y);
++        if (piece == null) {
++            return true;
++        }
+         return (!getColor().equals(piece.getColor()));
+     }
+ }

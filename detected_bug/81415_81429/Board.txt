@@ -1,0 +1,8 @@
+@@ -47,6 +47,7 @@
+             if (piece.getCoordinatesX() == x
+                     && piece.getCoordinatesY() == y) {
+                 pieces.remove(piece);
++                return;
+             }
+         }
+     }

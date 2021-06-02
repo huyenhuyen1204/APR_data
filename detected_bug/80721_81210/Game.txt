@@ -1,0 +1,25 @@
+@@ -9,12 +9,22 @@
+         this.board = board;
+     }
+ 
++    /**
++     * Author.
++     * Thuan
++     * Trinh Van Thuan
++     */
+     public void movePiece(Piece piece, int x, int y) {
+         if (piece.canMove(board, x, y)) {
+-            piece.setCoordinatesX(x);
+-            piece.setCoordinatesY(y);
+             Move move = new Move(piece.getCoordinatesX(), x,
+                     piece.getCoordinatesY(), y, piece);
++            if (board.getAt(x, y) != null) {
++                move.setKilledPiece(board.getAt(x, y));
++                board.removeAt(x, y);
++            }
++            move.setMovedPiece(piece);
++            piece.setCoordinatesX(x);
++            piece.setCoordinatesY(y);
+             moveHistory.add(move);
+         }
+     }

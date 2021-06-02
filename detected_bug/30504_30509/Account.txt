@@ -1,0 +1,30 @@
+@@ -14,6 +14,9 @@
+     }
+ 
+     private void deposit(double amount) {   // Nạp tiền vào tài khoản
++        if(amount <=0)  {
++            System.out.println("So tien ban nap vao khong hop le!");
++        }
+         balance += amount;
+ 
+         Transaction transaction = new Transaction(Transaction.DEPOSIT, amount, balance);
+@@ -23,7 +26,7 @@
+     private void withdraw(double amount) {  // rút tiền
+         //Số tiền amount >0; ngược lại int ra: "So tien khong hop le!"
+         if (amount <= 0) {
+-            System.out.println("So tien khong hop le!");
++            System.out.println("So tien ban rut ra khong hop le!");
+         } else if (amount > balance) {   // Nếu số tiền lớn hơn số dư, in ra "So tien ban rut vuot qua so du!"
+             System.out.println("So tien ban rut vuot qua so du!");
+         } else {
+@@ -52,8 +55,8 @@
+                         + ": Nap tien $" + Format(transitionList.get(i).getAmount()) + ". So du luc nay: $" + Format(transitionList.get(i).getBalance()) + ".";
+                 System.out.println(s);
+             } else {
+-                String s = "Giao dich " + Integer.toString(transitionList.size() + 1)
+-                        + ": Rut tien $" + Format(transitionList.get(i).getAmount()) + ". So du luc nay: $" + Format(balance) + ".";
++                String s = "Giao dich " + Integer.toString(i + 1)
++                        + ": Rut tien $" + Format(transitionList.get(i).getAmount()) + ". So du luc nay: $" + Format(transitionList.get(i).getBalance()) + ".";
+                 System.out.println(s);
+             }
+         }

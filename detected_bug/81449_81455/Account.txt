@@ -1,0 +1,76 @@
+@@ -1,12 +1,12 @@
+-/**
+- * @author Lê Công Nam .
+- */
+-
+ import java.util.ArrayList;
+ 
++/**
++ *  .
++ * @author Lê Công Nam .
++ */
+ public class Account {
+     private double balance;
+-    private ArrayList<String> transitionList = new ArrayList<>();
++    private ArrayList<Transaction> transitionList = new ArrayList<>();
+ 
+     /**
+      *  .
+@@ -42,30 +42,12 @@
+     public void addTransaction(double amount, String operation) {
+         if (operation.equals("deposit")) {
+             deposit(amount);
+-            if (this.getBalance() % 10 != 0) {
+-                transitionList.add("Nap tien $"
+-                        + (double) Math.round(amount * 100) / 100
+-                        + ". So du luc nay: $"
+-                        + (double) Math.round(this.getBalance() * 100) / 100 + ".");
+-            } else {
+-                transitionList.add("Nap tien $"
+-                        + (double) Math.round(amount * 100) / 100 + "0"
+-                        + ". So du luc nay: $"
+-                        + (double) Math.round(this.getBalance() * 100) / 100 + "0" + ".");
+-            }
++            Transaction deposit = new Transaction("deposit", amount, this.getBalance());
++            transitionList.add(deposit);
+         } else if (operation.equals("withdraw")) {
+             withdraw(amount);
+-            if (this.getBalance() % 10 != 0) {
+-                transitionList.add("Rut tien $"
+-                        + (double) Math.round(amount * 100) / 100 + "0"
+-                        + ". So du luc nay: $"
+-                        + (double) Math.round(this.getBalance() * 100) / 100 + ".");
+-            } else {
+-                transitionList.add("Rut tien $"
+-                        + (double) Math.round(amount * 100) / 100 + "0"
+-                        + ". So du luc nay: $"
+-                        + (double) Math.round(this.getBalance() * 100) / 100 + "0" + ".");
+-            }
++            Transaction withdraw = new Transaction("withdraw", amount, this.getBalance());
++            transitionList.add(withdraw);
+         } else {
+             System.out.println("Yeu cau khong hop le!");
+         }
+@@ -76,7 +58,21 @@
+      */
+     public void printTransaction() {
+         for (int i = 0; i < transitionList.size(); i++) {
+-            System.out.println("Giao dich " + (i + 1) + ": " + transitionList.get(i));
++            double amount = transitionList.get(i).getAmount();
++            double balance = transitionList.get(i).getBalance();
++            String dps = transitionList.get(i).getAmount() % 10 == 0
++                    ? (double) Math.round(amount * 100) / 100 + "0"
++                    : (double) Math.round(amount * 100) / 100 + "";
++            String blc = transitionList.get(i).getBalance() % 10 == 0
++                    ? (double) Math.round(balance * 100) / 100 + "0"
++                    : (double) Math.round(balance * 100) / 100 + "";
++            if (transitionList.get(i).getOperation().equals("deposit")) {
++                System.out.println("Giao dich " + (i + 1) + ": Nap tien $"
++                        + dps + ". So du luc nay: $" + blc + ".");
++            } else if (transitionList.get(i).getOperation().equals("withdraw")) {
++                System.out.println("Giao dich " + (i + 1) + ": Rut tien $"
++                        + dps + ". So du luc nay: $" + blc + ".");
++            }
+         }
+     }
+ 

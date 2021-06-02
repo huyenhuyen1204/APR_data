@@ -1,0 +1,65 @@
+@@ -49,42 +49,34 @@
+     }
+ 
+     /**
++     * round.
++     */
++    private String round(double number) {
++        String str = "";
++        double number1 = (double) Math.round(number * 100) / 100;
++
++        if (number - (int) number == 0) {
++            str = String.valueOf((int) number) + ".00";
++        } else {
++            str = String.valueOf(number1);
++        }
++        return str;
++    }
++
++    /**
+      * printTransaction.
+      */
+     public void printTransaction() {
+         for (int i = 0; i < transitionList.size(); i++) {
+-            if (((double) Math.round(transitionList.get(i).getAmount() * 10) / 10
+-                    - transitionList.get(i).getAmount()) == 0.0
+-                    || ((double) Math.round(transitionList.get(i).getBalance() * 10) / 10
+-                    - transitionList.get(i).getBalance()) == 0.0) {
+-                if (transitionList.get(i).getOperation().equals(Transaction.DEPOSIT)) {
+-                    System.out.println("Giao dich " + (i + 1) + ": Nap tien $"
+-                            + (int) transitionList.get(i).getAmount()
+-                            + ".00. So du luc nay: $"
+-                            + (int) transitionList.get(i).getBalance() + ".00.");
+-                }
+-                if (transitionList.get(i).getOperation().equals(Transaction.WITHDRAW)) {
+-                    System.out.println("Giao dich " + (i + 1) + ": Rut tien $"
+-                            + (int) transitionList.get(i).getAmount()
+-                            + ".00. So du luc nay: $"
+-                            + (int) transitionList.get(i).getBalance() + ".00.");
+-                }
++            String str = "";
++            if (transitionList.get(i).getOperation().equals(Transaction.DEPOSIT)) {
++                str = "Nap tien";
+             } else {
+-                if (transitionList.get(i).getOperation().equals(Transaction.DEPOSIT)) {
+-                    System.out.println("Giao dich " + (i + 1) + ": Nap tien $"
+-                            + (double) Math.round(transitionList.get(i).getAmount() * 100) / 100
+-                            + ". So du luc nay: $"
+-                            + (double) Math.round(transitionList.get(i).getBalance() * 100)
+-                            / 100 + ".");
+-                }
+-                if (transitionList.get(i).getOperation().equals(Transaction.WITHDRAW)) {
+-                    System.out.println("Giao dich " + (i + 1) + ": Rut tien $"
+-                            + (double) Math.round(transitionList.get(i).getAmount() * 100) / 100
+-                            + ". So du luc nay: $"
+-                            + (double) Math.round(transitionList.get(i).getBalance() * 100)
+-                            / 100 + ".");
+-                }
++                str = "Rut tien";
+             }
++            System.out.println("Giao dich " + (i + 1) + ": " + str + " $"
++                    + round(transitionList.get(i).getAmount()) + ". So du luc nay: $"
++                    + round(transitionList.get(i).getBalance()) + ".");
+         }
+     }
+ }

@@ -1,0 +1,49 @@
+@@ -3,7 +3,7 @@
+ 
+ public class Account {
+     private double balance;
+-    private ArrayList<Transaction> transactionList = new ArrayList<>();
++    private ArrayList<Transaction> transitionList = new ArrayList<>();
+ 
+     /**
+      * nap tien vao tai khoan.
+@@ -13,7 +13,7 @@
+         if (amount > 0) {
+             this.balance += amount;
+             Transaction temp = new Transaction(Transaction.DEPOSIT, amount, balance);
+-            transactionList.add(temp);
++            transitionList.add(temp);
+         } else {
+             System.out.println("So tien ban nap vao khong hop le!");
+         }
+@@ -31,10 +31,15 @@
+         } else {
+             this.balance -= amount;
+             Transaction temp = new Transaction(Transaction.WITHDRAW, amount, balance);
+-            transactionList.add(temp);
++            transitionList.add(temp);
+         }
+     }
+ 
++    /**
++     * them giao dich vao danh sach.
++     * @param amount tien giao dich.
++     * @param operation loai giao dich.
++     */
+     public void addTransaction(double amount, String operation) {
+         if (operation.equalsIgnoreCase(Transaction.DEPOSIT)) {
+             deposit(amount);
+@@ -45,9 +50,12 @@
+         }
+     }
+ 
++    /**
++     * in cac giao dich ra ngoai.
++     */
+     public void printTransaction() {
+         int count = 1;
+-        for (Transaction iterator : transactionList) {
++        for (Transaction iterator : transitionList) {
+             System.out.println(String.format("Giao dich %d: %s", count, iterator.toString()));
+             count += 1;
+         }

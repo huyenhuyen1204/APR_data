@@ -1,0 +1,50 @@
+@@ -2,7 +2,7 @@
+ 
+ public class Account {
+     private double balance = 0;
+-    private final ArrayList<Transaction> transactions = new ArrayList<>();
++    private final ArrayList<Transaction> transitionList = new ArrayList<>();
+ 
+     /** Deposit function. **/
+     private void deposit(double amount) {
+@@ -11,7 +11,7 @@
+             return;
+         }
+         balance += amount;
+-        transactions.add(new Transaction(Transaction.DEPOSIT, amount, this.balance));
++        transitionList.add(new Transaction(Transaction.DEPOSIT, amount, this.balance));
+     }
+ 
+     /** Withdraw function. **/
+@@ -25,7 +25,7 @@
+             return;
+         }
+         balance -= amount;
+-        transactions.add(new Transaction(Transaction.WITHDRAW, amount, this.balance));
++        transitionList.add(new Transaction(Transaction.WITHDRAW, amount, this.balance));
+     }
+ 
+     /** Add new transaction. **/
+@@ -45,17 +45,17 @@
+ 
+     /** Print ... transactions. **/
+     public void printTransaction() {
+-        for (int i = 1; i <= transactions.size(); ++ i) {
+-            String roundedAmount = String.format("%.2f", transactions.get(i - 1).getAmount());
+-            String roundedBalance = String.format("%.2f", transactions.get(i - 1).getBalance());
++        for (int i = 1; i <= transitionList.size(); ++ i) {
++            String roundedAmount = String.format("%.2f", transitionList.get(i - 1).getAmount());
++            String roundedBalance = String.format("%.2f", transitionList.get(i - 1).getBalance());
+             String operation;
+-            if (transactions.get(i - 1).getOperation().equals(Transaction.DEPOSIT)) {
++            if (transitionList.get(i - 1).getOperation().equals(Transaction.DEPOSIT)) {
+                 operation = "Nap";
+             } else {
+                 operation = "Rut";
+             }
+             System.out.println("Giao dich " + i + ": " + operation + " tien $" + roundedAmount
+-                    + ". So du luc nay: $" + roundedBalance);
++                    + ". So du luc nay: $" + roundedBalance + ".");
+         }
+     }
+ 

@@ -1,0 +1,10 @@
+@@ -9,6 +9,9 @@
+     public Transaction() {
+     }
+ 
++    /**
++     * Comment.
++     */
+     public Transaction(String operation, double amount, double balance) {
+         this.operation = operation;
+         this.amount = amount;

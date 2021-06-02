@@ -1,0 +1,45 @@
+public class Transaction {
+    private String operation;
+    private double amount;
+    private double balance;
+
+    public static final String DEPOSIT = "deposit";
+    public static final String WITHDRAW = "withdraw";
+
+    /** Khoi tao. **/
+    public Transaction(String operation, double amount, double balance) {
+        this.operation = operation;
+        this.amount = amount;
+        this.balance = balance;
+    }
+
+    /** Lay hoat dong. **/
+    public String getOperation() {
+        return operation;
+    }
+
+    /** Tao hoat dong. **/
+    public void setOperation(String operation) {
+        this.operation = operation;
+    }
+
+    /** Lay so tien giao dich. **/
+    public double getAmount() {
+        return amount;
+    }
+
+    /** Tao so tien giao dich. **/
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
+
+    /** Lay so du. **/
+    public double getBalance() {
+        return balance;
+    }
+
+    /** Tao so du. **/
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+}

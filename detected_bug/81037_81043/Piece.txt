@@ -1,0 +1,9 @@
+@@ -54,7 +54,7 @@
+      * cmt.
+      */
+     public boolean checkPosition(Piece piece) {
+-        if (coordinatesX == piece.getCoordinatesX()&& coordinatesY == piece.getCoordinatesY()) {
++        if (coordinatesX == piece.getCoordinatesX() && coordinatesY == piece.getCoordinatesY()) {
+             return false;
+         } else {
+             return true;

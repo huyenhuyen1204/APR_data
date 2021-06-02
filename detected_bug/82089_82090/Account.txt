@@ -1,0 +1,9 @@
+@@ -65,7 +65,7 @@
+          } else {
+             operator = "Rut tien";
+          }
+-         System.out.println(String.format(format,i + 1, operator, t.getAmount(), t.getBalance()));
++         System.out.println(String.format(format, i + 1, operator, t.getAmount(), t.getBalance()));
+       }
+    }
+ }

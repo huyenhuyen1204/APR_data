@@ -1,0 +1,59 @@
+@@ -1,9 +1,8 @@
+ import java.util.ArrayList;
+-import java.util.List;
+ 
+ public class Account {
+     private double balance;
+-    private List<Transaction> transactions = new ArrayList<>();
++    private ArrayList<Transaction> transitionList = new ArrayList<>();
+ 
+     /**
+      * hgasdg.
+@@ -11,10 +10,10 @@
+     public void addTransaction(double amount, String operation) {
+         if (operation.equals(Transaction.DEPOSIT)) {
+             deposit(amount);
+-            transactions.add(new Transaction(operation, amount, balance));
++            transitionList.add(new Transaction(operation, amount, balance));
+         } else if (operation.equals(Transaction.WITHDRAW)) {
+             withdraw(amount);
+-            transactions.add(new Transaction(operation, amount, balance));
++            transitionList.add(new Transaction(operation, amount, balance));
+         } else {
+             System.out.println("Yeu cau khong hop le!");
+         }
+@@ -37,8 +36,8 @@
+      */
+     private void withdraw(double amount) {
+         if (amount <= 0) {
+-            System.out.println("So tien ban nap vao khong hop le!");
+-        } else if (amount > 0) {
++            System.out.println("So tien ban rut ra khong hop le!");
++        } else if (amount > balance) {
+             System.out.println("So tien ban rut vuot qua so du!");
+         } else {
+             balance -= amount;
+@@ -49,15 +48,17 @@
+      * hgasdg.
+      */
+     public void printTransaction() {
+-        int i = 0;
+-        for (Transaction transaction : transactions) {
++        int i = 1;
++        for (Transaction transaction : transitionList) {
+             String s = "Giao dich " + i++ + ": ";
++            String a = String.format("%.2f", transaction.getAmount());
++            String b = String.format("%.2f", transaction.getBalance());
+             if (transaction.getOperation().equals(Transaction.DEPOSIT)) {
+-                s += "Nap tien $" + transaction.getAmount() + ". ";
+-                s += "So du luc nay: $" + transaction.getBalance() + ".";
++                s += "Nap tien $" + a + ". ";
++                s += "So du luc nay: $" + b + ".";
+             } else {
+-                s += "Rut tien $" + transaction.getAmount() + ". ";
+-                s += "So du luc nay: $" + transaction.getBalance() + ".";
++                s += "Rut tien $" + a + ". ";
++                s += "So du luc nay: $" + b + ".";
+             }
+             System.out.println(s);
+         }

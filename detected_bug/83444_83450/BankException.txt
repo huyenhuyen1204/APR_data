@@ -1,0 +1,18 @@
+@@ -1,15 +1,10 @@
+-public class BankException extends Exception{
+-    public String mess;
++public class BankException extends Exception {
+ 
+     public BankException() {
+ 
+     }
+ 
+     public BankException(String mess) {
+-        this.mess = mess;
+-    }
+-
+-    public String getMess() {
+-        return mess;
++        super(mess);
+     }
+ }

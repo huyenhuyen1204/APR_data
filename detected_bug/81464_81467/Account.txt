@@ -1,0 +1,38 @@
+@@ -35,7 +35,7 @@
+             if (operation.equals("deposit")) {
+                 double balance1 = balance;
+                 deposit(amount);
+-                if (balance == balance1 - amount) {
++                if (balance == balance1 + amount) {
+                     check = true;
+                 }
+             }
+@@ -56,19 +56,21 @@
+     /**2.*/
+     public void printTransaction() {
+         for (int i = 0; i < transitionList.size(); i++) {
+-            System.out.println("Giao dich " + (i + 1) + ": ");
++            System.out.print("Giao dich " + (i + 1) + ": ");
+             if (transitionList.get(i).getOperation().equals("deposit")) {
+-                System.out.println("Nap tien $");
++                System.out.print("Nap tien $");
+             }
+             if (transitionList.get(i).getOperation().equals("withdraw")) {
+-                System.out.println("Rut tien $");
++                System.out.print("Rut tien $");
+             }
+-            System.out.println(round(transitionList.get(i).getAmount()) + ".");
+-            System.out.println(" So du luc nay: $"
+-                    + round(transitionList.get(i).getBalance()) + ".");
+-
++            System.out.print("" + round(transitionList.get(i).getAmount()) + ".");
++            System.out.print(" So du luc nay: $"
++                    + round(transitionList.get(i).getBalance()) + '.');
++            System.out.println("");
+         }
+     }
++
++    /**2.*/
+     public String round(double amount) {
+         double amount1 = (double) (Math.round(amount * 100)) / 100;
+         double temp = amount1 - Math.round(amount1);

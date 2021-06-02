@@ -1,0 +1,35 @@
+@@ -6,7 +6,11 @@
+     private int endY;
+     private Piece killedPiece;
+ 
+-    public Move(int startX, int endX, int startY, int endY, Piece movedPiece) {
++    /**
++     * abc.
++     */
++    public Move(int startX, int endX, int startY, int endY,
++                Piece movedPiece) {
+         this.endX = endX;
+         this.endY = endY;
+         this.startX = startX;
+@@ -15,7 +19,11 @@
+         this.killedPiece = null;
+     }
+ 
+-    public Move(int startX, int endX, int startY, int endY, Piece movedPiece, Piece killedPiece) {
++    /**
++     * abc.
++     */
++    public Move(int startX, int endX, int startY, int endY,
++                Piece movedPiece, Piece killedPiece) {
+         this.endX = endX;
+         this.endY = endY;
+         this.startX = startX;
+@@ -52,6 +60,8 @@
+             case 8:
+                 ans += "h";
+                 break;
++            default:
++                break;
+         }
+         ans += y;
+ 

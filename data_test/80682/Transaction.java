@@ -1,0 +1,40 @@
+public class Transaction {
+    private String operation;
+    private Double amount;
+    private Double balance;
+    public static final String DEPOSIT = "deposit";
+    public static final String WITHDRAW = "withdraw";
+
+    /**
+     * constructor for 1 transaction.
+     */
+    public Transaction(String operation, Double amount, Double balance) {
+        this.operation = operation;
+        this.amount = amount;
+        this.balance = balance;
+    }
+
+    public String getOperation() {
+        return operation;
+    }
+
+    public Double getAmount() {
+        return amount;
+    }
+
+    public Double getBalance() {
+        return balance;
+    }
+
+    public void setOperation(String operation) {
+        this.operation = operation;
+    }
+
+    public void setAmount(Double amount) {
+        this.amount = amount;
+    }
+
+    public void setBalance(Double balance) {
+        this.balance = balance;
+    }
+}

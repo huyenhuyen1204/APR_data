@@ -1,0 +1,26 @@
+@@ -32,9 +32,9 @@
+    public void printTransaction(){
+        for (Transaction transaction : transitionList){
+         String t ="";
+-        if (transaction.getOperation() == "withdraw") t = "Rut tien $";
+-        else t = "Nap tien $";
+-        System.out.printf("Giao dich %d : %s $%.2f. So du luc nay: $%.2f.\n",transitionList.indexOf(transaction)+1,t,transaction.getAmount(),transaction.getBalance());
++        if (transaction.getOperation() == "withdraw") t = "Rut tien";
++        else t = "Nap tien";
++        System.out.printf("Giao dich %d: %s $%.2f. So du luc nay: $%.2f.\n",transitionList.indexOf(transaction)+1,t,transaction.getAmount(),transaction.getBalance());
+        }
+    }
+    Account(double balance){
+@@ -50,10 +50,10 @@
+     public void setBalance(double balance) {
+         this.balance = balance;
+     }
+-    /* public static void main(String[] argv){
++     public static void main(String[] argv){
+        Account acc = new Account(30);
+        acc.addTransaction(5,"withdraw");
+        acc.addTransaction(40,"deposit");
+        acc.printTransaction();
+-   }*/
++   }
+ }

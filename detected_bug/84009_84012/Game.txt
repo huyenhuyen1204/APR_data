@@ -1,0 +1,13 @@
+@@ -50,9 +50,10 @@
+     /**
+      * cmt.
+      */
+-    public  void movePiece(Piece p , int x, int y) {
++    public  void movePiece(Piece p, int x, int y) {
+         if (p.canMove(board, x, y)) {
+-            Move move = new Move(p.getCoordinatesX(), x, p.getCoordinatesY(), y, p, board.getAt(x, y));
++            Move move = new Move(p.getCoordinatesX(), x,
++                    p.getCoordinatesY(), y, p, board.getAt(x, y));
+             moveHistory.add(move);
+             Piece piece = board.getAt(x, y);
+             if (piece != null) {

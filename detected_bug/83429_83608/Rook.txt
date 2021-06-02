@@ -1,0 +1,25 @@
+@@ -40,14 +40,20 @@
+         }
+ 
+         if (x == this.getCoordinatesX()) {
+-            for (int i = Math.min(y, this.getCoordinatesY()) + 1; i < Math.max(y, this.getCoordinatesY()); i++) {
+-                if (board.getAt(x, i) != null) return false;
++            for (int i = Math.min(y, this.getCoordinatesY()) + 1;
++                 i < Math.max(y, this.getCoordinatesY()); i++) {
++                if (board.getAt(x, i) != null) {
++                    return false;
++                }
+             }
+         }
+ 
+         if (y == this.getCoordinatesY()) {
+-            for (int i = Math.min(x, this.getCoordinatesX()) + 1; i < Math.max(x, this.getCoordinatesX()); i++) {
+-                if (board.getAt(i, y) != null) return false;
++            for (int i = Math.min(x, this.getCoordinatesX()) + 1;
++                 i < Math.max(x, this.getCoordinatesX()); i++) {
++                if (board.getAt(i, y) != null) {
++                    return false;
++                }
+             }
+         }
+         return true;

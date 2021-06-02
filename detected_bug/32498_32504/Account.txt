@@ -1,0 +1,40 @@
+@@ -1,8 +1,9 @@
++import java.text.DecimalFormat;
+ import java.util.ArrayList;
+ 
+ public class Account {
+     private double balance;
+-    private ArrayList<String> transitionList = new ArrayList();
++    private ArrayList<Transaction> transitionList = new ArrayList();
+ 
+     private void deposit(double amount){
+         if(amount <= 0) System.out.println("So tien ban nap vao khong hop le!");
+@@ -21,19 +22,24 @@
+         else if(operation.equals("deposit")){
+             deposit(amount);
+             if(amount >= 0)
+-                transitionList.add("Nap tien $" + (double) Math.round(amount*100)/100 + ". So du luc nay: $" + (double) Math.round(balance*100)/100);
+-
++                transitionList.add(new Transaction(operation, amount, balance));
+         }
+         else {
+             withdraw(amount);
+             if(amount > 0 && amount <= balance)
+-                transitionList.add("Rut tien $" + (double) Math.round(amount*100)/100 + ". So du luc nay: $" + (double) Math.round(balance*100)/100);
++                transitionList.add(new Transaction(operation, amount, balance));
+         }
+     }
+ 
+     public void printTransaction(){
+         for(int i = 0; i < transitionList.size(); i++){
+-            System.out.println(transitionList.get(i));
++            if(transitionList.get(i).getOperation().equals("deposit")) transitionList.get(i).setOperation("Nap tien");
++            else if(transitionList.get(i).getOperation().equals("withdraw")) transitionList.get(i).setOperation("Rut tien");
++            DecimalFormat df = new DecimalFormat("#.00");
++            double Amount = transitionList.get(i).getAmount();
++            double Balance = transitionList.get(i).getBalance();
++
++            System.out.println("Giao dich " + (i+1) + ": " + transitionList.get(i).getOperation() + " $" + df.format(Amount) + ". So du luc nay: $" + df.format(Balance) + ".");
+         }
+     }
+ }

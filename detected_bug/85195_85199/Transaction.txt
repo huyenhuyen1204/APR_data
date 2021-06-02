@@ -1,0 +1,14 @@
+@@ -52,9 +52,11 @@
+     @Override
+     public String toString() {
+         if (operation.equals("withdraw")) {
+-            return "Rut tien $" +  String.format("%.2f", amount) + ". So du luc nay: $" + String.format("%.2f", balance) + ".";
++            String s1 = "Rut tien $" +  String.format("%.2f", amount);
++            return  s1 + ". So du luc nay: $" + String.format("%.2f", balance) + ".";
+         } else {
+-            return "Nap tien $" + String.format("%.2f", amount) + ". So du luc nay: $" + String.format("%.2f", balance) + ".";
++            String s1 = "Nap tien $" + String.format("%.2f", amount);
++            return s1 + ". So du luc nay: $" + String.format("%.2f", balance) + ".";
+         }
+     }
+ }

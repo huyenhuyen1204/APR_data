@@ -1,0 +1,27 @@
+@@ -1,8 +1,8 @@
+ import java.util.ArrayList;
+ 
+ public class Board {
+-    public final static int WIDTH = 8;
+-    public final static int HEIGHT = 8;
++    public static final int WIDTH = 8;
++    public static final int HEIGHT = 8;
+     private ArrayList<Piece> pieces = new ArrayList<>();
+ 
+     /**
+@@ -21,8 +21,14 @@
+         return check;
+     }
+ 
++    /**
++     * Thêm cbdj.
++     * @param piece quan.
++     */
+     public void addPiece(Piece piece) {
+-        pieces.add(piece);
++        if (!pieces.contains(piece)) {
++            pieces.add(piece);
++        }
+     }
+ 
+     /**

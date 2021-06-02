@@ -1,0 +1,43 @@
+@@ -1,18 +1,21 @@
+ public class Transaction {
+     private String operation;
+     private double amount;
+-    private double blance;
++    private double balance;
+ 
+-    public static final String despoit = "DESPOSIT";
+-    public static final String withdraw = "WITHDRAW";
++    public static final String DEPOSIT = "deposit";
++    public static final String WITHDRAW = "withdraw";
+ 
+     public Transaction() {
+     }
+ 
+-    public Transaction(String operation, double amount, double blance) {
++    /**
++     * construcor.
++     */
++    public Transaction(String operation, double amount, double balance) {
+         this.operation = operation;
+         this.amount = amount;
+-        this.blance = blance;
++        this.balance = balance;
+     }
+ 
+     public String getOperation() {
+@@ -31,11 +34,11 @@
+         this.amount = amount;
+     }
+ 
+-    public double getBlance() {
+-        return blance;
++    public double getBalance() {
++        return balance;
+     }
+ 
+-    public void setBlance(double blance) {
+-        this.blance = blance;
++    public void setBalance(double balance) {
++        this.balance = balance;
+     }
+ }

@@ -1,0 +1,50 @@
+@@ -2,12 +2,12 @@
+ 
+ public class Account {
+     private double balance;
+-    ArrayList<String> operationsList;
+-    static int id = 1;
++    private ArrayList<Transaction> transitionList;
++    int id = 1;
+ 
+     public Account() {
+         this.balance = 0;
+-        operationsList = new ArrayList<>();
++        transitionList = new ArrayList<>();
+     }
+ 
+     double round2Digit(double amount) {
+@@ -38,19 +38,27 @@
+         } else {
+             if (operation.equals(Transaction.DEPOSIT)) {
+                 deposit(amount);
+-                String s = "Giao dich " + id++ + ": Nap tien $" + round2Digit(amount) + ". So du luc nay: $" + round2Digit(balance) + ".";
+-                operationsList.add(s);
++                Transaction transaction = new Transaction(operation, amount, this.balance);
++//                String s = "Giao dich " + id++ + ": Nap tien $" + round2Digit(amount) + ". So du luc nay: $" + round2Digit(balance) + ".";
++//                transaction.setOperation(s);
++                transitionList.add(transaction);
+             } else {
+                 withdraw(amount);
+-                String s = "Giao dich " + id++ + ": Rut tien $" + round2Digit(amount) + ". So du luc nay: $" + round2Digit(balance) + ".";
+-                operationsList.add(s);
++                Transaction transaction = new Transaction(operation, amount, this.balance);
++//                String s = "Giao dich " + id++ + ": Rut tien $" + round2Digit(amount) + ". So du luc nay: $" + round2Digit(balance) + ".";
++//                transaction.setOperation(s);
++                transitionList.add(transaction);
+             }
+         }
+     }
+ 
+     public void printTransaction() {
+-        for (String s : operationsList) {
+-            System.out.println(s);
++        for (Transaction s : transitionList) {
++            if (s.getOperation().equals(Transaction.DEPOSIT)) {
++                System.out.printf("Giao dich %d: Nap tien $%.2f. So du luc nay: $%.2f.\n", id++, s.getAmount(), s.getBalance());
++            } else {
++                System.out.printf("Giao dich %d: Rut tien $%.2f. So du luc nay: $%.2f.\n", id++, s.getAmount(), s.getBalance());
++            }
+         }
+     }
+ }

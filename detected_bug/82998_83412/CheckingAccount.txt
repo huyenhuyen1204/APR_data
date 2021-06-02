@@ -1,0 +1,32 @@
+@@ -1,9 +1,15 @@
+ public class CheckingAccount extends Account {
+ 
++    /**
++     * .
++     */
+     public CheckingAccount(long accountNumber, double balance) {
+         super(accountNumber, balance);
+     }
+ 
++    /**
++     * .
++     */
+     @Override
+     public void withdraw(double num) {
+         try {
+@@ -13,11 +19,14 @@
+         }
+     }
+ 
++    /**
++     * .
++     */
+     @Override
+     public void deposit(double num) {
+         try {
+             doDepositing(num);
+-        } catch (InvalidFundingAmountException e) {
++        } catch (InvalidFundingAmountException | InsufficientFundsException e) {
+             e.printStackTrace();
+         }
+     }

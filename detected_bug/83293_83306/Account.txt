@@ -1,0 +1,59 @@
+@@ -3,7 +3,7 @@
+ 
+ public class Account {
+     private double balance = 0;
+-    ArrayList<Transaction> listTransaction = new ArrayList<Transaction>();
++    private ArrayList<Transaction> transitionList = new ArrayList<Transaction>();
+     
+     private void deposit(double amount) {
+         if (amount <= 0) {
+@@ -25,6 +25,11 @@
+         }
+     }
+ 
++    /**
++     * addTransaction.
++     * @param amount ..
++     * @param operation ..
++     */
+     public void addTransaction(double amount, String operation) {
+         if (operation != Transaction.WITHDRAW && operation != Transaction.DEPOSIT) {
+             System.out.println("Yeu cau khong hop le!");
+@@ -35,25 +40,28 @@
+             if (operation.equals(Transaction.DEPOSIT)) {
+                 deposit(amount);
+             }
+-            listTransaction.add(new Transaction(operation, amount, balance));   
++            transitionList.add(new Transaction(operation, amount, balance));   
+         }
+     }
+ 
++    /**
++     * printTransaction.
++     */
+     public void printTransaction() {
+-        for (int i = 0; i < listTransaction.size(); i++) {
+-            if (listTransaction.get(i).getOperation().equals(Transaction.DEPOSIT)) {
+-                DecimalFormat df = new DecimalFormat("##.##");
++        for (int i = 0; i < transitionList.size(); i++) {
++            if (transitionList.get(i).getOperation().equals(Transaction.DEPOSIT)) {
++                DecimalFormat df = new DecimalFormat("##.00##");
+                 System.out.println("Giao dich " + (i + 1) + ": Nap tien $"
+-                + df.format(Math.round(listTransaction.get(i).getAmount() * 100.0) / 100.0)
++                + df.format(Math.round(transitionList.get(i).getAmount() * 100.0) / 100.0)
+                 + ". So du luc nay: $" 
+-                + df.format(Math.round(listTransaction.get(i).getBalance() * 100.0) / 100.0) + ".");
++                + df.format(Math.round(transitionList.get(i).getBalance() * 100.0) / 100.0) + ".");
+             }
+-            if (listTransaction.get(i).getOperation().equals(Transaction.WITHDRAW)) {
++            if (transitionList.get(i).getOperation().equals(Transaction.WITHDRAW)) {
+                 DecimalFormat df = new DecimalFormat("##.00##");
+                 System.out.println("Giao dich " + (i + 1) + ": Rut tien $" 
+-                + df.format(Math.round(listTransaction.get(i).getAmount() * 100.0) / 100.0) 
++                + df.format(Math.round(transitionList.get(i).getAmount() * 100.0) / 100.0) 
+                 + ". So du luc nay: $" 
+-                + df.format(Math.round(listTransaction.get(i).getBalance() * 100.0) / 100.0) + ".");
++                + df.format(Math.round(transitionList.get(i).getBalance() * 100.0) / 100.0) + ".");
+             }
+         }   
+     }

@@ -1,0 +1,45 @@
+@@ -10,6 +10,12 @@
+     private static final String WHITE = "white";
+     private static final String BLACK = "black";
+ 
++    /**
++     * .
++     * @param coordinatesX int
++     * @param coordinatesY int
++     * @param color String
++     */
+     public Piece(int coordinatesX, int coordinatesY, String color) {
+         this.coordinatesX = coordinatesX;
+         this.coordinatesY = coordinatesY;
+@@ -40,6 +46,10 @@
+         return color;
+     }
+ 
++    /**
++     * .
++     * @param color String
++     */
+     public void setColor(String color) {
+         if (color.equals(WHITE)) {
+             color = WHITE;
+@@ -48,12 +58,18 @@
+         }
+     }
+ 
++    /**
++     * .
++     * @param that piece
++     * @return whether thit and that piece has the same position
++     */
+     public boolean checkPosition(Piece that) {
+         boolean con1 = this.coordinatesX == that.coordinatesX;
+         boolean con2 = this.coordinatesY == that.coordinatesY;
+         return con1 && con2;
+     }
+ 
+-    abstract public String getSymbol();
+-    abstract public boolean canMove(Board board, int x, int y);
++    public abstract String getSymbol();
++
++    public abstract boolean canMove(Board board, int x, int y);
+ }

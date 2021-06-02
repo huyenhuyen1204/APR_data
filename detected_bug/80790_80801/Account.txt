@@ -1,0 +1,76 @@
+@@ -1,8 +1,10 @@
++import java.text.DecimalFormat;
+ import java.util.ArrayList;
++import java.util.List;
+ 
+ public class Account {
+     private double balance;
+-    private ArrayList<Transaction> transactions = new ArrayList<>();
++    private ArrayList<Transaction> transitionList  = new ArrayList<>();
+ 
+     private void deposit(double amount) {
+         if (amount <= 0) {
+@@ -12,7 +14,7 @@
+         }
+     }
+ 
+-    public void withdraw(double amount) {
++    private void withdraw(double amount) {
+         if (amount <= 0) {
+             System.out.println("So tien ban rut ra khong hop le!");
+         } else if (amount > balance) {
+@@ -23,24 +25,44 @@
+ 
+     }
+ 
++    /**
++     * hello.
++     * @param amount 1.
++     * @param operation 2.
++     */
+     public void addTransaction(double amount, String operation) {
+-        if (operation.equals(Transaction.DEPOSIT)) deposit(amount);
+-        else if (operation.equals(Transaction.WITHDRAW)) withdraw(amount);
+-        transactions.add(new Transaction(operation, amount, this.balance));
++        if (operation.equals(Transaction.DEPOSIT)) {
++            deposit(amount);
++            transitionList.add(new Transaction(operation, amount, this.balance));
++
++        } else if (operation.equals(Transaction.WITHDRAW)) {
++            withdraw(amount);
++            transitionList.add(new Transaction(operation, amount, this.balance));
++        } else {
++            System.out.println("Yeu cau khong hop le!");
++        }
+     }
+ 
++    /**
++     * in du lieu.
++     */
+     public void printTransaction() {
+         int count = 0;
+-        for (Transaction transaction : transactions) {
++        for (Transaction transaction : transitionList) {
+             count++;
+-            transaction.setAmount(Math.round(transaction.getAmount() * 100) / 100.0);
+-            transaction.setBalance(Math.round(transaction.getBalance() * 100) / 100.0);
+             if (transaction.getOperation().equals(transaction.WITHDRAW)) {
+-                System.out.print("Giao dich " + count + ": Rut tien $" + transaction.getAmount() + ". So du luc nay: $" + transaction.getBalance() + ".");
++                System.out.print("Giao dich " + count + ": Rut tien $");
++                System.out.printf("%.2f", transaction.getAmount());
++                System.out.print(". So du luc nay: $");
++                System.out.printf("%.2f", transaction.getBalance());
++                System.out.print(".");
+                 System.out.println();
+-            }
+-            else if (transaction.getOperation().equals(transaction.DEPOSIT)) {
+-                System.out.print("Giao dich " + count + ": Nap tien $" + transaction.getAmount() + ". So du luc nay: $" + transaction.getBalance() + ".");
++            } else if (transaction.getOperation().equals(transaction.DEPOSIT)) {
++                System.out.print("Giao dich " + count + ": Nap tien $");
++                System.out.printf("%.2f", transaction.getAmount());
++                System.out.print(". So du luc nay: $");
++                System.out.printf("%.2f", transaction.getBalance());
++                System.out.print(".");
+                 System.out.println();
+             }
+         }

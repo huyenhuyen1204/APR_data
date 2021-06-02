@@ -1,0 +1,46 @@
+@@ -5,10 +5,9 @@
+ import java.io.InputStream;
+ import java.io.InputStreamReader;
+ import java.util.ArrayList;
++import java.util.Collections;
+ import java.util.List;
+ 
+-import static java.util.Collections.swap;
+-
+ public class Bank {
+     private List<Customer> customerList = new ArrayList<>();
+ 
+@@ -41,10 +40,10 @@
+     public void readCustomerList(InputStream inputStream) {
+         InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+         BufferedReader reader = new BufferedReader(inputStreamReader);
+-        String line = "";
++        String line;
++        Customer customer = new Customer();
+         while (true) {
+             try {
+-                Customer customer = new Customer();
+                 line = reader.readLine();
+                 if (line != null) {
+                     String[] words = line.split(" ");
+@@ -83,8 +82,9 @@
+     public String getCustomersInfoByNameOrder() {
+         for (int i = 0; i < customerList.size(); ++i) {
+             for (int j = i + 1; j < customerList.size(); ++j) {
+-                if (customerList.get(i).getFullName().compareTo(customerList.get(j).getFullName()) > 0) {
+-                    swap(customerList, i, j);
++                if (customerList.get(i).getFullName()
++                        .compareTo(customerList.get(j).getFullName()) > 0) {
++                    Collections.swap(customerList, i, j);
+                 }
+             }
+         }
+@@ -105,7 +105,7 @@
+         for (int i = 0; i < customerList.size(); ++i) {
+             for (int j = i + 1; j < customerList.size(); ++j) {
+                 if (customerList.get(i).getIdNumber() > customerList.get(j).getIdNumber()) {
+-                    swap(customerList, i, j);
++                    Collections.swap(customerList, i, j);
+                 }
+             }
+         }

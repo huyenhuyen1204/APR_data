@@ -1,0 +1,9 @@
+@@ -34,7 +34,7 @@
+      * @return true if can move
+      */
+ 
+-    public abstract boolean canMove( Board board, int x, int y);
++    public abstract boolean canMove(Board board, int x, int y);
+ 
+     public int getCoordinatesX() {
+         return coordinatesX;

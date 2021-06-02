@@ -1,0 +1,36 @@
+@@ -6,18 +6,29 @@
+ 
+     public Game(Board board) {
+         this.board = board;
++        moveHistory = new ArrayList<Move>();
+     }
+ 
++    /**
++     * move piece to (x,y) coordinate.
++     *
++     * @param piece moved piece
++     * @param x x axis of the piece
++     * @param y y axis of the piece
++     */
+     public void movePiece(Piece piece, int x, int y) {
+         if (board.validate(x, y)) {
+             if (board.getAt(x, y) == null) {
+-                Move temp = new Move(piece.getCoordinatesX(), piece.getCoordinatesY(), x, y, piece);
+-                moveHistory.add(temp);
+-            } else {
+-                board.remoteAt(x,y);
+-                Move temp = new Move(piece.getCoordinatesX(), piece.getCoordinatesY(), x, y, piece);
+-                moveHistory.add(temp);
++                moveHistory.add(new Move(piece.getCoordinatesX(), piece.getCoordinatesY(),
++                        x, y, piece));
++            } else if (board.getAt(x, y) != null) {
++                Piece killed = board.getAt(x, y);
++                board.removeAt(x, y);
++                moveHistory.add(new Move(piece.getCoordinatesX(), piece.getCoordinatesY(),
++                        x, y, piece, killed));
+             }
++            piece.setCoordinatesX(x);
++            piece.setCoordinatesY(y);
+         }
+     }
+ 

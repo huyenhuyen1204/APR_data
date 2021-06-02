@@ -1,0 +1,34 @@
+@@ -20,13 +20,13 @@
+      * @param color ham.
+      */
+     public Piece(int coordinatesX, int coordinatesY, String color) {
+-        this.coordinatesY = coordinatesY;
+         this.coordinatesX = coordinatesX;
++        this.coordinatesY = coordinatesY;
+         this.color = color;
+     }
+ 
+     public int getCoordinatesX() {
+-        return coordinatesX;
++        return this.coordinatesX;
+     }
+ 
+     public void setCoordinatesX(int coordinatesX) {
+@@ -34,7 +34,7 @@
+     }
+ 
+     public int getCoordinatesY() {
+-        return coordinatesY;
++        return this.coordinatesY;
+     }
+ 
+     public void setCoordinatesY(int coordinatesY) {
+@@ -42,7 +42,7 @@
+     }
+ 
+     public String getColor() {
+-        return color;
++        return this.color;
+     }
+ 
+     public void setColor(String color) {

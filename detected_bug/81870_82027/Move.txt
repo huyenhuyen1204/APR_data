@@ -1,0 +1,27 @@
+@@ -8,7 +8,7 @@
+     private Piece killedPiece;
+ 
+     /**
+-     * constructor
++     * constructor.
+      * @param startX start X
+      * @param startY start Y
+      * @param endX end X
+@@ -25,7 +25,7 @@
+     }
+ 
+     /**
+-     * constructor
++     * constructor.
+      * @param startX start X
+      * @param startY start Y
+      * @param endX end X
+@@ -43,7 +43,7 @@
+     }
+ 
+     /**
+-     * to string
++     * to string.
+      * @return string
+      */
+ 

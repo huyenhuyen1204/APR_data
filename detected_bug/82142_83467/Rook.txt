@@ -1,0 +1,51 @@
+@@ -15,22 +15,39 @@
+ 
+     @Override
+     public boolean canMove(Board board, int x, int y) {
+-        if (this.getCoordinatesX() == x) {
+-            for (Piece p : board.getPieces()) {
+-                if ((this.getCoordinatesY() < p.getCoordinatesY() && p.getCoordinatesY() < y)
+-                || (this.getCoordinatesY() > p.getCoordinatesY() && p.getCoordinatesY() > y)) {
+-                     return false;
++        if (1 <= x && x <= 8 && 1 <= y && y <= 8) {
++            if (this.getCoordinatesX() == x) {
++                for (Piece p : board.getPieces()) {
++                    if ((this.getCoordinatesY() < p.getCoordinatesY()
++                            && p.getCoordinatesY() < y)
++                            || (this.getCoordinatesY() > p.getCoordinatesY()
++                            && p.getCoordinatesY() > y)) {
++                        return false;
++                    }
++                }
++            } else if (this.getCoordinatesY() == y) {
++                for (Piece p : board.getPieces()) {
++                    if ((this.getCoordinatesX() < p.getCoordinatesX()
++                            && p.getCoordinatesX() < x)
++                            || (this.getCoordinatesX() > p.getCoordinatesX()
++                            && p.getCoordinatesX() > x)) {
++                        return false;
++                    }
+                 }
+             }
+-        } else if (this.getCoordinatesY() == y) {
+             for (Piece p : board.getPieces()) {
+-                if ((this.getCoordinatesX() < p.getCoordinatesX() && p.getCoordinatesX() < x)
+-                        || (this.getCoordinatesX() > p.getCoordinatesX() && p.getCoordinatesX() > x)) {
+-                    return false;
++                if (this.getColor().compareTo(p.getColor()) == 0) {
++                    if (p.getCoordinatesX() == x && p.getCoordinatesY() == y) {
++                            return false;
++                    }
+                 }
+             }
+-        }
+ 
+-        return true;
++            if (this.getCoordinatesX() != x && this.getCoordinatesY() != y) {
++                return false;
++            }
++            return true;
++        }
++        return false;
+     }
+ }

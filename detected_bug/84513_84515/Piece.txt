@@ -1,0 +1,23 @@
+@@ -7,11 +7,22 @@
+ 
+     }
+ 
++    /**
++     * ham khoi tao 2 tham so.
++     * @param coordinatesX df
++     * @param coordinatesY df
++     */
+     public Piece(int coordinatesX, int coordinatesY) {
+         this.coordinatesX = coordinatesX;
+         this.coordinatesY = coordinatesY;
+     }
+ 
++    /**
++     * ham khoi tao 3 tham so.
++     * @param coordinatesX sd
++     * @param coordinatesY df
++     * @param color df
++     */
+     public Piece(int coordinatesX, int coordinatesY, String color) {
+         this.coordinatesX = coordinatesX;
+         this.coordinatesY = coordinatesY;

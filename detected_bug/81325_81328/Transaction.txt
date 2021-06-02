@@ -1,0 +1,20 @@
+@@ -1,5 +1,4 @@
+ 
+-
+ public class Transaction {
+     private String operation;
+     private double amount;
+@@ -47,9 +46,11 @@
+     @Override
+     public String toString() {
+         if (operation.equalsIgnoreCase(Transaction.DEPOSIT)) {
+-            return String.format("Nap tien $%.2f. So du luc nay: $%.2f.", this.amount, this.balance);
++            return String.format("Nap tien $%.2f. So du luc nay: $%.2f.",
++                    this.amount, this.balance);
+         } else {
+-            return String.format("Rut tien $%.2f. So du luc nay: $%.2f.", this.amount, this.balance);
++            return String.format("Rut tien $%.2f. So du luc nay: $%.2f.",
++                    this.amount, this.balance);
+         }
+     }
+ }

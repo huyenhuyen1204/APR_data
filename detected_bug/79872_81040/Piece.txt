@@ -1,0 +1,78 @@
+@@ -1,17 +1,17 @@
+ public abstract class Piece {
+-    private int x;
++    private int coordinatesX;
+ 
+-    private int y;
++    private int coordinatesY;
+ 
+     private String color;
+ 
+     /**
+      * javadoc.
+      */
+-    public Piece(int x, int y) {
+-        if (x >= 1 && y <= 8) {
+-            this.x = x;
+-            this.y = y;
++    public Piece(int coordinatesX, int coordinatesY) {
++        if (coordinatesX >= 1 && coordinatesY <= 8) {
++            this.coordinatesX = coordinatesX;
++            this.coordinatesY = coordinatesY;
+             this.color = "white";
+         }
+     }
+@@ -19,10 +19,11 @@
+     /**
+      * javadoc.
+      */
+-    public Piece(int x, int y, String color) {
+-        if ((x >= 1 && y <= 8) && (color.equals("white") || color.equals("black"))) {
+-            this.x = x;
+-            this.y = y;
++    public Piece(int coordinatesX, int coordinatesY, String color) {
++        if ((coordinatesX >= 1 && coordinatesY <= 8) && (color.equals("white")
++                || color.equals("black"))) {
++            this.coordinatesX = coordinatesX;
++            this.coordinatesY = coordinatesY;
+             this.color = color;
+         }
+     }
+@@ -30,29 +31,29 @@
+     /**
+      * javadoc.
+      */
+-    public int getX() {
+-        return x;
++    public int getCoordinatesX() {
++        return coordinatesX;
+     }
+ 
+     /**
+      * javadoc.
+      */
+-    public void setX(int x) {
+-        this.x = x;
++    public void setCoordinatesX(int coordinatesX) {
++        this.coordinatesX = coordinatesX;
+     }
+ 
+     /**
+      * javadoc.
+      */
+-    public int getY() {
+-        return y;
++    public int getCoordinatesY() {
++        return coordinatesY;
+     }
+ 
+     /**
+      * javadoc.
+      */
+-    public void setY(int y) {
+-        this.y = y;
++    public void setCoordinatesY(int coordinatesY) {
++        this.coordinatesY = coordinatesY;
+     }
+ 
+     /**

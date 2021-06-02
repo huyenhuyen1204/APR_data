@@ -1,0 +1,9 @@
+@@ -39,7 +39,7 @@
+                 Move move = new Move(piece.getCoordinatesX(), x, piece.getCoordinatesY(), y,
+                         piece, board.getAt(x, y));
+                 moveHistory.add(move);
+-                move.setKilledPiece(board.getAt(x,y));
++                move.setKilledPiece(board.getAt(x, y));
+                 board.removeAt(x, y);
+             }
+             piece.setCoordinatesX(x);

@@ -1,0 +1,35 @@
+@@ -1,9 +1,15 @@
+-public class SavingsAccount extends Account{
++public class SavingsAccount extends Account {
+ 
++    /**
++     * .
++     */
+     public SavingsAccount(long accountNumber, double balance) {
+         super(accountNumber, balance);
+     }
+ 
++    /**
++     * .
++     */
+     @Override
+     public void withdraw(double num) {
+         try {
+@@ -13,13 +19,15 @@
+         }
+     }
+ 
++    /**
++     * .
++     */
+     @Override
+     public void deposit(double num) {
+         try {
+             doDepositing(num);
+-        } catch (InvalidFundingAmountException e) {
++        } catch (InvalidFundingAmountException | InsufficientFundsException e) {
+             e.printStackTrace();
+         }
+     }
+-
+ }

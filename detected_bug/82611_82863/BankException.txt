@@ -1,0 +1,19 @@
+@@ -1,8 +1,9 @@
+-/**
+- * Created by CCNE on 02/12/2020.
+- */
+-public class BankException extends Exception {
+-    public BankException(String string) {
+-        super(string);
+-    }
+-}
++/**
++ * Created by CCNE on 02/12/2020.
++ */
++public class BankException extends Exception {
++    public BankException(String string) {
++        super(string);
++    }
++}
++ 
+\ No newline at end of file

@@ -1,0 +1,37 @@
+@@ -44,11 +44,11 @@
+      * transaction history.
+      */
+     public String getTransactionHistory() {
+-        String res = "Lịch sử giao dịch của tài khoản " + accountNumber +
+-                ": \n";
+-        for(int i = 0; i < transactionList.size(); i++) {
++        String res = "Lịch sử giao dịch của tài khoản " + accountNumber
++                + ":\n";
++        for (int i = 0; i < transactionList.size(); i++) {
+             res = res + transactionList.get(i).getTransactionSummary();
+-            if(i < transactionList.size() - 1) {
++            if (i < transactionList.size() - 1) {
+                 res = res + "\n";
+             }
+         }
+@@ -73,7 +73,7 @@
+     /**
+      * do deposit.
+      */
+-    public void doDepositing(double b) throws BankException {
++    public void doDepositing(double b) throws InvalidFundingAmountException {
+         if (b < 0) {
+             throw new InvalidFundingAmountException(b);
+         }
+@@ -84,8 +84,9 @@
+     /**
+      * do withdraw.
+      */
+-    public void doWithdrawing(double b) throws BankException {
+-        if(b < 0) {
++    public void doWithdrawing(double b)
++            throws InvalidFundingAmountException, InsufficientFundsException {
++        if (b < 0) {
+             throw new InvalidFundingAmountException(b);
+         }
+         if (b > balance) {

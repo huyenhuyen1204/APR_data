@@ -1,0 +1,8 @@
+@@ -59,7 +59,6 @@
+             if (pieces.get(i).getCoordinatesX() == x
+                     && pieces.get(i).getCoordinatesY() == y) {
+                 pieces.remove(i);
+-                break;
+             }
+         }
+     }

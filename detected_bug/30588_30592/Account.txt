@@ -1,0 +1,59 @@
+@@ -4,7 +4,7 @@
+     public static final String DEPOSIT = "deposit";
+     public static final String WITHDRAW = "withdraw";
+     private double balance = 0;
+-    private ArrayList<String> arrlist = new ArrayList<String>();
++    private ArrayList<Transaction> transitionList = new ArrayList<Transaction>();
+ 
+     private void deposit( double amount ) {
+         amount = (double) Math.round(amount*100)/100;
+@@ -12,8 +12,7 @@
+             System.out.println( "So tien ban nap vao khong hop le!" );
+         } else {
+             this.balance += amount;
+-            String tmp = "Nap tien $" + amount + ". So du luc nay: $" + this.balance + ".";
+-            arrlist.add(tmp);
++            transitionList.add(new Transaction("deposit", amount, this.balance));
+         }
+     }
+ 
+@@ -25,8 +24,7 @@
+             System.out.println("So tien ban rut vuot qua so du!");
+         } else {
+             this.balance -= amount; 
+-            String tmp = "Rut tien $" + amount + ". So du luc nay: $" +this.balance + ".";
+-            arrlist.add(tmp);
++            transitionList.add(new Transaction("withdraw", amount, this.balance));
+         }
+     }
+ 
+@@ -41,15 +39,25 @@
+     }
+ 
+     public void printTransaction() {
+-        for(int i = 0; i < arrlist.size(); i++) {
+-            System.out.println(arrlist.get(i));
++        for(int i = 0; i < transitionList.size(); i++) {
++            int k = i+1;
++            if(transitionList.get(i).getOperation().equals(DEPOSIT) ==  true) {
++                String s_amount = String.format("%.2f", transitionList.get(i).getAmount());
++                String s_balance = String.format("%.2f", transitionList.get(i).getBalance());
++                System.out.println( "Giao dich " + k + ": Nap tien $" + s_amount + ". So du luc nay: $" + s_balance + ".");
++            } else {
++                String s_amount = String.format("%.2f", transitionList.get(i).getAmount());
++                String s_balance = String.format("%.2f", transitionList.get(i).getBalance());
++                System.out.println( "Giao dich " + k + ": Rut tien $" + s_amount + ". So du luc nay: $" + s_balance + ".");
++            }
+         }
+     }
+ 
+     public static void main(String[] args) {
+         Account acc= new Account();  
+         acc.addTransaction(2000.255,"deposit");  
+-        acc.addTransaction(1000,"withdraw");  
++        acc.addTransaction(1000,"withdraw");
++
+         acc.printTransaction();
+     }
+ }
+\ No newline at end of file

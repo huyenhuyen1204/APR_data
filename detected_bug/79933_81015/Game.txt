@@ -1,0 +1,30 @@
+@@ -14,14 +14,16 @@
+         if (piece.canMove(board, x1, y1)) {
+             Move newMove;
+             if (board.getAt(x1, y1) != null) {
+-                newMove = new Move(piece.getX(), x1, piece.getY(), y1, piece, board.getAt(x1, y1));
++                int tempX = piece.getCoordinatesX();
++                int tempY = piece.getCoordinatesY();
++                newMove = new Move(tempX, x1, tempY, y1, piece, board.getAt(x1, y1));
+                 board.removeAt(x1, y1);
+             } else {
+-                newMove = new Move(piece.getX(), x1, piece.getY(), y1, piece);
++                newMove = new Move(piece.getCoordinatesX(), x1, piece.getCoordinatesY(), y1, piece);
+             }
+             moveHistory.add(newMove);
+-            piece.setX(x1);
+-            piece.setY(y1);
++            piece.setCoordinatesX(x1);
++            piece.setCoordinatesY(y1);
+         }
+     }
+ 
+@@ -39,4 +41,8 @@
+     public ArrayList<Move> getMoveHistory() {
+         return moveHistory;
+     }
++
++    public static void main(String[] args) {
++
++    }
+ }

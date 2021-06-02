@@ -1,0 +1,9 @@
+@@ -15,7 +15,7 @@
+             System.out.println("So tien ban rut ra khong hop le!");
+         }
+         else if (amount>this.balance){
+-                System.out.println("So tien ban rut ra khong hop le!");
++                System.out.println("So tien ban rut vuot qua so du!");
+             }
+         else {
+             this.balance-=amount;

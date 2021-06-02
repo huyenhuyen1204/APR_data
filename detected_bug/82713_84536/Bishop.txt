@@ -1,0 +1,44 @@
+@@ -14,15 +14,17 @@
+ 
+     @Override
+     public boolean canMove(Board board, int desX, int desY) {
+-        if (!board.validate(desX, desY)
+-                || (Math.abs(this.getCoordinatesX() - desX) != Math.abs(this.getCoordinatesY() - desY))) {
++        if (!board.validate(desX, desY)) {
++            return false;
++        }
++        if (Math.abs(this.getCoordinatesX() - desX) != Math.abs(this.getCoordinatesY() - desY)) {
+             return false;
+         }
+         if (this.getCoordinatesX() == desX && this.getCoordinatesY() == desY) {
+             return false;
+         }
+-        int checkX = 0;
+-        int checkY = 0;
++        int checkX;
++        int checkY;
+         if (desX > this.getCoordinatesX()) {
+             checkX = 1;
+         } else {
+@@ -31,7 +33,7 @@
+         if (desY > this.getCoordinatesY()) {
+             checkY = 1;
+         } else {
+-            checkX = -1;
++            checkY = -1;
+         }
+         int y = this.getCoordinatesY() + checkY;
+         for (int x = this.getCoordinatesX() + checkX; x != desX; x += checkX) {
+@@ -40,10 +42,9 @@
+             }
+             y += checkY;
+         }
+-        if (board.getAt(desX, desY) == null) {
+-            return true;
+-        } else {
++        if (board.getAt(desX, desY) != null) {
+             return !board.getAt(desX, desY).getColor().equals(this.getColor());
+         }
++        return true;
+     }
+ }

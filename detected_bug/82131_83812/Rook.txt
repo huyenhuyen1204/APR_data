@@ -1,0 +1,26 @@
+@@ -1,5 +1,5 @@
+ public class Rook extends Piece {
+-    public Rook (int coordinatesX, int coordinatesY) {
++    public Rook(int coordinatesX, int coordinatesY) {
+         super(coordinatesX, coordinatesY);
+     }
+ 
+@@ -19,14 +19,16 @@
+         }
+ 
+         if (this.getCoordinatesX() == x) {
+-            for (int i = Math.min(y, this.getCoordinatesY()) + 1; i < Math.max(y, this.getCoordinatesY()) - 1; i++) {
++            for (int i = Math.min(y, this.getCoordinatesY()) + 1;
++                 i <= Math.max(y, this.getCoordinatesY()) - 1; i++) {
+                 if (board.getAt(x, i) != null) {
+                     return false;
+                 }
+             }
+         }
+         if (this.getCoordinatesY() == y) {
+-            for (int i = Math.min(x, this.getCoordinatesX()) + 1; i < Math.max(x, this.getCoordinatesX()) - 1; i++) {
++            for (int i = Math.min(x, this.getCoordinatesX()) + 1;
++                 i <= Math.max(x, this.getCoordinatesX()) - 1; i++) {
+                 if (board.getAt(i, y) != null) {
+                     return false;
+                 }

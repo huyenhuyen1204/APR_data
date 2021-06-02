@@ -1,0 +1,9 @@
+@@ -71,6 +71,8 @@
+             case 8:
+                 s = "h";
+                 break;
++            default:
++                break;
+         }
+         return String.format(movedPiece.getColor() + '-'
+                 + movedPiece.getSymbol() + s + startY);

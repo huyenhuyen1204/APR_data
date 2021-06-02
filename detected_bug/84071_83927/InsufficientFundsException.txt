@@ -1,0 +1,19 @@
+@@ -1,14 +1,8 @@
+-/**
+- * class InsufficientFundsException.
+- */
+-public class InsufficientFundsException extends BankException {
++import java.text.DecimalFormat;
+ 
+-    /**
+-     * constructor.
+-     */
+-    public InsufficientFundsException(double amount) {
++public class InsufficientFundsException extends BankException {
++    public InsufficientFundsException(double money) {
+         super("Số dư tài khoản không đủ $"
+-                + String.format("%.2f",amount)
+-                + " để thực hiện giao dịch");
++                + (new DecimalFormat("0.00")).format(money) + " để thực hiện giao dịch");
+     }
+ }

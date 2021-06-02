@@ -1,0 +1,20 @@
+@@ -20,7 +20,8 @@
+            || (!board.getAt(x, y).getColor().equals(super.getColor()))) {
+                if (super.getCoordinatesX() == x) {
+                    for (int i = 1; i <= 8; i++) {
+-                       if ((i < super.getCoordinatesY() && i > y) || (i > super.getCoordinatesY() && i < y)) {
++                       if ((i < super.getCoordinatesY() && i > y)
++                               || (i > super.getCoordinatesY() && i < y)) {
+                            if (board.getAt(x, i) != null) {
+                                return false;
+                            }
+@@ -30,7 +31,8 @@
+                }
+                if (super.getCoordinatesY() == y) {
+                    for (int i = 1; i <= 8; i++) {
+-                       if ((i < super.getCoordinatesX() && i > x) || (i > super.getCoordinatesX() && i < x)) {
++                       if ((i < super.getCoordinatesX() && i > x)
++                               || (i > super.getCoordinatesX() && i < x)) {
+                            if (board.getAt(i, y) != null) {
+                                return false;
+                            }

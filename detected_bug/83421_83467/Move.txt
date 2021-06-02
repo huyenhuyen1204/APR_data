@@ -1,0 +1,62 @@
+@@ -1,10 +1,10 @@
+ public class Move {
+-   private Piece movedPiece;
+-   private Piece killedPiece;
+    private int startX;
+    private int endX;
+    private int startY;
+    private int endY;
++   private Piece movedPiece;
++   private Piece killedPiece;
+ 
+     /**
+      * ham.
+@@ -15,11 +15,11 @@
+      * @param movedPiece ham.
+      */
+     public Move(int startX, int endX, int startY, int endY, Piece movedPiece) {
+-        this.movedPiece = movedPiece;
+         this.startX = startX;
+         this.endX = endX;
+         this.startY = startY;
+         this.endY = endY;
++        this.movedPiece = movedPiece;
+     }
+ 
+     /**
+@@ -32,12 +32,12 @@
+      * @param killedPiece ham.
+      */
+     public Move(int startX, int endX, int startY, int endY, Piece movedPiece, Piece killedPiece) {
+-        this.movedPiece = movedPiece;
+-        this.killedPiece = killedPiece;
+         this.startX = startX;
+         this.endX = endX;
+         this.startY = startY;
+         this.endY = endY;
++        this.movedPiece = movedPiece;
++        this.killedPiece = killedPiece;
+     }
+ 
+     public Piece getMovedPiece() {
+@@ -94,7 +94,7 @@
+      */
+     public String toString() {
+         String a = "";
+-        int b = movedPiece.getCoordinatesX();
++        int b = this.endX;
+         if (b == 1) {
+             a = "a";
+         } else if (b == 2) {
+@@ -112,8 +112,9 @@
+         } else if (b == 8) {
+             a = "h";
+         }
+-        String s = this.getMovedPiece().getColor() + "-R"
+-                + a + movedPiece.getCoordinatesY();
++        String s = this.getMovedPiece().getColor() + "-"
++                + this.getMovedPiece().getSymbol()
++                + a + this.endY;
+         return s;
+     }
+ }

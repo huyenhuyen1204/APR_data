@@ -1,0 +1,25 @@
+@@ -6,6 +6,7 @@
+     private Piece movedPiece;
+     private Piece killedPiece;
+ 
++    /** Constructor. */
+     public Move(int startX, int startY, int endX,
+                 int endY, Piece movedPiece) {
+         this.startX = startX;
+@@ -15,6 +16,7 @@
+         this.movedPiece = movedPiece;
+     }
+ 
++    /** Constructor. */
+     public Move(int startX, int startY, int endX,
+                 int endY, Piece movedPiece, Piece killedPiece) {
+         this(startX, startY, endX, endY, movedPiece);
+@@ -24,7 +26,7 @@
+     @Override
+     public String toString() {
+         return movedPiece.getColor() + "-" + movedPiece.getSymbol()
+-                + (char)('a' + (endX - 1)) + endY;
++                + (char) ('a' + (endX - 1)) + endY;
+     }
+ 
+     public int getStartX() {

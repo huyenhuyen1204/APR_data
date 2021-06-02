@@ -1,0 +1,12 @@
+@@ -36,6 +36,11 @@
+             tmpX += unitStepX;
+             tmpY += unitStepY;
+         }
++        Piece collisionPiece = board.getAt(x, y);
++        if (collisionPiece != null
++                && collisionPiece.getColor().equals(getColor())) {
++            return false;
++        }
+         return true;
+     }
+ }

@@ -1,0 +1,20 @@
+@@ -16,15 +16,16 @@
+         if (piece.canMove(board, x, y)) {
+             if (board.getAt(x, y) != null) {
+                 Piece p = board.getAt(x, y);
+-                Move move1 = new Move(piece.getCoordinatesX(), x, piece.getCoordinatesY(), y, piece, p);
++                Move move1 = new Move(piece.getCoordinatesX(),
++                        x, piece.getCoordinatesY(), y, piece, p);
+                 moveHistory.add(move1);
+                 board.removeAt(x, y);
+             } else {
+                 Move move = new Move(piece.getCoordinatesX(), x, piece.getCoordinatesY(), y, piece);
+                 moveHistory.add(move);
+             }
+-            piece.setX(x);
+-            piece.setY(y);
++            piece.setCoordinatesX(x);
++            piece.setCoordinatesY(y);
+         }
+     }
+ 

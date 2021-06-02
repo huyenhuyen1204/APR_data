@@ -1,0 +1,73 @@
+@@ -13,11 +13,12 @@
+      * .
+      */
+     public void readCustomerList(InputStream inputStream) {
+-        InputStreamReader inputStreamReader = new InputStreamReader(inputStream, StandardCharsets.UTF_8);
++        InputStreamReader inputStreamReader = new InputStreamReader(inputStream,
++                StandardCharsets.UTF_8);
+         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+         StringBuilder file = new StringBuilder();
+         int data = 0;
+-        while(data != -1) {
++        while (data != -1) {
+             try {
+                 data = bufferedReader.read();
+             } catch (IOException e) {
+@@ -65,9 +66,10 @@
+         String[] words = line.split("\\s+");
+         String id = words[words.length - 1];
+         String name = line.replace(id, "");
+-        name = name.trim();    id = id.trim();
+-        long CMND = Long.parseLong(id);
+-        return new Customer(CMND, name);
++        name = name.trim();
++        id = id.trim();
++        long cmnd = Long.parseLong(id);
++        return new Customer(cmnd, name);
+     }
+ 
+     /**
+@@ -76,7 +78,9 @@
+     public String getCustomersInfoByNameOrder() {
+         for (int i = 0; i < customerList.size(); i++) {
+             for (int j = i + 1; j < customerList.size(); j++) {
+-                if (customerList.get(i).getFullName().compareTo(customerList.get(j).getFullName()) > 0) {
++                String nameA = customerList.get(i).getFullName();
++                String nameB = customerList.get(j).getFullName();
++                if (nameA.compareTo(nameB) > 0) {
+                     Customer temp = customerList.get(i);
+                     customerList.set(i, customerList.get(j));
+                     customerList.set(j, temp);
+@@ -84,12 +88,12 @@
+             }
+         }
+         StringBuilder ans = new StringBuilder();
+-        for (Customer customer: customerList) {
+-            ans.append(customer.getCustomerInfo());
+-            ans.append("\n");
++        for (int i = 0; i < customerList.size(); i++) {
++            ans.append(customerList.get(i).getCustomerInfo());
++            if (i != customerList.size() - 1) {
++                ans.append("\n");
++            }
+         }
+-        ans.deleteCharAt(ans.length() - 1);
+-        ans.deleteCharAt(ans.length() - 1);
+         return String.valueOf(ans);
+     }
+ 
+@@ -107,9 +111,11 @@
+             }
+         }
+         StringBuilder ans = new StringBuilder();
+-        for (Customer customer: customerList) {
+-            ans.append(customer.getCustomerInfo());
+-            ans.append("\n");
++        for (int i = 0; i < customerList.size(); i++) {
++            ans.append(customerList.get(i).getCustomerInfo());
++            if (i != customerList.size() - 1) {
++                ans.append("\n");
++            }
+         }
+         return String.valueOf(ans);
+     }

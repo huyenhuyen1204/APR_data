@@ -1,0 +1,43 @@
+@@ -22,15 +22,15 @@
+     @Override
+     public boolean canMove(Board board, int x, int y) {
+         boolean check = true;
+-        if (1 <= x && x <= 8 && 1 <= y && y <= 8) {
++        if ((1 <= x && x <= 8) && (1 <= y && y <= 8)) {
+             if (getCoordinatesX() != x && getCoordinatesY() != y) {
+                 check = false;
+             }
+ 
+             if (getCoordinatesX() == x) {
+                 for (int i = Math.min(getCoordinatesY(), y) + 1;
+-                     i < Math.max(getCoordinatesY(), y) - 1; i++) {
+-                    if (board.getAt(x, y) != null) {
++                     i <= Math.max(getCoordinatesY(), y) - 1; i++) {
++                    if (board.getAt(x, i) != null) {
+                         check = false;
+                     }
+                 }
+@@ -38,19 +38,15 @@
+ 
+             if (getCoordinatesY() == y) {
+                 for (int i = Math.min(getCoordinatesX(), x) + 1;
+-                    i < Math.max(getCoordinatesX(), x) - 1; i++) {
+-                    if (board.getAt(x, y) != null) {
++                    i <= Math.max(getCoordinatesX(), x) - 1; i++) {
++                    if (board.getAt(i, y) != null) {
+                         check = false;
+                     }
+                 }
+             }
+ 
+-            if (board.getAt(x, y) == null) {
+-                check = true;
+-            } else {
+-                if (!board.getAt(x, y).getColor().equalsIgnoreCase(this.getColor())) {
+-                    check = true;
+-                } else {
++            if (board.getAt(x, y) != null) {
++                if (board.getAt(x, y).getColor().equalsIgnoreCase(this.getColor())) {
+                     check = false;
+                 }
+             }

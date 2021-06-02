@@ -1,0 +1,18 @@
+@@ -21,6 +21,9 @@
+      * Cmt.
+      */
+     private void withdraw(double amount) {
++        if (amount < 0) {
++            System.out.println("So tien ban rut ra khong hop le!");
++        }
+         if (amount > balance) {
+             System.out.println("So tien ban rut vuot qua so du!");
+         } else {
+@@ -68,6 +71,7 @@
+     public static void main(String[] args) {
+         Account acc = new Account();
+         acc.addTransaction(2000.255, "deposit");
++        acc.addTransaction(2000, "Tung");
+         acc.addTransaction(1000, "withdraw");
+         acc.printTransaction();
+     }

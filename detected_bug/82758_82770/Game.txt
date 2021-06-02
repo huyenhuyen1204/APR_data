@@ -1,0 +1,15 @@
+@@ -2,12 +2,13 @@
+ 
+ public class Game {
+     private Board board;
+-    private static ArrayList<Move> moveHistory= new ArrayList<>();
++    private static ArrayList<Move> moveHistory = new ArrayList<>();
+ 
+     public Game(Board board) {
+         this.board = board;
+     }
+ 
++    /** Move piece to position (x, y). */
+     public void movePiece(Piece piece, int x, int y) {
+         if (piece.canMove(board, x, y)) {
+             Move move = new Move(piece.getCoordinatesX(), piece.getCoordinatesY(),

@@ -1,0 +1,54 @@
+@@ -3,7 +3,7 @@
+ 
+ public class Account {
+     private double balance;
+-    private List<Transaction> TransactionList = new ArrayList<>();
++    private ArrayList<Transaction> transitionList = new ArrayList<>();
+ 
+     /**
+      * yay.
+@@ -13,7 +13,7 @@
+             System.out.println("So tien ban nap vao khong hop le!");
+         } else {
+             balance = balance + amount;
+-            TransactionList.add(new Transaction("deposit", amount, balance));
++            transitionList.add(new Transaction("deposit", amount, balance));
+         }
+     }
+ 
+@@ -27,7 +27,7 @@
+             System.out.println("So tien ban rut vuot qua so du!");
+         } else {
+             balance = balance - amount;
+-            TransactionList.add(new Transaction("withdraw", amount, balance));
++            transitionList.add(new Transaction("withdraw", amount, balance));
+         }
+     }
+ 
+@@ -49,15 +49,19 @@
+      */
+     public void printTransaction() {
+         String s = "";
+-        for (int i = 0; i < TransactionList.size(); i++) {
+-            if (TransactionList.get(i).getOperation().equals(Transaction.DEPOSIT)) {
++        for (int i = 0; i < transitionList.size(); i++) {
++            if (transitionList.get(i).getOperation().equals(Transaction.DEPOSIT)) {
+                 s = s + "Giao dich " + (i + 1) + ": " + "Nap tien $"
+-                        + String.format("%.2f", TransactionList.get(i).getAmount())
+-                        + ". So du luc nay: " + String.format("%.2f", TransactionList.get(i).getBalance()) + ".";
+-            } else if (TransactionList.get(i).getOperation().equals(Transaction.WITHDRAW)) {
++                        + String.format("%.2f", transitionList.get(i).getAmount())
++                        + ". So du luc nay: $"
++                        + String.format("%.2f", transitionList.get(i).getBalance())
++                        + "." + "\n";
++            } else if (transitionList.get(i).getOperation().equals(Transaction.WITHDRAW)) {
+                 s = s + "Giao dich " + (i + 1) + ": " + "Rut tien $"
+-                        + String.format("%.2f", TransactionList.get(i).getAmount())
+-                        + ". So du luc nay: " + String.format("%.2f", TransactionList.get(i).getBalance()) + ".";
++                        + String.format("%.2f", transitionList.get(i).getAmount())
++                        + ". So du luc nay: $"
++                        + String.format("%.2f", transitionList.get(i).getBalance())
++                        + "." + "\n";
+             }
+         }
+         System.out.println(s);

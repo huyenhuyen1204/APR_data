@@ -1,0 +1,76 @@
+@@ -2,7 +2,7 @@
+ 
+ public class Account {
+     private double balance;
+-    private ArrayList<Transaction> transactions = new ArrayList<>();
++    private ArrayList<Transaction> transitionList = new ArrayList<>();
+ 
+ 
+     public void addTransaction(double amount, String operation) {
+@@ -10,12 +10,14 @@
+             System.out.println("Yeu cau khong hop le!");
+         } else {
+             if (operation == Transaction.WITHDRAW) {
+-                transactions.add( new Transaction(operation, amount, balance));
+-                balance -= amount;
++                withdraw(amount);
++                transitionList.add( new Transaction(operation, amount, balance));
++
+             } else {
+                 if (operation == Transaction.DEPOSIT) {
+-                    transactions.add( new Transaction(operation, amount, balance));
+-                    balance += amount;
++                    deposit(amount);
++                    transitionList.add( new Transaction(operation, amount, balance));
++
+                 }
+             }
+ 
+@@ -25,36 +27,40 @@
+     private void deposit(double amount) {
+         if (amount <= 0) System.out.println("So tien ban nap vao khong hop le!");
+         else {
+-            addTransaction(amount,Transaction.DEPOSIT);
++            balance += amount;
++
+         }
+     }
+ 
+     private void withdraw(double amount) {
+         if (amount <= 0) System.out.println("So tien ban rut ra khong hop le!");
+-        else if (amount > balance) System.out.println("So tien ban rut ra vuot qua so du!");
++        else if (amount > balance) System.out.println("So tien ban rut vuot qua so du!");
+         else {
+-            addTransaction(amount,Transaction.WITHDRAW);
++            balance -= amount;
+         }
+     }
+ 
+     public void printTransaction() {
+         int cnt = 1;
+-        for (Transaction temp : transactions) {
++        for (Transaction temp : transitionList) {
+             if (temp.getOperation() == Transaction.DEPOSIT) {
+-                System.out.printf("Giao dich %d: Nap tien $%.2f. So du luc nay: %.2f.\n", cnt,temp.getAmount(), temp.getBalance());
++                System.out.printf("Giao dich %d: Nap tien $%.2f. So du luc nay: $%.2f.\n", cnt,temp.getAmount(), temp.getBalance());
+             } else if (temp.getOperation() == Transaction.WITHDRAW) {
+-                System.out.printf("Giao dich %d: Rut tien $%.2f. So du luc nay: %.2f.\n", cnt,temp.getAmount(), temp.getBalance());
++                System.out.printf("Giao dich %d: Rut tien $%.2f. So du luc nay: $%.2f.\n", cnt,temp.getAmount(), temp.getBalance());
+             }
++            else if (temp.getOperation() != Transaction.DEPOSIT && temp.getOperation() != Transaction.WITHDRAW)
++                System.out.println("Yeu cau khong hop le!");
+             cnt++;
+         }
+     }
+ 
+-
+     public static void main(String[] args) {
+         Account acc = new Account();
+         acc.addTransaction(2000.255, "deposit");
+         acc.addTransaction(1000, "withdraw");
++        acc.addTransaction(3000,"abc");
+         acc.printTransaction();
+ 
+     }
++
+ }

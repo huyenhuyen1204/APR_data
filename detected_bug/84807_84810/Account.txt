@@ -1,0 +1,11 @@
+@@ -64,8 +64,8 @@
+             DecimalFormat d = new DecimalFormat("#.00#");
+             double money = (double) Math.round(transitionList.get(i).getAmount() * 100) / 100;
+             System.out.print(d.format(money) + ". So du luc nay: $");
+-            double moneyy = (double) Math.round(transitionList.get(i).getBalance() * 10) / 10;
+-            System.out.println(moneyy + ".");
++            double moneyy = (double) Math.round(transitionList.get(i).getBalance() * 100) / 100;
++            System.out.println(d.format(moneyy) + ".");
+         }
+     }
+ }

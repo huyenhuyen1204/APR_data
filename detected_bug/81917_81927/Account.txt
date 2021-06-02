@@ -1,0 +1,32 @@
+@@ -47,6 +47,8 @@
+             deposit(amount);
+         } else if (operation.equals("withdraw")) {
+             withdraw(amount);
++        } else {
++            System.out.println("Yeu cau khong hop le!");
+         }
+ 
+              Transaction tra = new Transaction(operation, amount, balance);
+@@ -66,18 +68,16 @@
+              double a1 = (double) Math.round(t.getBalance() * 100) / 100;
+              if (t.getOperation().equals(t.DEPOSIT)) {
+                  System.out.print("Giao dich " + i + ": " + "Nap tien $");
+-                 System.out.printf( "%2.2f", t.getAmount());
++                 System.out.printf("%2.2f", t.getAmount());
+                  System.out.print(". So du luc nay: $");
+-                 System.out.printf( "%2.2f", t.getBalance());
++                 System.out.printf("%2.2f", t.getBalance());
+                  System.out.println(".");
+              } else if (t.getOperation().equals(t.WITHDRAW)) {
+                  System.out.print("Giao dich " + i + ": " + "Rut tien $");
+-                 System.out.printf( "%2.2f", t.getAmount());
++                 System.out.printf("%2.2f", t.getAmount());
+                  System.out.print(". So du luc nay: $");
+-                 System.out.printf( "%2.2f", t.getBalance());
++                 System.out.printf("%2.2f", t.getBalance());
+                  System.out.println(".");
+-             } else {
+-                 System.out.println("Yeu cau khong hop le!");
+              }
+              i++;
+          }

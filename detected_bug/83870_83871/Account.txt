@@ -1,0 +1,9 @@
+@@ -7,7 +7,7 @@
+     /** Deposit function. **/
+     private void deposit(double amount) {
+         if (amount <= 0) {
+-            System.out.println("So tien ban nsap vao khong hop le!");
++            System.out.println("So tien ban nap vao khong hop le!");
+             return;
+         }
+         balance += amount;

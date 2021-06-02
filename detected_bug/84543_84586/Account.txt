@@ -1,0 +1,47 @@
+@@ -26,7 +26,7 @@
+      * chuyen.
+      *
+      */
+-    
++
+     public void addTransaction(double amount, String operation) {
+         if (operation.equals(Transaction.DEPOSIT) == false
+                 && operation.equals(Transaction.WITHDRAW) == false) {
+@@ -34,11 +34,15 @@
+         } else {
+             if (operation.equals(Transaction.DEPOSIT)) {
+                 deposit(amount);
+-                transitionList.add(new Transaction(Transaction.DEPOSIT, amount, balance));
++                if (amount >= 0) {
++                    transitionList.add(new Transaction(Transaction.DEPOSIT, amount, balance));
++                }
+             }
+             if (operation.equals(Transaction.WITHDRAW)) {
+-                deposit(amount);
+-                transitionList.add(new Transaction(Transaction.WITHDRAW, amount, balance));
++                withdraw(amount);
++                if (amount <= balance && amount > 0) {
++                    transitionList.add(new Transaction(Transaction.WITHDRAW, amount, balance));
++                }
+             }
+         }
+     }
+@@ -49,9 +53,6 @@
+      */
+ 
+     public void printTransaction() {
+-        if (transitionList == null) {
+-            return;
+-        }
+         String s = "";
+         String temp = "";
+ 
+@@ -63,7 +64,7 @@
+             }
+             String s1 = String.format("%.2f", transitionList.get(i).getAmount());
+             String s2 = String.format("%.2f", transitionList.get(i).getBalance());
+-            s += "Giao dich " + (i + 1) + ": " + temp + s1 + ". So du luc nay: $" + s2 + "\n";
++            s += "Giao dich " + (i + 1) + ": " + temp + s1 + ". So du luc nay: $" + s2 + ".\n";
+         }
+         System.out.println(s);
+     }

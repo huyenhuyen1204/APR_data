@@ -1,0 +1,28 @@
+@@ -27,6 +27,7 @@
+         return balance;
+     }
+ 
++    /** Withdraw. */
+     public void doWithdrawing(double amount)
+             throws InsufficientFundsException, InvalidFundingAmountException {
+         if (amount < 0) {
+@@ -38,6 +39,7 @@
+         }
+     }
+ 
++    /** Deposit. */
+     public void doDepositing(double amount)
+             throws InvalidFundingAmountException {
+         if (amount < 0) {
+@@ -51,8 +53,10 @@
+ 
+     public abstract void deposit(double amount);
+ 
++    /** Transaction history. */
+     public String getTransactionHistory() {
+-        StringBuilder result = new StringBuilder("Lịch sử giao dịch của tài khoản " + accountNumber + ":\n");
++        StringBuilder result = new StringBuilder(
++                "Lịch sử giao dịch của tài khoản " + accountNumber + ":\n");
+         for (Transaction transaction : transactionList) {
+             result.append(transaction.getTransactionSummary()).append("\n");
+         }

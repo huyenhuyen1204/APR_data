@@ -1,0 +1,12 @@
+@@ -47,9 +47,9 @@
+         return format;
+     }
+     public String depositToString() {
+-        return ": Nap tien $" + this.toString(this.getAmount())+ ".So du luc nay: $" + this.toString(this.getBalance()) +".";
++        return ": Nap tien $" + this.toString(this.getAmount())+ ". So du luc nay: $" + this.toString(this.getBalance()) +".";
+     }
+     public String withdrawToString() {
+-        return ": Rut tien $" + this.toString(this.getAmount())+ ".So du luc nay: $" + this.toString(this.getBalance()) +".";
++        return ": Rut tien $" + this.toString(this.getAmount())+ ". So du luc nay: $" + this.toString(this.getBalance()) +".";
+     }
+ }

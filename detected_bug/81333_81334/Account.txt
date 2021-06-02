@@ -1,0 +1,10 @@
+@@ -51,7 +51,8 @@
+             String formattedString2 = String.format("%.02f", transitionList.get(i).getBalance());
+             if (transitionList.get(i).getOperation().equals(Transaction.DEPOSIT)) {
+                 balance += transitionList.get(i).getAmount();
+-                str += "Giao dich " + count + ": " + "Nap tien $" + formattedString1 + ". " + "So du luc nay: $"
++                str += "Giao dich " + count + ": " + "Nap tien $"
++                        + formattedString1 + ". " + "So du luc nay: $"
+                         + formattedString2 + ".\n";
+             } else if (transitionList.get(i).getOperation().equals(Transaction.WITHDRAW)) {
+                 balance -= transitionList.get(i).getAmount();

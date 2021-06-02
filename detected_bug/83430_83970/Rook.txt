@@ -1,0 +1,47 @@
+@@ -21,18 +21,38 @@
+ 
+     @Override
+     public boolean canMove(Board board, int x, int y) {
+-        if (x <= 8 && y <= 8) {
++        boolean check = true;
++        if ((1 <= x && x <= 8) && (1 <= y && y <= 8)) {
++            if (getCoordinatesX() != x && getCoordinatesY() != y) {
++                check = false;
++            }
++
++            if (getCoordinatesX() == x) {
++                for (int i = Math.min(getCoordinatesY(), y) + 1;
++                     i <= Math.max(getCoordinatesY(), y) - 1; i++) {
++                    if (board.getAt(x, i) != null) {
++                        check = false;
++                    }
++                }
++            }
++
++            if (getCoordinatesY() == y) {
++                for (int i = Math.min(getCoordinatesX(), x) + 1;
++                    i <= Math.max(getCoordinatesX(), x) - 1; i++) {
++                    if (board.getAt(i, y) != null) {
++                        check = false;
++                    }
++                }
++            }
++
+             if (board.getAt(x, y) != null) {
+-                return true;
+-            } else {
+-                if (board.getAt(x, y).getColor().equals(this.getColor())) {
+-                    return false;
+-                } else {
+-                    return true;
++                if (board.getAt(x, y).getColor().equalsIgnoreCase(this.getColor())) {
++                    check = false;
+                 }
+             }
+         } else {
+-            return false;
++            check = false;
+         }
++        return check;
+     }
+ }

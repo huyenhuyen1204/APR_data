@@ -1,0 +1,69 @@
+@@ -2,15 +2,16 @@
+ 
+ public class Account {
+     private double balance = 0;
+-    private ArrayList<Transaction> TransactionList = new ArrayList<>();
++    private ArrayList<Transaction> transitionList = new ArrayList<>();
+ 
+     private void deposit(double amount)
+     {
+         if(amount <= 0) System.out.println("So tien ban nap vao khong hop le!");
+         else
+         {
+-            Transaction depo = new Transaction("deposit", amount, balance + amount);
+-            TransactionList.add(depo);
++            balance += amount;
++            Transaction depo = new Transaction("deposit", amount, balance);
++            transitionList.add(depo);
+         }
+     }
+ 
+@@ -20,8 +21,9 @@
+         else if(balance - amount < 0) System.out.println("So tien ban rut vuot qua so du!");
+         else
+         {
+-            Transaction withd = new Transaction(Transaction.WITHDRAW,amount, balance - amount);
+-            TransactionList.add(withd);
++            balance -= amount;
++            Transaction withd = new Transaction(Transaction.WITHDRAW,amount, balance);
++            transitionList.add(withd);
+         }
+     }
+ 
+@@ -35,7 +37,7 @@
+         {
+             withdraw(amount);
+         }
+-        else System.out.println("Giao dich khong hop le!");
++        else System.out.println("Yeu cau khong hop le!");
+     }
+ 
+     public static double rou(double value)
+@@ -45,18 +47,21 @@
+ 
+     public  void printTransaction()
+     {
+-        int size = TransactionList.size();
+-        for(int i = 1; i<= size; i++)
++        int size = transitionList.size();
++        for(int i = 0; i< size; i++)
+         {
+-            System.out.print("Giao dich " + i + ": ");
+-            if(TransactionList.get(i).getOperation().equals(Transaction.WITHDRAW))
++            System.out.print("Giao dich ");
++            System.out.print(i+1 + ": ");
++            if(transitionList.get(i).getOperation().equals(Transaction.WITHDRAW))
+             {
+                 System.out.print("Rut tien $");
+             }
+             else System.out.print("Nap tien $");
+ 
+-            System.out.print( rou(TransactionList.get(i).getAmount()) + ". " );
+-            System.out.println("So du luc nay: $" + rou(TransactionList.get(i).getBalance()) +". ");
++            System.out.printf("%.2f", rou(transitionList.get(i).getAmount()) );
++            System.out.print(". So du luc nay: $" );
++            System.out.printf("%.2f", rou(transitionList.get(i).getBalance()) );
++            System.out.println(".");
+         }
+     }
+ 

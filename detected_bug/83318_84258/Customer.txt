@@ -1,0 +1,141 @@
+@@ -1,71 +1,100 @@
+ import java.util.ArrayList;
+ import java.util.List;
+ 
++/**
++ * class Customer.
++ */
+ public class Customer {
+-    private List<Account> accountList = new ArrayList<>();
+-    private String fullName = "";
+-    private long idNumber;
+ 
++    private long idNumber;
++    private String fullName;
++    private List<Account> accountList = new ArrayList<>();
++
++    /**
++     * constructor.
++     */
+     public Customer() {
+ 
+     }
+ 
+     /**
+-     * cmt.
++     * constructor.
+      */
+-    public Customer(String fullName, long idNumber) {
+-        this.fullName = fullName;
++    public Customer(long idNumber, String fullName) {
+         this.idNumber = idNumber;
+-    }
+-
+-    public String getFullName() {
+-        return fullName;
+-    }
+-
+-    public void setFullName(String fullName) {
+         this.fullName = fullName;
+     }
+ 
++    /**
++     * getter.
++     * @return .
++     */
++    public String getCustomerInfo() {
++        return "Số CMND: " + idNumber
++                + ". Họ tên: " + fullName + ".";
++    }
++
++    /**
++     * addAccount.
++     * @param account .
++     */
++    public void addAccount(Account account) {
++        accountList.add(account);
++    }
++
++    /**
++     * removeAccount.
++     * @param account .
++     */
++    public void removeAccount(Account account) {
++        accountList.remove(account);
++    }
++
++    /**
++     * getter.
++     * @return .
++     */
+     public long getIdNumber() {
+         return idNumber;
+     }
+ 
++    /**
++     * setter.
++     * @param idNumber .
++     */
+     public void setIdNumber(long idNumber) {
+         this.idNumber = idNumber;
+     }
+ 
++    /**
++     * getter.
++     * @return .
++     */
++    public String getFullName() {
++        return fullName;
++    }
++
++    /**
++     * setter.
++     * @param fullName .
++     */
++    public void setFullName(String fullName) {
++        this.fullName = fullName;
++    }
++
++    /**
++     * getter.
++     * @return .
++     */
+     public List<Account> getAccountList() {
+         return accountList;
+     }
+ 
+     /**
+-     * cmt.
++     * setter.
++     * @param accountList .
+      */
+-    public String getCustomerInfo() {
+-        return "Số CMND: " + idNumber + ". Họ tên: " + fullName + ".";
+-    }
+-
+-    /**
+-     * cmt.
+-     */
+-    public void addAccount(Account a) {
+-        for (Account account : accountList) {
+-            if (account.equals(a)) {
+-                return;
+-            }
+-        }
+-        accountList.add(a);
+-    }
+-
+-    /**
+-     * cmt.
+-     */
+-    public void removeAccount(Account a) {
+-        for (int i = 0; i < accountList.size(); ++i) {
+-            if (accountList.get(i).equals(a)) {
+-                accountList.remove(i);
+-                return;
+-            }
+-        }
++    public void setAccountList(List<Account> accountList) {
++        this.accountList = accountList;
+     }
+ }

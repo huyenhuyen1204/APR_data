@@ -1,0 +1,23 @@
+@@ -28,12 +28,22 @@
+         this.color = color;
+     }
+ 
++    /**
++     * Author.
++     * Thuan
++     * Trinh Van Thuan
++     */
+     public Piece(int coordinatesX, int coordinatesY) {
+         this.coordinatesX = coordinatesX;
+         this.coordinatesY = coordinatesY;
+         color = "white";
+     }
+ 
++    /**
++     * Author.
++     * Thuan
++     * Trinh Van Thuan
++     */
+     public Piece(int coordinatesX, int coordinatesY, String color) {
+         this.coordinatesX = coordinatesX;
+         this.coordinatesY = coordinatesY;

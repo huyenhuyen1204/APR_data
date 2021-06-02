@@ -1,0 +1,74 @@
+@@ -2,8 +2,8 @@
+ import java.io.IOException;
+ import java.io.InputStream;
+ import java.io.InputStreamReader;
+-import java.util.Comparator;
+ import java.util.ArrayList;
++import java.util.Comparator;
+ import java.util.List;
+ 
+ public class Bank {
+@@ -63,40 +63,19 @@
+     /**
+      * Functions.
+      */
+-    public String getCustomersInfoByIdOrder() {
+-        List<Customer> list = afterSort("id");
+-        StringBuilder stringBuilder = new StringBuilder();
+-        for (Customer customer : list) {
+-            stringBuilder.append(customer.getCustomerInfo() + "\n");
+-        }
+-        return stringBuilder.toString();
+-    }
+-
+-    /**
+-     * Functions.
+-     */
+     public String getCustomersInfoByNameOrder() {
+-        List<Customer> list = afterSort("name");
+-        StringBuilder stringBuilder = new StringBuilder();
+-        for (Customer customer : list) {
+-            stringBuilder.append(customer.getCustomerInfo() + "\n");
+-        }
+-        return stringBuilder.toString();
++        List<Customer> tmp = new ArrayList<>(customerList);
++        tmp.sort(Comparator.comparing(Customer::getFullName));
++        return listToString(tmp);
+     }
+ 
+     /**
+      * Functions.
+      */
+-    private List<Customer> afterSort(String string) {
+-        List<Customer> list = customerList;
+-        Comparator<Customer> rankOrder;
+-        if (string.equals("id")) {
+-            rankOrder = Comparator.comparing(Customer::getIdNumber);
+-        } else {
+-            rankOrder = Comparator.comparing(Customer::getFullName);
+-        }
+-        list.sort(rankOrder);
+-        return list;
++    public String getCustomersInfoByIdOrder() {
++        List<Customer> tmp = new ArrayList<>(customerList);
++        tmp.sort((o1, o2) -> (int) (o1.getIdNumber() - o2.getIdNumber()));
++        return listToString(tmp);
+     }
+ 
+     /**
+@@ -105,4 +84,15 @@
+     public List<Customer> getCustomerList() {
+         return customerList;
+     }
++
++    /**
++     * Functions.
++     */
++    private String listToString(List<Customer> list) {
++        StringBuilder res = new StringBuilder();
++        for (Customer customer : list) {
++            res.append(customer.getCustomerInfo());
++        }
++        return res.toString().trim();
++    }
+ }

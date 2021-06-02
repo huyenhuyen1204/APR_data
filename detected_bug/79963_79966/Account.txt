@@ -1,0 +1,61 @@
+@@ -3,7 +3,7 @@
+ public class Account {
+ 
+     private double balance;
+-    private ArrayList<Transaction> transactionList = new ArrayList<>();
++    private ArrayList<Transaction> transitionList = new ArrayList<>();
+ 
+     /**
+      * main.
+@@ -20,7 +20,7 @@
+      * main.
+      */
+     private void withdraw(double amount) {
+-        if(amount < 0) {
++        if (amount < 0) {
+             System.out.println("So tien ban rut ra khong hop le!");
+         }
+         if (amount > balance) {
+@@ -43,7 +43,7 @@
+             if (operation.equals(Transaction.DEPOSIT)) {
+                 deposit(amount);
+             }
+-            transactionList.add(new Transaction(operation, amount, balance));
++            transitionList.add(new Transaction(operation, amount, balance));
+         }
+     }
+ 
+@@ -51,28 +51,18 @@
+      * main.
+      */
+     public void printTransaction() {
+-        for (int i = 0; i < transactionList.size(); i++) {
++        for (int i = 0; i < transitionList.size(); i++) {
+             String operation = "";
+-            if (transactionList.get(i).getOperation().equals(Transaction.DEPOSIT)) {
++            if (transitionList.get(i).getOperation().equals(Transaction.DEPOSIT)) {
+                 operation = "Nap tien";
+             } else {
+                 operation = "Rut tien";
+             }
+             System.out.printf("Giao dich %d: %s $%.02f. "
+                             + "So du luc nay: $%.02f.\n",
+-                    i + 1, operation, transactionList.get(i).getAmount(),
+-                    transactionList.get(i).getBalance());
++                    i + 1, operation, transitionList.get(i).getAmount(),
++                    transitionList.get(i).getBalance());
+         }
+     }
+-
+-//    /**
+-//     * Cmt.
+-//     */
+-//    public static void main(String[] args) {
+-//        Account acc = new Account();
+-//        acc.addTransaction(2000.255, "deposit");
+-//        acc.addTransaction(1000, "withdraw");
+-//        acc.printTransaction();
+-//    }
+ }
+  
+\ No newline at end of file

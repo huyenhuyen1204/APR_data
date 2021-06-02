@@ -1,0 +1,41 @@
+@@ -2,15 +2,20 @@
+ 
+ public class Board {
+ 
+-    public static final int WIDTH = 8, HEIGHT = 8;
++    public static final int WIDTH = 8;
++    public static final int HEIGHT = 8;
+     private static ArrayList<Piece> pieces = new ArrayList<>();
+ 
+     public Board() {
+ 
+     }
+ 
++    /**
++     * 123.
++     */
+     public void addPiece(Piece piece) {
+-        if (validate(piece.getX(), piece.getY()) && getAt(piece.getX(),piece.getY()) == null) {
++        if (validate(piece.getCoordinatesX(), piece.getCoordinatesY())
++                && getAt(piece.getCoordinatesX(), piece.getCoordinatesY()) == null) {
+             pieces.add(piece);
+         }
+     }
+@@ -21,12 +26,15 @@
+     }
+ 
+     public void removeAt(int x, int y) {
+-        pieces.removeIf(piece -> piece.getX() == x && piece.getY() == y);
++        pieces.removeIf(piece -> piece.getCoordinatesX() == x && piece.getCoordinatesY() == y);
+     }
+ 
++    /**
++     * 123.
++     */
+     public Piece getAt(int x, int y) {
+         for (Piece piece : pieces) {
+-            if (piece.getX() == x && piece.getY() == y) {
++            if (piece.getCoordinatesX() == x && piece.getCoordinatesY() == y) {
+                 return piece;
+             }
+         }

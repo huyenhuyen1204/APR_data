@@ -1,0 +1,37 @@
+@@ -22,11 +22,11 @@
+     }
+ 
+     public void addTransaction(double amount, String operation){
+-        if (!operation.equals("deposit") && !operation.equals("withdraw"))
++        if (!operation.equals(Transaction.DEPOSIT) && !operation.equals(Transaction.WITHDRAW))
+             System.out.println("Yeu cau khong hop le!");
+-        if (operation.equals("deposit"))
++        if (operation.equals(Transaction.DEPOSIT))
+             deposit(amount);
+-        else if (operation.equals("withdraw"))
++        else if (operation.equals(Transaction.WITHDRAW))
+             withdraw(amount);
+         Transaction newTransaction = new Transaction(operation,amount,balance);
+         transitionList.add(newTransaction);
+@@ -34,13 +34,15 @@
+ 
+     public void printTransaction(){
+         for (int i = 0; i < transitionList.size(); i++) {
+-            double amount_temp = Math.round(transitionList.get(i).getAmount() * 100);
+-            double balance_temp = Math.round(transitionList.get(i).getBalance() * 100);
+             System.out.print("Giao dich " + (i+1) + ": ");
+-            if (transitionList.get(i).getOperation().equals("deposit"))
+-                System.out.println("Nap tien $" + (amount_temp/100) + ". So du luc nay: $" + (balance_temp/100) + ".");
+-            else if (transitionList.get(i).getOperation().equals("withdraw"))
+-                System.out.println("Nap tien $" + (amount_temp/100) + ". So du luc nay: $" + (balance_temp/100) + ".");
++            if (transitionList.get(i).getOperation().equals(Transaction.DEPOSIT)) {
++                System.out.printf("Nap tien $%.2f. ",transitionList.get(i).getAmount());
++                System.out.printf("So du luc nay: $%.2f.\n",transitionList.get(i).getBalance());
++            }
++            else if (transitionList.get(i).getOperation().equals(Transaction.WITHDRAW)) {
++                System.out.printf("Rut tien $%.2f. ",transitionList.get(i).getAmount());
++                System.out.printf("So du luc nay: $%.2f.\n",transitionList.get(i).getBalance());
++            }
+         }
+     }
+ 

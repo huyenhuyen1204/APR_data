@@ -1,0 +1,21 @@
+@@ -90,7 +90,7 @@
+         String s = "";
+         s += movedPiece.getColor() + "-";
+         s += movedPiece.getSymbol();
+-        switch (killedPiece.getX()) {
++        switch (endX) {
+             case 1:
+                 s += 'a';
+                 break;
+@@ -115,8 +115,10 @@
+             case 8:
+                 s += 'h';
+                 break;
++            default:
++                break;
+         }
+-        s += killedPiece.getY();
++        s += endY;
+         return s;
+     }
+ }

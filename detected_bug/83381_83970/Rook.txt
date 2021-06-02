@@ -1,0 +1,52 @@
+@@ -21,20 +21,38 @@
+ 
+     @Override
+     public boolean canMove(Board board, int x, int y) {
+-        for (int c = 0; c < 4; c++) {
+-            int xt = ((getCoordinatesX() + x) + c % 2 * 8) / Board.WIDTH; //divide with tiles size to pass to tile coordinate
+-            int yt = ((getCoordinatesY() + y) + c / 2 * 7 - 8) / Board.HEIGHT;
+-            Piece piece = board.getAt(xt, yt);
+-
+-            if (!piece.checkPosition()) {
+-                return false;
++        boolean check = true;
++        if ((1 <= x && x <= 8) && (1 <= y && y <= 8)) {
++            if (getCoordinatesX() != x && getCoordinatesY() != y) {
++                check = false;
+             }
+-        }
+-        return true;
+-    }
+ 
+-    @Override
+-    public boolean checkPosition() {
+-        return false;
++            if (getCoordinatesX() == x) {
++                for (int i = Math.min(getCoordinatesY(), y) + 1;
++                     i <= Math.max(getCoordinatesY(), y) - 1; i++) {
++                    if (board.getAt(x, i) != null) {
++                        check = false;
++                    }
++                }
++            }
++
++            if (getCoordinatesY() == y) {
++                for (int i = Math.min(getCoordinatesX(), x) + 1;
++                    i <= Math.max(getCoordinatesX(), x) - 1; i++) {
++                    if (board.getAt(i, y) != null) {
++                        check = false;
++                    }
++                }
++            }
++
++            if (board.getAt(x, y) != null) {
++                if (board.getAt(x, y).getColor().equalsIgnoreCase(this.getColor())) {
++                    check = false;
++                }
++            }
++        } else {
++            check = false;
++        }
++        return check;
+     }
+ }

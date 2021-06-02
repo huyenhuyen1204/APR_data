@@ -1,0 +1,45 @@
+@@ -21,14 +21,12 @@
+         if(operation.equals("deposit") || operation.equals("withdraw")) {
+             if(operation.equals("deposit")) {
+                 this.deposit(amount);
+-                amount = (double) Math.round(amount * 100)/100;
+-                this.balance = (double) Math.round((this.balance + amount) * 100)/100;
++                this.balance = (double) this.balance + amount;
+                 transitionList.add(new Transaction("deposit", amount, this.balance));
+             }
+             else{
+                 this.withdraw(amount);
+-                amount = (double) Math.round(amount * 100)/100;
+-                this.balance = (double) Math.round((this.balance - amount) * 100)/100;
++                this.balance = (double) this.balance - amount;
+                 transitionList.add(new Transaction("withdraw", amount, this.balance));
+             }
+         }
+@@ -40,13 +38,13 @@
+         for(int i = 0; i < transitionList.size(); i++) {
+             if(transitionList.get(i).getOperation().equals("deposit")) {
+                 if(transitionList.get(i).getAmount() > 0)
+-                    System.out.printf("Giao dich %d: Nap tien $%.2f. So du luc nay: $%.2f\n", i+1, transitionList.get(i).getAmount(), transitionList.get(i).getBalance());
++                    System.out.printf("Giao dich %d: Nap tien $%.2f. So du luc nay: $%.2f.\n", i+1, transitionList.get(i).getAmount(), transitionList.get(i).getBalance());
+                 else
+                     System.out.printf("Giao dich %d: So tien ban nap vao khong hop le!\n", i+1);
+             }
+             else if(transitionList.get(i).getOperation().equals("withdraw")) {
+                 if(transitionList.get(i).getAmount() > 0 && transitionList.get(i).getBalance() >= transitionList.get(i).getAmount())
+-                    System.out.printf("Giao dich %d: Rut tien $%.2f. So du luc nay: $%.2f\n", i+1, transitionList.get(i).getAmount(), transitionList.get(i).getBalance());
++                    System.out.printf("Giao dich %d: Rut tien $%.2f. So du luc nay: $%.2f.\n", i+1, transitionList.get(i).getAmount(), transitionList.get(i).getBalance());
+                 else if(transitionList.get(i).getAmount() <= 0)
+                     System.out.printf("Giao dich %d: So tien ban rut ra khong hop le!\n", i+1);
+                 else if(transitionList.get(i).getAmount() > 0 && transitionList.get(i).getBalance() < transitionList.get(i).getAmount())
+@@ -57,4 +55,11 @@
+ 
+         }
+     }
++
++    public static void main(String[] args) {
++        Account acc= new Account();
++        acc.addTransaction(2000.255,"deposit");
++        acc.addTransaction(1000,"withdraw");
++        acc.printTransaction();
++    }
+ }

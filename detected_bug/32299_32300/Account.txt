@@ -1,0 +1,9 @@
+@@ -13,7 +13,7 @@
+ 
+     private void withdraw(double amount){
+         if(amount<=0) System.out.println("So tien ban rut ra khong hop le!");
+-        if(amount>balance) System.out.println("So tien ban rut vuot qua so du");
++        if(amount>balance) System.out.println("So tien ban rut vuot qua so du!");
+         transitionList.add(new Transaction("Rut tien ",amount,balance-amount));
+         balance-=amount;
+     }

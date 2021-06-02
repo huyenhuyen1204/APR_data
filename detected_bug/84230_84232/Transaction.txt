@@ -1,0 +1,10 @@
+@@ -10,6 +10,9 @@
+     private double initialBalance;
+     private double finalBalance;
+ 
++    /**
++     * tt.
++     */
+     public Transaction(int type, double amount, double initialBalance, double finalBalance) {
+         this.type = type;
+         this.amount = amount;

@@ -1,0 +1,18 @@
+@@ -1,6 +1,6 @@
+-import java.util.ArrayList;
+-import java.text.DecimalFormat;
+ import java.math.BigDecimal;
++import java.text.DecimalFormat;
++import java.util.ArrayList;
+ 
+ public class Account {
+ 
+@@ -24,7 +24,7 @@
+     private void withdraw(double amount) {
+         if (amount > 0 && amount <= balance) {
+             balance = balance - amount;
+-        } else if (amount > balance){
++        } else if (amount > balance) {
+             System.out.println("So tien ban rut vuot qua so du!");
+         } else {
+             System.out.println("So tien ban rut ra khong hop le!");

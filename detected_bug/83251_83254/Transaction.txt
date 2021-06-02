@@ -1,0 +1,39 @@
+@@ -1,12 +1,12 @@
+ import java.text.DecimalFormat;
+ 
+ public class Transaction {
+-    public static final String deposit = "deposit";
+-    public static final String withdraw = "withdraw";
++    public static final String DEPOSIT = "deposit";
++    public static final String WITHDRAW = "withdraw";
+     private String operation;
+     private double amount;
+     private double balance;
+-    private DecimalFormat f = new DecimalFormat("##.00");
++    private DecimalFormat round = new DecimalFormat("##.00");
+ 
+     Transaction(String operation, double amount, double balance) {
+         this.operation = operation;
+@@ -22,8 +22,11 @@
+         return balance;
+     }
+ 
++    /**
++     * get operation.
++     */
+     public String getOperation() {
+-        if (operation.equals(deposit)) {
++        if (operation.equals(DEPOSIT)) {
+             return "Nap tien";
+         } else {
+             return "Rut tien";
+@@ -44,7 +47,7 @@
+ 
+     @Override
+     public String toString() {
+-        return getOperation() + " $" + f.format(getAmount())
+-                + ". So du luc nay: $" + f.format(getBalance()) + ".";
++        return getOperation() + " $" + round.format(getAmount())
++                + ". So du luc nay: $" + round.format(getBalance()) + ".";
+     }
+ }

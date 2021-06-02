@@ -1,0 +1,11 @@
+@@ -30,8 +30,9 @@
+                 return "Nạp tiền tiết kiệm";
+             case TYPE_WITHDRAW_SAVINGS:
+                 return "Rút tiền tiết kiệm";
++            default:
++                return null;
+         }
+-        return null;
+     }
+ 
+     /**

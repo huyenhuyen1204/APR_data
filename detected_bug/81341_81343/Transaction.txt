@@ -1,0 +1,61 @@
+@@ -5,24 +5,46 @@
+     public static final String DEPOSIT = "deposit";
+     public static final String WITHDRAW = "withdraw";
+ 
++    /**
++     *  .
++     * @param operation .
++     * @param amount .
++     * @param balance .
++     */
+     public Transaction(String operation, double amount, double balance) {
+         this.operation = operation;
+         this.amount = amount;
+         this.balance = balance;
+     }
+ 
++    /**
++     *  .
++     * @return .
++     */
+     public String getOperation() {
+         return operation;
+     }
+ 
++    /**
++     *  .
++     * @param operation .
++     */
+     public void setOperation(String operation) {
+         this.operation = operation;
+     }
+ 
++    /**
++     *  .
++     * @return .
++     */
+     public double getAmount() {
+         return amount;
+     }
+ 
++    /**
++     *  .
++     * @param amount .
++     */
+     public void setAmount(double amount) {
+         this.amount = amount;
+     }
+@@ -35,11 +57,11 @@
+         this.balance = balance;
+     }
+ 
+-    public static String getDEPOSIT() {
++    public static String getDeposit() {
+         return DEPOSIT;
+     }
+ 
+-    public static String getWITHDRAW() {
++    public static String getWithdraw() {
+         return WITHDRAW;
+     }
+ }

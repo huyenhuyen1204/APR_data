@@ -1,0 +1,9 @@
+@@ -22,7 +22,7 @@
+         this.balance -= amount;
+     }
+ 
+-    private List<Transaction> transitionList = new ArrayList<>();
++    private ArrayList<Transaction> transitionList = new ArrayList<>();
+ 
+     /**
+      *Add a new transaction to the list.

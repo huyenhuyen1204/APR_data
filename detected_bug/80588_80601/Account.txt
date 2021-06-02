@@ -1,0 +1,21 @@
+@@ -1,3 +1,5 @@
++import java.math.BigDecimal;
++import java.text.DecimalFormat;
+ import java.util.ArrayList;
+ 
+ public class Account {
+@@ -58,9 +60,12 @@
+             } else {
+                 System.out.print("Rut tien $");
+             }
+-            System.out.print((double) Math.round(temp.getAmount() * 100) / 100);
++            DecimalFormat test = new DecimalFormat("#.00#");
++            double amount1 = (double) Math.round(temp.getAmount() * 100) / 100;
++            System.out.print(test.format(amount1));
+             System.out.print(". So du luc nay: $");
+-            System.out.print((double) Math.round(temp.getBalance() * 100) / 100);
++            double balance1 = (double) Math.round(temp.getBalance() * 100) / 100;
++            System.out.print(test.format(balance1));
+             System.out.println(".");
+         }
+     }

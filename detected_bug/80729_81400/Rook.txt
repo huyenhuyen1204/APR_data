@@ -1,0 +1,39 @@
+@@ -16,27 +16,32 @@
+     @Override
+     public boolean canMove(Board board, int x, int y) {
+         if (this.getCoordinatesX() == x) {
+-            for (int i = 1; i < y; i++) {
+-                if (board.getAt(x, i) != null) {
++            for (Piece check : board.getPieces()) {
++                if (check.getCoordinatesX() == x
++                        && (check.getCoordinatesY() > Math.min(y, this.getCoordinatesY())
++                        && check.getCoordinatesY() < Math.max(y, this.getCoordinatesY()))) {
+                     return false;
+                 }
+             }
+             if (board.getAt(x, y) == null
+-                    || board.getAt(x, y).getColor().equals(this.getColor())) {
++                    || !board.getAt(x, y).getColor().equals(this.getColor())) {
+                 return true;
+             }
+         }
+         if (this.getCoordinatesY() == y) {
+-            for (int i = 1; i < x; i++) {
+-                if (board.getAt(i, y) != null) {
++            for (Piece check : board.getPieces()) {
++                if (check.getCoordinatesY() == y
++                        && (check.getCoordinatesX() > Math.min(x, this.getCoordinatesX())
++                        && check.getCoordinatesX() < Math.max(x, this.getCoordinatesX()))) {
+                     return false;
+                 }
+             }
+             if (board.getAt(x, y) == null
+-                    || board.getAt(x, y).getColor().equals(this.getColor())) {
++                    || !board.getAt(x, y).getColor().equals(this.getColor())) {
+                 return true;
+             }
+         }
++
+         return false;
+     }
+ }

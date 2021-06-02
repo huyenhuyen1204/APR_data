@@ -1,0 +1,51 @@
+@@ -18,13 +18,12 @@
+             if (transitionList.size() == 0) {
+                 x = 0;
+             } else {
+-                x = transitionList.get(transitionList.size() - 1).getAmount();
++                x = transitionList.get(transitionList.size() - 1).getBalance();
+             }
+             transaction.setAmount(amount);
+             transaction.setBalance(x + amount);
+             transaction.setOperation("Nap tien");
+             transitionList.add(transaction);
+-            balance += amount;
+         } else {
+             System.out.println("So tien ban nap vao khong hop le!");
+         }
+@@ -43,13 +42,12 @@
+                 if (transitionList.size() == 0) {
+                     x = 0;
+                 } else {
+-                    x = transitionList.get(transitionList.size() - 1).getAmount();
++                    x = transitionList.get(transitionList.size() - 1).getBalance();
+                 }
+                 transaction.setAmount(amount);
+                 transaction.setBalance(x - amount);
+                 transaction.setOperation("Rut tien");
+                 transitionList.add(transaction);
+-                balance -= amount;
+             }
+         }
+     }
+@@ -84,10 +82,16 @@
+         }
+     }
+ 
+-    public static void main(String[] args) {
++    /*public static void main(String[] args) {
+         Account acc= new Account();
+-        acc.addTransaction(2000.255,"deposit");
+-        acc.addTransaction(0,"withdraw");
++        acc.addTransaction(3000.68,"deposit");
++        System.out.println(acc.transitionList.get(acc.transitionList.size() - 1).getAmount());
++        acc.addTransaction(3000,"deposit");
++        System.out.println(acc.transitionList.get(acc.transitionList.size() - 1).getAmount());
++        acc.addTransaction(1000,"withdraw");
++        System.out.println(acc.transitionList.get(acc.transitionList.size() - 1).getAmount());
++        acc.addTransaction(2000,"withdraw");
++        System.out.println(acc.transitionList.get(acc.transitionList.size() - 1).getAmount());
+         acc.printTransaction();
+-    }
++    }*/
+ }

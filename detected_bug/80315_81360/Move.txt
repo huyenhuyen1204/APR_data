@@ -1,0 +1,20 @@
+@@ -7,6 +7,9 @@
+     private Piece movedPiece;
+     private Piece killedPiece;
+ 
++    /**
++     * Move.
++     */
+     public Move(int startX, int endX, int startY, int endY, Piece movedPiece) {
+         this.startX = startX;
+         this.endX = endX;
+@@ -15,6 +18,9 @@
+         this.movedPiece = movedPiece;
+     }
+ 
++    /**
++     * Move.
++     */
+     public Move(int startX, int endX, int startY, int endY, Piece movedPiece, Piece killedPiece) {
+         this.startX = startX;
+         this.endX = endX;

@@ -1,0 +1,9 @@
+@@ -19,7 +19,7 @@
+             System.out.println("So tien ban rut vuot qua so du!");
+         else {
+             balance -= amount;
+-            transitionList.add(new Transaction("deposit", amount, balance));
++            transitionList.add(new Transaction("withdraw", amount, balance));
+         }
+     }
+ 

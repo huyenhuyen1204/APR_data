@@ -1,0 +1,17 @@
+@@ -32,13 +32,14 @@
+     }
+ 
+     public void printTransaction(){
+-        for(int i = 1; i <= transitionList.size(); i++){
++        for(int i = 0; i < transitionList.size(); i++){
+             if(transitionList.get(i).getOperation().equals("deposit")) transitionList.get(i).setOperation("Nap tien");
+             else if(transitionList.get(i).getOperation().equals("withdraw")) transitionList.get(i).setOperation("Rut tien");
+             DecimalFormat df = new DecimalFormat("#.00");
+             double Amount = transitionList.get(i).getAmount();
+             double Balance = transitionList.get(i).getBalance();
+-            System.out.println("Giao dich " + i + ": " + transitionList.get(i).getOperation() + " $" + df.format(Amount) + ". So du luc nay: $" + df.format(Balance) + ".");
++
++            System.out.println("Giao dich " + (i+1) + ": " + transitionList.get(i).getOperation() + " $" + df.format(Amount) + ". So du luc nay: $" + df.format(Balance) + ".");
+         }
+     }
+ }

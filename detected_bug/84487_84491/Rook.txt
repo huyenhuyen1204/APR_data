@@ -1,0 +1,18 @@
+@@ -16,7 +16,8 @@
+     public boolean canMove(Board board, int x, int y) {
+         if (!board.validate(x, y)) {
+             return false;
+-        } else if (getColor().equals(board.getAt(x, y).getColor())) {
++        }
++        if (board.getAt(x, y) != null && getColor().equals(board.getAt(x, y).getColor())) {
+             return false;
+         }
+ 
+@@ -60,6 +61,7 @@
+                 }
+             }
+         }
++
+         return true;
+     }
+ }

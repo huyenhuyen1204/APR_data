@@ -1,0 +1,58 @@
+@@ -1,9 +1,8 @@
+ import java.util.ArrayList;
+-import java.util.List;
+ 
+ public class Account {
+     private double balance;
+-    private List<Transaction> transitionList = new ArrayList<Transaction>();
++    private ArrayList<Transaction> transitionList = new ArrayList<Transaction>();
+ 
+     private void deposit(double amount) {
+         if (amount <= 0) {
+@@ -23,25 +22,38 @@
+         }
+     }
+ 
++    /**
++     * add.
++     */
+     public void addTransaction(double amount, String operation) {
+         if (!operation.equals(Transaction.DEPOSIT) && !operation.equals(Transaction.WITHDRAW)) {
+             System.out.println("Yeu cau khong hop le!");
+         } else {
+-            Transaction transaction = new Transaction(operation, amount, balance);
+-            transitionList.add(transaction);
++            if (operation.equals(Transaction.DEPOSIT)) {
++                deposit(amount);
++                Transaction transaction = new Transaction(operation, amount, balance);
++                transitionList.add(transaction);
++            } else {
++                withdraw(amount);
++                Transaction transaction = new Transaction(operation, amount, balance);
++                transitionList.add(transaction);
++            }
+         }
+     }
+ 
++    /**
++     * print.
++     */
+     public void printTransaction() {
+         for (int i = 0; i < transitionList.size(); i++) {
+             if (transitionList.get(i).getOperation().equals(Transaction.DEPOSIT)) {
+-                System.out.println("Giao dich " + (i + 1) + ": Nap tien $" +
+-                        (double) Math.round(transitionList.get(i).getAmount() * 100) / 100 +
+-                        ". So du luc nay: $" + (double) Math.round(transitionList.get(i).getBalance() * 100) / 100 + ".");
++                System.out.printf("Giao dich " + (i + 1) + ": Nap tien $" + "%.2f"
++                                + ". So du luc nay: $" + "%.2f" + ".\n",
++                        transitionList.get(i).getAmount(), transitionList.get(i).getBalance());
+             } else if (transitionList.get(i).getOperation().equals(Transaction.WITHDRAW)) {
+-                System.out.println("Giao dich " + (i + 1) + ": Rut tien $" +
+-                        (double) Math.round(transitionList.get(i).getAmount() * 100) / 100 +
+-                        ". So du luc nay: $" + (double) Math.round(transitionList.get(i).getBalance() * 100) / 100 + ".");
++                System.out.printf("Giao dich " + (i + 1) + ": Rut tien $" + "%.2f"
++                                + ". So du luc nay: $" + "%.2f" + ".\n",
++                        transitionList.get(i).getAmount(), transitionList.get(i).getBalance());
+             }
+         }
+     }

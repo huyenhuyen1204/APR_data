@@ -1,0 +1,34 @@
+@@ -6,6 +6,9 @@
+     private int endY;
+     private Piece killedPiece;
+ 
++    /**
++     * con.
++     */
+     public Move(int startX, int endX, int startY, int endY, Piece movedPiece) {
+         this.movedPiece = movedPiece;
+         this.startX = startX;
+@@ -14,6 +17,9 @@
+         this.endY = endY;
+     }
+ 
++    /**
++     * con.
++     */
+     public Move(int startX, int endX, int startY, int endY, Piece killedPiece, Piece movedPiece) {
+         this.movedPiece = movedPiece;
+         this.startX = startX;
+@@ -74,10 +80,11 @@
+     @Override
+     public String toString() {
+         String tmp;
+-        if (killedPiece == null)
++        if (killedPiece == null) {
+             tmp = movedPiece.getColor();
+-        else
++        } else {
+             tmp = killedPiece.getColor();
++        }
+         tmp += "-" + movedPiece.getSymbol();
+ 
+         char c = (char) ('a' + (endX - 1));

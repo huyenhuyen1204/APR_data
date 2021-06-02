@@ -1,0 +1,9 @@
+@@ -64,7 +64,7 @@
+                     }
+                     thisX--;
+                 }
+-            } else if (destX > thisX){
++            } else if (destX > thisX) {
+                 thisX++;
+                 while (thisX != destX) {
+                     if (board.getAt(thisX, thisY) != null) {

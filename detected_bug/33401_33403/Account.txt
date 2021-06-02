@@ -1,0 +1,47 @@
+@@ -11,7 +11,7 @@
+ 
+ public class Account {
+     private double balance;
+-    private List<Transaction> transitionList = new ArrayList<Transaction>();
++    private ArrayList<Transaction> transitionList = new ArrayList<Transaction>();
+ 
+     private void deposit(double amount){
+         if(amount<=0) {
+@@ -29,22 +29,31 @@
+         }
+         else balance-=amount;
+     }
++
+     public void addTransaction(double amount, String operation){
+-        if(!operation.equals("withdraw") && !operation.equals("deposit")) {
+-            System.out.print("Yeu cau khong hop le!");
++        if(!operation.equals(Transaction.WITHDRAW) && !operation.equals(Transaction.DEPOSIT)) {
++            System.out.println("Yeu cau khong hop le!");
+         } else {
+-            if(operation.equals("deposit")) deposit(amount);
+-            else withdraw(amount);
++            if(operation.equals(Transaction.DEPOSIT)) {
++                deposit(amount);
++            } else {
++                withdraw(amount);
++            }
+             Transaction add = new Transaction(operation,amount,balance);
+             transitionList.add(add);
+         }
+     }
++
+     public void  printTransaction() {
+         for (int i=0; i<transitionList.size(); i++) {
+-            if (transitionList.get(i).getOperation().equals(Transaction.DEPOSIT) || transitionList.get(i).getOperation().equals(Transaction.WITHDRAW)) {
+-                System.out.printf("Giao dich %d: Nap tien $%.2f. So du luc nay: $%.2f.\n",i+1 , transitionList.get(i).getAmount(), transitionList.get(i).getBalance());
++            if (transitionList.get(i).getOperation().equals(Transaction.DEPOSIT)) {
++                System.out.printf("Giao dich %d: Nap tien $%.2f. So du luc nay: $%.2f.\n", i+1 , transitionList.get(i).getAmount(), transitionList.get(i).getBalance());
++            }
++            if (transitionList.get(i).getOperation().equals(Transaction.WITHDRAW)) {
++                System.out.printf("Giao dich %d: Rut tien $%.2f. So du luc nay: $%.2f.\n", i+1 , transitionList.get(i).getAmount(), transitionList.get(i).getBalance());
+             }
+         }
+     }
+ 
++
+ }

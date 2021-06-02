@@ -1,0 +1,58 @@
+@@ -1,9 +1,8 @@
+ import java.util.ArrayList;
+-import java.util.List;
+ 
+ public class Account {
+     private double balance;
+-    List<Transaction> historyTransaction = new ArrayList<>();
++    private ArrayList<Transaction> transitionList = new ArrayList<>();
+ 
+     public Account() {
+ 
+@@ -29,31 +28,40 @@
+         this.balance -= amount;
+     }
+ 
++    /**
++     * Tao giao dich.
++     *
++     * @param amount    double
++     * @param operation string
++     */
+     public void addTransaction(double amount, String operation) {
+-        if (operation == "deposit") {
++        if (operation.equals("deposit")) {
+             this.deposit(amount);
+             if (amount > 0) {
+                 Transaction transaction
+                         = new Transaction("Nap tien", amount, this.balance);
+-                this.historyTransaction.add(transaction);
++                this.transitionList.add(transaction);
+             }
+             return;
+         }
+-        if (operation == "withdraw") {
++        if (operation.equals("withdraw")) {
+             this.withdraw(amount);
+             if (amount > 0 && amount <= this.balance) {
+                 Transaction transaction
+                         = new Transaction("Rut tien", amount, this.balance);
+-                this.historyTransaction.add(transaction);
++                this.transitionList.add(transaction);
+             }
+             return;
+         }
+         System.out.println("Yeu cau khong hop le!");
+     }
+ 
++    /**
++     * In thong tin.
++     */
+     public void printTransaction() {
+-        for (int i = 0; i < this.historyTransaction.size(); i++) {
+-            Transaction transaction = this.historyTransaction.get(i);
++        for (int i = 0; i < this.transitionList.size(); i++) {
++            Transaction transaction = this.transitionList.get(i);
+             String text = "";
+             text += "Giao dich " + (i + 1) + ": " + transaction.getOperation();
+             text += " $" + this.approximately(transaction.getAmount()) + ". ";

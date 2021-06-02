@@ -1,0 +1,45 @@
+@@ -2,23 +2,34 @@
+ 
+ public class Game {
+     private Board board;
+-    private ArrayList<Move> moveHistory;
++    private ArrayList<Move> moveHistory = new ArrayList<>();
+ 
+     public Game(Board board) {
+         this.board = board;
+     }
+ 
++    /**
++     * ham di chuyen quan co.
++     * @param piece .
++     * @param x .
++     * @param y .
++     */
+     public void movePiece(Piece piece, int x, int y) {
+         if (piece.canMove(board, x, y)) {
+-            Move move = new Move(piece.getCoordinatesX(),
+-                    piece.getCoordinatesY(), x, y, piece);
+-            moveHistory.add(move);
+-        }
+-
+-        if (piece.getCoordinatesX() == x
+-        && piece.getCoordinatesY() == y) {
+-            if (board.getPieces() != null) {
+-                board.removeAt(x, y);
++            Piece newPiece = board.getAt(x, y);
++            if (newPiece == null) {
++                Move move = new Move(piece.getCoordinatesX(),
++                        piece.getCoordinatesY(), x, y, piece);
++                moveHistory.add(move);
++            } else {
++                piece.setCoordinatesX(x);
++                piece.setCoordinatesY(y);
++                Move move = new Move(piece.getCoordinatesX(),
++                        piece.getCoordinatesY(), x, y, piece, newPiece);
++                moveHistory.add(move);
++                if (!board.getPieces().isEmpty()) {
++                    board.removeAt(x, y);
++                }
+             }
+         }
+     }

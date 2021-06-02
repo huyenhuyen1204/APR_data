@@ -1,0 +1,35 @@
+@@ -22,7 +22,7 @@
+         boolean check = true;
+         ArrayList<Piece> ps = new ArrayList<>();
+         int n = board.getPieces().size();
+-        if (this.getX() != x || this.getY() != y) {
++        if (this.getCoordinatesX() != x && this.getCoordinatesY() != y) {
+             check = false;
+         } else {
+             if (board.getAt(x, y) != null
+@@ -30,12 +30,12 @@
+                 check = false;
+             } else {
+                 for (int i = 0; i < n; i++) {
+-                    int X = board.getPieces().get(i).getX();
+-                    int Y = board.getPieces().get(i).getY();
+-                    if ((x < X && X < this.getX())
+-                        || (x > X && X > this.getX())
+-                        || (y < Y && Y < this.getY())
+-                        || (y > Y && Y > this.getY())) {
++                    int abscissa = board.getPieces().get(i).getCoordinatesX();
++                    int ordinate = board.getPieces().get(i).getCoordinatesY();
++                    if ((x < abscissa && abscissa < this.getCoordinatesX())
++                        || (x > abscissa && abscissa > this.getCoordinatesX())
++                        || (y < ordinate && ordinate < this.getCoordinatesY())
++                        || (y > ordinate && ordinate > this.getCoordinatesY())) {
+                         ps.add(board.getPieces().get(i));
+                     }
+                 }
+@@ -46,4 +46,4 @@
+         }
+         return check;
+     }
+-}
++}
+\ No newline at end of file

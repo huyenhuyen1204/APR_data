@@ -1,0 +1,18 @@
+@@ -39,6 +39,10 @@
+         this.coordinatesY = coordinatesY;
+     }
+ 
++    /**
++     * fsdf.
++     * @return
++     */
+     public boolean checkPosition(Piece piece) {
+         if (this.getCoordinatesX() == piece.getCoordinatesX()) {
+             if (this.getCoordinatesY() == piece.getCoordinatesY()) {
+@@ -49,5 +53,6 @@
+     }
+ 
+     public abstract String getSymbol();
++
+     public abstract boolean canMove(Board board, int x, int y);
+ }

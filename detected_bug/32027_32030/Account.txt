@@ -1,0 +1,54 @@
+@@ -1,3 +1,4 @@
++import java.text.DecimalFormat;
+ import java.util.ArrayList;
+ 
+ public class Account {
+@@ -22,10 +23,6 @@
+         this.balance -= amount;
+     }
+     public void addTransaction(double amount , String operation){
+-        if (operation != "DEPOSIT" || operation != "deposit" || operation != "withdraw"|| operation!= "WITHDRAW"){
+-            System.out.println("Yeu cau khong hop le!");
+-            return;
+-        }
+         if (operation == "DEPOSIT" || operation == "deposit"){
+             this.deposit(amount);
+             Transaction a = new Transaction("deposit", amount, balance);
+@@ -34,20 +31,33 @@
+         }
+         if (operation == "WITHDRAW" || operation == "withdraw"){
+             this.withdraw(amount);
+-            Transaction b = new Transaction("deposit", amount, balance);
++            Transaction b = new Transaction("withdraw", amount, balance);
+             transitionList.add(b);
+             return;
+         }
++        System.out.println("Yeu cau khong hop le!");
++        return;
+     }
+     public void printTransaction(){
++        DecimalFormat df = new DecimalFormat("#.00");
+         for (int i =0;i<transitionList.size();i++){
+-            System.out.println("Giao dich " + (i+1) + ":");
++            System.out.print("Giao dich " + (i+1) + ":");
+             if (transitionList.get(i).getOperation() == "deposit"){
+-            System.out.print(" Nap tien $" + transitionList.get(i).getAmount() + ". So du luc nay: $" + transitionList.get(i).getBalance());
++            System.out.print(" Nap tien $" + df.format((double) Math.round(transitionList.get(i).getAmount() * 100.0) / 100.0) + ". So du luc nay: $"
++                    + df.format((double) Math.round(transitionList.get(i).getBalance() * 100) / 100) + "." +"\n");
+             }
+             if (transitionList.get(i).getOperation() == "withdraw"){
+-                System.out.print("Rut tien $" + transitionList.get(i).getAmount() + ". So du luc nay: $" + transitionList.get(i).getBalance());
++                System.out.print(" Rut tien $" + df.format((double) Math.round(transitionList.get(i).getAmount() * 100.0) / 100.0) + ". So du luc nay: $"
++                        + df.format((double) Math.round(transitionList.get(i).getBalance() * 100) / 100 )+ "." + "\n");
+             }
+         }
+     }
++    public static void main(String[] args){
++        Account acc= new Account();
++
++        acc.addTransaction(2000.255,"deposit");
++        acc.addTransaction(1000,"withdraw");
++        acc.printTransaction();
++    }
++
+ }

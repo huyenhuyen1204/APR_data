@@ -1,0 +1,12 @@
+@@ -66,11 +66,4 @@
+             System.out.println(".");
+         }
+     }
+-
+-    public static void main(String[] args) {
+-        Account acc= new Account();
+-        acc.addTransaction(2000,"deposit");
+-        acc.addTransaction(1000,"withdraw");
+-        acc.printTransaction();
+-    }
+ }

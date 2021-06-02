@@ -1,0 +1,14 @@
+@@ -58,9 +58,10 @@
+      * Javadoc Comment.
+      */
+     public void removeAt(int x, int y) {
+-        for (Piece p : pieces) {
+-            if (x == p.getCoordinatesX() && y == p.getCoordinatesY()) {
+-                pieces.remove(p);
++        for (int i = 0; i < pieces.size(); i++) {
++            if (x == pieces.get(i).getCoordinatesX()
++                    && y == pieces.get(i).getCoordinatesY()) {
++                pieces.remove(pieces.get(i));
+             }
+         }
+     }

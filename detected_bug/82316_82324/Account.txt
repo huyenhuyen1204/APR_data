@@ -1,0 +1,68 @@
+@@ -3,7 +3,7 @@
+ 
+ public class Account {
+     private double balance;
+-    public List<Transaction> transactions = new ArrayList<>();
++    private ArrayList<Transaction> transitionList = new ArrayList<>();
+ 
+     private void deposit(double amount) {
+         if (amount <= 0) {
+@@ -11,7 +11,7 @@
+         } else {
+             balance += amount;
+             Transaction depositTran = new Transaction(Transaction.DEPOSIT, amount, balance);
+-            transactions.add(depositTran);
++            transitionList.add(depositTran);
+         }
+     }
+ 
+@@ -20,15 +20,20 @@
+             System.out.println("So tien ban rut ra khong hop le!");
+         } else {
+             if (amount > balance) {
+-                System.out.println("So tien ban rut vuot qua so du");
++                System.out.println("So tien ban rut vuot qua so du!");
+             } else {
+                 balance -= amount;
+                 Transaction withdrawTran = new Transaction(Transaction.WITHDRAW, amount, balance);
+-                transactions.add(withdrawTran);
++                transitionList.add(withdrawTran);
+             }
+         }
+     }
+ 
++    /**
++     * Them giao dich.
++     * @param amount so tien giao dich.
++     * @param operation phuong thuc giao dich.
++     */
+     public void addTransaction(double amount, String operation) {
+         if (!operation.equals(Transaction.DEPOSIT) && !operation.equals(Transaction.WITHDRAW)) {
+             System.out.println("Yeu cau khong hop le!");
+@@ -42,15 +47,22 @@
+         }
+     }
+ 
++    /**
++     * In ra lich su giao dich.
++     */
+     public void printTransaction() {
+-        int j = 0;
+-        for (Transaction i : transactions) {
++        int j = 1;
++        for (Transaction i : transitionList) {
+             String s = null;
++            Double amount = i.getAmount();
++            Double balance = i.getBalance();
+             if (i.getOperation().equals(Transaction.DEPOSIT)) {
+-                s = String.format("Giao dich %s: Nap tien $%.5g. So du luc nay: $%.5g.", j, i.getAmount(), i.getBalance());
++                s = String.format("Giao dich %s: Nap tien $%.2f. So du luc nay: $%.2f.",
++                        j, amount, balance);
+             }
+             if (i.getOperation().equals(Transaction.WITHDRAW)) {
+-                s = String.format("Giao dich %s: Rut tien $%.5g. So du luc nay: $%.5g.", j, i.getAmount(), i.getBalance());
++                s = String.format("Giao dich %s: Rut tien $%.2f. So du luc nay: $%.2f.",
++                        j, amount, balance);
+             }
+             System.out.println(s);
+             j++;

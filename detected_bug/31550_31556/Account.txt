@@ -1,0 +1,18 @@
+@@ -20,7 +20,7 @@
+             System.out.println("So tien ban rut ra khong hop le!");
+             return;
+         } else if (amount >= balance) {
+-            System.out.println("So tien ban rut ra khong hop le!");
++            System.out.println("So tien ban rut vuot qua so du!");
+             return;
+         } else balance -= amount;
+     }
+@@ -29,7 +29,7 @@
+         amount = (double)Math.round(amount*100)/100;
+ 
+         if (operation != "deposit" && operation != "withdraw") {
+-            System.out.println("Yeu cau khong hop le");
++            System.out.println("Yeu cau khong hop le!");
+             return;
+         } else if (operation.equals("deposit") ) {
+             deposit(amount);

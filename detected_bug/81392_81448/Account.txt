@@ -1,0 +1,61 @@
+@@ -3,16 +3,14 @@
+ 
+ public class Account {
+     private double balance;
+-    private List<String> Type = new ArrayList<>();
+-    private List<Double> Amount = new ArrayList<>();
++    private ArrayList<Transaction> transitionList = new ArrayList<>();
+ 
+     private void deposit(double amount) {
+         if (amount <= 0) {
+             System.out.print("So tien ban nap vao khong hop le!");
+         } else {
+             this.balance += amount;
+-            Type.add("Nap tien");
+-            Amount.add(amount);
++            transitionList.add(new Transaction("Nap tien", amount, this.balance));
+         }
+     }
+ 
+@@ -23,8 +21,7 @@
+             System.out.print("So tien ban rut vuot qua so du!");
+         } else {
+             this.balance -= amount;
+-            Type.add("Rut tien");
+-            Amount.add(amount);
++            transitionList.add(new Transaction("Rut tien", amount, this.balance));
+         }
+     }
+ 
+@@ -42,14 +39,25 @@
+     }
+ 
+     /**
+-     * Print History of Transaction
++     * Print History of Transaction.
+      */
+     public void printTransaction() {
+-        for (int i = 0; i < Type.size(); i++) {
+-            double a = Math.round(Amount.get(i) * 100) / 100;
+-            double b = Math.round(this.balance * 100) / 100;
+-            System.out.println("Giao dich " + (i + 1) + ": " + Type.get(i) + " "
+-                    + a + ". So du luc nay: " + b + ".");
++        for (int i = 0; i < transitionList.size(); i++) {
++            double a = (double) Math.round(transitionList.get(i).getAmount() * 100) / 100;
++            double b = (double) Math.round(transitionList.get(i).getBalance() * 100) / 100;
++            String c = String.valueOf(a);
++            String d = String.valueOf(b);
++            if (c.charAt(c.length() - 1) == '0') {
++                c = c + "0";
++            }
++            if (d.charAt(d.length() - 1) == '0') {
++                d = d + "0";
++            }
++            System.out.println("Giao dich "
++                    + (i + 1)
++                    + ": "
++                    + transitionList.get(i).getOperation() + " $"
++                    + c + ". So du luc nay: $" + d + ".");
+         }
+     }
+ }

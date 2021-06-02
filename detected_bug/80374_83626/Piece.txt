@@ -1,0 +1,71 @@
+@@ -1,38 +1,40 @@
+ public abstract class Piece {
+-    private int x;
+-    private int y;
++    private int coordinatesX;
++    private int coordinatesY;
+     private String color;
+ 
+     public Piece(int x, int y) {
+-        this.x = x;
+-        this.y = y;
++        this.coordinatesX = x;
++        this.coordinatesY = y;
+     }
+ 
+     /**
++     * abc.
++     *
+      * @param x     int.
+      * @param y     int.
+      * @param color int.
+      */
+     public Piece(int x, int y, String color) {
+-        this.x = x;
+-        this.y = y;
++        this.coordinatesX = x;
++        this.coordinatesY = y;
+         this.color = color;
+     }
+ 
+-    public int getX() {
+-        return x;
++    public int getCoordinatesX() {
++        return coordinatesX;
+     }
+ 
+-    public void setX(int x) {
+-        this.x = x;
++    public void setCoordinatesX(int coordinatesX) {
++        this.coordinatesX = coordinatesX;
+     }
+ 
+-    public int getY() {
+-        return y;
++    public int getCoordinatesY() {
++        return coordinatesY;
+     }
+ 
+-    public void setY(int y) {
+-        this.y = y;
++    public void setCoordinatesY(int coordinatesY) {
++        this.coordinatesY = coordinatesY;
+     }
+ 
+     public String getColor() {
+@@ -43,8 +45,14 @@
+         this.color = color;
+     }
+ 
++    /**
++     * abc.
++     *
++     * @param p int.
++     * @return int.
++     */
+     public boolean checkPosition(Piece p) {
+-        if ((x == p.getX()) && (y == p.getY())) {
++        if ((coordinatesX == p.getCoordinatesX()) && (coordinatesY == p.coordinatesY)) {
+             return false;
+         }
+         return true;

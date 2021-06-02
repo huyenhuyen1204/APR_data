@@ -1,0 +1,13 @@
+@@ -47,10 +47,10 @@
+             double b = (double) Math.round(transitionList.get(i).getBalance() * 100) / 100;
+             String c = String.valueOf(a);
+             String d = String.valueOf(b);
+-            if(c.charAt(c.length() - 1) == '0') {
++            if (c.charAt(c.length() - 1) == '0') {
+                 c = c + "0";
+             }
+-            if(c.charAt(d.length() - 1) == '0') {
++            if (d.charAt(d.length() - 1) == '0') {
+                 d = d + "0";
+             }
+             System.out.println("Giao dich "

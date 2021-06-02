@@ -1,0 +1,24 @@
+@@ -4,9 +4,13 @@
+     private Board board;
+     private ArrayList<Move> moveHistory = new ArrayList<>();
+ 
+-    Game (Board board) {
++    Game(Board board) {
+         this.board = board;
+     }
++
++    /**
++     * fsdfsd.
++     */
+     public void movePiece(Piece piece, int x, int y) {
+         if (piece.canMove(board, x, y)) {
+             if (board.getAt(x, y) == null) {
+@@ -36,4 +40,8 @@
+     public ArrayList<Move> getMoveHistory() {
+         return moveHistory;
+     }
++
++    public void setMoveHistory(ArrayList<Move> moveHistory) {
++        this.moveHistory = moveHistory;
++    }
+ }

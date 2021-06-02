@@ -1,0 +1,100 @@
+@@ -1,28 +1,35 @@
+ public class Move {
+-    private Piece movedPiece;
+     private int startX;
+     private int startY;
+     private int endX;
+     private int endY;
++    private Piece movedPiece;
+     private Piece killedPiece;
+ 
+     /**
+      * Javadoc Comment.
+      */
+-    public Piece getMovedPiece() {
+-        return movedPiece;
+-    }
+-
+-    /**
+-     * Javadoc Comment.
+-     */
+-    public void setMovedPiece(Piece movedPiece) {
++    public Move(int startX, int endX, int startY, int endY, Piece movedPiece) {
++        this.startX = startX;
++        this.startY = startY;
++        this.endX = endX;
++        this.endY = endY;
+         this.movedPiece = movedPiece;
++
+     }
+ 
+     /**
+      * Javadoc Comment.
+      */
++    public Move(int startX, int endX, int startY, int endY, Piece movedPiece, Piece killedPiece) {
++        this.startX = startX;
++        this.startY = startY;
++        this.endX = endX;
++        this.endY = endY;
++        this.movedPiece = movedPiece;
++        this.killedPiece = killedPiece;
++    }
++
+     public int getStartX() {
+         return startX;
+     }
+@@ -79,6 +86,20 @@
+     /**
+      * Javadoc Comment.
+      */
++    public Piece getMovedPiece() {
++        return movedPiece;
++    }
++
++    /**
++     * Javadoc Comment.
++     */
++    public void setMovedPiece(Piece movedPiece) {
++        this.movedPiece = movedPiece;
++    }
++
++    /**
++     * Javadoc Comment.
++     */
+     public Piece getKilledPiece() {
+         return killedPiece;
+     }
+@@ -93,32 +114,9 @@
+     /**
+      * Javadoc Comment.
+      */
+-    public Move(int startX, int endX, int startY, int endY, Piece movedPiece) {
+-        this.startX = startX;
+-        this.startY = startY;
+-        this.endX = endX;
+-        this.endY = endY;
+-        this.movedPiece = movedPiece;
+-    }
+-
+-    /**
+-     * Javadoc Comment.
+-     */
+-    public Move(int startX, int endX, int startY, int endY, Piece movedPiece, Piece killedPiece) {
+-        this.startX = startX;
+-        this.startY = startY;
+-        this.endX = endX;
+-        this.endY = endY;
+-        this.movedPiece = movedPiece;
+-        this.killedPiece = killedPiece;
+-    }
+-
+-    /**
+-     * Javadoc Comment.
+-     */
+     public String toString() {
+         String color = movedPiece.getColor();
+-        char endX = (char) this.endX;
++        char endX = (char) (this.endX - 1);
+         endX += 'a';
+         return color + "-" + movedPiece.getSymbol() + String.valueOf(endX) + endY;
+     }

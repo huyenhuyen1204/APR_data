@@ -1,0 +1,50 @@
+@@ -4,8 +4,16 @@
+     private int startY;
+     private int endY;
+     private Piece movedPiece;
+-    private Piece killedPiece;
++    private Piece killedPiece = null;
+ 
++    /**
++     * constructor with 5 parameters.
++     * @param startX coordinates start x.
++     * @param endX coordinates end x.
++     * @param startY coordinates start y.
++     * @param endY coordinates end y.
++     * @param movedPiece piece moved.
++     */
+     public Move(int startX, int endX, int startY, int endY, Piece movedPiece) {
+         this.startX = startX;
+         this.endX = endX;
+@@ -14,6 +22,15 @@
+         this.movedPiece = movedPiece;
+     }
+ 
++    /**
++     * constructor with 6 parameters.
++     * @param startX coordinates start x.
++     * @param endX coordinates end x.
++     * @param startY coordinates start y.
++     * @param endY coordinates end y.
++     * @param movedPiece piece moved.
++     * @param killedPiece piece killed.
++     */
+     public Move(int startX, int endX, int startY, int endY,
+                 Piece movedPiece, Piece killedPiece) {
+         this.startX = startX;
+@@ -72,10 +89,14 @@
+         this.killedPiece = killedPiece;
+     }
+ 
++    /**
++     * get information of object move.
++     * @return a string.
++     */
+     public String toString() {
+         return this.movedPiece.getColor() + "-"
+                 + this.movedPiece.getSymbol()
+-                + (char)(96 + this.endX) + this.endY;
++                + (char) (96 + this.endX) + this.endY;
+     }
+ 
+ }

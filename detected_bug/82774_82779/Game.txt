@@ -1,0 +1,22 @@
+@@ -26,18 +26,18 @@
+          if (t == null) {
+             p.setCoordinatesX(x);
+             p.setCoordinatesY(y);
+-            m = new Move(xt, yt, x, y, p);
++            m = new Move(xt, x, yt, y, p);
+          } else {
+             board.removeAt(x, y);
+             p.setCoordinatesX(x);
+             p.setCoordinatesY(y);
+-            m = new Move(xt, yt, x, y, p, t);
++            m = new Move(xt, x, yt, y, p, t);
+          }
+          moveHistory.add(m);
+          board.addPiece(p);
+       }
+    }
+-   
++
+    /**
+     * c.
+     */

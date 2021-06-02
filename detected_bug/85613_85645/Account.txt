@@ -1,0 +1,79 @@
+@@ -1,10 +1,10 @@
+ 
+-
++import java.text.DecimalFormat;
+ import java.util.ArrayList;
+ 
+ public class Account {
+-    private double balance;
+-    ArrayList<Transaction> transactionArrayList = new ArrayList<>();
++    private double balance = 0;
++    private ArrayList<Transaction> transitionList = new ArrayList<>();
+ 
+     public Account() {
+ 
+@@ -13,41 +13,54 @@
+     private void deposit(double amount) {
+         if (amount <= 0) {
+             System.out.println("So tien ban nap vao khong hop le!");
++        } else {
++            balance = balance + amount;
+         }
+     }
+ 
+     private void withdraw(double amount) {
+         if (amount <= 0) {
+             System.out.println("So tien ban rut ra khong hop le!");
+-        } else if (amount > balance) {
++        } else if (amount > this.balance) {
+             System.out.println("So tien ban rut vuot qua so du!");
++        } else {
++            balance = balance - amount;
+         }
+     }
+ 
+-    public void addTransaction (double amount, String operation) {
++    /**
++     * comment.
++     */
++    public void addTransaction(double amount, String operation) {
+         if (operation.equals(Transaction.DEPOSIT)) {
+             deposit(amount);
+-            transactionArrayList.add(new Transaction(operation,amount,balance));
++            transitionList.add(new Transaction(operation, amount, balance));
+         } else if (operation.equals(Transaction.WITHDRAW)) {
+             withdraw(amount);
+-            transactionArrayList.add(new Transaction(operation,amount,balance));
++            transitionList.add(new Transaction(operation, amount, balance));
+         } else {
+             System.out.println("Yeu cau khong hop le!");
+         }
+     }
+ 
++    /**
++     * comment.
++     */
+     public void printTransaction() {
+-        for (int i = 1; i <= transactionArrayList.size(); i++) {
++        for (int i = 0; i < transitionList.size(); i++) {
++            DecimalFormat decimalFormat = new DecimalFormat("#.00");
+             String s = null;
+-            if (transactionArrayList.get(i).getOperation().equals("withdraw")) {
++            if (transitionList.get(i).getOperation().equals("deposit")) {
+                 s = "Nap tien";
+             }
+-            if (transactionArrayList.get(i).getOperation().equals("withdraw")) {
++            if (transitionList.get(i).getOperation().equals("withdraw")) {
+                 s = "Rut tien";
+             }
+-            System.out.println("Giao dich" + i + ": " + s + "$" +
+-                                + Math.round(transactionArrayList.get(i).getAmount() * 10) / 10
+-                                + ". So du luc nay: $" + Math.round(transactionArrayList.get(i).getAmount() * 10) / 10 + ".");
++            System.out.println("Giao dich " + (i + 1) + ": " + s + " $"
++                    + decimalFormat.format(transitionList.get(i).getAmount())
++                    + ". So du luc nay: $"
++                    + decimalFormat.format(transitionList.get(i).getBalance())
++                    + ".");
+         }
+     }
+ }

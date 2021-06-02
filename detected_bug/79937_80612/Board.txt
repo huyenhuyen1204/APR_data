@@ -1,0 +1,50 @@
+@@ -6,7 +6,7 @@
+ public class Board {
+     public static final int WIDTH = 8;
+     public static final int HEIGHT = 8;
+-    private ArrayList<Piece> pieces;
++    private ArrayList<Piece> pieces = new ArrayList<Piece>();
+ 
+     /**
+      * Loan .
+@@ -19,15 +19,19 @@
+      */
+     public void addPiece(Piece piece) {
+         boolean kt = true;
+-        kt = validate(piece.getX(), piece.getY());
++        kt = validate(piece.getCoordinatesX(), piece.getCoordinatesY());
+         for (int i = 0; i < pieces.size(); i++) {
+             Piece temp = pieces.get(i);
+-            if (temp.getX() == piece.getX() && temp.getY() == piece.getY()) {
++            int tempX = piece.getCoordinatesX();
++            int tempY = piece.getCoordinatesY();
++            if (temp.getCoordinatesX() == tempX && temp.getCoordinatesY() == tempY) {
+                 kt = false;
+                 break;
+             }
+         }
+-        if (kt) pieces.add(piece);
++        if (kt) {
++            pieces.add(piece);
++        }
+     }
+ 
+     /**
+@@ -43,7 +47,7 @@
+     public Piece getAt(int x, int y) {
+         for (int i = 0; i < pieces.size(); i++) {
+             Piece temp = pieces.get(i);
+-            if (temp.getX() == x && temp.getY() == y) {
++            if (temp.getCoordinatesX() == x && temp.getCoordinatesY() == y) {
+                 return temp;
+             }
+         }
+@@ -56,7 +60,7 @@
+     public void removeAt(int x, int y) {
+         for (int i = 0; i < pieces.size(); i++) {
+             Piece temp = pieces.get(i);
+-            if (temp.getX() == x && temp.getY() == y) {
++            if (temp.getCoordinatesX() == x && temp.getCoordinatesY() == y) {
+                 pieces.remove(i);
+             }
+         }

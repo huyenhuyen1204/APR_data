@@ -1,0 +1,49 @@
+@@ -1,16 +1,24 @@
++
+ public class Transaction {
+     private String operation;
+     private double amount;
+     private double balance;
+-    final public static String DEPOSIT = "deposit";
+-    final public static String WITHDRAW = "withdraw";
++    public static final String DEPOSIT = "deposit";
++    public static final String WITHDRAW = "withdraw";
+ 
++    /**
++     * create construct.
++     * @param operation .
++     * @param amount .
++     * @param balance .
++     */
+     public Transaction(String operation, double amount, double balance) {
++        this.operation = operation;
+         this.amount = amount;
+         this.balance = balance;
+-        this.operation = operation;
+     }
+ 
++
+     public String getOperation() {
+         return operation;
+     }
+@@ -35,11 +43,14 @@
+         this.balance = balance;
+     }
+ 
+-    public static String getDEPOSIT() {
+-        return DEPOSIT;
+-    }
+-
+-    public static String getWITHDRAW() {
+-        return WITHDRAW;
++    @Override
++    public String toString() {
++        if (operation.equalsIgnoreCase(Transaction.DEPOSIT)) {
++            return String.format("Nap tien $%.2f. So du luc nay: $%.2f.",
++                    this.amount, this.balance);
++        } else {
++            return String.format("Rut tien $%.2f. So du luc nay: $%.2f.",
++                    this.amount, this.balance);
++        }
+     }
+ }

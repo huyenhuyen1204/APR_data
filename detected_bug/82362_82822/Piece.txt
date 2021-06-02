@@ -1,0 +1,8 @@
+@@ -6,6 +6,7 @@
+ 
+     public static final String BLACK = "black";
+     public static final String WHITE = "white";
++    public static boolean kill = false;
+ 
+     /**
+      * Constructor.

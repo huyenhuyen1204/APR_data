@@ -1,0 +1,26 @@
+@@ -22,19 +22,21 @@
+             String line = scanner.nextLine();
+ 
+             if (line.charAt(0) < '0' || line.charAt(0) > '9') {
+-                int length = line.length();
+-                long id = Long.parseLong(line.substring(length - 9, length));
+-                String name = line.substring(0, length - 10);
+                 cnt++;
+                 if (cnt != 1) {
+                     customerList.add(customer);
+                 }
++
++                int length = line.length();
++                long id = Long.parseLong(line.substring(length - 9, length));
++
++                String name = line.substring(0, length - 10);
+                 customer = new Customer();
+                 customer.setFullName(name);
+                 customer.setIdNumber(id);
+ 
+             } else {
+-                String tokens [] = line.split(" ");
++                String[] tokens = line.split(" ");
+                 long stk = Long.parseLong(tokens[0]);
+                 String type = tokens[1];
+                 double sodu = Double.parseDouble(tokens[2]);

@@ -1,0 +1,10 @@
+@@ -17,7 +17,8 @@
+ 
+     @Override
+     public boolean canMove(Board board, int x, int y) {
+-        if (!board.validate(x, y) || (x != super.getCoordinatesX() && y != super.getCoordinatesY())) {
++        if (!board.validate(x, y)
++                || (x != super.getCoordinatesX() && y != super.getCoordinatesY())) {
+             return false;
+         }
+ 

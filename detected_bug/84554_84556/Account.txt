@@ -1,0 +1,53 @@
+@@ -25,34 +25,40 @@
+         }
+     }
+ 
++    /**
++     * add.
++     */
+     public void addTransaction(double amount, String operation) {
++
+         if (operation.equals(Transaction.DEPOSIT)) {
+-            Transaction transaction = new Transaction(operation, amount, balance);
+             deposit(amount);
+-            transitionList.add(transaction);
+-        }
+-        else if  (operation.equals(Transaction.WITHDRAW)) {
+             Transaction transaction = new Transaction(operation, amount, balance);
+-            withdraw(amount);
+             transitionList.add(transaction);
+-        } else if (!operation.equals(Transaction.DEPOSIT) && !operation.equals(Transaction.WITHDRAW)) {
++        } else if (operation.equals(Transaction.WITHDRAW)) {
++            withdraw(amount);
++            Transaction transaction = new Transaction(operation, amount, balance);
++            transitionList.add(transaction);
++        } else {
+             System.out.println("Yeu cau khong hop le!");
+         }
+     }
+ 
++    /**
++     * print.
++     */
+     public void printTransaction() {
+         int count = 1;
+-        for (Transaction tr : transitionList) {
++        for (Transaction transaction : transitionList) {
+ 
+-            if (tr.getOperation().equals("deposit")) {
+-                System.out.println("Giao dich " + (count) + ": Nap tien" + tr.toString());
+-            } else if (tr.getOperation().equals("withdraw")) {
+-                System.out.println("Giao dich " + (count) + ": Rut tien" + tr.toString());
++            if (transaction.getOperation().equals("deposit")) {
++                System.out.println("Giao dich " + (count) + ": Nap tien" + transaction.toString());
++            } else if (transaction.getOperation().equals("withdraw")) {
++                System.out.println("Giao dich " + (count) + ": Rut tien" + transaction.toString());
+             }
+             count++;
+         }
+     }
+-
++    
+ }
+ 
+ 

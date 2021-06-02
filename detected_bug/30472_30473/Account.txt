@@ -1,0 +1,9 @@
+@@ -34,7 +34,7 @@
+                 if(amount > 0) transitionList.add(t2);
+             }
+             if(operation == "withdraw"){
+-                if(amount > this.balance) {}
++                if(amount > this.balance) {System.out.println("So tien ban rut vuot qua so du!");}
+                 else {
+                     withdraw(amount);
+                     Transaction t2 = new Transaction(operation, amount, this.balance);

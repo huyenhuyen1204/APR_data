@@ -1,0 +1,24 @@
+@@ -1,13 +1,11 @@
+ 
+-
+ public abstract class Piece {
+ 
+-    private Board board;
+     private int coordinatesX;
+     private int coordinatesY;
+     private String color;
+ 
+-    /** khoi tao
++    /** khoi tao.
+      * @param x x(a->h)
+      * @param y y(1->8)
+      */
+@@ -17,7 +15,7 @@
+         color = "white";
+     }
+ 
+-    /** khoi tao
++    /** khoi tao.
+      * @param x x
+      * @param y y
+      * @param color color

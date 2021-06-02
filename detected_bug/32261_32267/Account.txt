@@ -1,0 +1,18 @@
+@@ -13,7 +13,7 @@
+         balance +=amount;
+     }
+ 
+-    private void widthdraw(double amount) {
++    private void withdraw(double amount) {
+         if(amount <= 0) {
+             System.out.println("So tien ban rut ra khong hop le!");
+             return;
+@@ -36,7 +36,7 @@
+         }
+ 
+         if(operation.equals("withdraw")) {
+-            widthdraw(amount);
++            withdraw(amount);
+             transitionList.add(new Transaction("withdraw", amount, balance));
+         }
+     }

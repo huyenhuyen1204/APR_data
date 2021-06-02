@@ -1,0 +1,51 @@
+@@ -20,14 +20,17 @@
+             this.balance += amount;
+         } else {
+             System.out.println("So tien ban nap vao khong hop le!");
++            return;
+         }
+     }
+ 
+     private void withdraw(double amount) {
+         if (amount > balance) {
+             System.out.println("So tien ban rut vuot qua so du!");
++            return;
+         } else if (amount < 0) {
+             System.out.println("So tien ban rut ra khong hop le!");
++            return;
+         } else {
+             this.balance -= amount;
+         }
+@@ -37,16 +40,17 @@
+      * comment.
+      */
+     public void addTransaction(double amount, String operation) {
+-        if (operation.equals("gui")) {
++        if (operation.equals("deposit")) {
+             this.deposit(amount);
+-            Transaction Tien = new Transaction(operation, amount, this.balance);
+-            transitionList.add(Tien);
+-        } else if (operation.equals("rut")) {
++            Transaction money = new Transaction(operation, amount, this.balance);
++            transitionList.add(money);
++        } else if (operation.equals("withdraw")) {
+             this.withdraw(amount);
+-            Transaction Tien = new Transaction(operation, amount, this.balance);
+-            transitionList.add(Tien);
++            Transaction money2 = new Transaction(operation, amount, this.balance);
++            transitionList.add(money2);
+         } else {
+             System.out.println("Yeu cau khong hop le!");
++            return;
+         }
+     }
+ 
+@@ -55,7 +59,7 @@
+      */
+     public void printTransaction() {
+         for (int i = 0; i < transitionList.size(); i++) {
+-            System.out.println("Giao dich" + (i + 1) + ": " + transitionList.get(i).toString());
++            System.out.println("Giao dich " + (i + 1) + ": " + transitionList.get(i).toString());
+         }
+     }
+ }

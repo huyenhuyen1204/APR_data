@@ -1,0 +1,91 @@
+@@ -1,46 +1,63 @@
++
+ import java.util.ArrayList;
+-import java.util.List;
+ 
+ public class Account {
+-    private double balance = 0;
+-    List<Transaction> List = new ArrayList<>();
+-    private void deposit (double amount) {
+-        if(amount < 0) {
++    private double balance;
++    private ArrayList<Transaction> transitionList = new ArrayList<>();
++
++    /**
++     * nap tien vao tai khoan.
++     * @param amount so tien ban nap.
++     */
++    private void deposit(double amount) {
++        if (amount > 0) {
++            this.balance += amount;
++            Transaction temp = new Transaction(Transaction.DEPOSIT, amount, balance);
++            transitionList.add(temp);
++        } else {
+             System.out.println("So tien ban nap vao khong hop le!");
+         }
+-        else balance += amount;
+     }
++
++    /**
++     * rut tien khoi tai khoan.
++     * @param amount so tien ban rut.
++     */
+     private void withdraw(double amount) {
+-        if(amount < 0) {
++        if (amount <= 0) {
+             System.out.println("So tien ban rut ra khong hop le!");
+-        }
+-        else if(amount > balance) {
++        } else if (amount > this.balance) {
+             System.out.println("So tien ban rut vuot qua so du!");
+-        }
+-        else {
+-            balance -= amount;
++        } else {
++            this.balance -= amount;
++            Transaction temp = new Transaction(Transaction.WITHDRAW, amount, balance);
++            transitionList.add(temp);
+         }
+     }
++
++    /**
++     * them giao dich vao danh sach.
++     * @param amount tien giao dich.
++     * @param operation loai giao dich.
++     */
+     public void addTransaction(double amount, String operation) {
+-        if(operation.equals("deposit") && operation.equals("withdraw")) {
++        if (operation.equalsIgnoreCase(Transaction.DEPOSIT)) {
++            deposit(amount);
++        } else if (operation.equalsIgnoreCase(Transaction.WITHDRAW)) {
++            withdraw(amount);
++        } else {
+             System.out.println("Yeu cau khong hop le!");
+         }
+-        else{
+-            if(operation.equals("deposit")) {
+-                deposit(amount);
+-            }
+-            else if(operation.equals("withdraw")) {
+-                withdraw(amount);
+-            }
+-            List.add(new Transaction(operation, amount, balance));
+-        }
+     }
++
++    /**
++     * in cac giao dich ra ngoai.
++     */
+     public void printTransaction() {
+-        for(int i = 0; i < List.size(); i++) {
+-            int count = i + 1;
+-            double a = (double) Math.round(List.get(i).getAmount() * 100) / 100;
+-            double b = (double) Math.round(List.get(i).getBalance() * 100) / 100;
+-            System.out.println("Giao dich " + count + ": Nap tien $" + a + ". So du luc nay: $" + b + "." );
++        int count = 1;
++        for (Transaction iterator : transitionList) {
++            System.out.println(String.format("Giao dich %d: %s", count, iterator.toString()));
++            count += 1;
+         }
+     }
+ 

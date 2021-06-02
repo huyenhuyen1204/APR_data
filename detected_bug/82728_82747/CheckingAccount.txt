@@ -1,0 +1,20 @@
+@@ -11,7 +11,8 @@
+         try {
+             double oldBalance = balance;
+             doWithdrawing(amount);
+-            addTransaction(new Transaction(Transaction.TYPE_WITHDRAW_CHECKING, amount, oldBalance, balance));
++            addTransaction(new Transaction(Transaction.TYPE_WITHDRAW_CHECKING,
++                    amount, oldBalance, balance));
+         } catch (InsufficientFundsException | InvalidFundingAmountException e) {
+             System.out.println(e.getMessage());
+         }
+@@ -22,7 +23,8 @@
+         try {
+             double oldBalance = balance;
+             doDepositing(amount);
+-            addTransaction(new Transaction(Transaction.TYPE_DEPOSIT_CHECKING, amount, oldBalance, balance));
++            addTransaction(new Transaction(Transaction.TYPE_DEPOSIT_CHECKING,
++                    amount, oldBalance, balance));
+ 
+         } catch (InvalidFundingAmountException e) {
+             System.out.println(e.getMessage());

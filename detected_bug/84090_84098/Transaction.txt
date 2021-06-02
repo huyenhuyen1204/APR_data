@@ -1,0 +1,14 @@
+@@ -2,9 +2,12 @@
+     private String operation;
+     private double amount;
+     private double balance;
+-    public static final String DESPOSIT = "desposit";
++    public static final String DEPOSIT = "deposit";
+     public static final String WITHDRAW = "withdraw";
+ 
++    /**
++     *Ham Giao dich.
++     */
+     public Transaction(String operation, double amount, double balance) {
+         this.operation = operation;
+         this.amount = amount;

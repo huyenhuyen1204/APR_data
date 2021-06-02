@@ -1,0 +1,99 @@
+@@ -1,16 +1,22 @@
+ import java.util.ArrayList;
+-import java.util.Map;
+-import java.util.regex.Matcher;
++
+ 
+ public class Account {
+     private double balance;
+-    ArrayList<Transaction> arr;
++    private ArrayList<Transaction> transitionList;
+ 
++    /**
++     *  .
++     */
+     public Account() {
+         this.balance = 0;
+-        this.arr = new ArrayList<>();;
++        this.transitionList  = new ArrayList<>();;
+     }
+ 
++    /**
++     *  .
++     * @param amount .
++     */
+     private void deposit(double amount) {
+         if (amount <= 0) {
+             System.out.println("So tien ban nap vao khong hop le!");
+@@ -19,6 +25,10 @@
+         }
+     }
+ 
++    /**
++     *  .
++     * @param amount .
++     */
+     private void withdraw(double amount) {
+         if (amount <= 0) {
+             System.out.println("So tien ban rut ra khong hop le!");
+@@ -29,34 +39,52 @@
+         }
+     }
+ 
++    /**
++     *  .
++     * @param amount .
++     * @param operation .
++     */
+     public void addTransaction(double amount, String operation) {
+         if (!operation.equals("deposit") && !operation.equals("withdraw")) {
+             System.out.println("Yeu cau khong hop le!");
+         } else if (operation.equals("deposit")) {
+             deposit(amount);
+-            arr.add(new Transaction("Nap tien ", amount, balance));
++            transitionList.add(new Transaction("Nap tien ", amount, balance));
+         } else if (operation.equals("withdraw")) {
+             withdraw(amount);
+-            arr.add(new Transaction("Rut tien ", amount, balance));
++            transitionList.add(new Transaction("Rut tien ", amount, balance));
+         }
+     }
+ 
++    /**
++     *  .
++     */
+     public void printTransaction() {
+         String print = ". So du luc nay: $";
+-        int n = arr.size();
++        int n = transitionList.size();
+         Transaction transaction;
+         String s;
+         double amount;
+         double balance;
++        String amountStr;
++        String balacenStr;
+         for (int i = 0; i < n; i++) {
+-            transaction = arr.get(i);
++            transaction = transitionList.get(i);
+             s = transaction.getOperation();
+             amount = (double) Math.round(transaction.getAmount() * 100) / 100;
+             balance = (double) Math.round(transaction.getBalance() * 100) / 100;
+-            System.out.println("Giao dich " + (i + 1) + ": " + s + "$" + amount +
+-                            print + balance + ".");
++            if ((amount - (int) amount) == 0) {
++                amountStr = String.valueOf(amount) + "0";
++            } else {
++                amountStr = String.valueOf(amount);
++            }
++            if ((balance - (int) balance) == 0) {
++                balacenStr = String.valueOf(balance) + "0";
++            } else {
++                balacenStr = String.valueOf(balance);
++            }
++            System.out.println("Giao dich " + (i + 1) + ": " + s + "$" + amountStr
++                                + print + balacenStr + ".");
+         }
+-        double x = 432.312321312312;
+-        System.out.println((double) Math.round(x*100)/100);
+     }
+ }

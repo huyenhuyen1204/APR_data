@@ -1,0 +1,10 @@
+@@ -11,9 +11,6 @@
+ 
+     /**
+      * alo123.
+-     * @param operation
+-     * @param amount
+-     * @param balance
+      */
+     public Transaction(String operation, double amount, double balance) {
+         this.operation = operation;

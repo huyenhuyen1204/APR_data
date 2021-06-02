@@ -1,0 +1,63 @@
+@@ -3,12 +3,20 @@
+     private int coordinatesY;
+     private String color;
+ 
++    /**
++     * cmt.
++     *
++     */
+     public Piece(int coordinatesX, int coordinatesY) {
+         this.coordinatesX = coordinatesX;
+         this.coordinatesY = coordinatesY;
+         this.color = "white";
+     }
+ 
++    /**
++     * cmt.
++     *
++     */
+     public Piece(int coordinatesX, int coordinatesY, String color) {
+         this.coordinatesX = coordinatesX;
+         this.coordinatesY = coordinatesY;
+@@ -16,12 +24,17 @@
+     }
+ 
+     public abstract String getSymbol();
+-    public abstract boolean canMove(Board board,int x, int y);
++
++    public abstract boolean canMove(Board board, int x, int y);
+ 
+     public int getCoordinatesX() {
+         return coordinatesX;
+     }
+ 
++    /**
++     * cmt.
++     *
++     */
+     public void setCoordinatesX(int coordinatesX) {
+         if (coordinatesX <= 8 && coordinatesX >= 1) {
+             this.coordinatesX = coordinatesX;
+@@ -32,6 +45,10 @@
+         return coordinatesY;
+     }
+ 
++    /**
++     * cmt.
++     *
++     */
+     public void setCoordinatesY(int coordinatesY) {
+         if (coordinatesY >= 1 && coordinatesY <= 8) {
+             this.coordinatesY = coordinatesY;
+@@ -42,8 +59,9 @@
+         return color;
+     }
+ 
+-    /*
+-     *n.
++    /**
++     * cmt.
++     *
+      */
+     public void setColor(String color) {
+         if (color.equals("white") || color.equals("black")) {

@@ -1,0 +1,46 @@
+@@ -7,7 +7,7 @@
+     }
+ 
+     /**
+-     * constructor
++     * constructor.
+      * @param coordinatesX coordinate x
+      * @param coordinatesY coordinate y
+      * @param color color
+@@ -27,14 +27,14 @@
+     public abstract String getSymbol();
+ 
+     /**
+-     * check available move
+-     * @param board
+-     * @param x
+-     * @param y
++     * check available move.
++     * @param board board
++     * @param x coordinate x
++     * @param y coordinate y
+      * @return true if can move
+      */
+ 
+-    public abstract boolean canMove( Board board, int x, int y);
++    public abstract boolean canMove(Board board, int x, int y);
+ 
+     public int getCoordinatesX() {
+         return coordinatesX;
+@@ -61,13 +61,13 @@
+     }
+ 
+     /**
+-     * if position is available
++     * if position is available.
+      * @param piece piece
+      * @return true if available
+      */
+ 
+-    public boolean checkPosition(Piece piece){
+-        if( piece == null){
++    public boolean checkPosition(Piece piece) {
++        if (piece == null) {
+             return false;
+         }
+         return true;

@@ -1,0 +1,13 @@
+@@ -44,8 +44,9 @@
+      */
+     public String getTransactionSummary() {
+         return "- Kiểu giao dịch: " + getTransactionTypeString(type)
+-                + ". Số dư ban đầu: $" + initialBalance
+-                + ". Số tiền: $" + amount + ". Số dư cuối: $" + finalBalance + ".";
++                + ". Số dư ban đầu: $" + String.format("%.2f", initialBalance)
++                + ". Số tiền: $" + String.format("%.2f", amount)
++                + ". Số dư cuối: $" + String.format("%.2f", finalBalance) + ".";
+     }
+ }
+  
+\ No newline at end of file

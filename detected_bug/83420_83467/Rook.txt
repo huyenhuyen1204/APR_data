@@ -1,0 +1,15 @@
+@@ -35,6 +35,14 @@
+                     }
+                 }
+             }
++            for (Piece p : board.getPieces()) {
++                if (this.getColor().compareTo(p.getColor()) == 0) {
++                    if (p.getCoordinatesX() == x && p.getCoordinatesY() == y) {
++                            return false;
++                    }
++                }
++            }
++
+             if (this.getCoordinatesX() != x && this.getCoordinatesY() != y) {
+                 return false;
+             }

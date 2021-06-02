@@ -1,0 +1,97 @@
+@@ -1,43 +1,61 @@
+ import java.util.ArrayList;
+ 
+-/**
+- * Created by CCNE on 05/11/2019.
+- */
+-public class Account extends Transaction {
+-    int count;
+-    private double balance;
+-    private ArrayList<Transaction> transitionList ;
+-    private void deposit(double amount)     {
+-        if(amount > 0)  balance+=amount;
+-        else System.out.println("So tien ban nap vao khong hop le!");
+-    }
+-    private void withdraw(double amount)    {
+-        if(amount>0&& amount < balance) balance+= amount;
+-        else {
+-            if (amount <= 0) System.out.println("So tien ban rut ra khong hop le!");
+-            else System.out.println("So tien ban rut vuot qua so du!");
+-        }
+-    }
+-    public void  addTransaction(double amount, String operation)    {
+-        if(operation==DEPOSIT) {
+-            deposit(amount);
+-            Transaction a =new Transaction(DEPOSIT,amount,this.balance);
+-            transitionList.add(a);
+-            count ++;
+-        }
+-        else if(operation==WITHDRAW)    {
++public class Account {
++    private double balance = 0;
++    private ArrayList<Transaction> transitionList = new ArrayList<>();
+ 
+-            withdraw(amount);
+-            Transaction b =new Transaction(WITHDRAW,amount,this.balance);
+-            transitionList.add(b);
+-           count ++;
++    private void deposit(double amount) {
++        if (amount <= 0) {
++            System.out.println("So tien ban nap vao khong hop le!");
++            return;
+         }
+-        else System.out.println("Yeu cau khong hop le!");
++        this.balance += amount;
++        transitionList.add(new Transaction("Nap tien",amount, balance));
+     }
+-    public void printTransaction() {
+-        for (int i = 0; i < count; i++) {
+-            System.out.println("Giao dich " + (i + 1) + ": Nap tien $" + transitionList.get(i).getAmount() + "." + " So du luc nay: $" + transitionList.get(i).getBalance());
+-        }
+ 
++    private void withdraw(double amount) {
++        if (amount <= 0 ) {
++            System.out.println("So tien ban rut ra khong hop le!");
++            return;
++        }
++        else if(amount > balance)
++        {
++            System.out.println("So tien ban rut vuot qua so du!");
++            return;
++        }
++        this.balance -= amount;
++        transitionList.add(new Transaction("Rut tien",amount, balance));
++    }
++
++    public void addTransaction(double amount, String operation)
++    {
++        switch (operation)
++        {
++            case Transaction.DEPOSIT:
++                deposit(amount);
++                break;
++            case Transaction.WITHDRAW:
++                withdraw(amount);
++                break;
++            default:
++                System.out.println("Yeu cau khong hop le!");
++                break;
++        }
++    }
++
++    public void  printTransaction(){
++        int i = 1 ;
++        for ( Transaction item : transitionList){
++            System.out.printf("Giao dich " + i +  ": "+item.getOperation() + " $%.2f. So du luc nay: $%.2f.\n", item.getAmount(), item.getBalance());
++            i++;
++        }
++    }
++
++    public static void main(String[] args)
++    {
++        Account acc= new Account();
++        acc.addTransaction(2000.255,"deposit");
++        acc.addTransaction(1000,"withdraw");
++        acc.printTransaction();
+     }
+ }

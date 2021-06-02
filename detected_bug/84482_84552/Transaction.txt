@@ -1,0 +1,25 @@
+@@ -1,9 +1,12 @@
++import java.text.DecimalFormat;
++
+ public class Transaction {
+     private String operation;
+     private double amount;
+     private double balance;
+     public static final String DEPOSIT = "deposit";
+     public static final String WITHDRAW = "withdraw";
++    DecimalFormat decimalFormat = new DecimalFormat("##.00");
+ 
+     /**
+      * khoitao.
+@@ -42,9 +45,9 @@
+     @Override
+     public String toString() {
+         return " $"
+-                + ((double) Math.round(amount * 100) / 100)
++                + decimalFormat.format(amount)
+                 + ". So du luc nay: $"
+-                + ((double) Math.round(balance * 100) / 100)
++                + decimalFormat.format(balance)
+                 + ".";
+     }
+ }

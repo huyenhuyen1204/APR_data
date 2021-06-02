@@ -1,0 +1,25 @@
+@@ -30,7 +30,7 @@
+         return coordinatesX;
+     }
+ 
+-    public void setX(int coordinatesX) {
++    public void setCoordinatesX(int coordinatesX) {
+         this.coordinatesX = coordinatesX;
+     }
+ 
+@@ -38,7 +38,7 @@
+         return coordinatesY;
+     }
+ 
+-    public void setY(int coordinatesY) {
++    public void setCoordinatesY(int coordinatesY) {
+         this.coordinatesY = coordinatesY;
+     }
+ 
+@@ -51,5 +51,6 @@
+     }
+ 
+     public abstract String getSymbol();
++    
+     public abstract boolean canMove(Board board, int coordinatesX, int coordinatesY);
+ }

@@ -1,0 +1,11 @@
+@@ -17,8 +17,8 @@
+                 if (p.getCoordinatesX() == x && p.getCoordinatesY() == y
+                         && p.getColor() != piece.getColor()) {
+                     moveHistory.add(
+-                            new Move(piece.getCoordinatesX(), x
+-                                    , piece.getCoordinatesY(), y, piece, p));
++                            new Move(piece.getCoordinatesX(), x,
++                                    piece.getCoordinatesY(), y, piece, p));
+                     this.board.removeAt(x, y);
+                     killed = true;
+                     break;

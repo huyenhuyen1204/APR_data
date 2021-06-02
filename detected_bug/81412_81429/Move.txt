@@ -1,0 +1,9 @@
+@@ -51,7 +51,7 @@
+         StringBuffer s = new StringBuffer(movedPiece.getColor());
+         s.append("-");
+         s.append(movedPiece.getSymbol());
+-        s.append((char) (movedPiece.getCoordinatesX() - 1 + 'a'));
++        s.append((char) (getEndX() - 1 + 'a'));
+         s.append(movedPiece.getCoordinatesY());
+         return new String(s);
+     }

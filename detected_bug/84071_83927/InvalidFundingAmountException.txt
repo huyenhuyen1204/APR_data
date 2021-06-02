@@ -1,0 +1,18 @@
+@@ -1,13 +1,7 @@
+-/**
+- * class InvalidFundingAmountException.
+- */
+-public class InvalidFundingAmountException extends BankException {
++import java.text.DecimalFormat;
+ 
+-    /**
+-     * constructor.
+-     */
+-    public InvalidFundingAmountException(double amount) {
+-        super("Số tiền không hợp lệ: $"
+-                + String.format("%.2f",amount));
++public class InvalidFundingAmountException extends BankException {
++    public InvalidFundingAmountException(double money) {
++        super("Số tiền không hợp lệ: $" + (new DecimalFormat("0.00")).format(money));
+     }
+ }

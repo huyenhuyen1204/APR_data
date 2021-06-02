@@ -1,0 +1,49 @@
+@@ -18,6 +18,12 @@
+         this.pieces = pieces;
+     }
+ 
++    /**
++     * Kiem tra vi tri quan co.
++     * @param x x.
++     * @param y y.
++     * @return tra ve dung neu vi tri cho phep.
++     */
+     public boolean validate(int x, int y) {
+         if (x >= 1 && x <= 8 && y >= 1 && y <= 8) {
+             return true;
+@@ -25,6 +31,10 @@
+         return false;
+     }
+ 
++    /**
++     * them quan co vao ban co.
++     * @param piece quan co.
++     */
+     public void addPiece(Piece piece) {
+         if (validate(piece.getCoordinatesX(), piece.getCoordinatesY())) {
+             if (!pieces.contains(piece)) {
+@@ -33,6 +43,12 @@
+         }
+     }
+ 
++    /**
++     * lay quan co.
++     * @param x vi tri x.
++     * @param y vi tri y.
++     * @return tra ve quan co lay duoc.
++     */
+     public Piece getAt(int x, int y) {
+         for (Piece i : pieces) {
+             if (i.getCoordinatesX() == x && i.getCoordinatesY() == y) {
+@@ -42,6 +58,11 @@
+         return null;
+     }
+ 
++    /**
++     * xoa quan co.
++     * @param x vi tri x.
++     * @param y vi tri y.
++     */
+     public void removeAt(int x, int y) {
+         Piece i = getAt(x, y);
+         if (i != null) {

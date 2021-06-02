@@ -1,0 +1,15 @@
+@@ -45,10 +45,10 @@
+      * Hello, this is me ure looking for.
+      */
+     public Piece getAt(int thisX, int thisY) {
+-        for (int i = 0; i < pieces.size(); i++) {
+-            if (thisX == pieces.get(i).getCoordinatesX()
+-                    && thisY == pieces.get(i).getCoordinatesY()) {
+-                return pieces.get(i);
++        for (Piece piece : pieces) {
++            if (thisX == piece.getCoordinatesX()
++                    && thisY == piece.getCoordinatesY()) {
++                return piece;
+             }
+         }
+         return null;

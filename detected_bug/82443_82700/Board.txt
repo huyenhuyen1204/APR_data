@@ -1,0 +1,50 @@
+@@ -1,13 +1,16 @@
+ import java.util.ArrayList;
+ 
+ public class Board {
+-    protected final int WIDTH = 8;
+-    protected final int HEIGHT = 8;
++    public static final int WIDTH = 8;
++    public static final int HEIGHT = 8;
+     private ArrayList<Piece> pieces = new ArrayList<Piece>();
+ 
+     public Board() {
+     }
+ 
++    /**
++     * .
++     **/
+     public void addPiece(Piece piece) {
+         if (validate(piece.getCoordinatesX(), piece.getCoordinatesY())
+                 && getAt(piece.getCoordinatesX(), piece.getCoordinatesY()) == null) {
+@@ -15,11 +18,19 @@
+         }
+     }
+ 
++    /**
++     * .
++     **/
+     public boolean validate(int x, int y) {
+-        if (x < 1 || x > 8 || y < 1 || y > 8) return false;
++        if (x < 1 || x > 8 || y < 1 || y > 8) {
++            return false;
++        }
+         return true;
+     }
+ 
++    /**
++     * .
++     **/
+     public void removeAt(int x, int y) {
+         for (int i = pieces.size() - 1; i >= 0; i--) {
+             if (x == pieces.get(i).getCoordinatesX() && y == pieces.get(i).getCoordinatesY()) {
+@@ -28,6 +39,9 @@
+         }
+     }
+ 
++    /**
++     * .
++     **/
+     public Piece getAt(int x, int y) {
+         for (int i = pieces.size() - 1; i >= 0; i--) {
+             if (x == pieces.get(i).getCoordinatesX() && y == pieces.get(i).getCoordinatesY()) {

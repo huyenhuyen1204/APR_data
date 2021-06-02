@@ -1,0 +1,11 @@
+@@ -65,8 +65,8 @@
+             } else if (tran.getOperation(). equals(Transaction.WITHDRAW)) {
+                 operation = ": Rut tien $";
+             }
+-
+-            System.out.println("Giao dich " + count + operation + String.format("%.2f", tran.getAmount())
++            System.out.println("Giao dich " + count + operation
++                    + String.format("%.2f", tran.getAmount())
+                     + ". So du luc nay: $" + String.format("%.2f", tran.getBalance()) + ".");
+             count++;
+         }

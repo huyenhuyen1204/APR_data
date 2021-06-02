@@ -1,0 +1,41 @@
+@@ -10,7 +10,7 @@
+             System.out.println("So tien ban nap vao khong hop le!");
+         } else {
+             balance += amount;
+-            transitionList.add(new Transaction("Deposit", amount, balance));
++            transitionList.add(new Transaction("deposit", amount, balance));
+         }
+     }
+     private void withdraw(double amount){
+@@ -22,14 +22,14 @@
+         }
+         if (amount>0 && amount<balance) {
+             balance-=amount;
+-            transitionList.add(new Transaction("Withdraw", amount, balance));
++            transitionList.add(new Transaction("withdraw", amount, balance));
+         }
+     }
+     public void addTransaction(double amount, String operation){
+-        if (operation == "Deposit"){
++        if (operation == "deposit"){
+             deposit(amount);
+         }
+-        else if(operation == "Withdraw"){
++        else if(operation == "withdraw"){
+             withdraw(amount);
+         }
+         else {
+@@ -40,11 +40,11 @@
+     DecimalFormat decimalFormat = new DecimalFormat(pattern);
+     public void printTransaction(){
+         for (int i=1; i<=transitionList.size(); i++){
+-            if (transitionList.get(i-1).getOperation() == "Deposit"){
++            if (transitionList.get(i-1).getOperation() == "deposit"){
+                 System.out.println("Giao dich "+ i + ": Nap tien $" + decimalFormat.format(transitionList.get(i-1).getAmount()) +
+                         ". So du luc nay: $" + decimalFormat.format(transitionList.get(i-1).getBalance()) + ".");
+             }
+-            else if (transitionList.get(i-1).getOperation() == "Withdraw"){
++            else if (transitionList.get(i-1).getOperation() == "withdraw"){
+                 System.out.println("Giao dich " + i +": Rut tien $" + decimalFormat.format(transitionList.get(i-1).getAmount()) +
+                         ". So du luc nay: $" + decimalFormat.format(transitionList.get(i-1).getBalance()) + ".");
+             }

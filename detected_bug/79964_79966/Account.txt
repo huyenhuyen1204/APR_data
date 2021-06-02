@@ -1,0 +1,26 @@
+@@ -20,7 +20,7 @@
+      * main.
+      */
+     private void withdraw(double amount) {
+-        if(amount < 0) {
++        if (amount < 0) {
+             System.out.println("So tien ban rut ra khong hop le!");
+         }
+         if (amount > balance) {
+@@ -64,15 +64,5 @@
+                     transitionList.get(i).getBalance());
+         }
+     }
+-
+-//    /**
+-//     * Cmt.
+-//     */
+-//    public static void main(String[] args) {
+-//        Account acc = new Account();
+-//        acc.addTransaction(2000.255, "deposit");
+-//        acc.addTransaction(1000, "withdraw");
+-//        acc.printTransaction();
+-//    }
+ }
+  
+\ No newline at end of file

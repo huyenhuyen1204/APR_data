@@ -1,0 +1,9 @@
+@@ -40,4 +40,8 @@
+     public ArrayList<Move> getMoveHistory() {
+         return moveHistory;
+     }
++
++    public void setMoveHistory(ArrayList<Move> moveHistory) {
++        this.moveHistory = moveHistory;
++    }
+ }

@@ -1,0 +1,53 @@
+@@ -1,10 +1,11 @@
++import java.math.RoundingMode;
+ import java.text.DecimalFormat;
+ import java.util.ArrayList;
+ import java.util.List;
+ 
+ public class Account {
+     private double balance;
+-    private List<Transaction> transitionList;
++    private ArrayList<Transaction> transitionList;
+ 
+     Account() {
+         this.balance = 0;
+@@ -12,6 +13,9 @@
+     }
+ 
+     private void deposit(double amount) {
++        if (amount < 0)
++            System.out.println("So tien ban nap vao khong hop le!");
++        else
+         this.balance += amount;
+     }
+ 
+@@ -40,11 +44,6 @@
+         }
+     }
+ 
+-    public String round(double value) {
+-        DecimalFormat df = new DecimalFormat("#.##");
+-        return df.format(value);
+-    }
+-
+     public void printTransaction() {
+         for (int i = 0; i < this.transitionList.size(); i++) {
+             System.out.print("Giao dich " + (i + 1) + ": ");
+@@ -52,8 +51,15 @@
+                 System.out.print("Rut tien ");
+             else
+                 System.out.print("Nap tien ");
+-            System.out.print("$" + round(this.transitionList.get(i).getAmount()) + ". ");
+-            System.out.println("So du luc nay: $" + round(this.transitionList.get(i).getBalance()) + ".");
++            System.out.print("$" + String.format("%.2f", this.transitionList.get(i).getAmount()) + ". ");
++            System.out.println("So du luc nay: $" + String.format("%.2f", this.transitionList.get(i).getBalance()) + ".");
+         }
+     }
++
++    public static void main(String[] args) {
++        Account acc= new Account();
++        acc.addTransaction(2000.255,"deposit");
++        acc.addTransaction(1000,"withdraw");
++        acc.printTransaction();
++    }
+ }

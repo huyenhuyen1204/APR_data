@@ -1,0 +1,10 @@
+@@ -32,6 +32,9 @@
+     public Transaction() {
+     }
+ 
++    /**
++     * Trang.
++     */
+     public Transaction(String operation, double amount, double balance) {
+         this.operation = operation;
+         this.amount = amount;

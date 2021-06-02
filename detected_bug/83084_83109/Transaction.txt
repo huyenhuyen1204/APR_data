@@ -1,0 +1,37 @@
+@@ -1,3 +1,5 @@
++import java.text.DecimalFormat;
++
+ /**
+  * Created by CCNE on 03/12/2020.
+  */
+@@ -12,6 +14,9 @@
+     private double initialBalance;
+     private double finalBalance;
+ 
++    /**
++     * javadoc.
++     */
+     public Transaction(int type, double amount, double initialBalance, double finalBalance) {
+         this.type = type;
+         this.amount = amount;
+@@ -32,12 +37,15 @@
+         }
+     }
+ 
++    /**
++     * javadoc.
++     */
+     public String getTransactionSummary() {
+-        // Kiểu giao dịch: Nạp tiền vãng lai. Số dư ban đầu: $1000.00. Số tiền: $500.00. Số dư cuối: $1500.00.
++        DecimalFormat df2 = new DecimalFormat("0.00");
+         return "- Kiểu giao dịch: " + getTransactionTypeString(type)
+-                + ". Số dư ban đầu: " + initialBalance
+-                + ". Số tiền: $" + amount
+-                + ". Số dư cuối: $" + finalBalance + ".";
++                + ". Số dư ban đầu: $" + df2.format(initialBalance)
++                + ". Số tiền: $" + df2.format(amount)
++                + ". Số dư cuối: $" + df2.format(finalBalance) + ".";
+     }
+ }
+  
+\ No newline at end of file

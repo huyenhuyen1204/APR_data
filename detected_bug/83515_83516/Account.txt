@@ -1,0 +1,21 @@
+@@ -7,9 +7,9 @@
+     /**
+      * jvbf.
+      */
+-    public void deposit(double amount) {
++    private void deposit(double amount) {
+         if (amount < 0) {
+-            System.out.println("So tien ban rut ra khong hop le!");
++            System.out.println("So tien ban nap vao khong hop le!");
+         } else {
+             balance += amount;
+         }
+@@ -18,7 +18,7 @@
+     /**
+      * jvbf.
+      */
+-    public void withdraw(double amount) {
++    private void withdraw(double amount) {
+         if (amount < 0) {
+             System.out.println("So tien ban rut ra khong hop le!");
+         }

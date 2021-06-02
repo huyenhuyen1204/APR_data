@@ -1,0 +1,11 @@
+@@ -15,8 +15,8 @@
+         if (piece.canMove(board, x, y)) {
+             Piece killedPiece = board.getAt(x, y);
+             if (killedPiece != null) {
+-                Move move = new
+-                        Move(piece.getCoordinatesX(), piece.getCoordinatesY(), x, y, piece, killedPiece);
++                Move move = new Move(piece.getCoordinatesX(),
++                        piece.getCoordinatesY(), x, y, piece, killedPiece);
+                 moveHistory.add(move);
+                 board.removeAt(x, y);
+             } else {

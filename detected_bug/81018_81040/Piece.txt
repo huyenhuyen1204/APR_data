@@ -1,0 +1,10 @@
+@@ -20,7 +20,8 @@
+      * javadoc.
+      */
+     public Piece(int coordinatesX, int coordinatesY, String color) {
+-        if ((coordinatesX >= 1 && coordinatesY <= 8) && (color.equals("white") || color.equals("black"))) {
++        if ((coordinatesX >= 1 && coordinatesY <= 8) && (color.equals("white")
++                || color.equals("black"))) {
+             this.coordinatesX = coordinatesX;
+             this.coordinatesY = coordinatesY;
+             this.color = color;

@@ -1,0 +1,32 @@
+@@ -10,7 +10,7 @@
+      * constructor.
+      */
+ 
+-    public Move(int startX, int endX, int startY, int endY,Piece movedPiece) {
++    public Move(int startX, int endX, int startY, int endY, Piece movedPiece) {
+         this.movedPiece = movedPiece;
+         this.startX = startX;
+         this.endX = endX;
+@@ -22,7 +22,7 @@
+      * constructor.
+      */
+ 
+-    public Move(int startX, int endX, int startY, int endY, Piece killedPiece,Piece movedPiece) {
++    public Move(int startX, int endX, int startY, int endY, Piece movedPiece, Piece killedPiece) {
+         this.movedPiece = movedPiece;
+         this.startX = startX;
+         this.endX = endX;
+@@ -33,10 +33,11 @@
+ 
+     @Override
+     public String toString() {
++        Rook rook = new Rook(endX, endY);
+         return movedPiece.getColor() + "-"
+                 + movedPiece.getSymbol()
+-                + movedPiece.algebraicNotation()
+-                + movedPiece.getCoordinatesY();
++                + rook.algebraicNotation()
++                + rook.getCoordinatesY();
+     }
+ 
+     public Piece getMovedPiece() {

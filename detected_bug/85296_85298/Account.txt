@@ -1,0 +1,49 @@
+@@ -2,7 +2,8 @@
+ 
+ public class Account {
+     private double balance;
+-    private ArrayList<String> transitionList = new ArrayList<>();
++    private ArrayList<String> transitions = new ArrayList<>();
++    private ArrayList<Transaction> transitionList = new ArrayList<>();
+ 
+     /**
+      * deposit.
+@@ -43,23 +44,23 @@
+     public void addTransaction(double amount, String operation) {
+         if (operation.equals(Transaction.DEPOSIT)) {
+             deposit(amount);
+-            String tmp = "Giao dich " + Integer.toString(transitionList.size() + 1) + ": "
++            String tmp = "Giao dich " + Integer.toString(transitions.size() + 1) + ": "
+                     + "Nap tien $" + String.format("%.2f", amount) + ". "
+                     + "So du luc nay: $" + String.format("%.2f", balance) + ".";
+-            if (!transitionList.isEmpty()) {
++            if (!transitions.isEmpty()) {
+                 tmp = "\n" + tmp;
+             }
+-            transitionList.add(tmp);
++            transitions.add(tmp);
+         } else {
+             if (operation.equals(Transaction.WITHDRAW)) {
+                 withdraw(amount);
+-                String tmp = "Giao dich " + Integer.toString(transitionList.size() + 1) + ": "
++                String tmp = "Giao dich " + Integer.toString(transitions.size() + 1) + ": "
+                         + "Rut tien $" + String.format("%.2f", amount) + ". "
+                         + "So du luc nay: $" + String.format("%.2f", balance) + ".";
+-                if (!transitionList.isEmpty()) {
++                if (!transitions.isEmpty()) {
+                     tmp = "\n" + tmp;
+                 }
+-                transitionList.add(tmp);
++                transitions.add(tmp);
+             } else {
+                 System.out.println("Yeu cau khong hop le!");
+             }
+@@ -70,7 +71,7 @@
+      * print.
+      */
+     public void printTransaction() {
+-        for (String transaction : transitionList) {
++        for (String transaction : transitions) {
+             System.out.print(transaction);
+         }
+     }

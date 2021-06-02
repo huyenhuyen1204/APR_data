@@ -1,0 +1,34 @@
+@@ -22,14 +22,15 @@
+     }
+ 
+     public boolean checkPosition(Piece p) {
+-        return (p.getCoordinatesX() >= 1 && p.getCoordinatesX() <= 8 && p.getCoordinatesY() >= 1 && p.getCoordinatesY() <= 8);
++        return (p.getCoordinatesX() >= 1 && p.getCoordinatesX() <= 8
++                && p.getCoordinatesY() >= 1 && p.getCoordinatesY() <= 8);
+     }
+ 
+     public int getCoordinatesX() {
+         return coordinatesX;
+     }
+ 
+-    public void setX(int coordinatesX) {
++    public void setCoordinatesX(int coordinatesX) {
+         this.coordinatesX = coordinatesX;
+     }
+ 
+@@ -37,7 +38,7 @@
+         return coordinatesY;
+     }
+ 
+-    public void setY(int coordinatesY) {
++    public void setCoordinatesY(int coordinatesY) {
+         this.coordinatesY = coordinatesY;
+     }
+ 
+@@ -50,5 +51,6 @@
+     }
+ 
+     public abstract String getSymbol();
++    
+     public abstract boolean canMove(Board board, int coordinatesX, int coordinatesY);
+ }

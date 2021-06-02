@@ -1,0 +1,55 @@
+@@ -3,13 +3,13 @@
+ 
+ public class Account {
+     private double balance;
+-    private List<Transaction> list;
++    private ArrayList<Transaction> transitionList;
+ 
+     /**
+      * constructor.
+      */
+     public Account() {
+-        list = new ArrayList<Transaction>();
++        transitionList = new ArrayList<Transaction>();
+     }
+ 
+     /**
+@@ -20,7 +20,7 @@
+             System.out.println("So tien ban nap vao khong hop le!");
+         } else {
+             balance += amount;
+-            list.add(new Transaction(Transaction.DEPOSIT, amount, balance));
++            transitionList.add(new Transaction(Transaction.DEPOSIT, amount, balance));
+         }
+     }
+ 
+@@ -34,7 +34,7 @@
+             System.out.println("So tien ban rut vuot qua so du!");
+         } else {
+             balance -= amount;
+-            list.add(new Transaction(Transaction.WITHDRAW, amount, balance));
++            transitionList.add(new Transaction(Transaction.WITHDRAW, amount, balance));
+         }
+     }
+ 
+@@ -55,11 +55,15 @@
+      * phương thức in ra các giao dịch.
+      */
+     public void printTransaction() {
+-        for (int i = 0; i < list.size(); i++) {
+-            if (list.get(i).getOperation().equals(Transaction.DEPOSIT))
+-                System.out.printf("Giao dich %d: Nap tien $%.2f.", i + 1, list.get(i).getAmount());
+-            else System.out.printf("Giao dich %d: Rut tien $%.2f.", i + 1, list.get(i).getAmount());
+-            System.out.printf(" So du luc nay: $%.2f\n", list.get(i).getBalance());
++        for (int i = 0; i < transitionList.size(); i++) {
++            if (transitionList.get(i).getOperation().equals(Transaction.DEPOSIT)) {
++                System.out.printf("Giao dich %d: Nap tien $%.2f.",
++                        i + 1, transitionList.get(i).getAmount());
++            } else {
++                System.out.printf("Giao dich %d: Rut tien $%.2f.",
++                        i + 1, transitionList.get(i).getAmount());
++            }
++            System.out.printf(" So du luc nay: $%.2f.\n", transitionList.get(i).getBalance());
+         }
+     }
+ 

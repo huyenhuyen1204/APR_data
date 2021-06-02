@@ -1,0 +1,40 @@
+@@ -7,6 +7,9 @@
+ 
+     public Board() {}
+ 
++    /**
++     * abc.
++     */
+     public void addPiece(Piece piece) {
+         int x = piece.getCoordinatesX();
+         int y = piece.getCoordinatesY();
+@@ -21,6 +24,9 @@
+         pieces.add(piece);
+     }
+ 
++    /**
++     * abc.
++     */
+     public boolean validate(int x, int y) {
+         if (x >= 1 && x <= 8 && y >= 1 && y <= 8) {
+             return true;
+@@ -28,6 +34,9 @@
+         return false;
+     }
+ 
++    /**
++     * abc.
++     */
+     public void removeAt(int x, int y) {
+         for (Piece p : pieces) {
+             if (p.getCoordinatesX() == x && p.getCoordinatesY() == y) {
+@@ -37,6 +46,9 @@
+         }
+     }
+ 
++    /**
++     * abc.
++     */
+     public Piece getAt(int x, int y) {
+         for (Piece p : pieces) {
+             if (p.getCoordinatesX() == x && p.getCoordinatesY() == y) {

@@ -1,0 +1,9 @@
+@@ -12,7 +12,7 @@
+     /**
+      * ad.
+      */
+-    public void addTransaction(double amount,String operation) {
++    public void addTransaction(double amount, String operation) {
+         Transaction a;
+         if (operation.equals(Transaction.getDepositstr())) {
+             deposit(amount);

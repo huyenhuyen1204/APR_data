@@ -1,0 +1,63 @@
+@@ -3,7 +3,7 @@
+ 
+ public class Account {
+     private double balance;
+-    private List<Transaction> list = new ArrayList<>();
++    private ArrayList<Transaction> transitionList = new ArrayList<>();
+ 
+     /**
+      *bla.
+@@ -39,12 +39,12 @@
+      *bla.
+      */
+     public void addTransaction(double amount, String operation) {
+-        if(operation.equals(Transaction.DEPOSIT)) {
++        if (operation.equals(Transaction.DEPOSIT)) {
+             deposit(amount);
+-            list.add(new Transaction(operation, amount, balance));
++            transitionList.add(new Transaction(operation, amount, balance));
+         } else if (operation.equals(Transaction.WITHDRAW)) {
+             withdraw(amount);
+-            list.add(new Transaction(operation, amount, balance));
++            transitionList.add(new Transaction(operation, amount, balance));
+         } else {
+             System.out.println("Yeu cau khong hop le!");
+         }
+@@ -55,14 +55,20 @@
+      */
+     public void printTransaction() {
+         int i = 1;
+-        for (Transaction t : list) {
++        for (Transaction t : transitionList) {
+             System.out.print("Giao dich " + i + ": ");
+             if (t.getOperation().equals(Transaction.DEPOSIT)) {
+-                System.out.println("Nap tien $" + t.getAmount() + ". So du luc nay: $"
+-                        + t.getBalance() + ".");
++                System.out.print("Nap tien $");
++                System.out.printf("%.2f", t.getAmount());
++                System.out.print(". So du luc nay: $");
++                System.out.printf("%.2f", t.getBalance());
++                System.out.println(".");
+             } else if (t.getOperation().equals(Transaction.WITHDRAW)) {
+-                System.out.println("Rut tien $" + t.getAmount() + ". So du luc nay: $"
+-                        + t.getBalance() + ".");
++                System.out.print("Rut tien $");
++                System.out.printf("%.2f", t.getAmount());
++                System.out.print(". So du luc nay: $");
++                System.out.printf("%.2f", t.getBalance());
++                System.out.println(".");
+             }
+             i++;
+         }
+@@ -73,8 +79,9 @@
+      */
+     public static void main(String[] args) {
+         Account acc = new Account();
+-        acc.addTransaction(1000.26,"deposit");
+-        acc.addTransaction(1000,"withdraw");
++        acc.addTransaction(1000, "deposit");
++        acc.addTransaction(2000, "deposit");
++        acc.addTransaction(1000, "withdraw");
+         acc.printTransaction();
+     }
+ }

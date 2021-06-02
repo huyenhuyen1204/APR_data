@@ -1,0 +1,12 @@
+@@ -8,6 +8,11 @@
+   private String fullName;
+   private final List<Account> accountList;
+ 
++  /**
++   * ldkjflkasjf.
++   * @param idNumber d
++   * @param fullName dk
++   */
+   public Customer(long idNumber, String fullName) {
+     this.idNumber = idNumber;
+     this.fullName = fullName;

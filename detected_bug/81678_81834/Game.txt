@@ -1,0 +1,30 @@
+@@ -1,5 +1,4 @@
+ 
+-
+ import java.util.ArrayList;
+ 
+ public class Game {
+@@ -26,14 +25,18 @@
+         this.moveHistory = moveHistory;
+     }
+ 
++    /**
++     * move .
++     */
+     public void movePiece(Piece piece, int x, int y) {
+         if (piece.canMove(board, x, y)) {
+             Piece killedPiece = board.getAt(x, y);
+-            moveHistory.add(new Move(piece.getCoordinatesX(), piece.getCoordinatesY(), x, y, piece, killedPiece));
+-            if (killedPiece != null) {
+-                board.removeAt(x, y);
+-            }
+-            return;
++            moveHistory.add(
++                    new Move(piece.getCoordinatesX(), piece.getCoordinatesY(),
++                            x, y, piece, killedPiece));
++            board.removeAt(x, y);
++            piece.setCoordinatesX(x);
++            piece.setCoordinatesY(y);
+         }
+     }
+ 

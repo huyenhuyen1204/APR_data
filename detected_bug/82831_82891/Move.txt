@@ -1,0 +1,40 @@
+@@ -6,6 +6,14 @@
+     private Piece movedPiece;
+     private Piece killedPiece;
+ 
++    /**
++     * khoi tao lop di chuyen.
++     * @param startX vi tri bat dau.
++     * @param endX vi tri ket thuc x.
++     * @param startY vi tri bat dau y.
++     * @param endY vi tri ket thuc y.
++     * @param movedPiece quan co di chuyen.
++     */
+     public Move(int startX, int endX, int startY, int endY, Piece movedPiece) {
+         this.startX = startX;
+         this.startY = startY;
+@@ -14,6 +22,15 @@
+         this.movedPiece = movedPiece;
+     }
+ 
++    /**
++     * khoi tao lop di chuyen.
++     * @param startX vi tri bat dau.
++     * @param endX vi tri ket thuc x.
++     * @param startY vi tri bat dau y.
++     * @param endY vi tri ket thuc y.
++     * @param movedPiece quan co di chuyen.
++     * @param killedPiece quan co bi giet.
++     */
+     public Move(int startX, int endX, int startY, int endY, Piece movedPiece, Piece killedPiece) {
+         this.startX = startX;
+         this.startY = startY;
+@@ -72,7 +89,7 @@
+     }
+ 
+     public String toString() {
+-        char x = (char)(endX + 47 + 48);
++        char x = (char) (endX + 47 + 49);
+         return String.format("%s-%s%s%s", movedPiece.getColor(), movedPiece.getSymbol(), x, endY);
+     }
+ }

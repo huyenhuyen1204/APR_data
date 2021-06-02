@@ -1,0 +1,11 @@
+@@ -29,8 +29,8 @@
+      */
+ 
+     public void addTransaction(double amount, String operation) {
+-        if (! (operation.toUpperCase().compareTo(Transaction.DEPOSIT) == 0 ||
+-        operation.toUpperCase().compareTo(Transaction.WITHDRAW) == 0)) {
++        if (! (operation.toUpperCase().compareTo(Transaction.DEPOSIT) == 0
++                || operation.toUpperCase().compareTo(Transaction.WITHDRAW) == 0)) {
+             System.out.println("Yeu cau khong hop le!");
+         } else if (operation.toUpperCase().compareTo(Transaction.DEPOSIT) == 0) {
+             deposit(amount);

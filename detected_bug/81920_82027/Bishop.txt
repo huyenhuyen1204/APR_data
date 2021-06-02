@@ -1,0 +1,17 @@
+@@ -44,12 +44,13 @@
+ 
+         }
+ 
+-        if (board.getAt(i, j).getColor() == null) {
++        i += tx;
++        j += ty;
++
++        if (board.getAt(i, j) == null) {
+             return true;
+         }
+ 
+-        i += tx;
+-        j += ty;
+         if (board.getAt(i, j).getColor() == this.getColor()) {
+             return false;
+         } else {

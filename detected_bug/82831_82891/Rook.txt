@@ -1,0 +1,21 @@
+@@ -12,13 +12,16 @@
+         if (x < 1 || x > 8 || y < 1 || y > 8) {
+             return false;
+         }
+-        for (int i = getCoordinatesX(); i < x; i++) {
+-            if (board.getAt(i, y) != null) {
++        if (getCoordinatesX() != x && getCoordinatesY() != y) {
++            return false;
++        }
++        for (int i = Math.min(x, getCoordinatesX()) + 1; i < Math.max(x, getCoordinatesX()); i++) {
++            if (board.getAt(i, getCoordinatesY()) != null) {
+                 return false;
+             }
+         }
+-        for (int i = getCoordinatesY(); i < y; i++) {
+-            if (board.getAt(x, i) != null) {
++        for (int i = Math.min(y, getCoordinatesY()) + 1; i < Math.max(y, getCoordinatesY()); i++) {
++            if (board.getAt(getCoordinatesX(), i) != null) {
+                 return false;
+             }
+         }

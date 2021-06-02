@@ -1,0 +1,19 @@
+@@ -3,7 +3,7 @@
+ 
+ public class Account {
+     private double balance = 0;
+-    private List<Transaction>  transitionList = new ArrayList<Transaction>();
++    private ArrayList<Transaction>  transitionList = new ArrayList<>();
+ 
+     // give money
+     private void deposit(double amount) {
+@@ -54,7 +54,8 @@
+                         + ". So du luc nay: $"
+                         + String.format("%.2f", transitionList.get(i).getBalance()) + ".");
+             } else if (transitionList.get(i).getOperation().equals("deposit")) {
+-                System.out.print("Nap tien $" + String.format("%.2f", transitionList.get(i).getAmount())
++                System.out.print("Nap tien $"
++                        + String.format("%.2f", transitionList.get(i).getAmount())
+                         + ". So du luc nay: $"
+                         + String.format("%.2f", transitionList.get(i).getBalance()) + ".");
+             }

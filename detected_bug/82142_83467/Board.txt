@@ -1,0 +1,9 @@
+@@ -53,7 +53,7 @@
+      * @param y ham.
+      */
+     public void removeAt(int x, int y) {
+-        pieces.removeIf(piece -> (piece.getCoordinatesY() == y && piece.getCoordinatesX() == x));
++        pieces.removeIf(piece -> (piece.getCoordinatesX() == x && piece.getCoordinatesY() == y));
+     }
+ 
+     public ArrayList<Piece> getPieces() {

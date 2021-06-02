@@ -1,0 +1,10 @@
+@@ -33,7 +33,8 @@
+     public void addPiece(Piece piece) {
+         if (validate(piece.getCoordinatesX(), piece.getCoordinatesY())) {
+             for (Piece p : pieces) {
+-                if (p.getCoordinatesX() == piece.getCoordinatesX() && p.getCoordinatesY() == piece.getCoordinatesY()) {
++                if (p.getCoordinatesX() == piece.getCoordinatesX()
++                        && p.getCoordinatesY() == piece.getCoordinatesY()) {
+                     return;
+                 }
+             }

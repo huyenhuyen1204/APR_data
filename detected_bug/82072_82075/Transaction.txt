@@ -1,0 +1,31 @@
+@@ -3,9 +3,12 @@
+     private double amount;
+     private double balance;
+     
+-    static final String DEPOSIT = "deposit";
+-    static final String WITHDRAW = "withdraw";
++    public static final String DEPOSIT = "deposit";
++    public static final String WITHDRAW = "withdraw";
+     
++    /**
++     * New transaction.
++     */
+     public Transaction(String operation, double amount, double balance) {
+         this.operation = operation;
+         this.amount = amount;
+@@ -41,13 +44,13 @@
+         StringBuilder builder = new StringBuilder();
+         if (operation.equals(Transaction.DEPOSIT)) {
+             builder.append("Nap tien $").append(String.format("%.2f", amount));
+-            builder.append(". So du luc nay: ").append(String.format("%.2f", balance));
++            builder.append(". So du luc nay: $").append(String.format("%.2f", balance));
+             builder.append(".");
+             return builder.toString();
+         }
+         if (operation.equals(Transaction.WITHDRAW)) {
+             builder.append("Rut tien $").append(String.format("%.2f", amount));
+-            builder.append(". So du luc nay: ").append(String.format("%.2f", balance));
++            builder.append(". So du luc nay: $").append(String.format("%.2f", balance));
+             builder.append(".");
+             return builder.toString();
+         }

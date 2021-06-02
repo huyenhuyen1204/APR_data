@@ -1,0 +1,58 @@
+@@ -6,21 +6,21 @@
+ 
+     static DecimalFormat format = new DecimalFormat("0.00");
+     private double balance;
+-    private ArrayList<Transaction> transactions = new ArrayList<>();
++    private ArrayList<Transaction> transitionList = new ArrayList<>();
+ 
+     private void deposit(double amount) {
+         if (amount <= 0) {
+-            System.out.println("So tien ban nap khong hop le!");
++            System.out.println("So tien ban nap vao khong hop le!");
+             return;
+         } else balance += amount;
+     }
+ 
+     private void withdraw(double amount) {
+         if (amount <= 0) {
+-            System.out.println("So tien ban nap khong hop le!");
++            System.out.println("So tien ban rut ra khong hop le!");
+             return;
+         } else if (amount >= balance) {
+-            System.out.println("So tien ban rut ra khong hop le!");
++            System.out.println("So tien ban rut vuot qua so du!");
+             return;
+         } else balance -= amount;
+     }
+@@ -29,7 +29,7 @@
+         amount = (double)Math.round(amount*100)/100;
+ 
+         if (operation != "deposit" && operation != "withdraw") {
+-            System.out.println("yeu cau khong hop le");
++            System.out.println("Yeu cau khong hop le!");
+             return;
+         } else if (operation.equals("deposit") ) {
+             deposit(amount);
+@@ -39,17 +39,17 @@
+         }
+ 
+         Transaction transaction = new Transaction(amount, operation, balance);
+-        transactions.add(transaction);
++        transitionList.add(transaction);
+     }
+ 
+     public void printTransaction() {
+-        for (int i = 0; i < transactions.size(); i++) {
++        for (int i = 0; i < transitionList.size(); i++) {
+             System.out.print("Giao dich " + (i+1) + ": ");
+ 
+-            if (transactions.get(i).getOperation() == "deposit") System.out.print("Nap tien $");
+-            else if (transactions.get(i).getOperation() == "withdraw") System.out.print("Rut tien $");
++            if (transitionList.get(i).getOperation() == "deposit") System.out.print("Nap tien $");
++            else if (transitionList.get(i).getOperation() == "withdraw") System.out.print("Rut tien $");
+ 
+-            System.out.println(format.format(transactions.get(i).getAmount()) + ". So du luc nay: $" + format.format(transactions.get(i).getBalance()) + ".");
++            System.out.println(format.format(transitionList.get(i).getAmount()) + ". So du luc nay: $" + format.format(transitionList.get(i).getBalance()) + ".");
+         }
+     }
+ 

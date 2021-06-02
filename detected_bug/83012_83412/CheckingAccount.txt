@@ -1,0 +1,26 @@
+@@ -1,9 +1,15 @@
+ public class CheckingAccount extends Account {
+ 
++    /**
++     * .
++     */
+     public CheckingAccount(long accountNumber, double balance) {
+         super(accountNumber, balance);
+     }
+ 
++    /**
++     * .
++     */
+     @Override
+     public void withdraw(double num) {
+         try {
+@@ -13,6 +19,9 @@
+         }
+     }
+ 
++    /**
++     * .
++     */
+     @Override
+     public void deposit(double num) {
+         try {

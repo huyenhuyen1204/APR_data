@@ -1,0 +1,50 @@
+@@ -1,11 +1,15 @@
+ public class Bishop extends Piece {
+-    Bishop(int x, int y) {
++    public Bishop() {
++
++    }
++
++    public Bishop(int x, int y) {
+         super(x, y);
+     }
+ 
+-    Bishop(int x, int y, String color) {
++   public Bishop(int x, int y, String color) {
+         super(x, y, color);
+-    }
++   }
+ 
+     @Override
+     public String getSymbol() {
+@@ -14,10 +18,26 @@
+ 
+     @Override
+     public boolean canMove(Board board, int x, int y) {
+-        //Chua xu ly tren duong gap quan co khac thi khong duoc di chuyen
+-        if (getCoordinatesX() - x == getCoordinatesY() - y
+-                || getCoordinatesX() - x == y - getCoordinatesY()) {
+-            return true;
++        int distanceX = x - getCoordinatesX();
++        int distanceY = y - getCoordinatesY();
++
++        if (distanceX == distanceY || distanceX == -distanceY) {
++            int stepX = distanceX < 0 ? -1 : 1;
++            int stepY = distanceY < 0 ? -1 : 1;
++
++            for (int i = 1; i < Math.abs(distanceX); i++) {
++                if (board.getAt(getCoordinatesX() + i * stepX,
++                        getCoordinatesY() + i * stepY) != null) {
++                    return false;
++                }
++            }
++
++            if (board.getAt(x, y) == null) {
++                return true;
++            } else if (board.getAt(x, y).getColor().equals(getColor()) == false) {
++                return true;
++            }
++
+         }
+ 
+         return false;

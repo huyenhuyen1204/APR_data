@@ -1,0 +1,67 @@
+@@ -2,22 +2,22 @@
+ 
+ public class Account {
+     private double balance;
+-    ArrayList<Transaction> list = new ArrayList<>();
++    private ArrayList<Transaction> transitionList = new ArrayList<>();
+ 
+     public Account() {
+ 
+     }
+ 
+     /**
+-    * Comment.
+-    **/
++     * Comment.
++     **/
+     private void deposit(double amount) {
+         if (amount < 0) {
+             System.out.println("So tien ban nap vao khong hop le!");
+             return;
+         }
+         balance += amount;
+-        list.add(new Transaction(Transaction.DEPOSIT, amount, balance));
++        transitionList.add(new Transaction(Transaction.DEPOSIT, amount, balance));
+     }
+ 
+     /**
+@@ -33,9 +33,12 @@
+             return;
+         }
+         balance -= amount;
+-        list.add(new Transaction(Transaction.WITHDRAW, amount, balance));
++        transitionList.add(new Transaction(Transaction.WITHDRAW, amount, balance));
+     }
+ 
++    /**
++     * Comment.
++     **/
+     public void addTransaction(double amount, String operation) {
+         if (!operation.equals(Transaction.DEPOSIT) && !operation.equals(Transaction.WITHDRAW)) {
+             System.out.println("Yeu cau khong hop le!");
+@@ -46,15 +49,18 @@
+         }
+     }
+ 
+-    public void  printTransaction() {
+-        for (int i = 0 ; i < list.size(); i++) {
+-            Transaction a = list.get(i);
++    /**
++     * Comment.
++     **/
++    public void printTransaction() {
++        for (int i = 0; i < transitionList.size(); i++) {
++            Transaction a = transitionList.get(i);
+             if (a.getOperation() == Transaction.DEPOSIT) {
+-                System.out.printf("Giao dich %d: %s $%.2f. So du luc nay: $%.2f.\n"
+-                        , i + 1, "Nap tien", a.getAmount(), a.getBalance());
++                System.out.printf("Giao dich %d: %s $%.2f. So du luc nay: $%.2f.\n",
++                        i + 1, "Nap tien", a.getAmount(), a.getBalance());
+             } else {
+-                System.out.printf("Giao dich %d: %s $%.2f. So du luc nay: $%.2f.\n"
+-                        , i + 1, "Rut tien", a.getAmount(), a.getBalance());
++                System.out.printf("Giao dich %d: %s $%.2f. So du luc nay: $%.2f.\n",
++                        i + 1, "Rut tien", a.getAmount(), a.getBalance());
+             }
+         }
+     }

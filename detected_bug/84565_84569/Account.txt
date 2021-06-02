@@ -1,0 +1,76 @@
+@@ -2,12 +2,14 @@
+ 
+ public class Account {
+     private double balance;
+-    private ArrayList<Transaction> arrayTransaction = new ArrayList<>();
++    private ArrayList<Transaction> transitionList = new ArrayList<>();
+ 
+     private void deposit(double amount) {
+         if (amount <= 0) {
+             System.out.println("So tien ban nap vao khong hop le!");
+-        } else balance += amount;
++        } else {
++            balance += amount;
++        }
+     }
+ 
+     private void withdraw(double amount) {
+@@ -15,23 +17,31 @@
+             System.out.println("So tien ban rut ra khong hop le!");
+         } else if (amount >= balance) {
+             System.out.println("So tien ban rut vuot qua so du!");
+-        } else balance -= amount;
++        } else {
++            balance -= amount;
++        }
+     }
+ 
++    /**
++     * hung.
++     */
+     public void addTransaction(double amount, String operation) {
+         if (operation == Transaction.DEPOSIT) {
+             deposit(amount);
+             Transaction transaction = new Transaction(Transaction.DEPOSIT, amount, balance);
+-            arrayTransaction.add(transaction);
++            transitionList.add(transaction);
+         } else if (operation == Transaction.WITHDRAW) {
+             withdraw(amount);
+             Transaction transaction = new Transaction(Transaction.WITHDRAW, amount, balance);
+-            arrayTransaction.add(transaction);
++            transitionList.add(transaction);
+         } else {
+             System.out.println("Yeu cau khong hop le!");
+         }
+     }
+ 
++    /**
++     * hung.
++     */
+     public String lamtron(double a) {
+         long b = Math.round(a * 100);
+         String str = Integer.toString((int) b);
+@@ -39,9 +49,21 @@
+         return str;
+     }
+ 
++    /**
++     * hung.
++     */
+     public void printTransaction() {
+-        for (int i = 0; i < arrayTransaction.size(); i++) {
+-            System.out.println("Giao dich " + i + 1 + ": Nap tien $" + lamtron(arrayTransaction.get(i).getAmount()) + ". So du luc nay: $" + lamtron(arrayTransaction.get(i).getBalance()) + ".\n");
++        for (int i = 0; i < transitionList.size(); i++) {
++            if (transitionList.get(i).getOperation() == transitionList.get(i).DEPOSIT) {
++                System.out.println("Giao dich " + (i + 1)
++                        + ": Nap tien $" + lamtron(transitionList.get(i).getAmount())
++                        + ". So du luc nay: $" + lamtron(transitionList.get(i).getBalance()) + ".");
++            }
++            if (transitionList.get(i).getOperation() == transitionList.get(i).WITHDRAW) {
++                System.out.println("Giao dich " + (i + 1)
++                        + ": Rut tien $" + lamtron(transitionList.get(i).getAmount())
++                        + ". So du luc nay: $" + lamtron(transitionList.get(i).getBalance()) + ".");
++            }
+         }
+     }
+ }

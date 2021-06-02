@@ -1,0 +1,12 @@
+@@ -120,10 +120,7 @@
+      * Loan .
+      */
+     public String toString() {
+-        String res = movedPiece.getColor() + "-" + movedPiece.getSymbol();
+-        char temp = (char) (movedPiece.getX() + 96);
+-        res += temp + (char) (movedPiece.getY() + 48);
+-        return res;
++        return movedPiece.getColor() + "-" + movedPiece.getSymbol() + (char) (endX + 96) + endY;
+     }
+ 
+ }

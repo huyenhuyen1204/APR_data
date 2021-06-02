@@ -1,0 +1,9 @@
+@@ -28,7 +28,7 @@
+     }
+ 
+     /**
+-     *
++     * Phuong thuc them giao dich.
+      */
+     public void addTransaction(double amount, String operation) {
+         if (operation.equals(Transaction.DEPOSIT)) {

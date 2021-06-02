@@ -1,0 +1,18 @@
+@@ -12,7 +12,7 @@
+         return balance;
+     }
+ 
+-    ArrayList<Transaction> transitionList = new ArrayList<Transaction>();
++    private ArrayList<Transaction> transitionList = new ArrayList<Transaction>();
+     private int countTransaction = 0;
+ 
+     private void deposit(double amount) {
+@@ -29,7 +29,7 @@
+ 
+     private void withdraw(double amount) {
+         if(amount > balance) {
+-            System.out.println("So tien ban rut ra vuot qua so du!");
++            System.out.println("So tien ban rut vuot qua so du!");
+         }else if(amount <= 0){
+             System.out.println("So tien ban rut ra khong hop le!");
+         }else {

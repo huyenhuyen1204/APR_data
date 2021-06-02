@@ -1,0 +1,18 @@
+@@ -24,7 +24,7 @@
+                 }
+             }
+             if (board.getAt(x, y) == null
+-                    || !board.getAt(x, y).getColor().equals(this.getColor())){
++                    || !board.getAt(x, y).getColor().equals(this.getColor())) {
+                 return true;
+             }
+         }
+@@ -37,7 +37,7 @@
+                 }
+             }
+             if (board.getAt(x, y) == null
+-                    || !board.getAt(x, y).getColor().equals(this.getColor())){
++                    || !board.getAt(x, y).getColor().equals(this.getColor())) {
+                 return true;
+             }
+         }

@@ -1,0 +1,32 @@
+@@ -9,12 +9,13 @@
+     double initialBalance = getBalance();
+     try {
+       doWithdrawing(amount);
++      addTransaction(
++          new Transaction(Transaction.TYPE_WITHDRAW_CHECKING, amount, initialBalance, getBalance())
++      );
+     } catch (BankException e) {
+       System.out.println(e.toString());
+     }
+-    addTransaction(
+-        new Transaction(Transaction.TYPE_WITHDRAW_CHECKING, amount, initialBalance, getBalance())
+-    );
++
+   }
+ 
+   @Override
+@@ -22,11 +23,11 @@
+     double initialBalance = getBalance();
+     try {
+       doDepositing(amount);
++      addTransaction(
++          new Transaction(Transaction.TYPE_DEPOSIT_CHECKING, amount, initialBalance, getBalance())
++      );
+     } catch (BankException e) {
+       System.out.println(e.toString());
+     }
+-    addTransaction(
+-        new Transaction(Transaction.TYPE_DEPOSIT_CHECKING, amount, initialBalance, getBalance())
+-    );
+   }
+ }

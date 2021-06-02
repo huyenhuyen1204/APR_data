@@ -1,0 +1,18 @@
+@@ -9,7 +9,7 @@
+      * Diposit function.
+      * @param amount money
+      */
+-    private void deposite(double amount) {
++    private void deposit(double amount) {
+ 
+         if (amount <= 0) {
+             System.out.println("So tien ban nap vao khong hop le!");
+@@ -53,7 +53,7 @@
+         }
+ 
+         if (operation.equals(Transaction.DEPOSIT)) {
+-            deposite(amount);
++            deposit(amount);
+         } else if (operation.equals(Transaction.WITHDRAW)) {
+             withdraw(amount);
+         }

@@ -1,0 +1,13 @@
+@@ -50,9 +50,9 @@
+      */
+     @Override
+     public String toString() {
+-        String character = Integer.toString(movedPiece.getCoordinatesX() + 96);
+-        return "`" + movedPiece.getColor() + "-" + movedPiece.getSymbol()
+-                + character + movedPiece.getCoordinatesY() + "`";
++        char character = (char) (this.getEndX() + 96);
++        return movedPiece.getColor() + "-" + movedPiece.getSymbol()
++                + character + this.getEndY();
+     }
+ 
+     /**

@@ -1,0 +1,38 @@
+@@ -22,12 +22,12 @@
+     public void addPiece(Piece piece) {
+         int c = 0;
+         for (int i = 0; i < pieces.size(); i++) {
+-            if (piece.getX() == pieces.get(i).getX()
+-                && piece.getY() == pieces.get(i).getY()) {
++            if (piece.getCoordinatesX() == pieces.get(i).getCoordinatesX()
++                && piece.getCoordinatesY() == pieces.get(i).getCoordinatesY()) {
+                 c++;
+             }
+         }
+-        if (piece.getX() >= 1 && piece.getY() <= 8
++        if (piece.getCoordinatesX() >= 1 && piece.getCoordinatesY() <= 8
+             && c == 0) {
+             pieces.add(piece);
+         }
+@@ -37,8 +37,8 @@
+     public Piece getAt(int x, int y) {
+         Piece p = null;
+         for (int i = 0; i < pieces.size(); i++) {
+-            if (pieces.get(i).getX() == x
+-                && pieces.get(i).getY() == y) {
++            if (pieces.get(i).getCoordinatesX() == x
++                && pieces.get(i).getCoordinatesY() == y) {
+                 p = pieces.get(i);
+             }
+         }
+@@ -48,8 +48,8 @@
+     /** Xoa quan co. **/
+     public void removeAt(int x, int y) {
+         for (int i = 0; i < pieces.size(); i++) {
+-            if (pieces.get(i).getX() == x
+-                && pieces.get(i).getY() == y) {
++            if (pieces.get(i).getCoordinatesX() == x
++                && pieces.get(i).getCoordinatesY() == y) {
+                 pieces.remove(i);
+             }
+         }

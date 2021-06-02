@@ -1,0 +1,46 @@
+@@ -4,7 +4,7 @@
+ public class Board {
+     public static final int WIDTH = 8;
+     public static final int HEIGHT = 8;
+-    private ArrayList<Piece> pieces;
++    private ArrayList<Piece> pieces = new ArrayList<>();
+ 
+     public Board() {
+     }
+@@ -23,9 +23,9 @@
+ 
+     /**
+      * kiem tra toa do.
+-     * @param x
+-     * @param y
+-     * @return
++     * @param x .
++     * @param y .
++     * @return .
+      */
+     public boolean validate(int x, int y) {
+         return (x >= 1 && x <= 8
+@@ -34,8 +34,8 @@
+ 
+     /**
+      * xoa quan co.
+-     * @param x
+-     * @param y
++     * @param x .
++     * @param y .
+      */
+     public void removeAt(int x, int y) {
+         Piece piece = getAt(x, y);
+@@ -46,9 +46,9 @@
+ 
+     /**
+      * lay quan co.
+-     * @param x
+-     * @param y
+-     * @return
++     * @param x .
++     * @param y .
++     * @return .
+      */
+     public Piece getAt(int x, int y) {
+         Iterator<Piece> itr = pieces.iterator();

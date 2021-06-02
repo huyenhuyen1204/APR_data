@@ -1,0 +1,66 @@
+@@ -2,25 +2,37 @@
+ 
+ public class Game {
+     private Board board;
+-    private ArrayList<Move> moveHistory = new ArrayList<>();
++    private ArrayList<Move> moveHistory = new ArrayList<Move>();
+ 
+-    Game(Board board) {
++    public Game() {
++
++    }
++
++    public Game(Board board) {
+         this.board = board;
+     }
+ 
+     /**
+-     * ds da s.
+-     * @param piece d
+-     * @param x 
+-     * @param y
++     * move a piece.
++     * @param piece df
++     * @param x df
++     * @param y df
+      */
+     public void movePiece(Piece piece, int x, int y) {
+-        //chua xu ly neu ha duoc 1 quan co khac thi xoa quan co do
+         if (piece.canMove(board, x, y)) {
+-            Move newMove = new Move(piece.getCoordinatesX(), piece.getCoordinatesY(), x, y, piece);
++            Move newMove;
++            if (board.getAt(x, y) != null
++                    && board.getAt(x, y).getColor().equals(piece.getColor()) == false) {
++                newMove = new Move(piece.getCoordinatesX(), piece.getCoordinatesY(),
++                        x, y, piece, board.getAt(x, y));
++                board.removeAt(x, y);
++            } else {
++                newMove = new Move(piece.getCoordinatesX(), piece.getCoordinatesY(), x, y, piece);
++            }
++            moveHistory.add(newMove);
++            board.addPiece(piece);
+             piece.setCoordinatesX(x);
+             piece.setCoordinatesY(y);
+-            moveHistory.add(newMove);
+         }
+     }
+ 
+@@ -35,18 +47,4 @@
+     public ArrayList<Move> getMoveHistory() {
+         return moveHistory;
+     }
+-
+-    public void setMoveHistory(ArrayList<Move> moveHistory) {
+-        this.moveHistory = moveHistory;
+-    }
+-
+-    public static void main(String[] args) {
+-        Board board = new Board();
+-        Piece B = new Bishop(2, 7, "black");
+-        board.addPieve(B);
+-        System.out.println(B.canMove(board, 7, 2));
+-
+-        Move move = new Move(7, 7, 7, 7, B);
+-        System.out.println(move.toString());
+-    }
+ }

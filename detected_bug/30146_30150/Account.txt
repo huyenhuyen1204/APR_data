@@ -1,0 +1,32 @@
+@@ -49,22 +49,22 @@
+             if (o.equals("deposit") ){
+ 
+                 System.out.println("Giao dich " + (i+1) + ": " + "Nap tien $" + decimalFormat.format(this.transitionList.get(i).getAmount()) +
+-                        ". So du luc nay: " + "$" + decimalFormat.format(this.transitionList.get(i).getBalance()));
++                        ". So du luc nay: " + "$" + decimalFormat.format(this.transitionList.get(i).getBalance()) + ".");
+             }
+             else  {
+                 System.out.println("Giao dich " + (i+1) + ": " + "Rut tien $" + decimalFormat.format(this.transitionList.get(i).getAmount()) +
+-                        ". So du luc nay: " + "$" + decimalFormat.format(this.transitionList.get(i).getBalance()));
++                        ". So du luc nay: " + "$" + decimalFormat.format(this.transitionList.get(i).getBalance()) + ".");
+             }
+         }
+     }
+ 
+     public static void main(String[] args) {
+-//        Account account = new Account();
+-//        account.addTransaction(3000.68, "deposit");
+-//        account.addTransaction(3000, "deposit");
+-//        account.addTransaction( 1000 , "withdraw");
+-//        account.addTransaction( 2000.00 , "withdraw");
+-//
+-//        account.printTransaction();
++        Account account = new Account();
++        account.addTransaction(3000.68, "deposit");
++        account.addTransaction(3000, "deposit");
++        account.addTransaction( 1000 , "withdraw");
++        account.addTransaction( 2000.00 , "withdraw");
++
++        account.printTransaction();
+     }
+ }

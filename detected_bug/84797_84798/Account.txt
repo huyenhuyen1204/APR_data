@@ -1,0 +1,9 @@
+@@ -44,7 +44,7 @@
+      * @param amount    the amount
+      * @param operation the operation
+      */
+-    public void addTransaction(double amount, String operation ) {
++    public void addTransaction(double amount, String operation) {
+         if (!operation.equals(Transaction.DEPOSIT) && !operation.equals(Transaction.WITHDRAW)) {
+             System.out.println("Yeu cau khong hop le!");
+         } else {

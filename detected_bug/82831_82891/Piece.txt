@@ -1,0 +1,24 @@
+@@ -3,12 +3,23 @@
+     private int coordinatesY;
+     private String color;
+ 
++    /**
++     * khoi tao quan co.
++     * @param coordinatesX tai x.
++     * @param coordinatesY tai y.
++     */
+     public Piece(int coordinatesX, int coordinatesY) {
+         this.coordinatesX = coordinatesX;
+         this.coordinatesY = coordinatesY;
+         this.color = "white";
+     }
+ 
++    /**
++     * khoi tao quan co.
++     * @param coordinatesX tai x.
++     * @param coordinatesY tai y.
++     * @param color mau.
++     */
+     public Piece(int coordinatesX, int coordinatesY, String color) {
+         this.coordinatesX = coordinatesX;
+         this.coordinatesY = coordinatesY;

@@ -1,0 +1,9 @@
+@@ -43,7 +43,7 @@
+             Transaction transaction = new Transaction(operation, amount, this.balance);
+             transitionList.add(transaction);
+         }
+-        else if (operation.equals("")){
++        else if (operation.equals("withdraw")){
+             this.withdraw(amount);
+             Transaction transaction = new Transaction(operation, amount, this.balance);
+             transitionList.add(transaction);

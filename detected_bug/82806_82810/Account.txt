@@ -1,0 +1,62 @@
+@@ -2,26 +2,26 @@
+ 
+ public class Account {
+     private double balance;
+-    private ArrayList<Transaction> transactionList;
++    private ArrayList<Transaction> transitionList;
+ 
+-    /*Chong chong tre ne Nobita.*/
++    /**Chong chong tre ne Nobita.*/
+     public Account() {
+-        transactionList = new ArrayList<>();
++        transitionList = new ArrayList<>();
+     }
+ 
+-    /*Chong chong tre ne Nobita.*/
++    /**Chong chong tre ne Nobita.*/
+     private void deposit(double amount) {
+-        if (amount == 0) {
++        if (amount <= 0) {
+             System.out.println("So tien ban nap vao khong hop le!");
+             return;
+         }
+         balance += amount;
+-        transactionList.add(new Transaction(Transaction.DEPOSIT, amount, balance));
++        transitionList.add(new Transaction(Transaction.DEPOSIT, amount, balance));
+     }
+ 
+-    /*Chong chong tre ne Nobita.*/
++    /**Chong chong tre ne Nobita.*/
+     private void withdraw(double amount) {
+-        if (amount == 0) {
++        if (amount <= 0) {
+             System.out.println("So tien ban rut ra khong hop le!");
+             return;
+         } else if (amount > balance) {
+@@ -29,10 +29,10 @@
+             return;
+         }
+         balance -= amount;
+-        transactionList.add(new Transaction(Transaction.WITHDRAW, amount, balance));
++        transitionList.add(new Transaction(Transaction.WITHDRAW, amount, balance));
+     }
+ 
+-    /*Chong chong tre ne Nobita.*/
++    /**Chong chong tre ne Nobita.*/
+     public void addTransaction(double amount, String operation) {
+         switch (operation) {
+             case Transaction.DEPOSIT:
+@@ -47,10 +47,10 @@
+         }
+     }
+ 
+-    /*Chong chong tre ne Nobita.*/
++    /**Chong chong tre ne Nobita.*/
+     public void printTransaction() {
+-        for (int i = 0; i < transactionList.size(); i++) {
+-            Transaction temp = transactionList.get(i);
++        for (int i = 0; i < transitionList.size(); i++) {
++            Transaction temp = transitionList.get(i);
+             String out = "Giao dich " + String.valueOf(i + 1) + ": ";
+             switch (temp.getOperation()) {
+                 case Transaction.DEPOSIT:

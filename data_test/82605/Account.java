@@ -1,0 +1,90 @@
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Created by CCNE on 02/12/2020.
+ */
+public abstract class Account {
+    public static final String CHECKING = "CHECKING";
+    public static final String SAVINGS = "SAVINGS";
+
+    protected long accountNumber;
+    protected double balance;
+    protected List<Transaction> transactionList = new ArrayList<>();
+
+    public Account() {
+
+    }
+
+    public Account(long accountNumber, double balance) {
+        this.accountNumber = accountNumber;
+        this.balance = balance;
+    }
+
+    public long getAccountNumber() {
+        return accountNumber;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    /**
+     * withdraw.
+     * @param amount a
+     * @throws InvalidFundingAmountException e
+     * @throws InsufficientFundsException e
+     */
+    public void doWithdrawing(double amount)
+            throws InvalidFundingAmountException, InsufficientFundsException {
+        if (amount < 0) {
+            throw new InvalidFundingAmountException(amount);
+        } else if (amount > balance) {
+            throw new InvalidFundingAmountException(amount);
+        } else {
+            balance -= amount;
+        }
+    }
+
+    /**
+     * deposit.
+     * @param amount a
+     * @throws InvalidFundingAmountException e
+     */
+    public void doDepositing(double amount) throws InvalidFundingAmountException {
+        if (amount < 0) {
+            throw new InvalidFundingAmountException(amount);
+        } else {
+            balance += amount;
+        }
+    }
+
+    public abstract void withdraw(double amount);
+
+    public abstract void deposit(double amount);
+
+    /**
+     * get history.
+     * @return history
+     */
+    public String getTransactionHistory() {
+        StringBuilder stringBuilder = new StringBuilder();
+
+        stringBuilder.append("Lịch sử giao dịch của tài khoản " + accountNumber + ":").append('\n');
+
+        for (Transaction transaction : transactionList) {
+            stringBuilder.append(transaction.getTransactionSummary()).append('\n');
+        }
+
+        return stringBuilder.toString();
+    }
+
+    public void addTransaction(Transaction transaction) {
+        transactionList.add(transaction);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return accountNumber == ((Account) obj).accountNumber;
+    }
+}

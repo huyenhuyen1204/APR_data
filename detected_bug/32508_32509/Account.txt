@@ -1,0 +1,9 @@
+@@ -42,7 +42,7 @@
+             double tempAmount = (double) Math.round(transitionList.get(i).getAmount() * 100) / 100;
+             double tempBalance = (double) Math.round(transitionList.get(i).getBalance() * 100) / 100;
+             System.out.println("Giao dich " + (i + 1) + ": " + transitionList.get(i).getOperation()
+-            + " $" + df.format(tempAmount) + ". " + "So du luc nay: $" + df.format(tempAmount) + ".");
++            + " $" + df.format(tempAmount) + ". " + "So du luc nay: $" + df.format(tempBalance) + ".");
+         }
+     }
+ }

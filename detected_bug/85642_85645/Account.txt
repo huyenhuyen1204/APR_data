@@ -1,0 +1,50 @@
+@@ -1,9 +1,9 @@
+ 
+-
++import java.text.DecimalFormat;
+ import java.util.ArrayList;
+ 
+ public class Account {
+-    private double balance;
++    private double balance = 0;
+     private ArrayList<Transaction> transitionList = new ArrayList<>();
+ 
+     public Account() {
+@@ -14,7 +14,7 @@
+         if (amount <= 0) {
+             System.out.println("So tien ban nap vao khong hop le!");
+         } else {
+-            this.balance = balance + amount;
++            balance = balance + amount;
+         }
+     }
+ 
+@@ -24,7 +24,7 @@
+         } else if (amount > this.balance) {
+             System.out.println("So tien ban rut vuot qua so du!");
+         } else {
+-            this.balance = this.balance - amount;
++            balance = balance - amount;
+         }
+     }
+ 
+@@ -48,6 +48,7 @@
+      */
+     public void printTransaction() {
+         for (int i = 0; i < transitionList.size(); i++) {
++            DecimalFormat decimalFormat = new DecimalFormat("#.00");
+             String s = null;
+             if (transitionList.get(i).getOperation().equals("deposit")) {
+                 s = "Nap tien";
+@@ -56,9 +57,9 @@
+                 s = "Rut tien";
+             }
+             System.out.println("Giao dich " + (i + 1) + ": " + s + " $"
+-                    + (double)Math.round(transitionList.get(i).getAmount() * 100) / 100
++                    + decimalFormat.format(transitionList.get(i).getAmount())
+                     + ". So du luc nay: $"
+-                    + (double)Math.round(this.balance * 100) / 100
++                    + decimalFormat.format(transitionList.get(i).getBalance())
+                     + ".");
+         }
+     }

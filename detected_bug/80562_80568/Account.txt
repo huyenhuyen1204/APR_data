@@ -1,0 +1,39 @@
+@@ -2,7 +2,8 @@
+ 
+ public class Account {
+     private double balance;
+-    private ArrayList<String> transitionList = new ArrayList<String>();
++    private ArrayList<Transaction> transitionList = new ArrayList<Transaction>();
++    private ArrayList<String> list = new ArrayList<String>();
+ 
+     public Account() {
+ 
+@@ -15,7 +16,7 @@
+             balance += amount;
+             String newBalance = round(balance);
+             String newAmount = round(amount);
+-            transitionList.add("Nap tien $" + newAmount + ". So du luc nay: $" + newBalance + ".");
++            list.add("Nap tien $" + newAmount + ". So du luc nay: $" + newBalance + ".");
+         }
+     }
+ 
+@@ -28,7 +29,7 @@
+             balance -= amount;
+             String newBalance = round(balance);
+             String newAmount = round(amount);
+-            transitionList.add("Rut tien $" + newAmount + ". So du luc nay: $" + newBalance + ".");
++            list.add("Rut tien $" + newAmount + ". So du luc nay: $" + newBalance + ".");
+         }
+     }
+ 
+@@ -51,8 +52,8 @@
+      * sasukeeeeee.
+      */
+     public void printTransaction() {
+-        for (int i = 0; i < transitionList.size(); i++) {
+-            System.out.println("Giao dich " + (i + 1) + ": " + transitionList.get(i));
++        for (int i = 0; i < list.size(); i++) {
++            System.out.println("Giao dich " + (i + 1) + ": " + list.get(i));
+         }
+     }
+ 

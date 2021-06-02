@@ -1,0 +1,16 @@
+@@ -20,6 +20,7 @@
+         } else {
+             amount = Double.valueOf(String.format("%.2f", amount));
+             balance += amount;
++            balance = Double.valueOf(String.format("%.2f", balance));
+             Transaction newTransaction =
+                     new Transaction(Transaction.DEPOSIT, amount, balance);
+             transitionList.add(newTransaction);
+@@ -37,6 +38,7 @@
+         } else {
+             amount = Double.valueOf(String.format("%.2f", amount));
+             balance -= amount;
++            balance = Double.valueOf(String.format("%.2f", balance));
+             Transaction newTransaction =
+                     new Transaction(Transaction.WITHDRAW, amount, balance);
+             transitionList.add(newTransaction);

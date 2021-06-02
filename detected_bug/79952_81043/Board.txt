@@ -1,0 +1,54 @@
+@@ -17,7 +17,7 @@
+     public void setPieces(ArrayList<Piece> pieces) {
+         this.pieces = pieces;
+     }
+-    
++
+     /**
+      * cmt.
+      */
+@@ -28,6 +28,9 @@
+         return false;
+     }
+ 
++    /**
++     * cmt.
++     */
+     public void addPiece(Piece p) {
+         boolean check = true;
+ 
+@@ -39,29 +42,29 @@
+                 }
+             }
+         }
+-        if (validate(p.getX(), p.getY()) && check) {
++        if (validate(p.getCoordinatesX(), p.getCoordinatesY()) && check) {
+             pieces.add(p);
+         }
+     }
+-    
++
+     /**
+      * cmt.
+      */
+     public Piece getAt(int x, int y) {
+         for (Piece p : pieces) {
+-            if (p.getX() == x && p.getY() == y) {
++            if (p.getCoordinatesX() == x && p.getCoordinatesY() == y) {
+                 return p;
+             }
+         }
+         return null;
+     }
+-    
++
+     /**
+      * cmt.
+      */
+     public void removeAt(int x, int y) {
+         for (int i = 0; i < pieces.size(); i++) {
+-            if (pieces.get(i).getX() == x && pieces.get(i).getY() == y) {
++            if (pieces.get(i).getCoordinatesX() == x && pieces.get(i).getCoordinatesY() == y) {
+                 pieces.remove(i);
+             }
+         }

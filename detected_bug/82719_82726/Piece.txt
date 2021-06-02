@@ -1,0 +1,24 @@
+@@ -5,8 +5,8 @@
+ 
+     /**
+      * ham khoi tao co tham so.
+-     * @param coordinatesX
+-     * @param coordinatesY
++     * @param coordinatesX .
++     * @param coordinatesY .
+      */
+     public Piece(int coordinatesX, int coordinatesY) {
+         if (coordinatesX >= 1 && coordinatesX <= 8) {
+@@ -20,9 +20,9 @@
+ 
+     /**
+      * ham khoi tao co tham so.
+-     * @param coordinatesX
+-     * @param coordinatesY
+-     * @param color
++     * @param coordinatesX .
++     * @param coordinatesY .
++     * @param color .
+      */
+     public Piece(int coordinatesX, int coordinatesY, String color) {
+         this.coordinatesX = coordinatesX;

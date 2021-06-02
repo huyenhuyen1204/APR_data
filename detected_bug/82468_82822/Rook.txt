@@ -1,0 +1,61 @@
+@@ -1,7 +1,5 @@
+ public class Rook extends Piece {
+ 
+-    public static boolean kill = false;
+-
+     /**
+      * ...
+      */
+@@ -23,25 +21,35 @@
+ 
+     @Override
+     public boolean canMove(Board board, int x, int y) {
+-        if ((this.getCoordinatesX() == x
+-                || this.getCoordinatesY() == y)
+-                && board.validate(x, y)) {
+-            for (Piece piece : board.getPieces()) {
+-                if (piece.getCoordinatesX() == x &&
+-                        piece.getCoordinatesY() == y &&
+-                        !piece.getColor().equals(this.getColor())) {
+-                    kill = true;
+-                    return true;
+ 
+-                } else if (piece.getCoordinatesX() == x &&
+-                        piece.getCoordinatesY() == y) {
+-                    return false;
+-
+-                }
+-            }
+-            return true;
++        if (this.getCoordinatesX() != x
++                && this.getCoordinatesY() != y) {
++            return false;
+         }
+ 
+-        return false;
++        if (this.getCoordinatesX() == x) {
++            for (int i = Math.min(y, this.getCoordinatesY()) + 1;
++                 i <= Math.max(y, this.getCoordinatesY()) - 1; i++) {
++                if (board.getAt(x, i) != null) {
++                    return false;
++                }
++            }
++        }
++        if (this.getCoordinatesY() == y) {
++            for (int i = Math.min(x, this.getCoordinatesX()) + 1;
++                 i <= Math.max(x, this.getCoordinatesX()) - 1; i++) {
++                if (board.getAt(i, y) != null) {
++                    return false;
++                }
++            }
++        }
++
++        if (board.getAt(x, y) != null) {
++            if (board.getAt(x, y).getColor().equalsIgnoreCase(this.getColor())) {
++                return false;
++            }
++            kill = true;
++        }
++        return true;
+     }
+ }

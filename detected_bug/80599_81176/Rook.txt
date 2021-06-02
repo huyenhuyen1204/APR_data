@@ -1,0 +1,53 @@
+@@ -27,11 +27,7 @@
+         int thisX = this.getCoordinatesX();
+         int thisY = this.getCoordinatesY();
+ 
+-        if (board == null) {
+-            return true;
+-        }
+-
+-        if (1 >= destX || 8 <= destX || 1 >= destY || 8 <= destY
++        if (1 > destX || 8 < destX || 1 > destY || 8 < destY
+                 || (thisX != destX && thisY != destY)) {
+             return false;
+         }
+@@ -43,14 +39,16 @@
+ 
+         if (thisX == destX) {
+             if (destY < thisY) {
+-                while (thisY != destY){
++                thisY--;
++                while (thisY != destY) {
+                     if (board.getAt(thisX, thisY) != null) {
+                         return false;
+                     }
+                     thisY--;
+                 }
+-            } else {
+-                while (thisY != destY){
++            } else if (destY > thisY) {
++                thisY++;
++                while (thisY != destY) {
+                     if (board.getAt(thisX, thisY) != null) {
+                         return false;
+                     }
+@@ -59,14 +57,16 @@
+             }
+         } else {
+             if (destX < thisX) {
+-                while (thisX != destX){
++                thisX--;
++                while (thisX != destX) {
+                     if (board.getAt(thisX, thisY) != null) {
+                         return false;
+                     }
+                     thisX--;
+                 }
+-            } else {
+-                while (thisX != destX){
++            } else if (destX > thisX) {
++                thisX++;
++                while (thisX != destX) {
+                     if (board.getAt(thisX, thisY) != null) {
+                         return false;
+                     }

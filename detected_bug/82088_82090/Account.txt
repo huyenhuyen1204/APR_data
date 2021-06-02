@@ -1,0 +1,27 @@
+@@ -3,7 +3,7 @@
+ public class Account {
+    
+    private double balance;
+-   ArrayList<Transaction> transitionList;
++   private ArrayList<Transaction> transitionList;
+ 
+    public Account() {
+       transitionList = new ArrayList<>();
+@@ -56,7 +56,7 @@
+     * c.
+     */
+    public void printTransaction() {
+-      String format = "Giao dich %d: %s $%.2f. So du luc nay: $%.2f";
++      String format = "Giao dich %d: %s $%.2f. So du luc nay: $%.2f.";
+       String operator;
+       for (int i = 0; i < transitionList.size(); i++) {
+          Transaction t = transitionList.get(i);
+@@ -65,7 +65,7 @@
+          } else {
+             operator = "Rut tien";
+          }
+-         System.out.println(String.format(format,i + 1, operator, t.getAmount(), t.getBalance()));
++         System.out.println(String.format(format, i + 1, operator, t.getAmount(), t.getBalance()));
+       }
+    }
+ }

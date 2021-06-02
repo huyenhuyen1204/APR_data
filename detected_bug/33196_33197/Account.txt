@@ -1,0 +1,9 @@
+@@ -34,7 +34,7 @@
+         String t ="";
+         if (transaction.getOperation() == "withdraw") t = "Rut tien";
+         else t = "Nap tien";
+-        System.out.printf("Giao dich %d : %s $%.2f. So du luc nay: $%.2f.\n",transitionList.indexOf(transaction)+1,t,transaction.getAmount(),transaction.getBalance());
++        System.out.printf("Giao dich %d: %s $%.2f. So du luc nay: $%.2f.\n",transitionList.indexOf(transaction)+1,t,transaction.getAmount(),transaction.getBalance());
+        }
+    }
+    Account(double balance){

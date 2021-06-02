@@ -1,0 +1,49 @@
+@@ -2,7 +2,7 @@
+ import java.util.ArrayList;
+ 
+ public class Account {
+-    private final ArrayList<Transaction> transactionList;
++    private final ArrayList<Transaction> transitionList;
+     private double balance;
+ 
+     /**
+@@ -10,7 +10,7 @@
+      */
+     public Account() {
+         this.balance = 0;
+-        this.transactionList = new ArrayList<Transaction>();
++        this.transitionList = new ArrayList<Transaction>();
+     }
+ 
+     /**
+@@ -38,8 +38,8 @@
+      * @param operation .
+      */
+     public void addTransaction(double amount, String operation) {
+-        if (!operation.equals(Transaction.DEPOSIT) &&
+-                !operation.equals(Transaction.WITHDRAW)) {
++        if (!operation.equals(Transaction.DEPOSIT)
++                && !operation.equals(Transaction.WITHDRAW)) {
+             System.out.println("Yeu cau khong hop le!");
+             return;
+         }
+@@ -61,16 +61,16 @@
+             withdraw(amount);
+         }
+         Transaction transaction = new Transaction(operation, amount, this.balance);
+-        transactionList.add(transaction);
++        transitionList.add(transaction);
+     }
+ 
+     /**
+      * .
+      */
+     public void printTransaction() {
+-        int length = this.transactionList.size();
++        int length = this.transitionList.size();
+         for (int i = 1; i <= length; i++) {
+-            Transaction trans = transactionList.get(i - 1);
++            Transaction trans = transitionList.get(i - 1);
+             StringBuffer s = new StringBuffer("Giao dich ");
+             s.append(i);
+             if (trans.getOperation().equals("deposit")) {

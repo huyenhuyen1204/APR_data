@@ -1,0 +1,91 @@
+@@ -1,9 +1,8 @@
+ import java.util.ArrayList;
+-import java.util.List;
+ 
+ public class Account {
+     private double balance;
+-    private List<Transaction> transactions = new ArrayList<>();
++    private ArrayList<Transaction> transitionList = new ArrayList<>();
+ 
+     public double getBalance() {
+         return balance;
+@@ -13,14 +12,6 @@
+         this.balance = balance;
+     }
+ 
+-    public List<Transaction> getTransactions() {
+-        return transactions;
+-    }
+-
+-    public void setTransactions(List<Transaction> transactions) {
+-        this.transactions = transactions;
+-    }
+-
+     /**
+      * Nap tien.
+      * param amount
+@@ -53,22 +44,31 @@
+      * param operation
+      */
+     public void addTransaction(double amount, String operation) {
+-        if (operation.equals(Transaction.DEPOSIT) && amount > 0) {
+-            deposit(amount);
+-            Transaction tran = new Transaction("Nap tien",
+-                    (double) Math.round(amount * 100) / 100,
+-                    (double) Math.round(getBalance() * 100) / 100);
+-            transactions.add(tran);
+-        } else if (operation.equals(Transaction.WITHDRAW)
+-                && amount > 0 && amount < getBalance()) {
+-            withdraw(amount);
+-            Transaction tran1 = new Transaction("Rut tien",
+-                    (double) Math.round(amount * 100) / 100,
+-                    (double) Math.round(getBalance() * 100) / 100);
+-            transactions.add(tran1);
++        if (operation.equals(Transaction.DEPOSIT)) {
++            if (amount > 0) {
++                deposit(amount);
++                Transaction tran = new Transaction("Nap tien",
++                        (double) Math.round(amount * 100) / 100,
++                        (double) Math.round(getBalance() * 100) / 100);
++                transitionList.add(tran);
++            } else {
++                deposit(amount);
++            }
++        } else if (operation.equals(Transaction.WITHDRAW)) {
++            if (amount > 0 && amount < getBalance()) {
++                withdraw(amount);
++                Transaction tran1 = new Transaction("Rut tien",
++                        (double) Math.round(amount * 100) / 100,
++                        (double) Math.round(getBalance() * 100) / 100);
++                transitionList.add(tran1);
++            } else if (amount < 0) {
++                withdraw(amount);
++            } else if (amount > getBalance()) {
++                withdraw(amount);
++            }
+         } else if (operation.equals(Transaction.DEPOSIT) == false
+-                || operation.equals(Transaction.WITHDRAW) == false) {
+-            System.out.println("Yeu cau khong hop le!");
++                    || operation.equals(Transaction.WITHDRAW) == false) {
++                System.out.println("Yeu cau khong hop le!");
+         }
+     }
+ 
+@@ -76,11 +76,12 @@
+      * In ra cac giao dich.
+      */
+     public void printTransaction() {
+-        for (int i = 0; i < transactions.size(); i++) {
+-            System.out.println("Giao dich " + (i+1) + ": "
+-                    + transactions.get(i).getOperation()
+-                    + " $" + transactions.get(i).getAmount() + ". " + "So du luc nay: "
+-                    + transactions.get(i).getBalance() + ".");
++        for (int i = 0; i < transitionList.size(); i++) {
++            System.out.println("Giao dich " + (i + 1) + ": "
++                    + transitionList.get(i).getOperation()
++                    + " $" + String.format("%.2f", transitionList.get(i).getAmount())
++                    + ". " + "So du luc nay: "
++                    + "$" + String.format("%.2f", transitionList.get(i).getBalance()) + ".");
+         }
+     }
+ }

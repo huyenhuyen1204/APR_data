@@ -1,0 +1,37 @@
+@@ -9,7 +9,7 @@
+  */
+ public class Account {
+     private double balance = 0;
+-    ArrayList<Transaction> transactions = new ArrayList<Transaction>();
++    private ArrayList<Transaction> transitionList = new ArrayList<Transaction>();
+ 
+     private void deposit(double amount) {
+         if(amount <= 0) System.out.println("So tien ban nap vao khong hop le!");
+@@ -26,11 +26,11 @@
+ 
+         if(operation.equals(Transaction.DEPOSIT)) {
+             deposit(amount);
+-            transactions.add(new Transaction(operation,amount,balance));
++            transitionList.add(new Transaction(operation,amount,balance));
+         }
+         if(operation.equals(Transaction.WITHDRAW)) {
+             withdraw(amount);
+-            transactions.add(new Transaction(operation,amount,balance));
++            transitionList.add(new Transaction(operation,amount,balance));
+         }
+         if(!operation.equals(Transaction.DEPOSIT) && !operation.equals(Transaction.WITHDRAW))  System.out.println("Yeu cau khong hop le!");
+     }
+@@ -38,10 +38,10 @@
+     public void printTransaction() {
+         // %.2f
+         int i = 1;
+-        for(Transaction t : transactions)  {
++        for(Transaction t : transitionList)  {
+             String o = "";
+-            if(t.getOperation().equals(Transaction.DEPOSIT)) o = "nap";
+-            if(t.getOperation().equals(Transaction.WITHDRAW)) o = "rut";
++            if(t.getOperation().equals(Transaction.DEPOSIT)) o = "Nap";
++            if(t.getOperation().equals(Transaction.WITHDRAW)) o = "Rut";
+             System.out.printf("Giao dich %d: %s tien $%.2f. So du luc nay: $%.2f.\n",i++ , o, t.getAmount(), t.getBalance());
+ 
+         }

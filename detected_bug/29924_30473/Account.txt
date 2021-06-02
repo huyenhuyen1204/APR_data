@@ -1,0 +1,47 @@
+@@ -16,7 +16,7 @@
+     }
+     private void withdraw(double amount)
+     {
+-        if(amount<=0) System.out.println("So tien ban nap vao khong hop le!");
++        if(amount<=0) System.out.println("So tien ban rut ra khong hop le!");
+         else {
+             if(amount>this.balance) System.out.println("So tien ban rut vuot qua so du!");
+             else this.balance = this.balance - amount ;
+@@ -28,7 +28,20 @@
+         else
+         {
+             Transaction t1 = new Transaction(operation,amount,this.balance);
+-            transitionList.add(t1);
++            if(operation == "deposit"){
++                deposit(amount);
++                Transaction t2 = new Transaction(operation,amount,this.balance);
++                if(amount > 0) transitionList.add(t2);
++            }
++            if(operation == "withdraw"){
++                if(amount > this.balance) {System.out.println("So tien ban rut vuot qua so du!");}
++                else {
++                    withdraw(amount);
++                    Transaction t2 = new Transaction(operation, amount, this.balance);
++                    if (amount > 0) transitionList.add(t2);
++                }
++            }
++
+         }
+     }
+     public void printTransaction()
+@@ -37,14 +50,12 @@
+         {
+             System.out.print("Giao dich "+(i+1)+": ");
+             if(transitionList.get(i).getOperation() == "deposit"){
+-                deposit(transitionList.get(i).getAmount());
+                 System.out.print("Nap tien");
+             }
+             if(transitionList.get(i).getOperation() == "withdraw"){
+-                withdraw(transitionList.get(i).getAmount());
+                 System.out.print("Rut tien");
+             }
+-            System.out.println(" $"+(df.format(transitionList.get(i).getAmount())+". So du luc nay: "+(df.format(this.balance))+"."));
++            System.out.println(" $"+(df.format(transitionList.get(i).getAmount())+". So du luc nay: $"+(df.format(transitionList.get(i).getBalance()))+"."));
+         }
+     }
+ 

@@ -1,0 +1,14 @@
+@@ -44,11 +44,11 @@
+             System.out.print("Giao dich " + (i+1) + ":");
+             if (transitionList.get(i).getOperation() == "deposit"){
+             System.out.print(" Nap tien $" + df.format((double) Math.round(transitionList.get(i).getAmount() * 100.0) / 100.0) + ". So du luc nay: $"
+-                    + df.format((double) Math.round(transitionList.get(i).getBalance() * 100) / 100) + "\n");
++                    + df.format((double) Math.round(transitionList.get(i).getBalance() * 100) / 100) + "." +"\n");
+             }
+             if (transitionList.get(i).getOperation() == "withdraw"){
+                 System.out.print(" Rut tien $" + df.format((double) Math.round(transitionList.get(i).getAmount() * 100.0) / 100.0) + ". So du luc nay: $"
+-                        + df.format((double) Math.round(transitionList.get(i).getBalance() * 100) / 100 )+ "\n");
++                        + df.format((double) Math.round(transitionList.get(i).getBalance() * 100) / 100 )+ "." + "\n");
+             }
+         }
+     }

@@ -1,0 +1,49 @@
+@@ -39,34 +39,38 @@
+ 
+         if (thisX == destX) {
+             if (destY < thisY) {
++                thisY--;
+                 while (thisY != destY) {
++                    if (board.getAt(thisX, thisY) != null) {
++                        return false;
++                    }
+                     thisY--;
+-                    if (board.getAt(thisX, thisY) != null) {
+-                        return false;
+-                    }
+                 }
+-            } else {
++            } else if (destY > thisY) {
++                thisY++;
+                 while (thisY != destY) {
+-                    thisY++;
+                     if (board.getAt(thisX, thisY) != null) {
+                         return false;
+                     }
++                    thisY++;
+                 }
+             }
+         } else {
+             if (destX < thisX) {
++                thisX--;
+                 while (thisX != destX) {
++                    if (board.getAt(thisX, thisY) != null) {
++                        return false;
++                    }
+                     thisX--;
+-                    if (board.getAt(thisX, thisY) != null) {
+-                        return false;
+-                    }
+                 }
+-            } else {
++            } else if (destX > thisX) {
++                thisX++;
+                 while (thisX != destX) {
+-                    thisX++;
+                     if (board.getAt(thisX, thisY) != null) {
+                         return false;
+                     }
++                    thisX++;
+                 }
+             }
+         }

@@ -1,0 +1,22 @@
+@@ -1,3 +1,4 @@
++
+ public class Transaction {
+     private String operation;
+     private double amount;
+@@ -5,6 +6,9 @@
+     public static final String WITHDRAW = "withdraw";
+     public static final String DEPOSIT = "deposit";
+ 
++    /**
++     * Transaction.
++     */
+     public Transaction(String operation, double amount, double balance) {
+         this.operation = operation;
+         this.amount = amount;
+@@ -35,4 +39,4 @@
+         this.balance = balance;
+     }
+ 
+-}
+\ No newline at end of file
++}

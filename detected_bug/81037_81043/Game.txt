@@ -1,0 +1,11 @@
+@@ -31,7 +31,9 @@
+      */
+     public void movePiece(Piece piece, int x, int y) {
+         if (piece.canMove(board, x, y)) {
+-            Move move = new Move(piece.getCoordinatesX(), x, piece.getCoordinatesY(), y, piece, board.getAt(x, y));
++            Move move = new Move(piece.getCoordinatesX(), x,
++                    piece.getCoordinatesY(), y,
++                    piece, board.getAt(x, y));
+             moveHistory.add(move);
+             Piece p = board.getAt(x, y);
+             if (p != null) {

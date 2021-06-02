@@ -1,0 +1,10 @@
+@@ -38,9 +38,6 @@
+             deposit(amount);
+             transitionList.add(new Transaction("deposit", amount, this.balance));
+         } else if (operation.equals("withdraw")) {
+-            if (amount < 0 || amount > this.balance) {
+-                return;
+-            }
+             withdraw(amount);
+             transitionList.add(new Transaction("withdraw", amount, this.balance));
+         } else {

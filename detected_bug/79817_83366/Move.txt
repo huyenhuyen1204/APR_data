@@ -1,0 +1,50 @@
+@@ -1,6 +1,3 @@
+-/**
+- * Created by CCNE on 19/11/2020.
+- */
+ public class Move {
+     private int startX;
+     private int endX;
+@@ -9,6 +6,7 @@
+     private Piece movedPiece;
+     private Piece killedPiece;
+ 
++    /**Move.*/
+     public Move(int startX, int endX, int startY, int endY, Piece movedPiece) {
+         this.startX = startX;
+         this.endX = endX;
+@@ -17,6 +15,7 @@
+         this.movedPiece = movedPiece;
+     }
+ 
++    /**Move.*/
+     public Move(int startX, int endX, int startY, int endY, Piece movedPiece, Piece killedPiece) {
+         this.startX = startX;
+         this.endX = endX;
+@@ -26,8 +25,25 @@
+         this.killedPiece = killedPiece;
+     }
+ 
++    /**String.*/
+     public String toString() {
+-        return "`white-Ra7` : Quân cờ **Xe** trắng di chuyển tới vị trí cột a hàng 7 tương ứng với `(x=1, y=7)`";
++        if (endX == 1) {
++            return movedPiece.getColor() + "-" + movedPiece.getSymbol() + "a" + endY;
++        } else if (endX == 2) {
++            return movedPiece.getColor() + "-" + movedPiece.getSymbol() + "b" + endY;
++        } else if (endX == 3) {
++            return movedPiece.getColor() + "-" + movedPiece.getSymbol() + "c" + endY;
++        } else if (endX == 4) {
++            return movedPiece.getColor() + "-" + movedPiece.getSymbol() + "d" + endY;
++        } else if (endX == 5) {
++            return movedPiece.getColor() + "-" + movedPiece.getSymbol() + "e" + endY;
++        } else if (endX == 6) {
++            return movedPiece.getColor() + "-" + movedPiece.getSymbol() + "f" + endY;
++        } else if (endX == 7) {
++            return movedPiece.getColor() + "-" + movedPiece.getSymbol() + "g" + endY;
++        } else {
++            return movedPiece.getColor() + "-" + movedPiece.getSymbol() + "h" + endY;
++        }
+     }
+ 
+     public int getStartX() {

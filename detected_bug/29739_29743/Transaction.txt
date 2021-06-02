@@ -1,0 +1,11 @@
+@@ -2,8 +2,8 @@
+  * Created by CCNE on 29/10/2019.
+  */
+ public class Transaction {
+-    static final String DEPOSIT = "deposit";
+-    static final String WITHDRAW = "withdraw";
++    public static final String DEPOSIT = "deposit";
++    public static final String WITHDRAW = "withdraw";
+ 
+     private String operation;
+     private double amount;

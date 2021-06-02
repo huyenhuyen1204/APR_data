@@ -1,0 +1,70 @@
+@@ -17,6 +17,10 @@
+         this.pieces = pieces;
+     }
+ 
++    /**
++     * cmt.
++     *
++     */
+     public boolean validate(int x, int y) {
+         if (x >= 1 && x <= 8 && y >= 1 && y <= 8) {
+             return true;
+@@ -24,31 +28,49 @@
+         return false;
+     }
+ 
++    /**
++     * cmt.
++     *
++     */
+     public void addPiece(Piece piece) {
+         for (Piece check : this.pieces) {
+-            if (check.getX() == piece.getX() && check.getY() == piece.getY()) {
++            if (check.getCoordinatesX() == piece.getCoordinatesX()
++                    && check.getCoordinatesY() == piece.getCoordinatesY()) {
+                 return;
+             }
+         }
+-        if (validate(piece.getX(), piece.getY())) {
++        if (validate(piece.getCoordinatesX(), piece.getCoordinatesY())) {
+             this.pieces.add(piece);
+         }
+     }
+ 
++    /**
++     * cmt.
++     *
++     */
+     public void removeAt(int x, int y) {
+-        for (Piece check : this.pieces) {
+-            if (check.getX() == x && check.getY() == y) {
+-                this.getPieces().remove(check);
++        for (int i = 0; i < this.pieces.size(); i++) {
++            if (this.pieces.get(i).getCoordinatesX() == x
++                    && this.pieces.get(i).getCoordinatesY() == y) {
++                this.pieces.remove(i);
++                break;
+             }
+         }
+     }
+ 
++    /**
++     * cmt.
++     *
++     */
+     public Piece getAt(int x, int y) {
+-        for (Piece check : this.pieces) {
+-            if (check.getX() == x && check.getY() == y) {
+-                return check;
++        Piece res = null;
++        for (int i = 0; i < this.pieces.size(); i++) {
++            if (this.pieces.get(i).getCoordinatesX() == x
++                    && this.pieces.get(i).getCoordinatesY() == y) {
++                res = this.pieces.get(i);
++                break;
+             }
+         }
+-        return null;
++        return res;
+     }
+ }

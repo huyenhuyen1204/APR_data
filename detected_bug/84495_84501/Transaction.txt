@@ -1,0 +1,22 @@
+@@ -6,6 +6,9 @@
+     public static final String DEPOSIT = "deposit";
+     public static final String WITHDRAW = "withdram";
+ 
++    /**
++     * Luc Thi Hue.
++     */
+     public Transaction(String operation, double amount, double balance) {
+         this.operation = operation;
+         this.amount = amount;
+@@ -36,11 +39,4 @@
+         this.balance = balance;
+     }
+ 
+-    public static String getDEPOSIT() {
+-        return DEPOSIT;
+-    }
+-
+-    public static String getWITHDRAW() {
+-        return WITHDRAW;
+-    }
+ }

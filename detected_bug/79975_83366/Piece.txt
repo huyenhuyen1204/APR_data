@@ -1,0 +1,54 @@
+@@ -1,18 +1,19 @@
+ public abstract class Piece {
+-    private int x, y;
++    private int coordinatesX;
++    private int coordinatesY;
+     private String color;
+ 
+     /**Piece.*/
+     public Piece(int x, int y) {
+-        this.x = x;
+-        this.y = y;
++        this.coordinatesX = x;
++        this.coordinatesY = y;
+         color = "white";
+     }
+ 
+     /**Piece.*/
+     public Piece(int x, int y, String color) {
+-        this.x = x;
+-        this.y = y;
++        this.coordinatesX = x;
++        this.coordinatesY = y;
+         this.color = color;
+     }
+ 
+@@ -20,20 +21,20 @@
+ 
+     public abstract boolean canMove(Board board, int x, int y);
+ 
+-    public int getX() {
+-        return x;
++    public int getCoordinatesX() {
++        return coordinatesX;
+     }
+ 
+-    public void setX(int x) {
+-        this.x = x;
++    public void setCoordinatesX(int x) {
++        this.coordinatesX = x;
+     }
+ 
+-    public int getY() {
+-        return y;
++    public int getCoordinatesY() {
++        return coordinatesY;
+     }
+ 
+-    public void setY(int y) {
+-        this.y = y;
++    public void setCoordinatesY(int y) {
++        this.coordinatesY = y;
+     }
+ 
+     public String getColor() {

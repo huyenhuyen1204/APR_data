@@ -1,0 +1,36 @@
+@@ -4,7 +4,7 @@
+ 
+ public class Account {
+     private double balance = 0;
+-    private ArrayList<Transaction> transaction = new ArrayList();
++    private ArrayList<Transaction> transitionList = new ArrayList();
+ 
+     private void deposit(double amount)
+     {
+@@ -28,12 +28,12 @@
+         if (operation.equals(Transaction.DEPOSIT))
+         {
+             deposit(amount);
+-            transaction.add(new Transaction(operation, amount, balance));
++            transitionList.add(new Transaction(operation, amount, balance));
+         }
+         else if (operation.equals(Transaction.WITHDRAW))
+         {
+             withdraw(amount);
+-            transaction.add(new Transaction(operation, amount, balance));
++            transitionList.add(new Transaction(operation, amount, balance));
+         }
+         else
+         {
+@@ -45,9 +45,9 @@
+     {
+         DecimalFormat format = new DecimalFormat("0.00");
+         int dem =1;
+-        for (Transaction val: transaction)
++        for (Transaction val:  transitionList)
+         {
+-            if (val.getOpration().equals(Transaction.DEPOSIT)) {
++            if (val.getOperation().equals(Transaction.DEPOSIT)) {
+                 System.out.println("Giao dich " + dem + ": Nap tien $" + format.format(val.getAmount()) + ". So du luc nay: $" + format.format(val.getBalance()) +".");
+             }
+             else

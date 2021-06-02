@@ -1,0 +1,68 @@
+@@ -1,9 +1,9 @@
+ 
+-
++import java.text.DecimalFormat;
+ import java.util.ArrayList;
+ 
+ public class Account {
+-    private double balance;
++    private double balance = 0;
+     private ArrayList<Transaction> transitionList = new ArrayList<>();
+ 
+     public Account() {
+@@ -14,7 +14,7 @@
+         if (amount <= 0) {
+             System.out.println("So tien ban nap vao khong hop le!");
+         } else {
+-            this.balance = balance + amount;
++            balance = balance + amount;
+         }
+     }
+ 
+@@ -24,7 +24,7 @@
+         } else if (amount > this.balance) {
+             System.out.println("So tien ban rut vuot qua so du!");
+         } else {
+-            this.balance = this.balance - amount;
++            balance = balance - amount;
+         }
+     }
+ 
+@@ -32,10 +32,10 @@
+      * comment.
+      */
+     public void addTransaction(double amount, String operation) {
+-        if (operation.equalsIgnoreCase(Transaction.DEPOSIT)) {
++        if (operation.equals(Transaction.DEPOSIT)) {
+             deposit(amount);
+             transitionList.add(new Transaction(operation, amount, balance));
+-        } else if (operation.equalsIgnoreCase(Transaction.WITHDRAW)) {
++        } else if (operation.equals(Transaction.WITHDRAW)) {
+             withdraw(amount);
+             transitionList.add(new Transaction(operation, amount, balance));
+         } else {
+@@ -47,18 +47,19 @@
+      * comment.
+      */
+     public void printTransaction() {
+-        for (int i = 1; i <= transitionList.size(); i++) {
++        for (int i = 0; i < transitionList.size(); i++) {
++            DecimalFormat decimalFormat = new DecimalFormat("#.00");
+             String s = null;
+-            if (transitionList.get(i).getOperation().equals("withdraw")) {
++            if (transitionList.get(i).getOperation().equals("deposit")) {
+                 s = "Nap tien";
+             }
+             if (transitionList.get(i).getOperation().equals("withdraw")) {
+                 s = "Rut tien";
+             }
+-            System.out.println("Giao dich" + i + ": " + s + "$"
+-                    + Math.round(transitionList.get(i).getAmount() * 10) / 10
++            System.out.println("Giao dich " + (i + 1) + ": " + s + " $"
++                    + decimalFormat.format(transitionList.get(i).getAmount())
+                     + ". So du luc nay: $"
+-                    + Math.round(transitionList.get(i).getAmount() * 10) / 10
++                    + decimalFormat.format(transitionList.get(i).getBalance())
+                     + ".");
+         }
+     }

@@ -1,0 +1,37 @@
+@@ -22,6 +22,9 @@
+         }
+     }
+ 
++    /**
++     * Luc Thi Hue.
++     */
+     public void addTransaction(double amount, String operation) {
+         if (operation != "deposit" && operation != "withdraw") {
+             System.out.println("Yeu cau khong hop le!");
+@@ -36,15 +39,21 @@
+         }
+     }
+ 
++    /**
++     * Luc Thi Hue.
++     */
+     public void printTransaction() {
+         String s = "";
+         for (int i = 0; i < transitionList.size(); i++) {
+             s += "Giao dich " + (i + 1) + ": ";
+-            if (transitionList.get(i).getOperation() == "deposit")
+-                s += "Nap tien ";
+-            else s += "Rut tien ";
+-            s += "$" + String.format("%.2f", transitionList.get(i).getAmount()) + ". ";
+-            s += "So du luc nay: $" + String.format("%.2f", transitionList.get(i).getBalance()) + ". "+"\n";
++            if (transitionList.get(i).getOperation() == "deposit") {
++                s += "Nap tien $";
++            } else {
++                s += "Rut tien $";
++            }
++            s += String.format("%.2f", transitionList.get(i).getAmount()) + ". ";
++            s += "So du luc nay: $"
++                    + String.format("%.2f", transitionList.get(i).getBalance()) + "." + "\n";
+         }
+         System.out.println(s);
+     }

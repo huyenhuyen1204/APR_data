@@ -1,0 +1,17 @@
+@@ -1,5 +1,6 @@
+-import java.util.ArrayList;
+ import java.text.DecimalFormat;
++import java.util.ArrayList;
++
+ 
+ public class Account {
+     private double balance = 0;
+@@ -63,7 +64,7 @@
+             DecimalFormat dcf = new DecimalFormat("########.00");
+             System.out.println("Giao dich " + x + p
+                     + dcf.format(transitionList.get(i).getAmount())
+-                    + ". So du luc nay: $" + dcf.format(transitionList.get(i).getBalance()));
++                    + ". So du luc nay: $" + dcf.format(transitionList.get(i).getBalance()) + ".");
+         }
+     }
+ 

@@ -1,0 +1,19 @@
+@@ -21,7 +21,8 @@
+     public void movePiece(Piece piece, int x, int y) {
+         if (piece.canMove(board, x, y)) {
+             Move newMove;
+-            if (board.getAt(x, y) != null && board.getAt(x, y).getColor().equals(piece.getColor()) == false) {
++            if (board.getAt(x, y) != null
++                    && board.getAt(x, y).getColor().equals(piece.getColor()) == false) {
+                 newMove = new Move(piece.getCoordinatesX(), piece.getCoordinatesY(),
+                         x, y, piece, board.getAt(x, y));
+                 board.removeAt(x, y);
+@@ -30,6 +31,8 @@
+             }
+             moveHistory.add(newMove);
+             board.addPiece(piece);
++            piece.setCoordinatesX(x);
++            piece.setCoordinatesY(y);
+         }
+     }
+ 

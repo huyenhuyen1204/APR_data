@@ -1,0 +1,34 @@
+@@ -9,6 +9,9 @@
+     private double initialBalance;
+     private double finalBalance;
+ 
++    /**
++     * Constructor.
++     */
+     public Transaction(int type, double amount,
+                        double initialBalance, double finalBalance) {
+         this.type = type;
+@@ -36,7 +39,7 @@
+                 res = "Rút tiền tiết kiệm";
+                 break;
+             default:
+-                res = "Invalid type";
++                res = "";
+                 break;
+         }
+         return res;
+@@ -46,10 +49,10 @@
+      * Return all transaction as string.
+      */
+     public String getTransactionSummary() {
+-        return String.format("- Kiểu giao dịch: %s. " +
+-                        "Số dư ban đầu: $%.2f. " +
+-                        "Số tiền: $%.2f. " +
+-                        "Số dư cuối: $%.2f.",
++        return String.format("- Kiểu giao dịch: %s. "
++                        + "Số dư ban đầu: $%.2f. "
++                        + "Số tiền: $%.2f. "
++                        + "Số dư cuối: $%.2f.",
+                 this.getTransactionTypeString(type),
+                 this.initialBalance,
+                 this.amount,

@@ -1,0 +1,29 @@
+@@ -5,12 +5,18 @@
+ 
+     public Piece() {}
+ 
++    /**
++     * abc.
++     */
+     public Piece(int coordinatesX, int coordinatesY) {
+         this.coordinatesX = coordinatesX;
+         this.coordinatesY = coordinatesY;
+         this.color = "white";
+     }
+ 
++    /**
++     * abc.
++     */
+     public Piece(int coordinatesX, int coordinatesY, String color) {
+         this.coordinatesX = coordinatesX;
+         this.coordinatesY = coordinatesY;
+@@ -45,6 +51,9 @@
+         this.color = color;
+     }
+ 
++    /**
++     * abc.
++     */
+     public boolean checkPosition(Piece piece) {
+         if (piece.getCoordinatesX() == coordinatesX && piece.getCoordinatesY() == coordinatesY) {
+             return true;

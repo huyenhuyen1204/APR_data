@@ -1,0 +1,28 @@
+@@ -1,9 +1,9 @@
+ public class Transaction {
+     //khai bao
+-    private String operation;//ten loai giao dich
+-    private double amount;//so tien giao dich
+-    private double balance;//so du
+-    public static final String DEPOSITE = "deposit"; //gui tien
++    private String operation; //ten loai giao dich
++    private double amount; //so tien giao dich
++    private double balance; //so du
++    public static final String DEPOSIT = "deposit"; //gui tien
+     public static final String WITHDRAW = "withdraw"; //rut tien
+ 
+ 
+@@ -41,13 +41,4 @@
+         this.balance = balance;
+     }
+ 
+-    public static String getDEPOSITE() {
+-        return DEPOSITE;
+-    }
+-
+-    public static String getWITHDRAW() {
+-        return WITHDRAW;
+-    }
+-
+-
+ }

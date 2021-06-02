@@ -1,0 +1,37 @@
+@@ -36,13 +36,13 @@
+             return;
+         }
+ 
+-        this.balance += (double) Math.ceil(amount * 100)/ 100;
++        this.balance += amount;
+         Transaction e = new Transaction(Transaction.DEPOSIT, amount, this.balance);
+         transitionList.add(e);
+     }
+ 
+     /**
+-     * rut tien
++     * rut tien.
+      * @param amount so tien
+      */
+     private void withdraw(double amount) {
+@@ -56,7 +56,7 @@
+             return;
+         }
+ 
+-        this.balance -= (double) Math.ceil(amount * 100)/ 100;
++        this.balance -= amount;
+         Transaction e = new Transaction(Transaction.WITHDRAW, amount, this.balance);
+         transitionList.add(e);
+     }
+@@ -79,11 +79,4 @@
+ 
+         System.out.println("Yeu cau khong hop le!");
+     }
+-
+-    public static void main(String[] args) {
+-        Account acc= new Account();
+-        acc.addTransaction(2000.255,"deposit");
+-        acc.addTransaction(1000,"withdraw");
+-        acc.printTransaction();
+-    }
+ }

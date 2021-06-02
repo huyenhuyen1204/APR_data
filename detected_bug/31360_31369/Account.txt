@@ -1,0 +1,9 @@
+@@ -53,7 +53,7 @@
+             //Giao dich 1: Nap tien $2000.26. So du luc nay: $2000.26.
+             double a = (double) Math.round(transaction.getAmount() * 100) / 100;
+             double b = (double) Math.round(transaction.getBalance() * 100) / 100;
+-            System.out.printf("Giao dich %d: Nap tien $%.2f. So du luc nay: $%.2f.\n",(i+1),a,b);
++            System.out.printf("Giao dich %d:%s%.2f. So du luc nay: $%.2f.\n",(i+1),operation,a,b);
+         }
+     }
+ 

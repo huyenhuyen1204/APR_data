@@ -1,0 +1,28 @@
+@@ -29,9 +29,14 @@
+     /**
+      * Do withdrawing.
+      */
+-    public void doWithdrawing(double amount) throws InsufficientFundsException {
+-        if (amount <= 0 || amount > balance)
++    public void doWithdrawing(double amount)
++        throws InsufficientFundsException, InvalidFundingAmountException {
++        if (amount <= 0) {
++            throw new InvalidFundingAmountException(amount);
++        }
++        if (amount > balance) {
+             throw new InsufficientFundsException(amount);
++        }
+         balance -= amount;
+     }
+ 
+@@ -39,8 +44,9 @@
+      * Do depositing.
+      */
+     public void doDepositing(double amount) throws InvalidFundingAmountException {
+-        if (amount <= 0)
++        if (amount <= 0) {
+             throw new InvalidFundingAmountException(amount);
++        }
+         balance += amount;
+     }
+ 

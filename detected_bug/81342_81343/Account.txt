@@ -1,0 +1,44 @@
+@@ -1,10 +1,9 @@
+ import java.util.ArrayList;
+-import java.util.Map;
+-import java.util.regex.Matcher;
++
+ 
+ public class Account {
+     private double balance;
+-    ArrayList<Transaction> transitionList ;
++    private ArrayList<Transaction> transitionList;
+ 
+     /**
+      *  .
+@@ -50,10 +49,10 @@
+             System.out.println("Yeu cau khong hop le!");
+         } else if (operation.equals("deposit")) {
+             deposit(amount);
+-            transitionList .add(new Transaction("Nap tien ", amount, balance));
++            transitionList.add(new Transaction("Nap tien ", amount, balance));
+         } else if (operation.equals("withdraw")) {
+             withdraw(amount);
+-            transitionList .add(new Transaction("Rut tien ", amount, balance));
++            transitionList.add(new Transaction("Rut tien ", amount, balance));
+         }
+     }
+ 
+@@ -62,7 +61,7 @@
+      */
+     public void printTransaction() {
+         String print = ". So du luc nay: $";
+-        int n = transitionList .size();
++        int n = transitionList.size();
+         Transaction transaction;
+         String s;
+         double amount;
+@@ -70,7 +69,7 @@
+         String amountStr;
+         String balacenStr;
+         for (int i = 0; i < n; i++) {
+-            transaction = transitionList .get(i);
++            transaction = transitionList.get(i);
+             s = transaction.getOperation();
+             amount = (double) Math.round(transaction.getAmount() * 100) / 100;
+             balance = (double) Math.round(transaction.getBalance() * 100) / 100;

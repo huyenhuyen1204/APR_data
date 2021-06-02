@@ -1,0 +1,42 @@
+@@ -4,12 +4,12 @@
+     private double balance;
+     private ArrayList<Transaction> transitionList;
+ 
+-    /*Chong chong tre ne Nobita.*/
++    /**Chong chong tre ne Nobita.*/
+     public Account() {
+         transitionList = new ArrayList<>();
+     }
+ 
+-    /*Chong chong tre ne Nobita.*/
++    /**Chong chong tre ne Nobita.*/
+     private void deposit(double amount) {
+         if (amount <= 0) {
+             System.out.println("So tien ban nap vao khong hop le!");
+@@ -19,7 +19,7 @@
+         transitionList.add(new Transaction(Transaction.DEPOSIT, amount, balance));
+     }
+ 
+-    /*Chong chong tre ne Nobita.*/
++    /**Chong chong tre ne Nobita.*/
+     private void withdraw(double amount) {
+         if (amount <= 0) {
+             System.out.println("So tien ban rut ra khong hop le!");
+@@ -32,7 +32,7 @@
+         transitionList.add(new Transaction(Transaction.WITHDRAW, amount, balance));
+     }
+ 
+-    /*Chong chong tre ne Nobita.*/
++    /**Chong chong tre ne Nobita.*/
+     public void addTransaction(double amount, String operation) {
+         switch (operation) {
+             case Transaction.DEPOSIT:
+@@ -47,7 +47,7 @@
+         }
+     }
+ 
+-    /*Chong chong tre ne Nobita.*/
++    /**Chong chong tre ne Nobita.*/
+     public void printTransaction() {
+         for (int i = 0; i < transitionList.size(); i++) {
+             Transaction temp = transitionList.get(i);

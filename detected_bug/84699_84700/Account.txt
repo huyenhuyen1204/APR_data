@@ -1,0 +1,48 @@
+@@ -2,7 +2,7 @@
+ 
+ public class Account {
+     private double balance;
+-    private ArrayList<Transaction> transactionList = new ArrayList<>();
++    private ArrayList<Transaction> transitionList = new ArrayList<>();
+ 
+     public double getBalance() {
+         return balance;
+@@ -44,11 +44,11 @@
+         if ((operation.equalsIgnoreCase(Transaction.DEPOSIT)) == true) {
+             deposit(amount);
+             Transaction t = new Transaction(operation, amount, balance);
+-            transactionList.add(t);
++            transitionList.add(t);
+         } else if ((operation.equalsIgnoreCase(Transaction.WITHDRAW)) == true) {
+             withdraw(amount);
+             Transaction t = new Transaction(operation, amount, balance);
+-            transactionList.add(t);
++            transitionList.add(t);
+         } else {
+             System.out.println("Yeu cau khong hop le!");
+         }
+@@ -58,15 +58,17 @@
+      * Trang.
+      */
+     public void printTransaction() {
+-        for (int i = 0; i < transactionList.size(); i++) {
+-            if ((transactionList.get(i).getOperation().equalsIgnoreCase(Transaction.DEPOSIT)) == true) {
++        for (int i = 0; i < transitionList.size(); i++) {
++            if ((transitionList.get(i).getOperation().equalsIgnoreCase(Transaction.DEPOSIT))) {
+                 System.out.printf("Giao dich %d: Nap tien $%.2f. So du luc nay: $%.2f.\n",
+-                        (i + 1), (double) Math.round(transactionList.get(i).getAmount() * 100) / 100,
+-                        (double) Math.round(transactionList.get(i).getBalance() * 100) / 100);
+-            } else if ((transactionList.get(i).getOperation().equalsIgnoreCase(Transaction.WITHDRAW)) == true) {
++                        (i + 1),
++                        (double) Math.round(transitionList.get(i).getAmount() * 100) / 100,
++                        (double) Math.round(transitionList.get(i).getBalance() * 100) / 100);
++            } else {
+                 System.out.printf("Giao dich %d: Rut tien $%.2f. So du luc nay: $%.2f.\n",
+-                        (i + 1), (double) Math.round(transactionList.get(i).getAmount() * 100) / 100,
+-                        (double) Math.round(transactionList.get(i).getBalance() * 100) / 100);
++                        (i + 1),
++                        (double) Math.round(transitionList.get(i).getAmount() * 100) / 100,
++                        (double) Math.round(transitionList.get(i).getBalance() * 100) / 100);
+             }
+         }
+     }

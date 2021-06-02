@@ -1,0 +1,11 @@
+@@ -38,8 +38,8 @@
+      * @param operation .
+      */
+     public void addTransaction(double amount, String operation) {
+-        if (!operation.equals(Transaction.DEPOSIT) &&
+-                !operation.equals(Transaction.WITHDRAW)) {
++        if (!operation.equals(Transaction.DEPOSIT)
++                && !operation.equals(Transaction.WITHDRAW)) {
+             System.out.println("Yeu cau khong hop le!");
+             return;
+         }

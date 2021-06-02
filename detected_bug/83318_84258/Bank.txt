@@ -1,0 +1,192 @@
+@@ -1,125 +1,92 @@
+-import java.io.*;
++import java.io.InputStream;
+ import java.util.ArrayList;
++import java.util.Arrays;
++import java.util.Comparator;
+ import java.util.List;
++import java.util.Scanner;
+ 
++/**
++ * class Bank.
++ */
+ public class Bank {
+     private List<Customer> customerList = new ArrayList<>();
+ 
+     /**
+-     * cmt.
++     * readCustomerList.
++     * @param input .
+      */
+-    public static void main(String[] args) throws FileNotFoundException {
++    public void readCustomerList(InputStream input) {
++        Scanner scanner = new Scanner(input);
+ 
+-        Bank bank = new Bank();
+-        bank.readCustomerList(new FileInputStream("src/test.txt"));
+-        List<Customer> customers = bank.getCustomerList();
+-        customers.get(0).getAccountList().get(0).deposit(2000.00);
+-        customers.get(0).getAccountList().get(0).withdraw(500.0);
+-        customers.get(0).getAccountList().get(0).withdraw(300.0);
+-        System.out.println(customers.get(0).getAccountList().get(0).getTransactionHistory());
+-    }
++        while (scanner.hasNextLine()) {
++            String[] words = scanner.nextLine().split(" ");
+ 
+-    /**
+-     * cmt.
+-     */
+-    public boolean isNumber(String s) {
+-        for (int i = 0; i < s.length(); ++i) {
+-            if (s.charAt(i) > '9' || s.charAt(i) < '0') {
+-                return false;
+-            }
+-        }
+-        return true;
+-    }
++            if (words.length != 3) {
++                String name = String.join(" ",
++                        Arrays.copyOfRange(words, 0, words.length - 1));
++                long id = Long.parseLong(words[words.length - 1]);
++                customerList.add(new Customer(id, name));
++            } else {
+ 
+-    /**
+-     * cmt.
+-     */
+-    public void readCustomerList(InputStream inputStream) {
+-        InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+-        BufferedReader reader = new BufferedReader(inputStreamReader);
+-        String line = "";
+-        Customer customer = new Customer();
+-        while (true) {
+-            try {
+-                if (((line = reader.readLine()) != null)) {
+-                    String[] ss = line.split(" ");
+-                    if (isNumber(ss[0])) {
+-                        if (ss[1].equals("CHECKING")) {
+-                            Account account = new CheckingAccount(Long.parseLong(ss[0]),
+-                                    Double.parseDouble(ss[2]));
+-                            customer.addAccount(account);
+-                        } else {
+-                            Account account = new SavingsAccount(Long.parseLong(ss[0]),
+-                                    Double.parseDouble(ss[2]));
+-                            customer.addAccount(account);
+-                        }
+-                    } else {
+-                        String name = "";
+-                        for (int i = 0; i < ss.length - 2; ++i) {
+-                            name = name + ss[i] + " ";
+-                        }
+-                        name += ss[ss.length - 2];
+-                        customer = new Customer(name, Long.parseLong(ss[ss.length - 1]));
+-                        customerList.add(customer);
+-                    }
+-                } else {
+-                    break;
+-                }
+-            } catch (IOException e) {
+-                e.printStackTrace();
+-            }
++                long accountNumber = Long.parseLong(words[0]);
++                String accountType = words[1];
++                double accountBalance = Double.parseDouble(words[2]);
+ 
+-        }
+-    }
+-
+-    public List<Customer> getCustomerList() {
+-        return customerList;
+-    }
+-
+-    /**
+-     * cmt.
+-     */
+-    public String getCustomersInfoByIdOrder() {
+-        for (int i = 0; i < customerList.size(); ++i) {
+-            for (int j = i + 1; j < customerList.size(); ++j) {
+-                if (customerList.get(i).getIdNumber() > customerList.get(j).getIdNumber()) {
+-                    Customer swap = customerList.get(i);
+-                    customerList.set(i, customerList.get(j));
+-                    customerList.set(j, swap);
++                if (accountType.equals(Account.CHECKING)) {
++                    customerList.get(customerList.size() - 1)
++                            .addAccount(new CheckingAccount(accountNumber, accountBalance));
++                } else if (accountType.equals(Account.SAVINGS)) {
++                    customerList.get(customerList.size() - 1)
++                            .addAccount(new SavingsAccount(accountNumber, accountBalance));
+                 }
+             }
+         }
+-        String s = "";
+-        for (int i = 0; i < customerList.size(); ++i) {
+-            s = s + customerList.get(i).getCustomerInfo();
+-            if (i != customerList.size() - 1) {
+-                s += "\n";
+-            }
+-        }
+-        return s;
+     }
+ 
+     /**
+-     * cmt.
++     * getter.
++     * @return .
+      */
+     public String getCustomersInfoByNameOrder() {
+-        for (int i = 0; i < customerList.size(); ++i) {
+-            for (int j = i + 1; j < customerList.size(); ++j) {
+-                if (customerList.get(i).getFullName()
+-                        .compareTo(customerList.get(j).getFullName()) > 0) {
+-                    Customer swap = customerList.get(i);
+-                    customerList.set(i, customerList.get(j));
+-                    customerList.set(j, swap);
+-                }
++        List<Customer> nameOrder = new ArrayList<Customer>(customerList);
++        nameOrder.sort(new Comparator<Customer>() {
++            public int compare(Customer o1, Customer o2) {
++                return o1.getFullName().compareTo(o2.getFullName());
+             }
++        });
++
++        StringBuilder result = new StringBuilder();
++        for (Customer customer : nameOrder) {
++            result.append(customer.getCustomerInfo()).append("\n");
+         }
+-        String s = "";
+-        for (int i = 0; i < customerList.size(); ++i) {
+-            s = s + customerList.get(i).getCustomerInfo();
+-            if (i != customerList.size() - 1) {
+-                s += "\n";
++        return result.toString().trim();
++    }
++
++    /**
++     * getter.
++     * @return .
++     */
++    public String getCustomersInfoByIdOrder() {
++        List<Customer> idOrder = new ArrayList<Customer>(customerList);
++        idOrder.sort(new Comparator<Customer>() {
++            @Override
++            public int compare(Customer o1, Customer o2) {
++                return (int) (o1.getIdNumber() - o2.getIdNumber());
+             }
++        });
++
++        StringBuilder result = new StringBuilder();
++        for (Customer customer : idOrder) {
++            result.append(customer.getCustomerInfo()).append("\n");
+         }
+-        return s;
++        return result.toString().trim();
++    }
++
++    /**
++     * getter.
++     * @return .
++     */
++    public List<Customer> getCustomerList() {
++        return customerList;
+     }
+ }

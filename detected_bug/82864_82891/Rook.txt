@@ -1,0 +1,10 @@
+@@ -12,6 +12,9 @@
+         if (x < 1 || x > 8 || y < 1 || y > 8) {
+             return false;
+         }
++        if (getCoordinatesX() != x && getCoordinatesY() != y) {
++            return false;
++        }
+         for (int i = Math.min(x, getCoordinatesX()) + 1; i < Math.max(x, getCoordinatesX()); i++) {
+             if (board.getAt(i, getCoordinatesY()) != null) {
+                 return false;

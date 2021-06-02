@@ -1,0 +1,12 @@
+@@ -35,9 +35,9 @@
+      * abc.
+      */
+     public String toString() {
+-        int width = movedPiece.getCoordinatesX() + 96;
++        int col = endX + 96;
+         String mpiece = movedPiece.getColor() + "-" + movedPiece.getSymbol()
+-                + (char) width + movedPiece.getCoordinatesY();
++                + (char) col + endY;
+         return mpiece;
+     }
+ 

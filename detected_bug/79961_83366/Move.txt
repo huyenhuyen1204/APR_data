@@ -1,0 +1,8 @@
+@@ -25,6 +25,7 @@
+         this.killedPiece = killedPiece;
+     }
+ 
++    /**String.*/
+     public String toString() {
+         if (endX == 1) {
+             return movedPiece.getColor() + "-" + movedPiece.getSymbol() + "a" + endY;

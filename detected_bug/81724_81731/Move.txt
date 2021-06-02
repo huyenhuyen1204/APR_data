@@ -1,0 +1,9 @@
+@@ -33,7 +33,7 @@
+ 
+     @Override
+     public String toString() {
+-        char column = (char)(endX - 1 + (int) 'a');
++        char column = (char) (endX - 1 + (int) 'a');
+         return String.format("%s-%s%c%d",
+                 movedPiece.getColor(), movedPiece.getSymbol(), column, endY);
+     }

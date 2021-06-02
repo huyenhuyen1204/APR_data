@@ -1,0 +1,9 @@
+@@ -30,7 +30,7 @@
+     }
+ 
+     /**
+-     * toString
++     * toString.
+      * @return move information
+      */
+     public String toString() {

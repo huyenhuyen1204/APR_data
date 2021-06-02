@@ -1,0 +1,26 @@
+@@ -16,11 +16,21 @@
+     /**
+      * ...
+      */
+-    public void removePiece(Piece piece, int x, int y) {
++    public void movePiece(Piece piece, int x, int y) {
+         if (piece.canMove(this.board, x, y)) {
+-            Move temp = new Move(piece.getCoordinatesX(), x,
+-                    piece.getCoordinatesY(), y, piece);
+-            moveHistory.add(temp);
++            Move temp;
++            if (!Piece.kill) {
++                temp = new Move(piece.getCoordinatesX(), x,
++                        piece.getCoordinatesY(), y, piece);
++            } else {
++                Piece pieceKilled = this.board.getAt(x, y);
++                temp = new Move(piece.getCoordinatesX(), x,
++                        piece.getCoordinatesY(), y, piece, pieceKilled);
++                this.board.removeAt(x, y);
++            }
++            piece.setCoordinatesX(x);
++            piece.setCoordinatesY(y);
++            this.moveHistory.add(temp);
+         }
+     }
+ 

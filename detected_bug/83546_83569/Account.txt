@@ -1,0 +1,52 @@
+@@ -1,9 +1,10 @@
++import java.text.DecimalFormat;
+ import java.util.ArrayList;
+ import java.util.List;
+ 
+ public class Account {
+     private double balance;
+-    private List<Transaction> transactionList = new ArrayList<Transaction>();
++    private ArrayList<Transaction> transitionList = new ArrayList<Transaction>();
+ 
+     /**hu hu.*/
+     private void deposit(double amount) {
+@@ -11,7 +12,7 @@
+             System.out.println("So tien ban nap vao khong hop le!");
+         } else {
+             balance += amount;
+-            transactionList.add(new Transaction("deposit", amount, balance));
++            transitionList.add(new Transaction("deposit", amount, balance));
+         }
+     }
+ 
+@@ -23,7 +24,7 @@
+             System.out.println("So tien ban rut vuot qua so du!");
+         } else {
+             balance -= amount;
+-            transactionList.add(new Transaction("withdraw", amount, balance));
++            transitionList.add(new Transaction("withdraw", amount, balance));
+         }
+     }
+ 
+@@ -41,16 +42,18 @@
+     /**hu hu.*/
+     public void printTransaction() {
+         int d = 1;
+-        for (Transaction tran : transactionList) {
++        for (Transaction tran : transitionList) {
+             System.out.print("Giao dich " + d + ": ");
+             if (tran.getOperation().equals("deposit")) {
+                 System.out.print("Nap tien ");
+             } else {
+                 System.out.print("Rut tien ");
+             }
+-            System.out.print("$" + (double) Math.round(tran.getAmount() * 100) / 100);
++            DecimalFormat f = new DecimalFormat("#.00");
++            System.out.print("$" + f.format((double) Math.round(tran.getAmount() * 100) / 100));
+             System.out.print(". So du luc nay: ");
+-            System.out.println("$" + (double) Math.round(tran.getBalance() * 100) / 100 + ".");
++            System.out.println("$" + f.format((double) Math.round(tran.getBalance() * 100) / 100)
++                    + ".");
+             ++d;
+         }
+     }

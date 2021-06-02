@@ -1,0 +1,1548 @@
+#SV1
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  85 and s.course_problem_id = 361 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_85.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV2
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  294 and s.course_problem_id = 495 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_294.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV3
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  427 and s.course_problem_id = 954 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_427.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV4
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  445 and s.course_problem_id = 503 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_445.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV5
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  449 and s.course_problem_id = 503 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_449.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV6
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  450 and s.course_problem_id = 503 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_450.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV7
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  451 and s.course_problem_id = 503 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_451.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV8
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  453 and s.course_problem_id = 503 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_453.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV9
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  454 and s.course_problem_id = 503 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_454.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV10
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  455 and s.course_problem_id = 503 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_455.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV11
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  456 and s.course_problem_id = 503 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_456.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV12
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  457 and s.course_problem_id = 503 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_457.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV13
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  458 and s.course_problem_id = 503 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_458.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV14
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  460 and s.course_problem_id = 503 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_460.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV15
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  462 and s.course_problem_id = 503 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_462.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV16
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  463 and s.course_problem_id = 503 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_463.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV17
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  464 and s.course_problem_id = 503 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_464.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV18
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  470 and s.course_problem_id = 503 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_470.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV19
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  475 and s.course_problem_id = 503 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_475.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV20
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  477 and s.course_problem_id = 503 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_477.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV21
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  478 and s.course_problem_id = 503 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_478.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV22
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  483 and s.course_problem_id = 495 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_483.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV23
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  484 and s.course_problem_id = 495 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_484.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV24
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  486 and s.course_problem_id = 495 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_486.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV25
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  487 and s.course_problem_id = 495 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_487.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV26
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  489 and s.course_problem_id = 495 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_489.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV27
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  492 and s.course_problem_id = 495 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_492.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV28
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  494 and s.course_problem_id = 495 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_494.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV29
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  500 and s.course_problem_id = 495 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_500.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV30
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  503 and s.course_problem_id = 495 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_503.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV31
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  505 and s.course_problem_id = 495 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_505.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV32
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  509 and s.course_problem_id = 514 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_509.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV33
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  512 and s.course_problem_id = 514 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_512.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV34
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  517 and s.course_problem_id = 514 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_517.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV35
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  520 and s.course_problem_id = 514 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_520.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV36
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  522 and s.course_problem_id = 514 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_522.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV37
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  526 and s.course_problem_id = 514 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_526.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV38
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  527 and s.course_problem_id = 514 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_527.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV39
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  528 and s.course_problem_id = 514 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_528.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV40
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  529 and s.course_problem_id = 1002 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_529.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV41
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  530 and s.course_problem_id = 514 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_530.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV42
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  533 and s.course_problem_id = 514 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_533.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV43
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  534 and s.course_problem_id = 514 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_534.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV44
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  535 and s.course_problem_id = 514 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_535.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV45
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  537 and s.course_problem_id = 514 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_537.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV46
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  539 and s.course_problem_id = 514 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_539.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV47
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  540 and s.course_problem_id = 514 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_540.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV48
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  541 and s.course_problem_id = 514 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_541.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV49
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  546 and s.course_problem_id = 514 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_546.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV50
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  567 and s.course_problem_id = 495 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_567.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV51
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  602 and s.course_problem_id = 498 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_602.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV52
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  603 and s.course_problem_id = 498 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_603.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV53
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  606 and s.course_problem_id = 498 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_606.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV54
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  609 and s.course_problem_id = 498 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_609.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV55
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  610 and s.course_problem_id = 498 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_610.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV56
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  612 and s.course_problem_id = 498 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_612.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV57
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  614 and s.course_problem_id = 498 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_614.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV58
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  615 and s.course_problem_id = 498 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_615.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV59
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  616 and s.course_problem_id = 498 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_616.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV60
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  617 and s.course_problem_id = 498 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_617.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV61
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  618 and s.course_problem_id = 498 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_618.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV62
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  619 and s.course_problem_id = 498 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_619.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV63
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  620 and s.course_problem_id = 498 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_620.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV64
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  621 and s.course_problem_id = 498 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_621.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV65
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  623 and s.course_problem_id = 498 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_623.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV66
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  624 and s.course_problem_id = 498 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_624.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV67
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  625 and s.course_problem_id = 498 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_625.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV68
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  628 and s.course_problem_id = 498 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_628.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV69
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  630 and s.course_problem_id = 498 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_630.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV70
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  631 and s.course_problem_id = 498 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_631.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV71
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  632 and s.course_problem_id = 498 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_632.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV72
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  633 and s.course_problem_id = 498 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_633.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV73
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  663 and s.course_problem_id = 476 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_663.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV74
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  664 and s.course_problem_id = 476 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_664.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV75
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  666 and s.course_problem_id = 476 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_666.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV76
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  667 and s.course_problem_id = 476 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_667.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV77
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  668 and s.course_problem_id = 476 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_668.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV78
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  669 and s.course_problem_id = 476 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_669.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV79
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  672 and s.course_problem_id = 476 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_672.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV80
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  673 and s.course_problem_id = 476 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_673.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV81
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  675 and s.course_problem_id = 476 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_675.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV82
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  676 and s.course_problem_id = 476 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_676.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV83
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  677 and s.course_problem_id = 476 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_677.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV84
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  678 and s.course_problem_id = 476 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_678.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV85
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  681 and s.course_problem_id = 476 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_681.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV86
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  682 and s.course_problem_id = 476 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_682.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV87
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  684 and s.course_problem_id = 476 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_684.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV88
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  685 and s.course_problem_id = 476 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_685.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV89
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  687 and s.course_problem_id = 476 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_687.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV90
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  688 and s.course_problem_id = 476 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_688.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV91
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  690 and s.course_problem_id = 472 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_690.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV92
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  692 and s.course_problem_id = 472 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_692.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV93
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  693 and s.course_problem_id = 472 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_693.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV94
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  694 and s.course_problem_id = 472 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_694.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV95
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  696 and s.course_problem_id = 472 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_696.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV96
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  702 and s.course_problem_id = 472 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_702.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV97
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  706 and s.course_problem_id = 472 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_706.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV98
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  708 and s.course_problem_id = 472 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_708.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV99
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  710 and s.course_problem_id = 472 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_710.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV100
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  711 and s.course_problem_id = 472 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_711.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV101
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  712 and s.course_problem_id = 472 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_712.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV102
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  714 and s.course_problem_id = 498 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_714.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV103
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  715 and s.course_problem_id = 498 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_715.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV104
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  716 and s.course_problem_id = 503 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_716.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV105
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  729 and s.course_problem_id = 472 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_729.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV106
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  736 and s.course_problem_id = 472 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_736.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV107
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  902 and s.course_problem_id = 570 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_902.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV108
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  904 and s.course_problem_id = 570 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_904.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV109
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  905 and s.course_problem_id = 570 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_905.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV110
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  910 and s.course_problem_id = 570 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_910.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV111
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  911 and s.course_problem_id = 570 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_911.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV112
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  912 and s.course_problem_id = 570 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_912.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV113
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  913 and s.course_problem_id = 570 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_913.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV114
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  914 and s.course_problem_id = 570 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_914.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV115
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  915 and s.course_problem_id = 570 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_915.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV116
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  921 and s.course_problem_id = 570 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_921.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV117
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  922 and s.course_problem_id = 570 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_922.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV118
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  925 and s.course_problem_id = 570 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_925.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV119
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  927 and s.course_problem_id = 570 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_927.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV120
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  929 and s.course_problem_id = 570 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_929.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV121
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  931 and s.course_problem_id = 594 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_931.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV122
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  932 and s.course_problem_id = 594 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_932.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV123
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  934 and s.course_problem_id = 594 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_934.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV124
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  935 and s.course_problem_id = 594 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_935.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV125
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  937 and s.course_problem_id = 594 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_937.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV126
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  942 and s.course_problem_id = 594 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_942.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV127
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  943 and s.course_problem_id = 594 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_943.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV128
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  946 and s.course_problem_id = 594 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_946.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV129
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  947 and s.course_problem_id = 594 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_947.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV130
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  948 and s.course_problem_id = 594 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_948.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV131
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  950 and s.course_problem_id = 594 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_950.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV132
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  952 and s.course_problem_id = 594 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_952.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV133
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  956 and s.course_problem_id = 594 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_956.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV134
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  961 and s.course_problem_id = 594 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_961.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV135
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1089 and s.course_problem_id = 762 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1089.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV136
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1093 and s.course_problem_id = 762 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1093.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV137
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1096 and s.course_problem_id = 762 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1096.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV138
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1105 and s.course_problem_id = 762 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1105.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV139
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1114 and s.course_problem_id = 762 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1114.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV140
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1115 and s.course_problem_id = 762 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1115.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV141
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1122 and s.course_problem_id = 762 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1122.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV142
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1126 and s.course_problem_id = 762 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1126.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV143
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1128 and s.course_problem_id = 786 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1128.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV144
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1129 and s.course_problem_id = 834 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1129.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV145
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1130 and s.course_problem_id = 786 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1130.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV146
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1131 and s.course_problem_id = 786 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1131.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV147
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1132 and s.course_problem_id = 786 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1132.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV148
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1133 and s.course_problem_id = 786 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1133.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV149
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1134 and s.course_problem_id = 786 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1134.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV150
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1136 and s.course_problem_id = 786 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1136.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV151
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1139 and s.course_problem_id = 786 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1139.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV152
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1143 and s.course_problem_id = 786 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1143.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV153
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1144 and s.course_problem_id = 786 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1144.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV154
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1146 and s.course_problem_id = 810 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1146.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV155
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1153 and s.course_problem_id = 810 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1153.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV156
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1170 and s.course_problem_id = 834 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1170.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV157
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1173 and s.course_problem_id = 834 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1173.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV158
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1179 and s.course_problem_id = 834 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1179.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV159
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1186 and s.course_problem_id = 834 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1186.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV160
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1190 and s.course_problem_id = 834 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1190.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV161
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1251 and s.course_problem_id = 930 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1251.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV162
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1256 and s.course_problem_id = 930 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1256.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV163
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1259 and s.course_problem_id = 978 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1259.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV164
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1262 and s.course_problem_id = 930 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1262.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV165
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1264 and s.course_problem_id = 930 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1264.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV166
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1267 and s.course_problem_id = 930 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1267.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV167
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1269 and s.course_problem_id = 930 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1269.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV168
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1271 and s.course_problem_id = 930 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1271.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV169
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1272 and s.course_problem_id = 930 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1272.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV170
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1278 and s.course_problem_id = 978 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1278.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV171
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1279 and s.course_problem_id = 954 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1279.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV172
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1283 and s.course_problem_id = 954 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1283.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV173
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1284 and s.course_problem_id = 954 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1284.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV174
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1286 and s.course_problem_id = 978 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1286.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV175
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1287 and s.course_problem_id = 954 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1287.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV176
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1294 and s.course_problem_id = 954 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1294.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV177
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1299 and s.course_problem_id = 954 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1299.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV178
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1300 and s.course_problem_id = 978 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1300.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV179
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1301 and s.course_problem_id = 978 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1301.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV180
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1304 and s.course_problem_id = 978 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1304.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV181
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1306 and s.course_problem_id = 978 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1306.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV182
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1307 and s.course_problem_id = 978 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1307.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV183
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1308 and s.course_problem_id = 978 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1308.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV184
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1315 and s.course_problem_id = 978 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1315.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV185
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1317 and s.course_problem_id = 978 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1317.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV186
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1318 and s.course_problem_id = 978 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1318.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV187
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1320 and s.course_problem_id = 978 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1320.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV188
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1321 and s.course_problem_id = 978 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1321.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV189
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1322 and s.course_problem_id = 978 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1322.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV190
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1323 and s.course_problem_id = 978 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1323.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV191
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1325 and s.course_problem_id = 978 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1325.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV192
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1326 and s.course_problem_id = 978 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1326.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV193
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1328 and s.course_problem_id = 1002 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1328.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV194
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1329 and s.course_problem_id = 1002 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1329.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV195
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1330 and s.course_problem_id = 1002 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1330.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV196
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1331 and s.course_problem_id = 1002 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1331.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV197
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1333 and s.course_problem_id = 1002 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1333.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV198
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1334 and s.course_problem_id = 1002 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1334.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV199
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1339 and s.course_problem_id = 1002 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1339.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV200
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1340 and s.course_problem_id = 1002 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1340.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV201
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1342 and s.course_problem_id = 1002 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1342.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV202
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1343 and s.course_problem_id = 1002 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1343.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV203
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1347 and s.course_problem_id = 1002 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1347.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV204
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1349 and s.course_problem_id = 1002 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1349.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV205
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1350 and s.course_problem_id = 1002 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1350.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV206
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1354 and s.course_problem_id = 1002 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1354.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV207
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1356 and s.course_problem_id = 1002 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1356.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV208
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1358 and s.course_problem_id = 1002 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1358.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV209
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1360 and s.course_problem_id = 1002 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1360.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV210
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1365 and s.course_problem_id = 1026 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1365.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV211
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1367 and s.course_problem_id = 1026 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1367.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV212
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1377 and s.course_problem_id = 1026 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1377.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV213
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1378 and s.course_problem_id = 1026 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1378.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV214
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1379 and s.course_problem_id = 1002 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1379.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV215
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1380 and s.course_problem_id = 1026 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1380.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV216
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1381 and s.course_problem_id = 1026 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1381.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV217
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1391 and s.course_problem_id = 1026 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1391.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV218
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1392 and s.course_problem_id = 1026 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1392.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV219
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1396 and s.course_problem_id = 1026 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1396.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV220
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1423 and s.course_problem_id = 762 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1423.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV221
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1424 and s.course_problem_id = 1146 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1424.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV222
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1431 and s.course_problem_id = 1146 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1431.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV223
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1432 and s.course_problem_id = 1146 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1432.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV224
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1434 and s.course_problem_id = 1146 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1434.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV225
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1439 and s.course_problem_id = 1146 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1439.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV226
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1441 and s.course_problem_id = 1146 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1441.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV227
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1443 and s.course_problem_id = 1146 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1443.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV228
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1455 and s.course_problem_id = 1146 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1455.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV229
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1457 and s.course_problem_id = 1146 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1457.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV230
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1466 and s.course_problem_id = 1146 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1466.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV231
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1468 and s.course_problem_id = 1146 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1468.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV232
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1469 and s.course_problem_id = 1146 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1469.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV233
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1472 and s.course_problem_id = 1146 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1472.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV234
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1473 and s.course_problem_id = 1146 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1473.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV235
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1477 and s.course_problem_id = 1146 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1477.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV236
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1478 and s.course_problem_id = 1146 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1478.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV237
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1484 and s.course_problem_id = 1146 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1484.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV238
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1485 and s.course_problem_id = 1146 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1485.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV239
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1490 and s.course_problem_id = 1146 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1490.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV240
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1491 and s.course_problem_id = 1146 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1491.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV241
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1493 and s.course_problem_id = 1146 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1493.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV242
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1502 and s.course_problem_id = 738 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1502.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV243
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1505 and s.course_problem_id = 738 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1505.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV244
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1506 and s.course_problem_id = 738 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1506.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV245
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1507 and s.course_problem_id = 738 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1507.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV246
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1509 and s.course_problem_id = 738 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1509.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV247
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1512 and s.course_problem_id = 738 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1512.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV248
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1518 and s.course_problem_id = 738 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1518.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV249
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1519 and s.course_problem_id = 738 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1519.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV250
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1520 and s.course_problem_id = 738 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1520.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV251
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1521 and s.course_problem_id = 738 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1521.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV252
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1530 and s.course_problem_id = 738 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1530.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV253
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1532 and s.course_problem_id = 738 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1532.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV254
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1533 and s.course_problem_id = 738 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1533.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV255
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1540 and s.course_problem_id = 570 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1540.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV256
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1549 and s.course_problem_id = 618 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1549.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV257
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1550 and s.course_problem_id = 762 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1550.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+
+#SV258
+select max(s.submission_id) from submission s join zip_submission_result zr on s.submission_id = zr.submission_id where s.student_id =  1556 and s.course_problem_id = 1026 and s.runtime_result_id != 9  and zr.junit_score > 0 group by s.total_score order by  s.total_score desc, s.created_at desc
+INTO OUTFILE '/var/lib/mysql-files/problem_22_student_1556.txt'
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY ';';
+

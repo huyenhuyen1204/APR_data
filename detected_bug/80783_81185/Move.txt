@@ -1,0 +1,15 @@
+@@ -1,3 +1,5 @@
++import java.nio.channels.Pipe;
++
+ public class Move {
+ 
+     private  Piece movedPiece;
+@@ -113,8 +115,4 @@
+                 + String.valueOf(this.getEndY());
+     }
+ 
+-    public static void main(String[] args) {
+-        Rook rook = new Rook(1, 1, "white");
+-
+-    }
+ }

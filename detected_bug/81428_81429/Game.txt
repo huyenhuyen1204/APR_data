@@ -1,0 +1,18 @@
+@@ -1,7 +1,7 @@
+ import java.util.ArrayList;
+ 
+ public class Game {
+-    private static ArrayList<Move> moveHistory;
++    private ArrayList<Move> moveHistory = new ArrayList<Move>();
+     private Board board;
+ 
+     /**
+@@ -18,7 +18,7 @@
+      *
+      * @return .
+      */
+-    public static ArrayList<Move> getMoveHistory() {
++    public ArrayList<Move> getMoveHistory() {
+         return moveHistory;
+     }
+ 

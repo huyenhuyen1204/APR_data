@@ -1,0 +1,27 @@
+@@ -7,6 +7,8 @@
+     private Piece killedPiece;
+ 
+     /**
++     * abc.
++     *
+      * @param startX     int.
+      * @param endX       int.
+      * @param startY     int.
+@@ -22,6 +24,8 @@
+     }
+ 
+     /**
++     * abc.
++     *
+      * @param startX      int.
+      * @param endX        int.
+      * @param startY      int.
+@@ -43,6 +47,8 @@
+     }
+ 
+     /**
++     * abc.
++     *
+      * @param x int.
+      * @return int.
+      */

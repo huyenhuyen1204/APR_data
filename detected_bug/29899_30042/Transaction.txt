@@ -1,0 +1,37 @@
+@@ -1,17 +1,19 @@
+ public class Transaction {
+-    private String oparation; // tên loại giao dịch
++    private String operation; // tên loại giao dịch
+     private double amount; // số tiền giao dịch
+     private double balance; // số dư còn lại
+-    public static final String DESPOSIT = "desposit", WITHDRAW = "withdraw";
++    public static final String DEPOSIT = "deposit";
++    public static final String WITHDRAW = "withdraw";
+ 
+-    public Transaction(String oparation, double amount, double balance) {
+-        this.oparation = oparation;
++
++    public Transaction(String operation, double amount, double balance) {
++        this.operation = operation;
+         this.amount = amount;
+         this.balance = balance;
+     }
+ 
+-    public String getOparation() {
+-        return oparation;
++    public String getOperation() {
++        return operation;
+     }
+ 
+     public double getAmount() {
+@@ -22,8 +24,8 @@
+         return balance;
+     }
+ 
+-    public void setOparation(String oparation) {
+-        this.oparation = oparation;
++    public void setOperation(String operation) {
++        this.operation = operation;
+     }
+ 
+     public void setAmount(double amount) {

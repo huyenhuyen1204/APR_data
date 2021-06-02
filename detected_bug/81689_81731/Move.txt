@@ -1,0 +1,27 @@
+@@ -10,6 +10,14 @@
+     private Piece movedPiece;
+     private Piece killedPiece;
+ 
++    /**
++     * when there isn't killedPiece.
++     * @param startX coordinate
++     * @param startY coordinate
++     * @param endX coordinate
++     * @param endY coordinate
++     * @param movedPiece piece
++     */
+     public Move(int startX, int startY, int endX, int endY, Piece movedPiece) {
+         this.startX = startX;
+         this.startY = startY;
+@@ -25,8 +33,9 @@
+ 
+     @Override
+     public String toString() {
+-        char column = (char)(endY + (int)'a');
+-        return String.format("%s-%s%c%d", movedPiece.getColor(), movedPiece.getSymbol(), column, endX);
++        char column = (char) (endX - 1 + (int) 'a');
++        return String.format("%s-%s%c%d",
++                movedPiece.getColor(), movedPiece.getSymbol(), column, endY);
+     }
+ 
+     public int getStartX() {

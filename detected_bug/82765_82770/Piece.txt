@@ -1,0 +1,8 @@
+@@ -44,6 +44,7 @@
+         this.color = color;
+     }
+ 
++    /** Check valid position. */
+     public boolean checkPosition(Piece piece) {
+         int x = piece.getCoordinatesX();
+         int y = piece.getCoordinatesY();

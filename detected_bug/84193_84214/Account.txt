@@ -1,0 +1,62 @@
+@@ -1,8 +1,9 @@
++import java.text.DecimalFormat;
+ import java.util.ArrayList;
+ 
+ public class Account {
+     private double balance = 0;
+-    private ArrayList<Transaction> transactions = new ArrayList<>();
++    private ArrayList<Transaction> transitionList = new ArrayList<>();
+ 
+     private void deposit(double amount) {
+         if (amount < 0) {
+@@ -19,38 +20,42 @@
+         }
+     }
+ 
++    /**.....*/
+     public void addTransaction(double amount, String operation) {
+         if (operation.equals(Transaction.DEPOSIT)) {
+             if (amount < 0) {
+                 deposit(amount);
+             } else {
+-                transactions.add(new Transaction(operation, amount, balance += amount));
++                transitionList.add(new Transaction(operation, amount, balance += amount));
+             }
+         } else {
+             if (operation.equals(Transaction.WITHDRAW)) {
+                 if (amount < 0 || amount > balance) {
+                     withdraw(amount);
+                 } else {
+-                    transactions.add(new Transaction(operation, amount, balance -= amount));
++                    transitionList.add(new Transaction(operation, amount, balance -= amount));
+                 }
+             } else {
+-                System.out.print("Yeu cau khong hop le");
++                System.out.print("Yeu cau khong hop le!");
+             }
+         }
+     }
+ 
++    /**.....*/
+     public void printTransaction() {
+-        for (int i = 0; i < transactions.size(); i++) {
++        DecimalFormat df = new DecimalFormat("0.00");
++        for (int i = 0; i < transitionList.size(); i++) {
+             String s;
+-            if (transactions.get(i).getOperation().equals(Transaction.DEPOSIT)) {
++            if (transitionList.get(i).getOperation().equals(Transaction.DEPOSIT)) {
+                 s = "Nap tien $";
+             } else {
+                 s = "Rut tien $";
+             }
+-            System.out.println("Giao dich " + i + 1 + ": " + s
+-                    + (double)Math.round(transactions.get(i).getAmount() * 100) / 100
++            System.out.println("Giao dich " + (i + 1) + ": " + s
++                    + df.format((double) Math.round(transitionList.get(i).getAmount() * 100) / 100)
+                     + ". So du luc nay: $"
+-                    + (double)Math.round(transactions.get(i).getBalance() * 100) / 100);
++                    + df.format((double) Math.round(transitionList.get(i).getBalance() * 100) / 100)
++                    + ".");
+         }
+     }
+ }

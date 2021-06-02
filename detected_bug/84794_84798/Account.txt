@@ -1,0 +1,93 @@
+@@ -7,7 +7,7 @@
+ public class Account {
+ 
+     private double balance;
+-    private ArrayList<Transaction> transactionList;
++    private ArrayList<Transaction> transitionList;
+     private static DecimalFormat df = new DecimalFormat("0.00");
+ 
+ 
+@@ -15,24 +15,24 @@
+      * Instantiates a new Account.
+      */
+     public Account() {
+-        transactionList = new ArrayList<Transaction>();
++        transitionList = new ArrayList<Transaction>();
+     }
+ 
+     private void deposit(double amount) {
+-        if(amount <= 0) {
++        if (amount <= 0) {
+             System.out.println("So tien ban nap vao khong hop le!");
+-        }else {
++        } else {
+             balance += amount;
+         }
+     }
+ 
+     private void withdraw(double amount) {
+-        if(amount <= 0) {
++        if (amount <= 0) {
+             System.out.println("So tien ban rut ra khong hop le!");
+-        }else {
++        } else {
+             if (amount > balance) {
+                 System.out.println("So tien ban rut vuot qua so du!");
+-            }else {
++            } else {
+                 balance -= amount;
+             }
+         }
+@@ -44,16 +44,16 @@
+      * @param amount    the amount
+      * @param operation the operation
+      */
+-    public void addTransaction  (double amount, String operation ) {
+-        if(!operation.equals(Transaction.DEPOSIT) && !operation.equals(Transaction.WITHDRAW)) {
++    public void addTransaction(double amount, String operation) {
++        if (!operation.equals(Transaction.DEPOSIT) && !operation.equals(Transaction.WITHDRAW)) {
+             System.out.println("Yeu cau khong hop le!");
+-        }else {
+-            if(operation.equals(Transaction.DEPOSIT)) {
++        } else {
++            if (operation.equals(Transaction.DEPOSIT)) {
+                 deposit(amount);
+-                transactionList.add(new Transaction(operation, amount, balance));
+-            } else{
++                transitionList.add(new Transaction(operation, amount, balance));
++            } else {
+                 withdraw(amount);
+-                transactionList.add(new Transaction(operation, amount, balance));
++                transitionList.add(new Transaction(operation, amount, balance));
+             }
+         }
+     }
+@@ -62,21 +62,21 @@
+      * Print transaction.
+      */
+     public void printTransaction() {
+-        for(int i = 0; i < transactionList.size(); i++) {
++        for (int i = 0; i < transitionList.size(); i++) {
+             String s;
+-            if(transactionList.get(i).getOperation().equals(Transaction.DEPOSIT)) {
++            if (transitionList.get(i).getOperation().equals(Transaction.DEPOSIT)) {
+                 s = ": Nap tien ";
+-            }else {
+-                s = " Rut tien ";
++            } else {
++                s = ": Rut tien ";
+             }
+ 
+             System.out.println("Giao dich "
+-                    + i + 1
++                    + (i + 1)
+                     + s
+                     + "$"
+-                    + df.format(transactionList.get(i).getAmount())
++                    + df.format(transitionList.get(i).getAmount())
+                     + ". So du luc nay: $"
+-                    + df.format(transactionList.get(i).getBalance())
++                    + df.format(transitionList.get(i).getBalance())
+                     + "."
+             );
+         }

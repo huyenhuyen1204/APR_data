@@ -1,0 +1,41 @@
+@@ -3,25 +3,25 @@
+     private int coordinatesY;
+     private String color;
+ 
++    /**
++     * khoi tao.
++     * @param coordinatesX x.
++     * @param coordinatesY y.
++     */
+     public Piece(int coordinatesX, int coordinatesY) {
+-        if (coordinatesX >=1 && coordinatesX <= 8) {
+-            if (coordinatesY >= 1 && coordinatesY <= 8) {
+-                this.coordinatesX = coordinatesX;
+-                this.coordinatesY = coordinatesY;
+-            }
+-        }
++        this(coordinatesX, coordinatesY, "white");
+     }
+ 
++    /**
++     * khoi tao.
++     * @param coordinatesX x.
++     * @param coordinatesY y.
++     * @param color mau.
++     */
+     public Piece(int coordinatesX, int coordinatesY, String color) {
+-        if (coordinatesX >=1 && coordinatesX <= 8) {
+-            if (coordinatesY >= 1 && coordinatesY <= 8) {
+-                this.coordinatesX = coordinatesX;
+-                this.coordinatesY = coordinatesY;
+-            }
+-        }
+-        if (color.equals("black") || color.equals("white")) {
+-            this.color = color;
+-        }
++        this.coordinatesX = coordinatesX;
++        this.coordinatesY = coordinatesY;
++        this.color = color;
+     }
+ 
+     public abstract String getSymbol();

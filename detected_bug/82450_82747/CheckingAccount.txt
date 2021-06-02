@@ -1,0 +1,29 @@
+@@ -9,8 +9,11 @@
+     @Override
+     public void withdraw(double amount) {
+         try {
++            double oldBalance = balance;
+             doWithdrawing(amount);
+-        } catch (InsufficientFundsException e) {
++            addTransaction(new Transaction(Transaction.TYPE_WITHDRAW_CHECKING,
++                    amount, oldBalance, balance));
++        } catch (InsufficientFundsException | InvalidFundingAmountException e) {
+             System.out.println(e.getMessage());
+         }
+     }
+@@ -18,9 +21,14 @@
+     @Override
+     public void deposit(double amount) {
+         try {
++            double oldBalance = balance;
+             doDepositing(amount);
++            addTransaction(new Transaction(Transaction.TYPE_DEPOSIT_CHECKING,
++                    amount, oldBalance, balance));
++
+         } catch (InvalidFundingAmountException e) {
+             System.out.println(e.getMessage());
+         }
+     }
+ }
++ 
+\ No newline at end of file

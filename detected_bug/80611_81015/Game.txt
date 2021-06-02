@@ -1,0 +1,11 @@
+@@ -14,7 +14,9 @@
+         if (piece.canMove(board, x1, y1)) {
+             Move newMove;
+             if (board.getAt(x1, y1) != null) {
+-                newMove = new Move(piece.getCoordinatesX(), x1, piece.getCoordinatesY(), y1, piece, board.getAt(x1, y1));
++                int tempX = piece.getCoordinatesX();
++                int tempY = piece.getCoordinatesY();
++                newMove = new Move(tempX, x1, tempY, y1, piece, board.getAt(x1, y1));
+                 board.removeAt(x1, y1);
+             } else {
+                 newMove = new Move(piece.getCoordinatesX(), x1, piece.getCoordinatesY(), y1, piece);

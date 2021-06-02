@@ -1,0 +1,101 @@
+@@ -1,10 +1,10 @@
+ public class Move {
+-   private Piece movedPiece;
+-   private Piece killedPiece;
+    private int startX;
+    private int endX;
+    private int startY;
+    private int endY;
++   private Piece movedPiece;
++   private Piece killedPiece;
+ 
+     /**
+      * ham.
+@@ -15,11 +15,11 @@
+      * @param movedPiece ham.
+      */
+     public Move(int startX, int endX, int startY, int endY, Piece movedPiece) {
+-        this.movedPiece = movedPiece;
+         this.startX = startX;
+         this.endX = endX;
+         this.startY = startY;
+         this.endY = endY;
++        this.movedPiece = movedPiece;
+     }
+ 
+     /**
+@@ -32,12 +32,12 @@
+      * @param killedPiece ham.
+      */
+     public Move(int startX, int endX, int startY, int endY, Piece movedPiece, Piece killedPiece) {
+-        this.movedPiece = movedPiece;
+-        this.killedPiece = killedPiece;
+         this.startX = startX;
+         this.endX = endX;
+         this.startY = startY;
+         this.endY = endY;
++        this.movedPiece = movedPiece;
++        this.killedPiece = killedPiece;
+     }
+ 
+     public Piece getMovedPiece() {
+@@ -88,35 +88,33 @@
+         this.endY = endY;
+     }
+ 
++    /**
++     * ham.
++     * @return ham.
++     */
+     public String toString() {
+         String a = "";
+-        switch (this.getMovedPiece().getCoordinatesX()) {
+-            case 1:
+-                a = "a";
+-                break;
+-            case 2:
+-                a = "b";
+-                break;
+-            case 3:
+-                a = "c";
+-                break;
+-            case 4:
+-                a = "d";
+-                break;
+-            case 5:
+-                a = "e";
+-                break;
+-            case 6:
+-                a = "f";
+-                break;
+-            case 7:
+-                a = "g";
+-                break;
+-            case 8:
+-                a = "h";
+-                break;
++        int b = this.endX;
++        if (b == 1) {
++            a = "a";
++        } else if (b == 2) {
++            a = "b";
++        } else if (b == 3) {
++            a = "c";
++        } else if (b == 4) {
++            a = "d";
++        } else if (b == 5) {
++            a = "e";
++        } else if (b == 6) {
++            a = "f";
++        } else if (b == 7) {
++            a = "g";
++        } else if (b == 8) {
++            a = "h";
+         }
+-        String s = this.getMovedPiece().getColor() + "-R" + a + this.getMovedPiece().getCoordinatesY();
++        String s = this.getMovedPiece().getColor() + "-"
++                + this.getMovedPiece().getSymbol()
++                + a + this.endY;
+         return s;
+     }
+ }

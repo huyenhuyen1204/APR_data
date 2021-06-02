@@ -1,0 +1,22 @@
+@@ -1,7 +1,7 @@
+ /**
+  * Created by CCNE on 30/11/2020.
+  */
+-public class Bishop extends  Piece{
++public class Bishop extends Piece {
+ 
+     public Bishop(int coordinatesX, int coordinatesY) {
+         super(coordinatesX, coordinatesY);
+@@ -33,8 +33,10 @@
+             return true;
+         }
+ 
+-        if (board.getAt(x, y).getColor().equals(this)) {
+-            return false;
++        if (board.getAt(x, y) != null) {
++            if (board.getAt(x, y).getColor().equals(this)) {
++                return false;
++            }
+         }
+ 
+         int i = changeUnit(deltaX, getCoordinatesX());

@@ -1,0 +1,10 @@
+@@ -14,7 +14,8 @@
+      * 123.
+      */
+     public void addPiece(Piece piece) {
+-        if (validate(piece.getCoordinatesX(), piece.getCoordinatesY()) && getAt(piece.getCoordinatesX(), piece.getCoordinatesY()) == null) {
++        if (validate(piece.getCoordinatesX(), piece.getCoordinatesY())
++                && getAt(piece.getCoordinatesX(), piece.getCoordinatesY()) == null) {
+             pieces.add(piece);
+         }
+     }

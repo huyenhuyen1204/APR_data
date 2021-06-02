@@ -1,0 +1,49 @@
+@@ -9,19 +9,26 @@
+         this.moveHistory = new ArrayList<Move>();
+     }
+ 
++    /** Make a piece move. **/
+     public void movePiece(Piece piece, int x, int y) {
+         if (piece.canMove(this.board, x, y)) {
+             boolean killed = false;
+             for (Piece p : board.getPieces()) {
+-                if (p.getX() == x && p.getY() == y && p.getColor() != piece.getColor()) {
+-                    moveHistory.add(new Move(piece.getX(), x, piece.getY(), y, piece, p));
++                if (p.getCoordinatesX() == x && p.getCoordinatesY() == y
++                        && p.getColor() != piece.getColor()) {
++                    moveHistory.add(
++                            new Move(piece.getCoordinatesX(), x,
++                                    piece.getCoordinatesY(), y, piece, p));
++                    this.board.removeAt(x, y);
+                     killed = true;
+                     break;
+                 }
+             }
+             if (!killed) {
+-                moveHistory.add(new Move(piece.getX(), x, piece.getY(), y, piece));
++                moveHistory.add(
++                        new Move(piece.getCoordinatesX(), x, piece.getCoordinatesY(), y, piece));
+             }
++            this.board.movePiece(piece, x, y);
+         }
+     }
+ 
+@@ -37,14 +44,14 @@
+         return moveHistory;
+     }
+ 
++    /** This is my try out for all the functions. **/
+     public static void main(String[] args) {
+         Game game = new Game(new Board());
+-        Rook r1 = new Rook(1, 1, "white");
+-        Rook r2 = new Rook(1, 7, "black");
++        Rook r1 = new Rook(2, 3, "white");
++        Rook r2 = new Rook(2, 6, "black");
+         game.board.addPiece(r1);
+         game.board.addPiece(r2);
+-        game.moveHistory.add(new Move(1, 1, 1, 8, r1));
+-        game.movePiece(r1, 1, 8);
++        game.movePiece(r1, 2, 6);
+         for (Move m : game.moveHistory) {
+             System.out.println(m.toString());
+         }

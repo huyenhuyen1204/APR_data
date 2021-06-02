@@ -1,0 +1,35 @@
+@@ -2,9 +2,12 @@
+     private String operation;
+     private double amount;
+     private double balance;
+-    //public final static String DEPOSIT;
+-    //public final static String WITHDRAW;
++    public static final String DEPOSIT = "deposit";
++    public static final String WITHDRAW = "withdraw";
+ 
++    /**
++     * hentaiz.
++     */
+     public Transaction(String operation, double amount, double balance) {
+         this.operation = operation;
+         this.amount = amount;
+@@ -23,13 +26,13 @@
+         return balance;
+     }
+ 
+-    //public static String getDeposit() {
+-        //return DEPOSIT;
+-    //}
++    public static String getDeposit() {
++        return DEPOSIT;
++    }
+ 
+-    //public String getWithdraw() {
+-        //return WITHDRAW;
+-    //}
++    public String getWithdraw() {
++        return WITHDRAW;
++    }
+ 
+     public void setOperation(String operation) {
+         this.operation = operation;

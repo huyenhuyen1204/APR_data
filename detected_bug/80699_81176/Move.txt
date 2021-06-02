@@ -1,0 +1,9 @@
+@@ -34,7 +34,7 @@
+      */
+     public String toString() {
+         return movedPiece.getColor() + '-' + movedPiece.getSymbol()
+-                + (char) (movedPiece.getCoordinatesX() - 1 + 'a') + movedPiece.getCoordinatesY();
++                + (char) (endX - 1 + 'a') + endY;
+     }
+ 
+     /**

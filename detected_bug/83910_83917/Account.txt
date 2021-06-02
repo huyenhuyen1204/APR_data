@@ -1,0 +1,35 @@
+@@ -37,7 +37,7 @@
+     /**
+      * them giao dich.
+      */
+-    public void addTransaction(double amount , String operation) {
++    public void addTransaction(double amount, String operation) {
+         if (!operation.equals(Transaction.WITHDRAW) && !operation.equals(Transaction.DEPOSIT)) {
+             System.out.println("Yeu cau khong hop le!");
+             return;
+@@ -58,20 +58,19 @@
+     public void printTransaction() {
+         int count = 1;
+         for (Transaction tran : transitionList) {
+-            double countAmo = (double)(Math.round(tran.getAmount() * 100) / 100 + 0.00);
+ 
+-            double countBala = (double)(Math.round(tran.getBalance() * 100) / 100 + 0.00);
+             String operation = null;
+             if (tran.getOperation(). equals(Transaction.DEPOSIT)) {
+                 operation = ": Nap tien $";
+             } else if (tran.getOperation(). equals(Transaction.WITHDRAW)) {
+                 operation = ": Rut tien $";
+             }
+-
+-            System.out.println( "Giao dich "+ count + operation + String.format("%.2f", countAmo)
+-                    + ". So du luc nay: $" + String.format("%.2f", countBala) + ".");
+-            count ++;
++            System.out.println("Giao dich " + count + operation
++                    + String.format("%.2f", tran.getAmount())
++                    + ". So du luc nay: $" + String.format("%.2f", tran.getBalance()) + ".");
++            count++;
+         }
+     }
+ 
++
+ }

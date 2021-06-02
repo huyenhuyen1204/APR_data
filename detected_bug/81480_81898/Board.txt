@@ -1,0 +1,40 @@
+@@ -11,8 +11,6 @@
+ 
+     /**
+      * gdfgdf.
+-     * @param x
+-     * @param y
+      * @return
+      */
+     public boolean validate(int x, int y) {
+@@ -22,7 +20,6 @@
+ 
+     /**
+      * fasfa.
+-     * @param piece
+      */
+     public void addPiece(Piece piece) {
+         boolean check = false;
+@@ -42,8 +39,6 @@
+ 
+     /**
+      * gfd.
+-     * @param x
+-     * @param y
+      * @return
+      */
+     public Piece getAt(int x, int y) {
+@@ -57,12 +52,10 @@
+ 
+     /**
+      * gdfgdf.
+-     * @param x
+-     * @param y
+      */
+     public void removeAt(int x, int y) {
+         for (int i = 0; i < pieces.size(); i++) {
+-            if(pieces.get(i).getCoordinatesX() == x && pieces.get(i).getCoordinatesY() == y) {
++            if (pieces.get(i).getCoordinatesX() == x && pieces.get(i).getCoordinatesY() == y) {
+                 pieces.remove(i);
+                 break;
+             }

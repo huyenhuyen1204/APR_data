@@ -1,0 +1,17 @@
+@@ -66,14 +66,14 @@
+     /**
+      * cmt.
+      */
+-    public static String getDEPOSIT() {
++    public static String getDeposit() {
+         return DEPOSIT;
+     }
+ 
+     /**
+      * cmt.
+      */
+-    public static String getWITHDRAW() {
++    public static String getWithdraw() {
+         return WITHDRAW;
+     }
+ 

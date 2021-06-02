@@ -1,0 +1,8 @@
+@@ -79,6 +79,6 @@
+ 
+     @Override
+     public String toString() {
+-        return movedPiece.getColor() + "-" + movedPiece.getSymbol() + (char)(endX + 96) + endY;
++        return movedPiece.getColor() + "-" + movedPiece.getSymbol() + (char) (endX + 96) + endY;
+     }
+ }

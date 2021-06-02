@@ -1,0 +1,59 @@
+@@ -13,42 +13,33 @@
+     }
+ 
+     @Override
+-    public boolean canMove(Board board, int coordinatesX, int coordinatesY) {
+-        if (board.validate(coordinatesX, coordinatesY)) {
+-            if (this.getCoordinatesX() != coordinatesX && this.getCoordinatesY() != coordinatesY) {
++    public boolean canMove(Board board, int x, int y) {
++        if (board.validate(x, y)) {
++            if (this.getCoordinatesX() != x && this.getCoordinatesY() != y) {
+                 return false;
+             }
+-            if (coordinatesX < this.getCoordinatesX()) {
+-                for (int i = coordinatesX + 1; i < this.getCoordinatesX(); i++) {
+-                    Piece piece = board.getAt(i, this.getCoordinatesY());
+-                    if (piece != null) {
+-                        return false;
+-                    }
+-                }
+-            } else if (coordinatesX > this.getCoordinatesX()) {
+-                for (int i = this.getCoordinatesX() + 1; i < coordinatesX; i++) {
+-                    Piece piece = board.getAt(i, this.getCoordinatesY());
+-                    if (piece != null) {
++            if (this.getCoordinatesX() == x) {
++                for (int i = Math.min(y, this.getCoordinatesY()) + 1;
++                     i < Math.max(y, this.getCoordinatesY()); i++) {
++                    if (board.getAt(x, i) != null) {
+                         return false;
+                     }
+                 }
+             }
+-            if (coordinatesY < this.getCoordinatesY()) {
+-                for (int i = coordinatesY + 1; i < this.getCoordinatesY(); i++) {
+-                    Piece piece = board.getAt(this.getCoordinatesX(), i);
+-                    if (piece != null) {
+-                        return false;
+-                    }
+-                }
+-            } else if (coordinatesY > this.getCoordinatesY()) {
+-                for (int i = this.getCoordinatesY() + 1; i < coordinatesY; i++) {
+-                    Piece piece = board.getAt(this.getCoordinatesX(), i);
+-                    if (piece != null) {
++            if (this.getCoordinatesY() == y) {
++                for (int i = Math.min(x, this.getCoordinatesX()) + 1;
++                     i < Math.max(x, this.getCoordinatesX()); i++) {
++                    if (board.getAt(i, y) != null) {
+                         return false;
+                     }
+                 }
+             }
+ 
++            if (board.getAt(x, y) != null) {
++                if (board.getAt(x, y).getColor().equalsIgnoreCase(this.getColor())) {
++                    return false;
++                }
++            }
+ 
+             return true;
+         }

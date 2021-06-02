@@ -1,0 +1,39 @@
+@@ -20,8 +20,7 @@
+                     + ": Nap tien $" + amountStr
+                     + ". So du luc nay: $" + balanceStr + ".");
+         } else {
+-            transactionHistory.clear();
+-            transactionHistory.add("So tien ban nap vao khong hop le!");
++            System.out.println("So tien ban nap vao khong hop le!");
+         }
+     }
+ 
+@@ -30,16 +29,14 @@
+         amount = Double.parseDouble(amountStr);
+ 
+         if (amount > balance) {
+-            transactionHistory.clear();
+-            transactionHistory.add("So tien ban rut vuot qua so du!");
++            System.out.println("So tien ban rut vuot qua so du!");
+         } else if (amount > 0) {
+             setBalance(getBalance() - amount);
+             String balanceStr = df.format(balance);
+             transactionHistory.add("Giao dich " + (transactionHistory.size() + 1)
+                     + ": Rut tien $" + amountStr + ". So du luc nay: $" + balanceStr + ".");
+         } else {
+-            transactionHistory.clear();
+-            transactionHistory.add("So tien ban nap vao khong hop le!");
++            System.out.println("So tien ban rut ra khong hop le!");
+         }
+     }
+ 
+@@ -48,8 +45,7 @@
+      */
+     public void addTransaction(double amount, String operation) {
+         if (!operation.equals(Transaction.DEPOSIT) && !operation.equals(Transaction.WITHDRAW)) {
+-            transactionHistory.clear();
+-            transactionHistory.add("Yeu cau khong hop le!");
++            System.out.println("Yeu cau khong hop le!");
+         } else {
+             Transaction newTransaction = new Transaction(operation, amount, balance);
+             transitionList.add(newTransaction);

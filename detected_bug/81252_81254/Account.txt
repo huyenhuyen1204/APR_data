@@ -1,0 +1,12 @@
+@@ -79,9 +79,9 @@
+             Transaction trans = transitionList.get(i);
+             System.out.print("Giao dich " + (i + 1) + ": ");
+             if (trans.getOperation().equalsIgnoreCase(Transaction.DEPOSIT)) {
+-                System.out.print("Nap tien: $");
++                System.out.print("Nap tien $");
+             } else {
+-                System.out.print("Rut tien: $");
++                System.out.print("Rut tien $");
+             }
+             System.out.format("%.2f", trans.getAmount());
+             System.out.print(String.format(". So du luc nay: $%.2f",

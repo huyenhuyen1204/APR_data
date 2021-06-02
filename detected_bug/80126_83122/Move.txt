@@ -1,0 +1,29 @@
+@@ -6,7 +6,8 @@
+     private Piece movedPiece;
+     private Piece killedPiece;
+ 
+-    public Move(int startX, int startY, int endX, int endY, Piece movedPiece) {
++    /**hu hu.*/
++    public Move(int startX, int endX, int startY, int endY, Piece movedPiece) {
+         this.endX = endX;
+         this.endY = endY;
+         this.movedPiece = movedPiece;
+@@ -14,7 +15,8 @@
+         this.startY = startY;
+     }
+ 
+-    public Move(int startX, int startY, int endX, int endY, Piece movedPiece, Piece killedPiece) {
++    /**hu hu.*/
++    public Move(int startX, int endX, int startY, int endY, Piece movedPiece, Piece killedPiece) {
+         this.startY = startY;
+         this.startX = startX;
+         this.movedPiece = movedPiece;
+@@ -23,7 +25,7 @@
+         this.killedPiece = killedPiece;
+     }
+ 
+-    /**hu hu*/
++    /**hu hu.*/
+     public String toString() {
+         String s = movedPiece.getColor() + '-' + movedPiece.getSymbol();
+         switch (endX) {

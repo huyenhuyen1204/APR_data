@@ -1,0 +1,34 @@
+@@ -4,7 +4,7 @@
+ 
+ public class Account {
+     private double balance;
+-    private ArrayList<Transaction> listTransactions = new ArrayList<>();
++    private ArrayList<Transaction> transitionList = new ArrayList<>();
+ 
+ 
+     /**
+@@ -59,11 +59,11 @@
+         if (operation.equals(Transaction.DEPOSIT)) {
+             deposit(amount);
+             transaction = new Transaction(Transaction.DEPOSIT, amount, balance);
+-            listTransactions.add(transaction);
++            transitionList.add(transaction);
+         } else if (operation.equals(Transaction.WITHDRAW)) {
+             withdraw(amount);
+             transaction = new Transaction(Transaction.WITHDRAW, amount, balance);
+-            listTransactions.add(transaction);
++            transitionList.add(transaction);
+         } else {
+             System.out.println("Yeu cau khong hop le!");
+         }
+@@ -75,8 +75,8 @@
+      */
+     public void printTransaction() {
+         NumberFormat formatter = new DecimalFormat("#0.00");
+-        for (int i = 0; i < listTransactions.size(); ++i) {
+-            Transaction transaction = listTransactions.get(i);
++        for (int i = 0; i < transitionList.size(); ++i) {
++            Transaction transaction = transitionList.get(i);
+             String result = "Giao dich " + (i + 1) + ": ";
+             if (transaction.getOperation().equals(Transaction.DEPOSIT)) {
+                 result += "Nap tien";

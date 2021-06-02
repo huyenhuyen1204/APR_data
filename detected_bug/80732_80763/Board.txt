@@ -1,0 +1,27 @@
+@@ -1,14 +1,14 @@
+ import java.util.ArrayList;
+ 
+ public class Board {
+-    private static final int WIDTH = 8;
+-    private static final int HEIGHT = 8;
++    public static final int WIDTH = 8;
++    public static final int HEIGHT = 8;
+     private ArrayList<Piece> pieces = new ArrayList<>();
+ 
+     /**
+      *  .
+      */
+-    public Board () {
++    public Board() {
+ 
+     }
+ 
+@@ -30,7 +30,7 @@
+      * @return .
+      */
+     public boolean validate(int x, int y) {
+-        if (x >= 1 && x <= 8 && y >= 1 && y <=8) {
++        if (x >= 1 && x <= 8 && y >= 1 && y <= 8) {
+             return true;
+         }
+         return false;

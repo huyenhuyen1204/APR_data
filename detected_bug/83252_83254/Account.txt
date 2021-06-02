@@ -1,0 +1,27 @@
+@@ -3,7 +3,7 @@
+ 
+ public class Account {
+     private double balance;
+-    private List<Transaction> transactions = new ArrayList<>();
++    private ArrayList<Transaction> transitionList = new ArrayList<Transaction>();
+ 
+     /**
+      * nap tien.
+@@ -46,7 +46,7 @@
+             withdraw(amount);
+         }
+         if (amount >= 0 && (!operation.equals("withdraw") || amount <= balance)) {
+-            transactions.add(new Transaction(operation, amount, balance));
++            transitionList.add(new Transaction(operation, amount, balance));
+         }
+     }
+ 
+@@ -55,7 +55,7 @@
+      */
+     public void printTransaction() {
+         int i = 0;
+-        for (Transaction s : transactions) {
++        for (Transaction s : transitionList) {
+             i++;
+             System.out.println("Giao dich " + i + ": " + s.toString());
+         }

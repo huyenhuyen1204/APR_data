@@ -1,0 +1,19 @@
+@@ -10,9 +10,6 @@
+ 
+     /**
+      * fsdfsd.
+-     * @param piece
+-     * @param x
+-     * @param y
+      */
+     public void movePiece(Piece piece, int x, int y) {
+         if (piece.canMove(board, x, y)) {
+@@ -43,4 +40,8 @@
+     public ArrayList<Move> getMoveHistory() {
+         return moveHistory;
+     }
++
++    public void setMoveHistory(ArrayList<Move> moveHistory) {
++        this.moveHistory = moveHistory;
++    }
+ }

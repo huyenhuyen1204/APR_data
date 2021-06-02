@@ -1,0 +1,54 @@
+@@ -3,37 +3,39 @@
+ 
+ public class Account {
+     private double balance;
+-    private ArrayList<Transaction> arrayList= new ArrayList<Transaction>();
++    private ArrayList<Transaction> transitionList= new ArrayList<Transaction>();
++
+     private void deposit(double amount){
+         if(amount<=0) System.out.println("So tien ban nap vao khong hop le!");
++        transitionList.add(new Transaction( "Nap tien " , amount,balance+amount));
++        balance+=amount;
+     }
++
+     private void withdraw(double amount){
+         if(amount<=0) System.out.println("So tien ban rut ra khong hop le!");
+-        if(amount>balance) System.out.println("So tien ban rut vuot qua so du");
++        if(amount>balance) System.out.println("So tien ban rut vuot qua so du!");
++        transitionList.add(new Transaction("Rut tien ",amount,balance-amount));
++        balance-=amount;
+     }
++
+     public void addTransaction(double amount,String operation){
+         if(operation!=Transaction.DEPOSIT&&operation!=Transaction.WITHDRAW)
+             System.out.println("Yeu cau khong hop le!");
++
+         if(operation==Transaction.DEPOSIT){
+-            arrayList.add(new Transaction( operation , amount,balance+amount));
+-            balance+=amount;
++            deposit(amount);
+         }
+         if(operation==Transaction.WITHDRAW){
+-            arrayList.add(new Transaction(operation,amount,balance-amount));
+-            balance-=amount;
++            withdraw(amount);
+         }
+     }
+     public void printTransaction(){
+ 
+-        for(int i=0; i<arrayList.size(); i++)
++        for(int i=0; i<transitionList.size(); i++)
+             {
+-                String amountS= String.format("%.2f",arrayList.get(i).getAmount());
+-                String balanceS= String.format("%.2f",arrayList.get(i).getBalance());
+-                System.out.print("Giao dich "+(i+1)+": ");
+-                if(arrayList.get(i).getOperation()=="deposit")
+-                    System.out.print("Nap tien ");
+-                else
+-                    System.out.print("Rut tien ");
++                String amountS= String.format("%.2f",transitionList.get(i).getAmount());
++                String balanceS= String.format("%.2f",transitionList.get(i).getBalance());
++                System.out.print("Giao dich "+(i+1)+": "+transitionList.get(i).getOperation());
+                 System.out.println("$"+amountS+". So du luc nay: $"+balanceS+".");
+             }
+     }

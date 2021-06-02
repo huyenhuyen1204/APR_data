@@ -1,0 +1,19 @@
+@@ -92,5 +92,17 @@
+     public void setColor(String color) {
+         this.color = color;
+     }
+-    
++
++    /**
++     *  .
++     * @param piece .
++     * @return .
++     */
++    public boolean checkPosition(Piece piece) {
++        if (piece.getCoordinatesX() >= 1 && piece.getCoordinatesX() <= 8
++                && piece.getCoordinatesY() >= 1 && piece.getCoordinatesY() <= 8) {
++            return true;
++        }
++        return false;
++    }
+ }

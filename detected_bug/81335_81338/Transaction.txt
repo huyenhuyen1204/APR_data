@@ -1,0 +1,9 @@
+@@ -1,6 +1,6 @@
+ public class Transaction {
+-    public static final String in = "DEPOSIT";
+-    public static final String out = "WITHDRAW";
++    public static final String DEPOSIT = "deposit";
++    public static final String WITHDRAW = "withdraw";
+     private String operation;
+     private double amount;
+     private double balance;

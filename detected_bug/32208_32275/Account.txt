@@ -1,0 +1,23 @@
+@@ -47,7 +47,21 @@
+     }
+     public void printTransaction()
+     {
+-        
++        int dem = 0;
++        if(this.transitionList.isEmpty()) return;
++        else {
++            DecimalFormat df = new DecimalFormat("#.00");
++            for (Transaction i : this.transitionList) {
++                dem++;
++                if (i.getOperation().equals("deposit") )
++                {
++                    System.out.println("Giao dich " + dem + ": Nap tien $" +df.format( Math.round(i.getAmount()* 100.00)/100.0) + ". So du luc nay: $" + df.format(Math.round(i.getBalance()* 100.0)/100.0) + ".");
++                }
++                else if (i.getOperation().equals("withdraw") ){
++                    System.out.println("Giao dich " + dem + ": Rut tien $" + df.format(Math.round(i.getAmount()* 100.00)/100.00 )+ ". So du luc nay: $" +df.format( Math.round(i.getBalance()* 100.0)/100.0) + ".");
++                }
++            }
++        }
+     }
+ 
+ 

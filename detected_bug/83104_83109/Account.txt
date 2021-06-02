@@ -1,0 +1,10 @@
+@@ -40,6 +40,9 @@
+         }
+     }
+ 
++    /**
++     * javadoc.
++     */
+     public void doWithdrawing(double amount)
+     throws InvalidFundingAmountException, InsufficientFundsException {
+         if (amount < 0) {

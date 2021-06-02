@@ -1,0 +1,50 @@
+@@ -2,7 +2,7 @@
+ 
+ public class Account {
+     private double balance;
+-    private ArrayList<Transaction> transactionList = new ArrayList<>();
++    private ArrayList<Transaction> transitionList = new ArrayList<>();
+ 
+     /**
+      * deposit operation.
+@@ -33,7 +33,7 @@
+     }
+ 
+     /**
+-     * add a transaction to field transactionList.
++     * add a transaction to field transitionList.
+      * @param amount amount of operation.
+      * @param operation type operation.
+      */
+@@ -42,13 +42,13 @@
+             this.deposit(amount);
+             Transaction transaction =
+                     new Transaction(Transaction.DEPOSIT, amount, this.balance);
+-            this.transactionList.add(transaction);
++            this.transitionList.add(transaction);
+ 
+-        } else if (operation.equals(Transaction.WITHDRAW)){
++        } else if (operation.equals(Transaction.WITHDRAW)) {
+             this.withdraw(amount);
+             Transaction transaction =
+                     new Transaction(Transaction.WITHDRAW, amount, this.balance);
+-            this.transactionList.add(transaction);
++            this.transitionList.add(transaction);
+ 
+         } else {
+             System.out.println("Yeu cau khong hop le!");
+@@ -57,11 +57,11 @@
+     }
+ 
+     /**
+-     * print information of transaction in transactionList.
++     * print information of transaction in transitionList.
+      */
+     public void printTransaction() {
+-        for (int i = 0; i < this.transactionList.size(); i++) {
+-            Transaction tran = this.transactionList.get(i);
++        for (int i = 0; i < this.transitionList.size(); i++) {
++            Transaction tran = this.transitionList.get(i);
+             String operation = tran.getOperation();
+             String operationVie;
+ 

@@ -1,0 +1,21 @@
+@@ -29,14 +29,18 @@
+                 return true;
+             } else if (x == currX && y - currY == 1 && board.getAt(x, y) == null) {
+                 return true;
+-            } else return Math.abs(x - currX) == 1 && y - currY == 1 && board.getAt(x, y) != null;
++            } else {
++                return Math.abs(x - currX) == 1 && y - currY == 1 && board.getAt(x, y) != null;
++            }
+         } else if (getColor().equals("black")) {
+             if (currX == x && currY == 7 && y == 5
+                     && board.getAt(x, 6) == null && board.getAt(x, 5) == null) {
+                 return true;
+             } else if (x == currX && currY - y == 1 && board.getAt(x, y) == null) {
+                 return true;
+-            } else return Math.abs(x - currX) == 1 && currY - y == 1 && board.getAt(x, y) != null;
++            } else {
++                return Math.abs(x - currX) == 1 && currY - y == 1 && board.getAt(x, y) != null;
++            }
+         }
+ 
+         return false;

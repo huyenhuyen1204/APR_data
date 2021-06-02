@@ -1,0 +1,52 @@
+@@ -2,7 +2,11 @@
+ 
+ public class Account {
+     private double balance;
+-    private ArrayList<Transaction> list =new ArrayList<>();
++    private ArrayList<Transaction> transitionList;
++    public Account() {
++        transitionList = new ArrayList<Transaction>();
++    }
++
+     private void deposit (double amount) {
+         if(amount<=0) {
+             System.out.println("So tien ban nap vao khong hop le!");
+@@ -27,14 +31,14 @@
+         {
+             deposit(amount);
+             Transaction temp = new Transaction("deposit", amount, balance);
+-            list.add(temp);
++            transitionList.add(temp);
+         }
+         else if(operation.equals("withdraw"))
+         {
+             {
+                 withdraw(amount);
+                 Transaction temp = new Transaction("withdraw", amount, balance);
+-                list.add(temp);
++                transitionList.add(temp);
+             }
+         }
+         else
+@@ -44,14 +48,14 @@
+ 
+     }
+     public void printTransaction() {
+-        String t = "";
+-        for (int i=0;i<list.size();i++) {
+-            if(list.get(i).getOperation().equals("deposit")) {
+-                t =t+ "Nap tien $";
++        String t ;
++        for (int i = 0; i< transitionList.size(); i++) {
++            if(transitionList.get(i).getOperation().equals("deposit")) {
++                t = "Nap tien $";
+             }
+-             else if(list.get(i).getOperation().equals("withdraw"))
+-                 t=t+"Rut tien $";
+-             System.out.println(String.format("Giao dich %d: %s%.2f. So du luc nay: $%.2f.",i+1, t ,list.get(i).getAmount(),list.get(i).getBlance()));
++             else
++                 t= "Rut tien $";
++             System.out.println(String.format("Giao dich %d: %s%.2f. So du luc nay: $%.2f.",i+1, t , transitionList.get(i).getAmount(), transitionList.get(i).getBalance()));
+             }
+         }
+ 

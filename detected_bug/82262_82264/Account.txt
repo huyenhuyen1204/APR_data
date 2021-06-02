@@ -1,0 +1,31 @@
+@@ -20,8 +20,8 @@
+      */
+     private void withdraw(double amount) {
+         if (amount < 0) {
+-            System.out.println("So tien ban nap vao khong hop le!");
+-        } else if (amount > balance){
++            System.out.println("So tien ban rut ra khong hop le!");
++        } else if (amount > balance) {
+             System.out.println("So tien ban rut vuot qua so du!");
+         } else {
+             balance -= amount;
+@@ -50,17 +50,11 @@
+ 
+         for (int i = 0; i < transitionList.size(); ++i) {
+             System.out.println("Giao dich " + (i + 1) + ": "
+-            + (transitionList.get(i).getOperation().equals("deposit")? "Nap tien $" : "Rut tien $")
+-            + df.format(transitionList.get(i).getAmount()) + ". So du luc nay: $"
++            + (transitionList.get(i).getOperation().equals("deposit") ? "Nap tien" : "Rut tien")
++            + " $" + df.format(transitionList.get(i).getAmount()) + ". So du luc nay: $"
+             + df.format(transitionList.get(i).getBalance()) + "."
+             );
+         }
+     }
+ 
+-    public static void main(String[] args) {
+-        Account acc= new Account();
+-        acc.addTransaction(2000.255,"deposit");
+-        acc.addTransaction(1000,"withdraw");
+-        acc.printTransaction();
+-    }
+ }

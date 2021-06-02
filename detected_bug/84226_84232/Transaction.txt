@@ -1,0 +1,30 @@
+@@ -10,6 +10,9 @@
+     private double initialBalance;
+     private double finalBalance;
+ 
++    /**
++     * tt.
++     */
+     public Transaction(int type, double amount, double initialBalance, double finalBalance) {
+         this.type = type;
+         this.amount = amount;
+@@ -17,6 +20,9 @@
+         this.finalBalance = finalBalance;
+     }
+ 
++    /**
++     * tt.
++     */
+     private String getTransactionTypeString(int type) {
+         switch (type) {
+             case 1:
+@@ -30,6 +36,9 @@
+         }
+     }
+ 
++    /**
++     * tt.
++     */
+     public String getTransactionSummary() {
+         DecimalFormat df = new DecimalFormat("0.00");
+         return "- Kiểu giao dịch: " + getTransactionTypeString(type) + ". Số dư ban đầu: $"

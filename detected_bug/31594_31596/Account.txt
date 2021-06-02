@@ -1,0 +1,13 @@
+@@ -58,8 +58,10 @@
+             }
+             else System.out.print("Nap tien $");
+ 
+-            System.out.print( rou(transitionList.get(i).getAmount()) + ". " );
+-            System.out.println("So du luc nay: $" + rou(transitionList.get(i).getBalance()) +". ");
++            System.out.printf("%.2f", rou(transitionList.get(i).getAmount()) );
++            System.out.print(". So du luc nay: $" );
++            System.out.printf("%.2f", rou(transitionList.get(i).getBalance()) );
++            System.out.println(".");
+         }
+     }
+ 

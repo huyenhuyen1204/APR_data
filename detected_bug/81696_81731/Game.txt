@@ -1,0 +1,16 @@
+@@ -11,8 +11,14 @@
+         this.board = board;
+     }
+ 
++    /**
++     * remove piece.
++     * @param piece to move
++     * @param x coordinate
++     * @param y coordinate
++     */
+     public void movePiece(Piece piece, int x, int y) {
+-        if(piece.canMove(board, x, y)) {
++        if (piece.canMove(board, x, y)) {
+             int startX = piece.getCoordinatesX();
+             int startY = piece.getCoordinatesY();
+             Piece killedPiece = board.getAt(x, y);

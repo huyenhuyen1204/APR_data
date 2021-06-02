@@ -1,0 +1,27 @@
+@@ -13,13 +13,13 @@
+             switch (tran.getOperation()){
+                 case Transaction.DEPOSIT:
+                     System.out.println("Giao dich " + i
+-                            + ": Nap tien " + decimalFormat.format(tran.getAmount())
+-                            + ". So du luc nay: " + decimalFormat.format(tran.getBalance()) + ".");
++                            + ": Nap tien $" + decimalFormat.format(tran.getAmount())
++                            + ". So du luc nay: $" + decimalFormat.format(tran.getBalance()) + ".");
+                     break;
+                 case Transaction.WITHDRAW:
+                     System.out.println("Giao dich " + i
+-                            + ": Rut tien " + decimalFormat.format(tran.getAmount())
+-                            + ". So du luc nay: " + decimalFormat.format(tran.getBalance()) + ".");
++                            + ": Rut tien $" + decimalFormat.format(tran.getAmount())
++                            + ". So du luc nay: $" + decimalFormat.format(tran.getBalance()) + ".");
+                     break;
+             }
+ 
+@@ -35,6 +35,8 @@
+             case Transaction.WITHDRAW:
+                 withdraw(amount);
+                 break;
++            default:
++                System.out.println("Yeu cau khong hop le!");
+         }
+     }
+ 

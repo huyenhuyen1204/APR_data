@@ -1,0 +1,32 @@
+@@ -1,5 +1,4 @@
+ 
+-
+ import java.text.DecimalFormat;
+ 
+ public class Transaction {
+@@ -35,11 +34,11 @@
+     }
+ 
+     public double getAmount() {
+-        return Math.round(amount*100)/100;
++        return amount;
+     }
+ 
+     public double getBalance() {
+-        return Math.round(balance*100)/100;
++        return balance;
+     }
+     public String toString(double number){
+         String pat = "##.00";
+@@ -48,9 +47,9 @@
+         return format;
+     }
+     public String depositToString() {
+-        return ": Nap tien $" + this.toString(this.getAmount())+ ".So du luc nay: $" + this.toString(this.getBalance()) +".";
++        return ": Nap tien $" + this.toString(this.getAmount())+ ". So du luc nay: $" + this.toString(this.getBalance()) +".";
+     }
+     public String withdrawToString() {
+-        return ": Rut tien $" + this.toString(this.getAmount())+ ".So du luc nay: $" + this.toString(this.getBalance()) +".";
++        return ": Rut tien $" + this.toString(this.getAmount())+ ". So du luc nay: $" + this.toString(this.getBalance()) +".";
+     }
+ }

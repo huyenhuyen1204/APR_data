@@ -1,0 +1,81 @@
+@@ -1,5 +1,5 @@
+-import java.util.List;
+ import java.util.ArrayList;
++import java.util.List;
+ 
+ public class Customer {
+     private long idNumber;
+@@ -10,16 +10,25 @@
+ 
+     }
+ 
++    /**
++     * tt.
++     */
+     public Customer(long idNumber, String fullName) {
+         this.idNumber = idNumber;
+         this.fullName = fullName;
+     }
+ 
++    /**
++     * tt.
++     */
+     public String getCustomerInfo() {
+         String res = "Số CMND: " + idNumber + ". Họ tên: " + fullName + ".";
+         return res;
+     }
+ 
++    /**
++     * tt.
++     */
+     public void addAccount(Account a) {
+         for (Account account : accountList) {
+             if (account.equals(a)) {
+@@ -29,6 +38,9 @@
+         accountList.add(a);
+     }
+ 
++    /**
++     * tt.
++     */
+     public void removeAccount(Account a) {
+         for (int i = 0; i < accountList.size(); i++) {
+             if (accountList.get(i).equals(a)) {
+@@ -38,22 +50,37 @@
+         }
+     }
+ 
++    /**
++     * tt.
++     */
+     public long getIdNumber() {
+         return idNumber;
+     }
+ 
++    /**
++     * tt.
++     */
+     public void setIdNumber(long idNumber) {
+         this.idNumber = idNumber;
+     }
+ 
++    /**
++     * tt.
++     */
+     public String getFullName() {
+         return fullName;
+     }
+ 
++    /**
++     * tt.
++     */
+     public void setFullName(String fullName) {
+         this.fullName = fullName;
+     }
+ 
++    /**
++     * tt.
++     */
+     public List<Account> getAccountList() {
+         return accountList;
+     }

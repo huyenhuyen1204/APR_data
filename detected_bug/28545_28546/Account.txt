@@ -1,0 +1,9 @@
+@@ -9,7 +9,7 @@
+  */
+ public class Account {
+     private double balance = 0;
+-    ArrayList<Transaction> transitionList = new ArrayList<Transaction>();
++    private ArrayList<Transaction> transitionList = new ArrayList<Transaction>();
+ 
+     private void deposit(double amount) {
+         if(amount <= 0) System.out.println("So tien ban nap vao khong hop le!");

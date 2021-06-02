@@ -1,0 +1,77 @@
+@@ -1,43 +1,33 @@
+-
+-/**
+- * Created by CCNE on 03/12/2020.
+- */
+-public class SavingsAccount extends Account {
+-    /**
+-     * javadoc.
+-     */
+-    public SavingsAccount(long accountNumber, double balance) {
+-        super(accountNumber, balance);
+-    }
+-
+-    /**
+-     * javadoc.
+-     */
+-    public void withdraw(double number) {
+-        try {
+-            if (number > 1000 || this.getBalance() - number < 5000) {
+-                throw new InvalidFundingAmountException(number);
+-            } else {
+-                double cur = this.getBalance();
+-                doWithdrawing(number);
+-                addTransaction(new Transaction(-2, number, cur, this.getBalance()));
+-            }
+-        } catch (Exception e) {
+-            System.out.println(e.getMessage());
+-        }
+-    }
+-
+-    /**
+-     * javadoc.
+-     */
+-    public void deposit(double number) {
+-        try {
+-            double cur = this.getBalance();
+-            doDepositing(number);
+-            addTransaction(new Transaction(2, number, cur, this.getBalance()));
+-        } catch (Exception e) {
+-            System.out.println(e.getMessage());
+-        }
+-    }
+-}
++
++public class SavingsAccount extends Account {
++
++    /**
++     * Yes.
++     */
++    public SavingsAccount(long a, double b) {
++        super(a, b);
++    }
++
++    /**
++     * Yes.
++     */
++    public void withdraw(double x) {
++        try {
++            doWithdrawing(x);
++        } catch (BankException e) {
++            e.printStackTrace();
++        }
++    }
++
++    /**
++     * Yes.
++     */
++    public void deposit(double x) {
++        try {
++            doDepositing(x);
++        } catch (BankException e) {
++            e.printStackTrace();
++        }
++    }
++}
+  
+\ No newline at end of file

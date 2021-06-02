@@ -1,0 +1,55 @@
+@@ -21,30 +21,44 @@
+             }
+             if (x > getCoordinatesX()) {
+                 for (int i = getCoordinatesX() + 1; i < x; i++) {
+-                    if (board.getAt(i, y) != null) return false;
++                    if (board.getAt(i, y) != null) {
++                        return false;
++                    }
+                 }
+             } else {
+-                for (int i = getCoordinatesX() + 1; i > x; i--) {
+-                    if (board.getAt(i, y) != null) return false;
++                for (int i = getCoordinatesX() - 1; i > x; i--) {
++                    if (board.getAt(i, y) != null) {
++                        return false;
++                    }
+                 }
+             }
+             if (board.getAt(x, y) != null) {
+-                if (board.getAt(x, y).getColor().equals(getColor())) return false;
+-                else return true;
++                if (board.getAt(x, y).getColor().equals(getColor())) {
++                    return false;
++                } else {
++                    return true;
++                }
+             }
+         } else {
+             if (y > getCoordinatesY()) {
+                 for (int i = getCoordinatesY() + 1; i < y; i++) {
+-                    if (board.getAt(x, i) != null) return false;
++                    if (board.getAt(x, i) != null) {
++                        return false;
++                    }
+                 }
+             } else {
+-                for (int i = getCoordinatesY() + 1; i > y; i--) {
+-                    if (board.getAt(x, i) != null) return false;
++                for (int i = getCoordinatesY() - 1; i > y; i--) {
++                    if (board.getAt(x, i) != null) {
++                        return false;
++                    }
+                 }
+             }
+             if (board.getAt(x, y) != null) {
+-                if (board.getAt(x, y).getColor().equals(getColor())) return false;
+-                else return true;
++                if (board.getAt(x, y).getColor().equals(getColor())) {
++                    return false;
++                } else {
++                    return true;
++                }
+             }
+         }
+         return true;

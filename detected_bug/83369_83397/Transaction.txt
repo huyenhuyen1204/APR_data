@@ -1,0 +1,11 @@
+@@ -5,6 +5,10 @@
+     public static final String DEPOSIT = "deposit";
+     public static final String WITHDRAW = "withdraw";
+ 
++    /**
++     * Constructor1.
++     */
++
+     public Transaction(String operation, double amount, double balance) {
+         this.amount = amount;
+         this.balance = balance;

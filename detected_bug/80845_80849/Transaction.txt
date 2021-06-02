@@ -1,0 +1,49 @@
+@@ -1,8 +1,8 @@
+ public class Transaction {
+ 
+     private String operation;
+-    private Double amount;
+-    private Double balance;
++    private double amount;
++    private double balance;
+     public static final String DEPOSIT = "deposit";
+     public static final String WITHDRAW = "withdraw";
+ 
+@@ -18,14 +18,14 @@
+     /**
+      * .
+      */
+-    public Double getAmount() {
++    public double getAmount() {
+         return amount;
+     }
+ 
+     /**
+      * .
+      */
+-    public Double getBalance() {
++    public double getBalance() {
+         return balance;
+     }
+ 
+@@ -35,17 +35,18 @@
+     public String getOperation() {
+         return operation;
+     }
++
+     /**
+      * .
+      */
+-    public void setAmount(Double amount) {
++    public void setAmount(double amount) {
+         this.amount = amount;
+     }
+ 
+     /**
+      * .
+      */
+-    public void setBalance(Double balance) {
++    public void setBalance(double balance) {
+         this.balance = balance;
+     }
+ 

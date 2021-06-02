@@ -1,0 +1,52 @@
+@@ -18,10 +18,8 @@
+     }
+ 
+     /**
+-     * jklfk.
+-     * @param x
+-     * @param y
+-     * @return
++     * cmt.
++     *
+      */
+     public boolean validate(int x, int y) {
+         if (x >= 1 && x <= 8 && y >= 1 && y <= 8) {
+@@ -31,10 +29,8 @@
+     }
+ 
+     /**
+-     * jklfk.
+-     * @param
+-     * @param
+-     * @return
++     * cmt.
++     *
+      */
+     public void addPiece(Piece piece) {
+         for (Piece check : this.pieces) {
+@@ -49,10 +45,8 @@
+     }
+ 
+     /**
+-     * jklfk.
+-     * @param x
+-     * @param y
+-     * @return
++     * cmt.
++     *
+      */
+     public void removeAt(int x, int y) {
+         for (int i = 0; i < this.pieces.size(); i++) {
+@@ -65,10 +59,8 @@
+     }
+ 
+     /**
+-     * jklfk.
+-     * @param x
+-     * @param y
+-     * @return
++     * cmt.
++     *
+      */
+     public Piece getAt(int x, int y) {
+         Piece res = null;

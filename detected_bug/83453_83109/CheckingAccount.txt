@@ -1,0 +1,59 @@
+@@ -1,32 +1,26 @@
+-public class CheckingAccount extends Account {
+-    /**
+-     * This is comment.
+-     */
+-    public CheckingAccount(long accountNumber, double balance) {
+-        super(accountNumber, balance);
+-    }
+-
+-    /**
+-     * This is comment.
+-     */
+-    public void withdraw(double out) {
+-        try {
+-            doWithdrawing(out);
+-            transactionList.add(new Transaction(1, out, balance + out, balance));
+-        } catch (BankException e) {
+-            System.out.println(e.getMessage());
+-        }
+-    }
+-
+-    /**
+-     * This is comment.
+-     */
+-    public void deposit(double in) {
+-        try {
+-            doDepositing(in);
+-            transactionList.add(new Transaction(0, in, balance - in, balance));
+-        } catch (BankException e) {
+-            System.out.println(e.getMessage());
+-        }
+-    }
+-}
++public class CheckingAccount extends Account {
++    public CheckingAccount(long accountNumber, double balance) {
++        super(accountNumber, balance);
++    }
++
++    @Override
++    public void deposit(double amount) {
++        try {
++            doDepositing(amount);
++            addTransaction(new Transaction(1, amount, getBalance() - amount, getBalance()));
++        } catch (InvalidFundingAmountException e) {
++            System.out.println(e.getMessage());
++        }
++
++    }
++
++    @Override
++    public void withdraw(double amount) {
++        try {
++            doWithdrawing(amount);
++            addTransaction(new Transaction(2, amount, getBalance() + amount, getBalance()));
++        } catch (InvalidFundingAmountException | InsufficientFundsException e) {
++            System.out.println(e.getMessage());
++        }
++    }
++}

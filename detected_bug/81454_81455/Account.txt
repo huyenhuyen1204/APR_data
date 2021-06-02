@@ -1,0 +1,36 @@
+@@ -1,9 +1,9 @@
+-/**
+- * @author Lê Công Nam .
+- */
+-
+ import java.util.ArrayList;
+ 
++/**
++ *  .
++ * @author Lê Công Nam .
++ */
+ public class Account {
+     private double balance;
+     private ArrayList<Transaction> transitionList = new ArrayList<>();
+@@ -61,15 +61,17 @@
+             double amount = transitionList.get(i).getAmount();
+             double balance = transitionList.get(i).getBalance();
+             String dps = transitionList.get(i).getAmount() % 10 == 0
+-                    ? (double) Math.round(amount * 100) / 100 + "0" : (double) Math.round(amount * 100) / 100 + "";
++                    ? (double) Math.round(amount * 100) / 100 + "0"
++                    : (double) Math.round(amount * 100) / 100 + "";
+             String blc = transitionList.get(i).getBalance() % 10 == 0
+-                    ? (double) Math.round(balance * 100) / 100 + "0" : (double) Math.round(balance * 100) / 100 + "";
++                    ? (double) Math.round(balance * 100) / 100 + "0"
++                    : (double) Math.round(balance * 100) / 100 + "";
+             if (transitionList.get(i).getOperation().equals("deposit")) {
+                 System.out.println("Giao dich " + (i + 1) + ": Nap tien $"
+-                        + dps + ". So du luc nay: $" + blc + ".") ;
++                        + dps + ". So du luc nay: $" + blc + ".");
+             } else if (transitionList.get(i).getOperation().equals("withdraw")) {
+                 System.out.println("Giao dich " + (i + 1) + ": Rut tien $"
+-                        + dps + ". So du luc nay: $" + blc + ".") ;
++                        + dps + ". So du luc nay: $" + blc + ".");
+             }
+         }
+     }

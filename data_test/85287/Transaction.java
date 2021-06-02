@@ -1,0 +1,43 @@
+public class Transaction {
+    private String operation;
+    private double amount;
+    private double balance;
+    public static final String DEPOSIT = "deposit";      // tien gui
+    public static final String WITHDRAW = "withdraw";     // tien rut
+
+    public double getAmount() {
+        return amount;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public String getOperation() {
+        return operation;
+    }
+
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
+    public void setOperation(String operation) {
+        this.operation = operation;
+    }
+
+    public Transaction() {}
+
+    /**
+     * khai bao.
+     */
+    public Transaction(String operation, double amount, double balance) {
+        this.amount = amount;
+        this.balance = balance;
+        this.operation = operation;
+    }
+
+}

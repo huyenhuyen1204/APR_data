@@ -1,0 +1,14 @@
+@@ -32,10 +32,9 @@
+      */
+     public abstract boolean canMove(Board board, int x, int y);
+ 
+-    /**
+-     * check position of piece.
+-     */
+-    public abstract boolean checkPosition();
++    public boolean checkPosition() {
++        return true;
++    }
+ 
+     public int getCoordinatesX() {
+         return coordinatesX;

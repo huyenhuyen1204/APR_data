@@ -1,0 +1,11 @@
+@@ -34,8 +34,9 @@
+         if (amount <= 0) {
+             throw new InvalidFundingAmountException(amount);
+         }
+-        if (amount > balance)
++        if (amount > balance) {
+             throw new InsufficientFundsException(amount);
++        }
+         balance -= amount;
+     }
+ 

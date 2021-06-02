@@ -1,0 +1,49 @@
+@@ -8,8 +8,7 @@
+     private void deposit(double amount) {
+         if (amount <= 0) {
+             System.out.println("So tien ban nap vao khong hop le!");
+-        }
+-        else {
++        } else {
+             balance = balance + amount;
+         }
+     }
+@@ -20,27 +19,32 @@
+         }
+         if (amount > balance) {
+             System.out.println("So tien ban rut vuot qua so du!");
+-        }
+-        else {
++        } else {
+             balance = balance - amount;
+         }
+     }
++
++    /**
++     * Add.
++     */
+     public void addTransaction(double amount, String operation) {
+         if (!operation.equals(Transaction.DEPOSIT) && !operation.equals(Transaction.WITHDRAW)) {
+             System.out.println("Yeu cau khong hop le!");
+         } else {
+             if (operation.equals(Transaction.DEPOSIT)) {
+                 deposit(amount);
+-            }
+-            else {
++            } else {
+                 withdraw(amount);
+             }
+-            Transaction transaction = new Transaction(operation,amount,balance);
++            Transaction transaction = new Transaction(operation, amount, balance);
+             transitionList.add(transaction);
+         }
+     }
+ 
+-    public void printTransaction(){
++    /**
++     * Print.
++     */
++    public void printTransaction() {
+         for (int i = 0; i < transitionList.size(); i++) {
+             DecimalFormat format = new DecimalFormat("0.00");
+             String output = "Giao dich " + (i + 1) + ": ";

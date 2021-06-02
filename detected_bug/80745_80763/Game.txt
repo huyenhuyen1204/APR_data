@@ -1,0 +1,20 @@
+@@ -54,12 +54,16 @@
+         if (piece.canMove(board, x, y)) {
+             if (board.getAt(x, y) == null) {
+                 Move move = new Move(piece.getCoordinatesX(), x, piece.getCoordinatesY(), y, piece);
++                piece.setCoordinatesX(x);
++                piece.setCoordinatesY(y);
+                 moveHistory.add(move);
+             } else {
+-                Move move = new Move(piece.getCoordinatesX(), x,
+-                        piece.getCoordinatesY(), y, piece, board.getAt(x, y));
+-                board.removeAt(x, y);
++                Move move = new Move(piece.getCoordinatesX(), x, piece.getCoordinatesY(),
++                        y, piece, board.getAt(x, y));
+                 moveHistory.add(move);
++                board.removeAt(x, y);
++                piece.setCoordinatesX(x);
++                piece.setCoordinatesY(y);
+             }
+         }
+     }

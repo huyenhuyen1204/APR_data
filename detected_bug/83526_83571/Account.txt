@@ -1,0 +1,46 @@
+@@ -42,6 +42,15 @@
+         } else if (amount < 0) {
+             throw new InvalidFundingAmountException(amount);
+         } else {
++            Transaction transaction;
++            if (this instanceof CheckingAccount) {
++                transaction = new Transaction(Transaction.TYPE_WITHDRAW_CHECKING,
++                        amount, balance, balance - amount);
++            } else {
++                transaction = new Transaction(Transaction.TYPE_WITHDRAW_SAVINGS,
++                        amount, balance, balance - amount);
++            }
++            addTransaction(transaction);
+             balance -= amount;
+         }
+     }
+@@ -53,6 +62,15 @@
+         if (amount < 0) {
+             throw new InvalidFundingAmountException(amount);
+         } else {
++            Transaction transaction;
++            if (this instanceof CheckingAccount) {
++                transaction = new Transaction(Transaction.TYPE_DEPOSIT_CHECKING,
++                        amount, balance, balance + amount);
++            } else {
++                transaction = new Transaction(Transaction.TYPE_DEPOSIT_SAVINGS,
++                        amount, balance, balance + amount);
++            }
++            addTransaction(transaction);
+             balance += amount;
+         }
+     }
+@@ -79,11 +97,11 @@
+      */
+     public String getTransactionHistory() {
+         StringBuilder res = new StringBuilder(String.format(
+-                "Lịch sử giao dịch của tài khoản %d: ", accountNumber
++                "Lịch sử giao dịch của tài khoản %d:\n", accountNumber
+         ));
+         for (Transaction transaction : transactionList) {
+-            res.append("\n");
+             res.append(transaction.getTransactionSummary());
++            res.append("\n");
+         }
+         return res.toString();
+     }

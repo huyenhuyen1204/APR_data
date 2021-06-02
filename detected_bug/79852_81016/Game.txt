@@ -1,0 +1,92 @@
+@@ -5,28 +5,28 @@
+     private ArrayList<Move> moveHistory = new ArrayList<>();
+ 
+     /**
+-     * cmt
++     * cmt.
+      */
+     public Board getBoard() {
+         return board;
+     }
+ 
+     /**
+-     * cmt
++     * cmt.
+      */
+     public void setBoard(Board board) {
+         this.board = board;
+     }
+ 
+     /**
+-     * cmt
++     * cmt.
+      */
+     public Game(Board board) {
+         this.board = board;
+     }
+ 
+     /**
+-     * cmt
++     * cmt.
+      */
+ 
+     public Game(Board board, ArrayList<Move> moveHistory) {
+@@ -35,47 +35,47 @@
+     }
+ 
+     /**
+-     * cmt
++     * cmt.
+      */
+     public Board getBroad() {
+         return board;
+     }
+ 
+     /**
+-     * cmt
++     * cmt.
+      */
+     public void setBroad(Board board) {
+         this.board = board;
+     }
+ 
+     /**
+-     * cmt
++     * cmt.
+      */
+     public ArrayList<Move> getMoveHistory() {
+         return moveHistory;
+     }
+ 
+     /**
+-     * cmt
++     * cmt.
+      */
+     public void setMoveHistory(ArrayList<Move> moveHistory) {
+         this.moveHistory = moveHistory;
+     }
+ 
+     /**
+-     * cmt
++     * cmt.
+      */
+     public void movePiece(Piece piece, int x, int y) {
+-
+         if (piece.canMove(board, x, y)) {
+-            Move move = new Move(piece.getX(), x, piece.getY(), y, board.getAt(x, y));
++            Move move = new Move(piece.getCoordinatesX(), x, piece.getCoordinatesY(),
++                    y, piece, board.getAt(x, y));
+             moveHistory.add(move);
+-            Piece nPiece = board.getAt(x, y);
+-            if (nPiece != null) {
++            Piece piece1 = board.getAt(x, y);
++            if (piece1 != null) {
+                 board.removeAt(x, y);
+             }
+-            piece.setX(x);
+-            piece.setY(y);
++            piece.setCoordinatesX(x);
++            piece.setCoordinatesY(y);
+         }
+     }
+ }

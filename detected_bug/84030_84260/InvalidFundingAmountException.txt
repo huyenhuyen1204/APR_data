@@ -1,0 +1,8 @@
+@@ -8,6 +8,6 @@
+      */
+     public InvalidFundingAmountException(double amount) {
+         super("Số tiền không hợp lệ: $"
+-                + String.format("%.2f",amount));
++                + String.format("%.2f", amount));
+     }
+ }

@@ -1,0 +1,9 @@
+@@ -15,7 +15,7 @@
+      * Ham khoi tao 3 tham so.
+      */
+     public Piece(int x, int y, String color) {
+-        if((color == "white" || color == "black") && (x >= 1 && y <= 8)) {
++        if ((color == "white" || color == "black") && (x >= 1 && y <= 8)) {
+             this.coordinatesX = x;
+             this.coordinatesY = y;
+             this.color = color;

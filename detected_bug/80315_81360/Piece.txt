@@ -1,0 +1,85 @@
+@@ -1,43 +1,45 @@
+ public abstract class Piece {
++    private int coordinatesX;
++    private int coordinatesY;
++    private String color;
+ 
+-    private int x = 1;
+-    private int y = 1;
+-    private String color = "white";
+-    private boolean isRemove = false;
+-
+-    public Piece(int x, int y) {
+-        this.x = x;
+-        this.y = y;
++    /**
++     * Constructor.
++     */
++    public Piece(int coordinatesX, int coordinatesY) {
++        this.coordinatesX = coordinatesX;
++        this.coordinatesY = coordinatesY;
++        color = "white";
+     }
+ 
+-    public Piece(int x, int y, String color) {
+-        this.x = x;
+-        this.y = y;
++    /**
++     * Constructor.
++     */
++    public Piece(int coordinatesX, int coordinatesY, String color) {
++        this.coordinatesX = coordinatesX;
++        this.coordinatesY = coordinatesY;
+         this.color = color;
+     }
+ 
+-    public boolean isRemove() {
+-        return isRemove;
++    public boolean checkPosition(Piece p) {
++        return p.getCoordinatesX() >= 1 && p.getCoordinatesX() <= 8
++                && p.getCoordinatesY() >= 1 && p.getCoordinatesY() <= 8;
+     }
+ 
+-    public void setIsRemove(boolean remove) {
+-        isRemove = remove;
++    public int getCoordinatesX() {
++        return coordinatesX;
+     }
+ 
+-    public int getX() {
+-        return x;
++    public void setCoordinatesX(int coordinatesX) {
++        this.coordinatesX = coordinatesX;
+     }
+ 
+-    public void setX(int x) {
+-        this.x = x;
++    public int getCoordinatesY() {
++        return coordinatesY;
+     }
+ 
+-    public int getY() {
+-        return y;
+-    }
+-
+-    public void setY(int y) {
+-        this.y = y;
++    public void setCoordinatesY(int coordinatesY) {
++        this.coordinatesY = coordinatesY;
+     }
+ 
+     public String getColor() {
+@@ -48,12 +50,7 @@
+         this.color = color;
+     }
+ 
+-    public boolean checkPosition(Piece piece) {
+-        return piece.getX() >= 1 && piece.getX() <= 8
+-                && piece.getY() >= 1 && piece.getY() <= 8;
+-    }
+-
+     public abstract String getSymbol();
+ 
+-    public abstract boolean canMove(Board board, int x, int y);
++    public abstract boolean canMove(Board board, int coordinatesX, int coordinatesY);
+ }

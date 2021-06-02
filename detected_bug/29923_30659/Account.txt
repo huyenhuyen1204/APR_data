@@ -1,0 +1,53 @@
+@@ -1,8 +1,9 @@
++import java.text.DecimalFormat;
+ import java.util.ArrayList;
+ 
+ public class Account {
+     private double balance;
+-    private ArrayList<Transaction> transactions = new ArrayList<>();
++    private ArrayList<Transaction> transitionList = new ArrayList<>();
+ 
+     public Account(){
+         this.balance = 0;
+@@ -31,13 +32,13 @@
+         if (operation.equals(Transaction.DEPOSIT)){
+             deposit(amount);
+             Transaction transaction = new Transaction(operation, amount, this.balance);
+-            transactions.add(transaction);
++            transitionList.add(transaction);
+         }
+ 
+         else if (operation.equals(Transaction.WITHDRAW)){
+             withdraw(amount);
+             Transaction transaction = new Transaction(operation, amount, this.balance);
+-            transactions.add(transaction);
++            transitionList.add(transaction);
+         }
+ 
+         else{
+@@ -46,16 +47,18 @@
+     }
+ 
+     public void printTransaction(){
+-        for(int i=0; i<transactions.size(); i++){
+-            if (transactions.get(i).getOperation().equals("deposit")){
+-                String s = "Giao dich " + (i+1) + ": Nap tien $" + (double)Math.round(transactions.get(i).getAmount()*100)/100
+-                        + ". So du luc nay: " + (double)Math.round(transactions.get(i).getBalance()*100)/100 + ".";
++        DecimalFormat format = new DecimalFormat("0.00");
++        for(int i=0; i<transitionList.size(); i++){
++            if (transitionList.get(i).getOperation().equals("deposit")){
++                String s = "Giao dich " + (i+1) + ": Nap tien $" + format.format(transitionList.get(i).getAmount())
++                        + ". So du luc nay: $" + format.format(transitionList.get(i).getBalance()) + ".";
++
+                 System.out.println(s);
+             }
+ 
+-            if (transactions.get(i).getOperation().equals("withdraw")){
+-                String s = "Giao dich " + (i+1) + ": Rut tien $" + (double)Math.round(transactions.get(i).getAmount()*100)/100
+-                        + ". So du luc nay: " + (double)Math.round(transactions.get(i).getBalance()*100)/100 + ".";
++            if (transitionList.get(i).getOperation().equals("withdraw")){
++                String s = "Giao dich " + (i+1) + ": Rut tien $" + format.format(transitionList.get(i).getAmount())
++                        + ". So du luc nay: $" + format.format(transitionList.get(i).getBalance()) + ".";
+                 System.out.println(s);
+             }
+         }

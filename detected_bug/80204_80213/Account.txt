@@ -1,0 +1,53 @@
+@@ -42,15 +42,39 @@
+             return;
+         }
+ 
+-        Transaction trans = new Transaction(operation, amount, balance);
+-        transitionList.add(trans);
++        boolean check = false;
++        if (operation.equals(Transaction.WITHDRAW)) {
++            double temp = balance;
++            withdraw(amount);
++
++            if (balance == temp - amount) {
++                check = true;
++            }
++        } else if (operation.equals(Transaction.DEPOSIT)) {
++            double temp = balance;
++            deposit(amount);
++            if (balance == temp + amount) {
++                check = true;
++            }
++        }
++
++        if (check) {
++            Transaction transaction = new Transaction(operation, amount, balance);
++            transitionList.add(transaction);
++        }
+     }
+ 
+     /**
+      * abc.
+      */
+-    public double round(double amount) {
+-        return (double) (Math.round(amount * 100)) / 100;
++    public String round(double amount) {
++        double a = (double) (Math.round(amount * 100)) / 100;
++        double temp = a - Math.round(a);
++        if (temp == 0) {
++            return "" + a + '0';
++        }
++
++        return "" + a;
+     }
+ 
+     /**
+@@ -66,7 +90,7 @@
+             }
+ 
+             System.out.print("" + round(transitionList.get(i).getAmount())
+-                    + ". " + "So du luc nay: "
++                    + ". " + "So du luc nay: $"
+                     + round(transitionList.get(i).getBalance())
+                     + '.');
+             System.out.println("");

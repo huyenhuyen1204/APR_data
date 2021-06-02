@@ -1,0 +1,15 @@
+@@ -31,13 +31,7 @@
+ 
+     public void removeAt(int x, int y) {
+ 
+-        for (Piece piece : pieces) {
+-            if (piece.getCoordinatesX() == x && piece.getCoordinatesY() == y) {
+-                if (piece != null) {
+-                    pieces.remove(piece);
+-                }
+-            }
+-        }
++        pieces.removeIf(p -> x == p.getCoordinatesX() && y == p.getCoordinatesY());
+ 
+     }
+ 

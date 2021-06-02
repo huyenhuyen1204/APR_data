@@ -1,0 +1,58 @@
+@@ -1,16 +1,21 @@
+-/**
+- * Created by CCNE on 05/11/2019.
+- */
+ public class Transaction {
++    public static final String DEPOSIT = "deposit";
++    public static final String WITHDRAW = "withdraw";
+     private String operation;
+     private double amount;
+     private double balance;
+-    public static final String DEPOSIT="deposit";
+-    public static final  String WITHDRAW="withdraw";
+-    public  Transaction()   {};
++
+     public Transaction(String operation, double amount, double balance) {
+-        this.amount=amount;
++        this.operation = operation;
++        this.amount = amount;
+         this.balance = balance;
++    }
++
++    public String getOperation() {
++        return operation;
++    }
++
++    public void setOperation(String operation) {
+         this.operation = operation;
+     }
+ 
+@@ -18,23 +23,15 @@
+         return amount;
+     }
+ 
+-    public double getBalance() {
+-        return balance;
+-    }
+-
+-    public String getOperation() {
+-        return operation;
+-    }
+-
+     public void setAmount(double amount) {
+         this.amount = amount;
+     }
+ 
+-    public void setOperation(String operation) {
+-        this.operation = operation;
++    public double getBalance() {
++        return balance;
+     }
+-
+     public void setBalance(double balance) {
+         this.balance = balance;
+     }
+-}
++
++}
+\ No newline at end of file

@@ -1,0 +1,31 @@
+@@ -65,10 +65,12 @@
+      * Javadoc Comment.
+      */
+     public void printTransaction() {
++        Transaction current;
++        String operation;
++        String amount;
++        String balance;
+         for (int i = 0; i < transitionList.size(); i++) {
+-            Transaction current = transitionList.get(i);
+-            String operation;
+-            String amount;
++            current = transitionList.get(i);
+             if (current.getOperation().equals(Transaction.DEPOSIT)) {
+                 operation = "Nap tien $";
+             } else {
+@@ -79,8 +81,13 @@
+             } else {
+                 amount = String.valueOf(current.getAmount());
+             }
++            if ((current.getBalance() * 100) % 10 == 0) {
++                balance = current.getBalance() + "0";
++            } else {
++                balance = String.valueOf(current.getBalance());
++            }
+             System.out.println("Giao dich " + (i + 1) + ": " + operation + amount
+-                    + ". So du luc nay: $" + current.getBalance() + ".");
++                    + ". So du luc nay: $" + balance + ".");
+         }
+     }
+ }

@@ -1,0 +1,23 @@
+@@ -1,7 +1,9 @@
+ public class Move {
+     private Piece movedPiece;
+-    private int startX, endX;
+-    private int startY, endY;
++    private int startX;
++    private int endX;
++    private int startY;
++    private int endY;
+     private Piece killedPiece;
+ 
+     /**3.*/
+@@ -55,8 +57,8 @@
+             default:
+                 break;
+         }
+-        return "`" + this.movedPiece.getColor() + "-" + this.movedPiece.getSymbol()
+-                + s + this.endY + "`";
++        return "" + this.movedPiece.getColor() + "-" + this.movedPiece.getSymbol()
++                + s + this.endY;
+     }
+ 
+     /**3.*/

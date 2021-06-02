@@ -1,0 +1,30 @@
+@@ -3,6 +3,9 @@
+ 
+     }
+ 
++    /**
++     * initialize method.
++     */
+     public Bishop(int x, int y, String color) {
+         this.setCoordinatesX(x);
+         this.setCoordinatesY(y);
+@@ -32,12 +35,17 @@
+         }
+         int directionX = getCoordinatesX() < x ? 1 : -1;
+         int directionY = getCoordinatesY() < y ? 1 : -1;
+-        for (int currentX = getCoordinatesX() + directionX, currentY = getCoordinatesY() + directionY;
++        for (int currentX = getCoordinatesX() + directionX,
++             currentY = getCoordinatesY() + directionY;
+              !(currentX == x && currentY == y); currentX += directionX, currentY += directionY) {
+             if (board.getAt(currentX, currentY) != null) {
+                 return false;
+             }
+         }
+-        return !board.getAt(x, y).getColor().equals(this.getColor());
++        Piece piece = board.getAt(x, y);
++        if (piece != null) {
++            return !piece.getColor().equals(this.getColor());
++        }
++        return true;
+     }
+ }

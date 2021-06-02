@@ -1,0 +1,16 @@
+@@ -1,4 +1,5 @@
+-import java.io.*;
++import java.io.InputStream;
++import java.io.InputStreamReader;
+ import java.rmi.server.ExportException;
+ import java.util.ArrayList;
+ import java.util.List;
+@@ -47,7 +48,7 @@
+                     customerList.add(currentCustomer);
+                 }
+             }
+-        } catch(Exception ex) {
++        } catch (Exception ex) {
+             System.out.println("Exception1");
+         }
+     }

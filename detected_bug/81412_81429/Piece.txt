@@ -1,0 +1,11 @@
+@@ -17,8 +17,8 @@
+     /**
+      * .
+      *
+-     * @param coodinatesX .
+-     * @param coodinatesY .
++     * @param coordinatesX .
++     * @param coordinatesY .
+      * @param color       .
+      */
+     public Piece(int coordinatesX, int coordinatesY, String color) {

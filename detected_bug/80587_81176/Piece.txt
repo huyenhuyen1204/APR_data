@@ -1,0 +1,9 @@
+@@ -83,6 +83,7 @@
+      * Hello, this is me ure looking for.
+      */
+     public boolean checkPosition(Piece p) {
+-        return 1 <= p.getCoordinatesX() && p.getCoordinatesX() <= 8 && 1 <= p.getCoordinatesY() && p.getCoordinatesY() <= 8;
++        return 1 <= p.getCoordinatesX() && p.getCoordinatesX() <= 8
++                && 1 <= p.getCoordinatesY() && p.getCoordinatesY() <= 8;
+     }
+ }

@@ -1,0 +1,29 @@
+@@ -22,8 +22,8 @@
+     public void addPiece(Piece piece) {
+        int l = pieces.size();
+        for (int i = 0; i < l; i++) {
+-           if (piece.getX() == pieces.get(i).getX()
+-                   && piece.getY() == pieces.get(i).getY()) {
++           if (piece.getCoordinatesX() == pieces.get(i).getCoordinatesX()
++                   && piece.getCoordinatesY() == pieces.get(i).getCoordinatesY()) {
+                return;
+            }
+        }
+@@ -36,7 +36,7 @@
+     public Piece getAt(int x, int y) {
+         int l = pieces.size();
+         for (int i = 0; i < l; i++) {
+-            if (pieces.get(i).getX() == x && pieces.get(i).getY() == y) {
++            if (pieces.get(i).getCoordinatesX() == x && pieces.get(i).getCoordinatesY() == y) {
+                 return pieces.get(i);
+             }
+         }
+@@ -49,7 +49,7 @@
+     public void removeAt(int x, int y) {
+         int l = pieces.size();
+         for (int i = 0; i < l; i++) {
+-            if (pieces.get(i).getX() == x && pieces.get(i).getY() == y) {
++            if (pieces.get(i).getCoordinatesX() == x && pieces.get(i).getCoordinatesY() == y) {
+                 pieces.remove(i);
+                 break;
+             }

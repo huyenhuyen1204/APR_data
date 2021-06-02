@@ -1,0 +1,36 @@
+@@ -8,11 +8,11 @@
+ 
+     /**
+      * ham khoi tao co tham so.
+-     * @param startX
+-     * @param startY
+-     * @param endX
+-     * @param endY
+-     * @param movedPiece
++     * @param startX .
++     * @param startY .
++     * @param endX .
++     * @param endY .
++     * @param movedPiece .
+      */
+     public Move(int startX, int startY, int endX, int endY, Piece movedPiece) {
+         this.startX = startX;
+@@ -24,12 +24,12 @@
+ 
+     /**
+      * ham khoi tao co tham so.
+-     * @param startX
+-     * @param startY
+-     * @param endX
+-     * @param endY
+-     * @param movedPiece
+-     * @param killedPiece
++     * @param startX .
++     * @param startY .
++     * @param endX .
++     * @param endY .
++     * @param movedPiece .
++     * @param killedPiece .
+      */
+     public Move(int startX, int startY, int endX, int endY, Piece movedPiece, Piece killedPiece) {
+         this.startX = startX;

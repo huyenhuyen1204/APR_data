@@ -1,0 +1,20 @@
+@@ -103,7 +103,7 @@
+     }
+ 
+     /**
+-     * cmt
++     * cmt.
+      */
+     public Move(int startX, int endX, int startY, int endY, Piece movedPiece, Piece killedPiece) {
+         this.startX = startX;
+@@ -117,8 +117,8 @@
+     @Override
+     public String toString() {
+         String ans = "";
+-        char xUnit = (char) (endX + 96);
+-        ans = String.valueOf(xUnit);
++        char init = (char) (endX + 96);
++        ans = String.valueOf(init);
+         ans += String.valueOf(endY);
+         return movedPiece.getColor() + "-" + movedPiece.getSymbol() + ans;
+     }

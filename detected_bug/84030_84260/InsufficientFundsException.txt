@@ -1,0 +1,9 @@
+@@ -8,7 +8,7 @@
+      */
+     public InsufficientFundsException(double amount) {
+         super("Số dư tài khoản không đủ $"
+-                + String.format("%.2f",amount)
++                + String.format("%.2f", amount)
+                 + " để thực hiện giao dịch");
+     }
+ }

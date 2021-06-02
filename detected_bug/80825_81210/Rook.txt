@@ -1,0 +1,32 @@
+@@ -13,6 +13,11 @@
+         return "R";
+     }
+ 
++    /**
++     * Author.
++     * Thuan
++     * Trinh Van Thuan
++     */
+     @Override
+     public boolean canMove(Board board, int x, int y) {
+         if (this.getCoordinatesX() != x && this.getCoordinatesY() != y) {
+@@ -28,6 +33,9 @@
+                         return false;
+                     }
+                 }
++                if (board.getAt(x, y) != null) {
++                    return !board.getAt(x, y).getColor().equals(this.getColor());
++                }
+                 return true;
+             } else {
+                 int start = Math.min(this.getCoordinatesY(), y);
+@@ -37,6 +45,9 @@
+                         return false;
+                     }
+                 }
++                if (board.getAt(x, y) != null) {
++                    return !board.getAt(x, y).getColor().equals(this.getColor());
++                }
+                 return true;
+             }
+         }

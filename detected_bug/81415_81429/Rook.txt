@@ -1,0 +1,52 @@
+@@ -43,14 +43,47 @@
+         if (x == getCoordinatesX() && y == getCoordinatesY()) {
+             return false;
+         }
+-        if (x == getCoordinatesX() || y == getCoordinatesY()) {
+-            Piece p = board.getAt(x, y);
+-            if (p == null) {
++        if (x == getCoordinatesX()) {
++            for (int i = getCoordinatesY() + 1; i < y; i++) {
++                Piece p = board.getAt(x, i);
++                if (p != null) {
++                    return false;
++                }
++            }
++            for (int i = getCoordinatesY() - 1; i > y; i--) {
++                Piece p = board.getAt(x, i);
++                if (p != null) {
++                    return false;
++                }
++            }
++            if (board.getAt(x, y) == null) {
+                 return true;
+             }
+-            if (!getColor().equals(p.getColor())) {
++            if (board.getAt(x, y).getColor().equals(getColor())) {
++                return false;
++            }
++            return true;
++        }
++        if (y == getCoordinatesY()) {
++            for (int i = getCoordinatesX() + 1; i < x; i++) {
++                Piece p = board.getAt(i, y);
++                if (p != null) {
++                    return false;
++                }
++            }
++            for (int i = getCoordinatesX() - 1; i > x; i--) {
++                Piece p = board.getAt(i, y);
++                if (p != null) {
++                    return false;
++                }
++            }
++            if (board.getAt(x, y) == null) {
+                 return true;
+             }
++            if (board.getAt(x, y).getColor().equals(getColor())) {
++                return false;
++            }
++            return true;
+         }
+         return false;
+     }

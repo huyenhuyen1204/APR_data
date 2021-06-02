@@ -1,0 +1,19 @@
+@@ -40,6 +40,9 @@
+         }
+     }
+ 
++    /**
++     * javadoc.
++     */
+     public void doWithdrawing(double amount)
+     throws InvalidFundingAmountException, InsufficientFundsException {
+         if (amount < 0) {
+@@ -67,7 +70,7 @@
+         for (Transaction transaction : transactionList) {
+             res.append(transaction.getTransactionSummary()).append("\n");
+         }
+-        //res.deleteCharAt(res.lastIndexOf("\n"));
++        res.deleteCharAt(res.lastIndexOf("\n"));
+         return res.toString();
+     }
+ 

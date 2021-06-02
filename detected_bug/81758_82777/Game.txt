@@ -1,0 +1,31 @@
+@@ -17,19 +17,19 @@
+     public void movePiece(Piece piece, int x, int y) {
+         if (piece.canMove(board, x, y)) {
+             if (board.getAt(x, y) == null) {
+-                piece.setCoordinatesX(x);
+-                piece.setCoordinatesY(y);
+                 moveHistory.add(
+                         new Move(piece.getCoordinatesX(), piece.getCoordinatesY(),
+                                 x, y, piece));
++                piece.setCoordinatesX(x);
++                piece.setCoordinatesY(y);
+             } else {
+                 Piece killedPiece = board.getAt(x, y);
+                 board.removeAt(x, y);
+-                piece.setCoordinatesX(x);
+-                piece.setCoordinatesY(y);
+                 moveHistory.add(
+                         new Move(piece.getCoordinatesX(), piece.getCoordinatesY(),
+                                 x, y, piece, killedPiece));
++                piece.setCoordinatesX(x);
++                piece.setCoordinatesY(y);
+             }
+         }
+     }
+@@ -49,4 +49,6 @@
+     public void setBoard(Board board) {
+         this.board = board;
+     }
++
++
+ }

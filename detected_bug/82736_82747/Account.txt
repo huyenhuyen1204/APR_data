@@ -1,0 +1,47 @@
+@@ -11,7 +11,8 @@
+     protected double balance;
+     protected List<Transaction> transactionList = new ArrayList<>();
+ 
+-    public Account() {}
++    public Account() {
++    }
+ 
+     public Account(long accountNumber, double balance) {
+         this.accountNumber = accountNumber;
+@@ -26,6 +27,7 @@
+         return balance;
+     }
+ 
++    /** Withdraw. */
+     public void doWithdrawing(double amount)
+             throws InsufficientFundsException, InvalidFundingAmountException {
+         if (amount < 0) {
+@@ -37,6 +39,7 @@
+         }
+     }
+ 
++    /** Deposit. */
+     public void doDepositing(double amount)
+             throws InvalidFundingAmountException {
+         if (amount < 0) {
+@@ -50,8 +53,10 @@
+ 
+     public abstract void deposit(double amount);
+ 
++    /** Transaction history. */
+     public String getTransactionHistory() {
+-        StringBuilder result = new StringBuilder("Lịch sử gioa dịch của tài khoản " + accountNumber + ":\n");
++        StringBuilder result = new StringBuilder(
++                "Lịch sử giao dịch của tài khoản " + accountNumber + ":\n");
+         for (Transaction transaction : transactionList) {
+             result.append(transaction.getTransactionSummary()).append("\n");
+         }
+@@ -65,7 +70,7 @@
+     @Override
+     public boolean equals(Object obj) {
+         if (obj instanceof Account) {
+-            if (accountNumber == ((Account)obj).accountNumber) {
++            if (accountNumber == ((Account) obj).accountNumber) {
+                 return true;
+             }
+         }

@@ -1,0 +1,11 @@
+@@ -51,8 +51,8 @@
+     public String toString() {
+         DecimalFormat df = new DecimalFormat("#0.00");
+         if(this.operation.equals(Transaction.DEPOSIT))
+-            return " Nap tien $" + df.format(this.amount) + ". So du luc nay: $" + df.format(this.balance) + ".";
++            return ": Nap tien $" + df.format(this.amount) + ". So du luc nay: $" + df.format(this.balance) + ".";
+         else
+-            return " Rut tien $" + df.format(this.amount) + ". So du luc nay: $" + df.format(this.balance) + ".";
++            return ": Rut tien $" + df.format(this.amount) + ". So du luc nay: $" + df.format(this.balance) + ".";
+     }
+ }

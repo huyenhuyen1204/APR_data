@@ -1,0 +1,26 @@
+@@ -14,7 +14,12 @@
+     public void withdraw(double amount) {
+         try {
+             if (amount <= withdrawLimit && balance - amount >= minBalance) {
++                double initialBalance = balance;
+                 doWithdrawing(amount);
++                addTransaction(
++                    new Transaction(
++                        Transaction.TYPE_WITHDRAW_SAVINGS,
++                        amount, initialBalance, balance));
+             }
+         } catch (BankException e) {
+             System.out.println(e.getMessage());
+@@ -27,7 +32,12 @@
+     @Override
+     public void deposit(double amount) {
+         try {
++            double initialBalance = balance;
+             doDepositing(amount);
++            addTransaction(
++                new Transaction(
++                    Transaction.TYPE_DEPOSIT_SAVINGS,
++                    amount, initialBalance, balance));
+         } catch (BankException e) {
+             System.out.println(e.getMessage());
+         }

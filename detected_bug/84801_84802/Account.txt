@@ -1,0 +1,29 @@
+@@ -3,7 +3,7 @@
+ public class Account {
+ 
+     private double balance = 0;
+-    private ArrayList<Transaction> transactions;
++    private ArrayList<Transaction> transitionList = new ArrayList<>();
+ 
+     /**
+      * Comment.
+@@ -39,7 +39,7 @@
+             } else {
+                 withdraw(amount);
+             }
+-            transactions.add(new Transaction(operation, amount, balance));
++            transitionList.add(new Transaction(operation, amount, balance));
+         } else {
+             System.out.println("Yeu cau khong hop le!");
+         }
+@@ -49,8 +49,8 @@
+      * Comment.
+      */
+     public void printTransaction() {
+-        for (int i = 1; i <= transactions.size(); i++) {
+-            System.out.println("Giao dich " + i + ": " + transactions.get(i - 1).getInfo());
++        for (int i = 1; i <= transitionList.size(); i++) {
++            System.out.println("Giao dich " + i + ": " + transitionList.get(i - 1).getInfo());
+         }
+     }
+ 

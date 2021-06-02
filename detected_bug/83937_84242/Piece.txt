@@ -1,0 +1,60 @@
+@@ -23,6 +23,29 @@
+         this.color = color;
+     }
+ 
++    /**
++     * method.
++     */
++
++    public String algebraicNotation() {
++        if (getCoordinatesX() == 1) {
++            return "a";
++        } else if (getCoordinatesX() == 2) {
++            return "b";
++        } else if (getCoordinatesX() == 3) {
++            return "c";
++        } else if (getCoordinatesX() == 4) {
++            return "d";
++        } else if (getCoordinatesX() == 5) {
++            return "e";
++        } else if (getCoordinatesX() == 6) {
++            return "f";
++        } else if (getCoordinatesX() == 7) {
++            return "g";
++        }
++        return "h";
++    }
++
+     public int getCoordinatesX() {
+         return coordinatesX;
+     }
+@@ -47,29 +70,6 @@
+         this.color = color;
+     }
+ 
+-    /**
+-     * method.
+-     */
+-
+-    public String algebraicNotation() {
+-       if (getCoordinatesX() == 1) {
+-           return "a";
+-       } else if (getCoordinatesX() == 2) {
+-           return "b";
+-       } else if (getCoordinatesX() == 3) {
+-           return "c";
+-       } else if (getCoordinatesX() == 4) {
+-           return "d";
+-       } else if (getCoordinatesX() == 5) {
+-           return "e";
+-       } else if (getCoordinatesX() == 6) {
+-           return "f";
+-       } else if (getCoordinatesX() == 7) {
+-           return "g";
+-       }
+-       return "h";
+-    }
+-
+     public abstract String getSymbol();
+ 
+     public abstract boolean canMove(Board board, int x, int y);

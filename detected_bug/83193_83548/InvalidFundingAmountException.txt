@@ -1,0 +1,25 @@
+@@ -1,12 +1,12 @@
+-/**
+- * Created by CCNE on 03/12/2020.
+- */
+-public class InvalidFundingAmountException extends BankException {
+-    /**
+-     * javadoc.
+-     */
+-    public InvalidFundingAmountException(double number) {
+-        super(String.format("Số tiền không hợp lệ: $%.2f", number));
+-    }
+-}
++import java.text.DecimalFormat;
++
++public class InvalidFundingAmountException extends BankException {
++
++    /**
++     * Yes.
++     */
++    public InvalidFundingAmountException(double x) {
++        super("Số tiền không hợp lệ: $" + (new DecimalFormat("0.00")).format(x));
++    }
++}
+  
+\ No newline at end of file

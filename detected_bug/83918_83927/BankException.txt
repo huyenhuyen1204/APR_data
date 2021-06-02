@@ -1,0 +1,11 @@
+@@ -1,5 +1,5 @@
+-public class BankException extends Exception {
+-    BankException(String e) {
+-        super(e);
+-    }
+-}
++public class BankException extends Exception {
++    public BankException(String s) {
++        super(s);
++    }
++}

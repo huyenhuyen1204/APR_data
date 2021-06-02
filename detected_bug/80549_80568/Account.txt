@@ -1,0 +1,66 @@
+@@ -1,9 +1,9 @@
+-import java.util.List;
+ import java.util.ArrayList;
+ 
+ public class Account {
+     private double balance;
+-    List<String> list = new ArrayList<String>();
++    private ArrayList<Transaction> transitionList = new ArrayList<Transaction>();
++    private ArrayList<String> list = new ArrayList<String>();
+ 
+     public Account() {
+ 
+@@ -11,7 +11,7 @@
+ 
+     private void deposit(double amount) {
+         if (amount <= 0) {
+-            list.add("So tien ban nap vao khong hop le!");
++            System.out.println("So tien ban nap vao khong hop le!");
+         } else {
+             balance += amount;
+             String newBalance = round(balance);
+@@ -22,7 +22,9 @@
+ 
+     private void withdraw(double amount) {
+         if (amount <= 0) {
+-            list.add("So tien ban rut ra khong hop le!");
++            System.out.println("So tien ban rut ra khong hop le!");
++        } else if (amount > balance) {
++            System.out.println("So tien ban rut vuot qua so du!");
+         } else {
+             balance -= amount;
+             String newBalance = round(balance);
+@@ -31,6 +33,9 @@
+         }
+     }
+ 
++    /**
++     * narutooooo.
++     */
+     public void addTransaction(double amount, String operation) {
+         if (operation.equals("deposit")) {
+             deposit(amount);
+@@ -39,17 +44,20 @@
+             withdraw(amount);
+         }
+         if (!operation.equals("deposit") && !operation.equals("withdraw")) {
+-            list.add("Yeu cau khong hop le");
++            System.out.println("Yeu cau khong hop le!");
+         }
+     }
+ 
++    /**
++     * sasukeeeeee.
++     */
+     public void printTransaction() {
+         for (int i = 0; i < list.size(); i++) {
+             System.out.println("Giao dich " + (i + 1) + ": " + list.get(i));
+         }
+     }
+-    public String round(double a)
+-    {
++
++    public String round(double a) {
+         return String.format("%.2f", a);
+     }
+ }

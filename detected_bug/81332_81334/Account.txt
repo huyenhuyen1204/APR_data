@@ -1,0 +1,24 @@
+@@ -47,14 +47,19 @@
+         String str = "";
+         for (int i = 0; i < transitionList.size(); ++i) {
+             count = i + 1;
++            String formattedString1 = String.format("%.02f", transitionList.get(i).getAmount());
++            String formattedString2 = String.format("%.02f", transitionList.get(i).getBalance());
+             if (transitionList.get(i).getOperation().equals(Transaction.DEPOSIT)) {
+                 balance += transitionList.get(i).getAmount();
+-                str += "Giao dich " + count + ": " + "Nap tien $" + Math.round(transitionList.get(i).getAmount()*100.0)/100.0
+-                        + ". " + "So du luc nay: $" + Math.round(transitionList.get(i).getBalance()*100.0)/100.0 + ".\n";
++                str += "Giao dich " + count + ": " + "Nap tien $"
++                        + formattedString1 + ". " + "So du luc nay: $"
++                        + formattedString2 + ".\n";
+             } else if (transitionList.get(i).getOperation().equals(Transaction.WITHDRAW)) {
+                 balance -= transitionList.get(i).getAmount();
+-                str += "Giao dich " + count + ": " + "Rut tien $" + Math.round(transitionList.get(i).getAmount()*100.0)/100.0
+-                        + ". " + "So du luc nay: $" + Math.round(transitionList.get(i).getBalance()*100.0)/100.0 + ".\n";
++                str += "Giao dich " + count + ": " + "Rut tien $"
++                        + formattedString1
++                        + ". " + "So du luc nay: $"
++                        + formattedString2 + ".\n";
+             }
+         }
+         System.out.println(str);

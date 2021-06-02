@@ -1,0 +1,10 @@
+@@ -3,7 +3,7 @@
+  */
+ public class InvalidFundingAmountException extends BankException {
+     public InvalidFundingAmountException(double amount) {
+-        super("Số tiền không hợp lệ: " + String.format("%.2f", amount));
++        super("Số tiền không hợp lệ: " + String.format("$%.2f", amount));
+     }
+ }
+  
+\ No newline at end of file

@@ -1,0 +1,74 @@
+@@ -4,19 +4,20 @@
+ 
+ public class Account {
+     private double balance;
+-    private ArrayList<Transaction> history;
++    private ArrayList<Transaction> transitionList;
++
+ 
+     /**
+-     * Constructor
++     * Constructor.
+      */
+     public Account(double balance, ArrayList<Transaction> history) {
+         this.balance = balance;
+-        this.history = history;
++        this.transitionList = history;
+     }
+ 
+     public Account() {
+         balance = 0;
+-        history = new ArrayList<Transaction>();
++        transitionList = new ArrayList<Transaction>();
+     }
+ 
+     private void deposit(double amount) {
+@@ -25,7 +26,7 @@
+         } else {
+             balance += amount;
+             Transaction transaction = new Transaction("DEPOSIT", amount, balance);
+-            history.add(transaction);
++            transitionList.add(transaction);
+         }
+     }
+ 
+@@ -37,7 +38,7 @@
+         } else {
+             balance -= amount;
+             Transaction transaction = new Transaction("WITHDRAW", amount, balance);
+-            history.add(transaction);
++            transitionList.add(transaction);
+         }
+     }
+ 
+@@ -59,17 +60,22 @@
+         }
+     }
+ 
++    /**
++     * print trasactions.
++     */
+     public void printTransaction() {
+         NumberFormat formatter = new DecimalFormat("#0.00");
+-        for (int i = 0; i < history.size(); i++) {
+-            if (history.get(i).getOperation().compareToIgnoreCase("Deposit") == 1) {
+-                System.out.println("Giao dich " + i + ": " + "Nap tien $"
+-                        + formatter.format(history.get(i).getAmount())
+-                        + ". So du luc nay: $" + formatter.format(history.get(i).getBalance()));
++        for (int i = 0; i < transitionList.size(); i++) {
++            if (transitionList.get(i).getOperation().compareToIgnoreCase("Deposit") == 0) {
++                System.out.println("Giao dich " + (i + 1) + ": " + "Nap tien $"
++                        + formatter.format(transitionList.get(i).getAmount())
++                        + ". So du luc nay: $"
++                        + formatter.format(transitionList.get(i).getBalance()) + ".");
+             } else {
+-                System.out.println("Giao dich " + i + ": " + "Rut tien $"
+-                        + formatter.format(history.get(i).getAmount())
+-                        + ". So du luc nay: $" + formatter.format(history.get(i).getBalance()));
++                System.out.println("Giao dich " + (i + 1) + ": " + "Rut tien $"
++                        + formatter.format(transitionList.get(i).getAmount())
++                        + ". So du luc nay: $"
++                        + formatter.format(transitionList.get(i).getBalance()) + ".");
+             }
+         }
+     }

@@ -1,0 +1,10 @@
+@@ -21,7 +21,8 @@
+ 
+         for (int i = 0; i < pieces.size(); ++ i) {
+             Piece p = pieces.get(i);
+-            if (p.getCoordinatesX() == piece.getCoordinatesX() && p.getCoordinatesY() == piece.getCoordinatesY()) {
++            if (p.getCoordinatesX() == piece.getCoordinatesX()
++                    && p.getCoordinatesY() == piece.getCoordinatesY()) {
+                 return;
+             }
+         }

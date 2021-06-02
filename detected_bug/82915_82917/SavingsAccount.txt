@@ -1,0 +1,9 @@
+@@ -16,7 +16,7 @@
+       }
+       doWithdrawing(amount);
+       addTransaction(
+-          new Transaction(Transaction.TYPE_WITHDRAW_CHECKING, amount, initialBalance, getBalance())
++          new Transaction(Transaction.TYPE_WITHDRAW_SAVINGS, amount, initialBalance, getBalance())
+       );
+     } catch (BankException e) {
+       System.out.println(e.toString());

@@ -1,0 +1,60 @@
+@@ -1,3 +1,5 @@
++import java.nio.channels.Pipe;
++
+ public class Move {
+ 
+     private  Piece movedPiece;
+@@ -16,6 +18,7 @@
+         this.endX = endX;
+         this.endY = endY;
+         this.movedPiece = movedPiece;
++        killedPiece = null;
+     }
+ 
+     /**
+@@ -81,16 +84,35 @@
+     @Override
+     public String toString() {
+         String indexX = null;
+-        switch (movedPiece.getX()) {
+-            case 1 : indexX = "a"; break;
+-            case 2 : indexX = "b"; break;
+-            case 3 : indexX = "c"; break;
+-            case 4 : indexX = "d"; break;
+-            case 5 : indexX = "e"; break;
+-            case 6 : indexX = "f"; break;
+-            case 7 : indexX = "g"; break;
+-            case 8 : indexX = "h"; break;
++        switch (this.getEndX()) {
++            case 1 :
++                indexX = "a";
++                break;
++            case 2 :
++                indexX = "b";
++                break;
++            case 3 :
++                indexX = "c";
++                break;
++            case 4 :
++                indexX = "d";
++                break;
++            case 5 :
++                indexX = "e";
++                break;
++            case 6 :
++                indexX = "f";
++                break;
++            case 7 :
++                indexX = "g";
++                break;
++            case 8 :
++                indexX = "h";
++                break;
++            default:
+         }
+-        return movedPiece.getColor() + "-" + movedPiece.getSymbol() + indexX + String.valueOf(movedPiece.getY());
++        return movedPiece.getColor() + "-" + movedPiece.getSymbol() + indexX
++                + String.valueOf(this.getEndY());
+     }
++
+ }

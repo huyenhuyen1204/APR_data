@@ -1,0 +1,52 @@
+@@ -16,20 +16,6 @@
+     /**
+      * cmt.
+      */
+-    public static int getWIDTH() {
+-        return WIDTH;
+-    }
+-
+-    /**
+-     * cmt.
+-     */
+-    public static int getHEIGHT() {
+-        return HEIGHT;
+-    }
+-
+-    /**
+-     * cmt.
+-     */
+     public void setPieces(ArrayList<Piece> pieces) {
+         this.pieces = pieces;
+     }
+@@ -45,9 +31,10 @@
+      * cmt.
+      */
+     public void addPiece(Piece p) {
+-        if (validate(p.getX(), p.getY())) {
++        if (validate(p.getCoordinatesX(), p.getCoordinatesY())) {
+             for (Piece pie : pieces) {
+-                if (pie.getX() == p.getX() && pie.getY() == p.getY()) {
++                if (pie.getCoordinatesX() == p.getCoordinatesX()
++                        && pie.getCoordinatesY() == p.getCoordinatesY()) {
+                     return;
+                 }
+             }
+@@ -60,7 +47,7 @@
+      */
+     public Piece getAt(int x, int y) {
+         for (Piece p : pieces) {
+-            if (p.getX() == x && p.getY() == y) {
++            if (p.getCoordinatesX() == x && p.getCoordinatesY() == y) {
+                 return p;
+             }
+         }
+@@ -73,7 +60,7 @@
+     public void removeAt(int x, int y) {
+         int length = pieces.size();
+         for (int i = 0; i < length; i++) {
+-            if (pieces.get(i).getY() == y && pieces.get(i).getX() == x) {
++            if (pieces.get(i).getCoordinatesY() == y && pieces.get(i).getCoordinatesX() == x) {
+                 pieces.remove(i);
+                 return;
+             }

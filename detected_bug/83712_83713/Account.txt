@@ -1,0 +1,17 @@
+@@ -53,12 +53,14 @@
+             if (transitionList.get(i).getOperation().equals(Transaction.DEPOSIT)) {
+                 s = s + "Giao dich " + (i + 1) + ": " + "Nap tien $"
+                         + String.format("%.2f", transitionList.get(i).getAmount())
+-                        + ". So du luc nay: $" + String.format("%.2f", transitionList.get(i).getBalance())
++                        + ". So du luc nay: $"
++                        + String.format("%.2f", transitionList.get(i).getBalance())
+                         + "." + "\n";
+             } else if (transitionList.get(i).getOperation().equals(Transaction.WITHDRAW)) {
+                 s = s + "Giao dich " + (i + 1) + ": " + "Rut tien $"
+                         + String.format("%.2f", transitionList.get(i).getAmount())
+-                        + ". So du luc nay: $" + String.format("%.2f", transitionList.get(i).getBalance())
++                        + ". So du luc nay: $"
++                        + String.format("%.2f", transitionList.get(i).getBalance())
+                         + "." + "\n";
+             }
+         }

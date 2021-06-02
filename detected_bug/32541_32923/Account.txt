@@ -1,0 +1,41 @@
+@@ -38,14 +38,33 @@
+     public void printTransaction() {
+         for (int i = 0; i < transitionList.size(); i++) {
+             String a=(transitionList.get(i).getOperation()==transitionList.get(i).getDeposit())?"Nap tien":"Rut tien";
+-            System.out.println("Giao dich " + (i+1) + ": "+ a +" $" + (double)Math.round(transitionList.get(i).getAmount() * 100)/100 + ". So du luc nay: $" + (double)Math.round(transitionList.get(i).getBalance() * 100) / 100 + ".");
++
++            System.out.print("Giao dich " + (i+1) + ": "+ a +" $");
++            int k=(int)((transitionList.get(i).getAmount()*10)%10);
++            if(k==0){
++                System.out.print( (double)Math.round(transitionList.get(i).getAmount() * 100) / 100 + "0" )  ;
++            }
++            else{
++                System.out.print((double)Math.round(transitionList.get(i).getAmount() * 100) / 100);
++            }
++            System.out.print(". So du luc nay: $");
++
++
++
++            int m=(int)((transitionList.get(i).getBalance()*10)%10);
++            if(m==0){
++                System.out.println( (double)Math.round(transitionList.get(i).getBalance() * 100) / 100 + "0." )  ;
++            } else{
++                System.out.println((double)Math.round(transitionList.get(i).getBalance() * 100) / 100 + ".");
++            }
+         }
+     }
+ 
+-//    public static void main(String[] args) {
+-//        Account acc= new Account();
+-//        acc.addTransaction(2000.255,"deposit");
+-//        acc.addTransaction(2000,"withdraw");
+-//        acc.printTransaction();
+-//    }
++    public static void main(String[] args) {
++        Account acc= new Account();
++        acc.addTransaction(2000.226,"deposit");
++        acc.addTransaction( 1000,"withdraw");
++        acc.printTransaction();
++
++    }
+ }

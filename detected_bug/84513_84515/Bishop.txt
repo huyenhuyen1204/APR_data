@@ -1,0 +1,6 @@
+@@ -1,4 +1,4 @@
+-public class Bishop extends Piece{
++public class Bishop extends Piece {
+     public Bishop() {
+ 
+     }

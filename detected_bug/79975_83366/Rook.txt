@@ -1,0 +1,85 @@
+@@ -13,14 +13,79 @@
+ 
+     /**canMove.*/
+     public boolean canMove(Board board, int x, int y) {
+-        if (!board.validate(x, y) || (this.getX() == x && this.getY() == y)) {
++        int count;
++        if (!board.validate(x, y) || (this.getCoordinatesX() == x && this.getCoordinatesY() == y)) {
+             return false;
+         }
+-        if (this.getX() == x || this.getY() == y) {
+-            if (board.getAt(x, y) != null && board.getAt(x, y).getColor().equals(this.getColor())) {
+-                return false;
++        if (this.getCoordinatesX() == x) {
++            if (this.getCoordinatesY() < y) {
++                count = 0;
++                for (int i = this.getCoordinatesY(); i < y - 1; i++) {
++                    if (board.getAt(x, i + 1) != null) {
++                        count++;
++                    }
++                }
++                if (count > 0) {
++                    return false;
++                } else {
++                    if (board.getAt(x, y) != null
++                            && board.getAt(x, y).getColor().equals(this.getColor())) {
++                        return false;
++                    }
++                    return true;
++                }
++            } else {
++                count = 0;
++                for (int i = this.getCoordinatesY(); i > y + 1; i--) {
++                    if (board.getAt(x, i - 1) != null) {
++                        count++;
++                    }
++                }
++                if (count > 0) {
++                    return false;
++                } else {
++                    if (board.getAt(x, y) != null
++                            && board.getAt(x, y).getColor().equals(this.getColor())) {
++                        return false;
++                    }
++                    return true;
++                }
+             }
+-            return true;
++        }
++        if (this.getCoordinatesY() == y) {
++            if (this.getCoordinatesX() < x) {
++                count = 0;
++                for (int i = this.getCoordinatesX(); i < x - 1; i++) {
++                    if (board.getAt(i + 1, y) != null) {
++                        count++;
++                    }
++                }
++                if (count > 0) {
++                    return false;
++                } else {
++                    if (board.getAt(x, y) != null
++                            && board.getAt(x, y).getColor().equals(this.getColor())) {
++                        return false;
++                    }
++                    return true;
++                }
++            } else {
++                count = 0;
++                for (int i = this.getCoordinatesX(); i > x + 1; i--) {
++                    if (board.getAt(i - 1, y) != null) {
++                        count++;
++                    }
++                }
++                if (count > 0) {
++                    return false;
++                } else {
++                    if (board.getAt(x, y) != null
++                            && board.getAt(x, y).getColor().equals(this.getColor())) {
++                        return false;
++                    }
++                    return true;
++                }
++            }
+         }
+         return false;
+     }

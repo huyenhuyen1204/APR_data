@@ -1,0 +1,82 @@
+@@ -1,41 +1,41 @@
+ public abstract class Piece {
+ 
+-    private int x;
+-    private int y;
++    private int coordinatesX;
++    private int coordinatesY;
+     private String color;
+-    
+-    /*
+-    * cmt.
+-    */
++
++    /**
++     * cmt.
++     */
+     public Piece(int x, int y) {
+-        this.x = x;
+-        this.y = y;
++        this.coordinatesX = x;
++        this.coordinatesY = y;
+         this.color = "white";
+     }
+-    
+-    /*
+-    * cmt.
+-    */
++
++    /**
++     * cmt.
++     */
+     public Piece(int x, int y, String color) {
+-        this.x = x;
+-        this.y = y;
++        this.coordinatesX = x;
++        this.coordinatesY = y;
+         this.color = color;
+     }
+ 
+-    public int getX() {
+-        return x;
++    public int getCoordinatesX() {
++        return coordinatesX;
+     }
+ 
+-    public void setX(int x) {
+-        this.x = x;
++    public void setCoordinatesX(int coordinatesX) {
++        this.coordinatesX = coordinatesX;
+     }
+ 
+-    public int getY() {
+-        return y;
++    public int getCoordinatesY() {
++        return coordinatesY;
+     }
+ 
+-    public void setY(int y) {
+-        this.y = y;
++    public void setCoordinatesY(int coordinatesY) {
++        this.coordinatesY = coordinatesY;
+     }
+ 
+     public String getColor() {
+@@ -49,12 +49,12 @@
+     public abstract String getSymbol();
+ 
+     public abstract boolean canMove(Board board, int x, int y);
+-    
+-    /*
+-    * cmt.
+-    */
++
++    /**
++     * cmt.
++     */
+     public boolean checkPosition(Piece piece) {
+-        if (x == piece.getX() && y == piece.getY()) {
++        if (coordinatesX == piece.getCoordinatesX() && coordinatesY == piece.getCoordinatesY()) {
+             return false;
+         } else {
+             return true;

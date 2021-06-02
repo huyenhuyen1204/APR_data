@@ -1,0 +1,33 @@
+@@ -46,20 +46,20 @@
+     public void printTransaction() {
+         for (int i = 0; i < transitionList.size(); i++) {
+             if (transitionList.get(i).getOperation().equals(Transaction.DEPOSIT)) {
+-                System.out.println("Giao dich " + (i + 1) + ": Nap tien $ "
+-                        + round(transitionList.get(i).getAmount()) + ". So du luc nay: $"
+-                        + round(transitionList.get(i).getBalance()) + ".");
++                System.out.print("Giao dich " + (i + 1) + ": Nap tien $");
++                System.out.printf("%.2f", transitionList.get(i).getAmount());
++                System.out.print(". So du luc nay: $");
++                System.out.printf("%.2f", transitionList.get(i).getBalance());
++                System.out.print(".");
++                System.out.println();
+             } else {
+-                System.out.println("Giao dich " + (i + 1) + ": Rut tien $ "
+-                        + round(transitionList.get(i).getAmount()) + ". So du luc nay: $"
+-                        + round(transitionList.get(i).getBalance()) + ".");
++                System.out.print("Giao dich " + (i + 1) + ": Rut tien $");
++                System.out.printf("%.2f", transitionList.get(i).getAmount());
++                System.out.print(". So du luc nay: $");
++                System.out.printf("%.2f", transitionList.get(i).getBalance());
++                System.out.print(".");
++                System.out.println();
+             }
+         }
+     }
+-
+-    private double round(double n) {
+-        n = (int) (n * 100 + 0.5);
+-        n /= 100;
+-        return n;
+-    }
+ }

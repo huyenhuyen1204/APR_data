@@ -1,0 +1,11 @@
+@@ -47,8 +47,8 @@
+     /**
+      * jax.
+      */
+-    public void setBanlance(double banlance) {
+-        this.balance = banlance;
++    public void setBalance(double balance) {
++        this.balance = balance;
+     }
+ 
+     /**

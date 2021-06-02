@@ -1,0 +1,41 @@
+@@ -16,11 +16,11 @@
+             String str = "Giao dich " + i + ":";
+             if (e.getOperation()
+                     .compareTo(Transaction.DEPOSIT) == 0) {
+-                str += " Nap tien " + e.getAmount()
+-                        + ". So du luc nay: " + f.format(e.getAmount()) + ".";
++                str += " Nap tien $" + f.format(e.getAmount())
++                        + ". So du luc nay: $" + f.format(e.getBalance()) + ".";
+             } else  {
+-                str += " Rut tien " + e.getAmount()
+-                        + ". So du luc nay: " + f.format(e.getBalance()) + ".";
++                str += " Rut tien $" + f.format(e.getAmount())
++                        + ". So du luc nay: $" + f.format(e.getBalance()) + ".";
+             }
+             System.out.println(str);
+         }
+@@ -36,13 +36,13 @@
+             return;
+         }
+ 
+-        this.balance += (double) Math.ceil(amount * 100)/ 100;
++        this.balance += amount;
+         Transaction e = new Transaction(Transaction.DEPOSIT, amount, this.balance);
+         transitionList.add(e);
+     }
+ 
+     /**
+-     * rut tien
++     * rut tien.
+      * @param amount so tien
+      */
+     private void withdraw(double amount) {
+@@ -56,7 +56,7 @@
+             return;
+         }
+ 
+-        this.balance -= (double) Math.ceil(amount * 100)/ 100;
++        this.balance -= amount;
+         Transaction e = new Transaction(Transaction.WITHDRAW, amount, this.balance);
+         transitionList.add(e);
+     }

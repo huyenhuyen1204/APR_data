@@ -1,0 +1,10 @@
+@@ -52,8 +52,7 @@
+      * control.
+      */
+     public String getCustomerInfo() {
+-        return "Số CMND: " + idNumber +
+-                ". Họ tên: " + fullName + ".";
++        return "Số CMND: " + idNumber + ". Họ tên: " + fullName + ".";
+     }
+ 
+     /**

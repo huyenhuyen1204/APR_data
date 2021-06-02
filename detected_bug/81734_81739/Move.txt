@@ -1,0 +1,9 @@
+@@ -32,7 +32,7 @@
+ 
+     @Override
+     public String toString() {
+-        return movedPiece.getColor() + "-" + movedPiece.getSymbol() + columns[endY] + endX;
++        return movedPiece.getColor() + "-" + movedPiece.getSymbol() + columns[endX] + endY;
+     }
+ 
+     public int getStartX() {

@@ -1,0 +1,11 @@
+@@ -51,8 +51,8 @@
+ 		for(Transaction t : transitionList) {
+ 			cnt++;
+ 			if (t.getOperation() == "deposit")
+-				System.out.print("Giao dich " + cnt + ": Nap tien $ " );
+-			else System.out.print("Giao dich " + cnt + ": Rut tien $ " );
++				System.out.print("Giao dich " + cnt + ": Nap tien $" );
++			else System.out.print("Giao dich " + cnt + ": Rut tien $" );
+ 			System.out.printf("%.2f", t.getAmount());
+ 			System.out.print(". So du luc nay: $");
+ 			System.out.printf("%.2f.\n", t.getBalance());

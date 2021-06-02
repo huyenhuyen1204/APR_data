@@ -1,0 +1,10 @@
+@@ -54,7 +54,8 @@
+             System.out.println("Giao dich " + (i + 1) + ": " + s
+                     + df.format((double) Math.round(transitionList.get(i).getAmount() * 100) / 100)
+                     + ". So du luc nay: $"
+-                    + df.format((double) Math.round(transitionList.get(i).getBalance() * 100) / 100) + ".");
++                    + df.format((double) Math.round(transitionList.get(i).getBalance() * 100) / 100)
++                    + ".");
+         }
+     }
+ }

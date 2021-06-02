@@ -1,0 +1,28 @@
+@@ -42,14 +42,21 @@
+         else System.out.println("Yeu cau khong hop le!");
+ 
+     }
+-    public void printTransaction ()
++    public void printTransaction()
+     {
+-        for(int i = 0; i < transitionList.size();i++)
++        String tmp;
++
++        String result = "";
++        for(int i  =0; i < transitionList.size(); i++)
+         {
+-            if(transitionList.get(i).getOperation() == "deposit")
+-            System.out.println("Giao dich"+i+": Nap tien $"+Math.round((transitionList.get(i).getAmount()*100)/100)+". So du luc nay:"+ Math.round((transitionList.get(i).getBalance()*100)/100)+");");
+-            else
+-                System.out.println("Giao dich"+i+": Rut tien $"+Math.round((transitionList.get(i).getAmount()*100)/100)+". So du luc nay:"+ Math.round((transitionList.get(i).getBalance()*100)/100)+");");
++            if(transitionList.get(i).getOperation().equals("deposit"))
++            {
++                tmp = "Nap tien $";
++            }
++            else tmp = "Rut tien $";
++            result = String.format("Giao dich %d: %s%.2f. So du luc nay: $%.2f.",i+1, tmp,
++                    transitionList.get(i).getAmount(), transitionList.get(i).getBalance());
++            System.out.println(result);
+         }
+     }
+ }

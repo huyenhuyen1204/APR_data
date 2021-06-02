@@ -1,0 +1,15 @@
+@@ -50,10 +50,12 @@
+ 		int cnt = 0;
+ 		for(Transaction t : transitionList) {
+ 			cnt++;
+-			System.out.print("Giao dich " + cnt + ": Nap tien $ " );
++			if (t.getOperation() == "deposit")
++				System.out.print("Giao dich " + cnt + ": Nap tien $" );
++			else System.out.print("Giao dich " + cnt + ": Rut tien $" );
+ 			System.out.printf("%.2f", t.getAmount());
+ 			System.out.print(". So du luc nay: $");
+-			System.out.printf("%.2f.\n", t.getAmount());
++			System.out.printf("%.2f.\n", t.getBalance());
+ 		}
+ 	}
+ 	public static void main(String[] args) 

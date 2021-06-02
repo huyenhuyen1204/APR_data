@@ -1,0 +1,33 @@
+@@ -2,7 +2,10 @@
+     private Piece movedPiece;
+     private Piece killedPiece;
+ 
+-    private int startX, endX, startY, endY;
++    private int startX;
++    private int endX;
++    private int startY;
++    private int endY;
+ 
+     /**
+      * javadoc.
+@@ -97,6 +100,7 @@
+         this.startY = startY;
+         this.endY = endY;
+         this.movedPiece = movedPiece;
++        this.killedPiece = null;
+     }
+ 
+     /**
+@@ -115,9 +119,8 @@
+      * javadoc.
+      */
+     public String toString() {
+-        char xColumn = (char) (movedPiece.getX() + 96);
+-        String AN = String.valueOf(xColumn);
+-        AN += String.valueOf(movedPiece.getY());
+-        return movedPiece.getColor() + "-" + movedPiece.getSymbol() + AN;
++        String[] str = {"a", "b", "c", "d", "e", "f", "g", "h"};
++        String result = str[endX - 1] + String.valueOf(endY);
++        return movedPiece.getColor() + "-" + movedPiece.getSymbol() + result;
+     }
+ }

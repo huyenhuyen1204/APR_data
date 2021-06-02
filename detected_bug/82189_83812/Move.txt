@@ -1,0 +1,11 @@
+@@ -35,8 +35,8 @@
+      */
+     public String toString() {
+         String res = movedPiece.getColor() + "-" + movedPiece.getSymbol();
+-        res += (char) (movedPiece.getCoordinatesY() + 96);
+-        res += movedPiece.getCoordinatesX();
++        res += (char) (endX + 96);
++        res += endY;
+         return res;
+     }
+ 

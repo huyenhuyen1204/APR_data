@@ -1,0 +1,61 @@
+@@ -12,24 +12,12 @@
+         return "R";
+     }
+ 
+-    private int moveX(int x) {
+-        int value = this.getCoordinatesX();
++    private int moveX(int value, int x) {
+         if (value < x) {
+-            return (value + 1);
++            return value + 1;
+         }
+         if (value > x) {
+-            return (value - 1);
+-        }
+-        return value;
+-    }
+-
+-    private int moveY(int y) {
+-        int value = this.getCoordinatesY();
+-        if (value < y) {
+-            return (value + 1);
+-        }
+-        if (value > y) {
+-            return (value - 1);
++            return value - 1;
+         }
+         return value;
+     }
+@@ -39,18 +27,23 @@
+         if (this.getCoordinatesX() != x && this.getCoordinatesY() != y) {
+             return false;
+         }
+-        while (this.getCoordinatesX() != x
+-                && this.getCoordinatesY() != y) {
+-            int nextX = moveX(x);
+-            int nextY = moveY(y);
+-            if (board.getAt(nextX, nextY) != null) {
+-                if (nextX < x || nextY < y) {
++        if (!board.validate(x, y)) {
++            return false;
++        }
++        int valueX = this.getCoordinatesX();
++        int valueY = this.getCoordinatesY();
++        while (valueX != x
++                || valueY != y) {
++            valueX = moveX(valueX, x);
++            valueY = moveX(valueY, y);
++            if (board.getAt(valueX, valueY) != null) {
++                if (valueX < x || valueY < y) {
+                     return false;
+                 }
+-                board.removeAt(nextX, nextY);
++                if (board.getAt(valueX, valueY).getColor().equals(getColor())) {
++                    return false;
++                }
+             }
+-            this.setCoordinatesX(nextX);
+-            this.setCoordinatesY(nextY);
+         }
+         return true;
+     }

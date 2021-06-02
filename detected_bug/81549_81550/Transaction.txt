@@ -1,0 +1,23 @@
+@@ -10,9 +10,10 @@
+ 
+     /**
+      * constructor.
++     *
+      * @param operation operation
+-     * @param amount amount
+-     * @param balance balance
++     * @param amount    amount
++     * @param balance   balance
+      */
+     public Transaction(String operation, double amount, double balance) {
+         this.operation = operation;
+@@ -21,7 +22,8 @@
+     }
+ 
+     /**
+-     * get operation
++     * get operation.
++     *
+      * @return operation
+      */
+     public String getOperation() {

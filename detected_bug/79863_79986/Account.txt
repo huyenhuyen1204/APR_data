@@ -1,0 +1,52 @@
+@@ -21,6 +21,9 @@
+      * Cmt.
+      */
+     private void withdraw(double amount) {
++        if (amount < 0) {
++            System.out.println("So tien ban rut ra khong hop le!");
++        }
+         if (amount > balance) {
+             System.out.println("So tien ban rut vuot qua so du!");
+         } else {
+@@ -32,13 +35,13 @@
+      * Cmt.
+      */
+     public void addTransaction(double amount, String operation) {
+-        if (!operation.equalsIgnoreCase("deposit") && !operation.equalsIgnoreCase("withdraw")) {
++        if (!operation.equals(Transaction.DEPOSIT) && !operation.equals(Transaction.WITHDRAW)) {
+             System.out.println("Yeu cau khong hop le!");
+         } else {
+-            if (operation.equalsIgnoreCase("deposit")) {
++            if (operation.equals(Transaction.DEPOSIT)) {
+                 deposit(amount);
+             }
+-            if (operation.equalsIgnoreCase("withdraw")) {
++            if (operation.equals(Transaction.WITHDRAW)) {
+                 withdraw(amount);
+             }
+             transitionList.add(new Transaction(operation, amount, balance));
+@@ -51,13 +54,14 @@
+     public void printTransaction() {
+         for (int i = 0; i < transitionList.size(); i++) {
+             String operation = "";
+-            if (transitionList.get(i).getOperation().equalsIgnoreCase("deposit")) {
++            if (transitionList.get(i).getOperation().equals(Transaction.DEPOSIT)) {
+                 operation = "Nap tien";
+             } else {
+                 operation = "Rut tien";
+             }
+             System.out.printf("Giao dich %d: %s $%.02f. " + "So du luc nay: $%.02f.\n",
+-                    i, operation, transitionList.get(i).getAmount(), transitionList.get(i).getBalance());
++                    i + 1, operation, transitionList.get(i).getAmount(),
++                    transitionList.get(i).getBalance());
+         }
+     }
+ 
+@@ -67,6 +71,7 @@
+     public static void main(String[] args) {
+         Account acc = new Account();
+         acc.addTransaction(2000.255, "deposit");
++        acc.addTransaction(2000, "Tung");
+         acc.addTransaction(1000, "withdraw");
+         acc.printTransaction();
+     }

@@ -1,0 +1,41 @@
+@@ -3,10 +3,10 @@
+ 
+ public class Account {
+     private double balance;
+-    private ArrayList<Transaction> ds;
++    private ArrayList<Transaction> transitionList;
+ 
+     public Account(){
+-        this.ds = new ArrayList<Transaction>();
++        this.transitionList = new ArrayList<Transaction>();
+     };
+ 
+     private void deposit(double amount){
+@@ -31,12 +31,12 @@
+     public void addTransaction(double amount, String operation){
+         if(operation.compareTo("deposit") == 0 ){
+             deposit(amount);
+-            this.ds.add(new Transaction("deposit", amount, this.balance));
++            this.transitionList.add(new Transaction("deposit", amount, this.balance));
+ 
+         }
+         else if(operation.compareTo("withdraw") == 0) {
+             withdraw(amount);
+-            this.ds.add(new Transaction("withdraw", amount, this.balance));
++            this.transitionList.add(new Transaction("withdraw", amount, this.balance));
+         }
+         else
+             System.out.println("Yeu cau khong hop le!");
+@@ -44,10 +44,10 @@
+ 
+     public void printTransaction(){
+         int dem = 0;
+-        if(this.ds.isEmpty()) return;
++        if(this.transitionList.isEmpty()) return;
+         else {
+             DecimalFormat df = new DecimalFormat("#.00");
+-            for (Transaction i : this.ds) {
++            for (Transaction i : this.transitionList) {
+                 dem++;
+                 if (i.getOperation().compareTo("deposit") == 0)
+                 {

@@ -1,0 +1,50 @@
+@@ -13,13 +13,13 @@
+             switch (tran.getOperation()){
+                 case Transaction.DEPOSIT:
+                     System.out.println("Giao dich " + i
+-                            + ": Nap tien: " + decimalFormat.format(tran.getAmount())
+-                            + ". So du luc nay: " + decimalFormat.format(tran.getBalance()) + ".");
++                            + ": Nap tien $" + decimalFormat.format(tran.getAmount())
++                            + ". So du luc nay: $" + decimalFormat.format(tran.getBalance()) + ".");
+                     break;
+                 case Transaction.WITHDRAW:
+                     System.out.println("Giao dich " + i
+-                            + ": Rut tien: " + decimalFormat.format(tran.getAmount())
+-                            + ". So du luc nay: " + decimalFormat.format(tran.getBalance()) + ".");
++                            + ": Rut tien $" + decimalFormat.format(tran.getAmount())
++                            + ". So du luc nay: $" + decimalFormat.format(tran.getBalance()) + ".");
+                     break;
+             }
+ 
+@@ -35,11 +35,13 @@
+             case Transaction.WITHDRAW:
+                 withdraw(amount);
+                 break;
++            default:
++                System.out.println("Yeu cau khong hop le!");
+         }
+     }
+ 
+     private void deposit(double amount){
+-        if (amount == 0){
++        if (amount <= 0){
+             System.out.println("So tien ban nap vao khong hop le!");
+             return;
+         }
+@@ -48,14 +50,14 @@
+     }
+ 
+     private void withdraw(double amount){
+-        if (amount == 0){
++        if (amount <= 0){
+             System.out.println("So tien ban rut ra khong hop le!");
+             return;
+         } else if (amount > this.balance){
+             System.out.println("So tien ban rut vuot qua so du!");
+         } else {
+             this.balance = this.balance - amount;
+-            transitionList.add(new Transaction(Transaction.DEPOSIT, amount, this.balance));
++            transitionList.add(new Transaction(Transaction.WITHDRAW, amount, this.balance));
+         }
+     }
+ }

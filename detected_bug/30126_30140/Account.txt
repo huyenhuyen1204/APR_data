@@ -1,0 +1,54 @@
+@@ -4,7 +4,7 @@
+ 
+ public class Account {
+     private double balance;
+-    private List<Transaction> transitionList;
++    private ArrayList<Transaction> transitionList;
+     public static DecimalFormat df = new DecimalFormat("####.##");
+ 
+     public Account () {
+@@ -22,9 +22,9 @@
+     }
+     private void withdraw (double amount) {
+         if(amount < 0)
+-            System.out.println("so tien ban rut khong hop le!");
++            System.out.println("So tien ban rut ra khong hop le!");
+         else if (amount > balance) {
+-            System.out.println("so tien ban rut vuot qua so du!");
++            System.out.println("So tien ban rut vuot qua so du!");
+         } else {
+             balance -= amount;
+             transitionList.add(new Transaction("Rut tien", amount, balance));
+@@ -38,21 +38,29 @@
+         } else if (operation.equals(Transaction.DEPOSIT)) {
+             deposit(amount);
+         } else {
+-            System.out.println("yeu cau khong hop le");
++            System.out.println("Yeu cau khong hop le!");
+         }
+ 
+     }
+     public void printTransaction () {
+         int i = 1;
+         for (Transaction tr : transitionList) {
+-            System.out.println("Giao dich "+i+": "+tr.getOperation()+" $"+df.format(tr.getAmount())+". So du luc nay: $"+df.format(tr.getBalance())+".");
++            String amount = df.format(tr.getAmount());
++            String balance = df.format(tr.getBalance());
++            if (!amount.contains(".")) {
++               amount+=".00";
++            }
++            if (!balance.contains(".")) {
++                balance+=".00";
++            }
++            System.out.println("Giao dich "+i+": "+tr.getOperation()+" $"+amount+". So du luc nay: $"+balance+".");
+             i++;
+         }
+     }
+ 
+     public static void main (String [] args) {
+         Account acc = new Account();
+-        acc.addTransaction(2000.255, "deposit");
++        acc.addTransaction(2000, "deposit");
+         acc.addTransaction(1000, "withdraw");
+         acc.printTransaction();
+     }

@@ -1,0 +1,40 @@
+@@ -13,6 +13,14 @@
+   public final double initialBalance;
+   public final double finalBalance;
+ 
++  /**
++   * lkasjflksdjf.
++   *
++   * @param type           kdjk
++   * @param amount         kdjk
++   * @param initialBalance kdjk
++   * @param finalBalance   kdjk
++   */
+   public Transaction(int type, double amount, double initialBalance, double finalBalance) {
+     this.type = type;
+     this.amount = amount;
+@@ -20,6 +28,12 @@
+     this.finalBalance = finalBalance;
+   }
+ 
++  /**
++   * lksdjflkasjfklj.
++   *
++   * @param t dkfjk
++   * @return lkdjflkaj
++   */
+   public String getTransactionTypeString(int t) {
+     switch (t) {
+       case TYPE_DEPOSIT_CHECKING:
+@@ -35,6 +49,11 @@
+     }
+   }
+ 
++  /**
++   * kdjflksdjflk.
++   *
++   * @return kasjflsdak
++   */
+   public String getTransactionSummary() {
+     return String
+         .format("- Kiểu giao dịch: %s. Số dư ban đầu: $%.2f. Số tiền: $%.2f. Số dư cuối: $%.2f.",

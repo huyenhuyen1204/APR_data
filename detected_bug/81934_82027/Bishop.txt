@@ -1,0 +1,9 @@
+@@ -50,7 +50,7 @@
+         if (board.getAt(i, j) == null) {
+             return true;
+         }
+-        
++
+         if (board.getAt(i, j).getColor() == this.getColor()) {
+             return false;
+         } else {

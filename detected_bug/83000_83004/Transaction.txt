@@ -1,0 +1,17 @@
+@@ -38,13 +38,13 @@
+   }
+ 
+   /**
+-   * Return trans summary
++   * Return trans summary.
+    *
+    * @return summary
+    */
+   public String getTransactionSummary() {
+-    return String.format("- Kiểu giao dịch: %s. Số dư ban đầu: $%.2f. " +
+-                    "Số tiền: $%.2f. Số dư cuối: $%.2f.",
++    return String.format("- Kiểu giao dịch: %s. Số dư ban đầu: $%.2f. "
++                    + "Số tiền: $%.2f. Số dư cuối: $%.2f.",
+             getTransactionTypeString(type), initialBalance, amount, finalBalance);
+   }
+ }

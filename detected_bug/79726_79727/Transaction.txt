@@ -1,0 +1,11 @@
+@@ -7,10 +7,6 @@
+ 
+     /**
+      * fuc.
+-     *
+-     * @param operation
+-     * @param amount
+-     * @param balance
+      */
+     public Transaction(String operation, double amount, double balance) {
+         this.operation = operation;

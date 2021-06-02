@@ -1,0 +1,35 @@
+@@ -1,11 +1,9 @@
+-import javax.sound.midi.Track;
+ import java.util.ArrayList;
+-import java.util.List;
+ 
+ public class Account {
+ 
+     private double balance;
+-    private ArrayList <Transaction> transitionList = new ArrayList<Transaction>();
++    private ArrayList<Transaction> transitionList = new ArrayList<Transaction>();
+ 
+     private void deposit(double amount) {
+         if (amount <= 0) {
+@@ -40,6 +38,11 @@
+         }
+     }
+ 
++    /**
++     * Hàm thêm giao dịch.
++     * @param amount là số tiền.
++     * @param operation là loại giao dịch.
++     */
+     public void addTransaction(double amount, String operation) {
+         if (operation.equals("deposit")) {
+             deposit(amount);
+@@ -50,6 +53,9 @@
+         }
+     }
+ 
++    /**
++     * Hàm in lịch sử giao dịch.
++     */
+     public void printTransaction() {
+         for (int i = 0; i < transitionList.size(); i++) {
+             System.out.println("Giao dich " + (i + 1) + ": " + transitionList.get(i).cheat);

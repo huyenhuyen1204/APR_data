@@ -1,0 +1,44 @@
+@@ -29,7 +29,9 @@
+                     }
+                 }
+                 if (board.getAt(x, y) != null) {
+-                    board.removeAt(x, y);
++                    if (board.getAt(x, y).getColor().equals(this.getColor())) {
++                        return false;
++                    }
+                     return true;
+                 } else {
+                     return true;
+@@ -42,7 +44,9 @@
+                     }
+                 }
+                 if (board.getAt(x, y) != null) {
+-                    board.removeAt(x, y);
++                    if (board.getAt(x, y).getColor().equals(this.getColor())) {
++                        return false;
++                    }
+                     return true;
+                 } else {
+                     return true;
+@@ -58,7 +62,9 @@
+                     }
+                 }
+                 if (board.getAt(x, y) != null) {
+-                    board.removeAt(x, y);
++                    if (board.getAt(x, y).getColor().equals(this.getColor())) {
++                        return false;
++                    }
+                     return true;
+                 } else {
+                     return true;
+@@ -71,7 +77,9 @@
+                     }
+                 }
+                 if (board.getAt(x, y) != null) {
+-                    board.removeAt(x, y);
++                    if (board.getAt(x, y).getColor().equals(this.getColor())) {
++                        return false;
++                    }
+                     return true;
+                 } else {
+                     return true;

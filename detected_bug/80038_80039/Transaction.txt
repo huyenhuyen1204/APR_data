@@ -1,0 +1,12 @@
+@@ -3,9 +3,9 @@
+     private double amount;
+     private double balance;
+ 
+-    public static final String operation1 = "DEPOSIT";
++    public static final String DEPOSIT = "deposit";
+ 
+-    public static final String operation2 = "WITHDRAW";
++    public static final String WITHDRAW = "withdraw";
+ 
+     /**
+      * constructor.

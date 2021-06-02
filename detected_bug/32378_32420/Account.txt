@@ -1,0 +1,24 @@
+@@ -8,7 +8,6 @@
+         if (amount > 0) {
+             this.balance += amount;
+             this.transitionList.add(new Transaction(Transaction.DEPOSIT, amount, this.balance));
+-            this.printTransaction();
+         } else System.out.println("So tien ban nap vao khong hop le!");
+     }
+ 
+@@ -17,7 +16,6 @@
+             if (amount <= balance) {
+                 balance -= amount;
+                 transitionList.add(new Transaction(Transaction.WITHDRAW, amount, this.balance));
+-                this.printTransaction();
+             } else System.out.println("So tien ban rut vuot qua so du!");
+         } else System.out.println("So tien ban rut ra khong hop le!");
+     }
+@@ -43,6 +41,6 @@
+     }
+ 
+     public static void main(String[] args) {
+-        
++       
+     }
+ }

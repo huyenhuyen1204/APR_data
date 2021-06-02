@@ -1,0 +1,27 @@
+@@ -43,7 +43,7 @@
+         int xcurrent = this.getCoordinatesX();
+         int ycurrent = this.getCoordinatesY();
+ 
+-        if (xcurrent == x && ycurrent == y) {
++        if (xcurrent != x && ycurrent != y) {
+             return false;
+         }
+ 
+@@ -54,7 +54,7 @@
+                         return false;
+                     }
+                 }
+-            } else {
++            } else if (ycurrent > y) {
+                 for (int i = ycurrent - 1; i > y; i--) {
+                     if (board.getAt(x, i) != null) {
+                         return false;
+@@ -68,7 +68,7 @@
+                         return false;
+                     }
+                 }
+-            } else {
++            } else if (xcurrent > x) {
+                 for (int i = xcurrent - 1; i > x; i--) {
+                     if (board.getAt(i, y) != null) {
+                         return false;
